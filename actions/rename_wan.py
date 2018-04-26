@@ -1,9 +1,12 @@
 import logging
 
 from flask import json
+from actions.util import *
 
-def create_wan(api_auth, parameters, contexts):
+def rename_wan(api_auth, parameters, contexts):
     """
+    Changes the short name of a WAN.
+
     :param api_auth: steelconnect api object
     :type api_auth: SteelConnectAPI
     :param parameters: json parameters from Dialogflow intent
@@ -13,26 +16,27 @@ def create_wan(api_auth, parameters, contexts):
     :return: Returns a response to be read out to user
     :rtype: string
     """
+
+    original_name = parameters["OriginalName"]
+    new_name = parameters["NewName"]
+
     try:
-        WAN_type = parameters["WANType"]
-        name = WAN_type
+        wan_id = get_wan_id_by_name(api_auth, original_name)
+    except APIError as e:
+        return str(e)
 
-    except KeyError as e:
-
-        error_string = "Error processing createWAN intent. {0}".format(e)
-
-        logging.error(error_string)
-
-        return error_string
-
-    res = api_auth.create_wan(name)
+    new_data = {
+        "name": new_name,
+        "longname": new_name
+    }
+    res = api_auth.update_wan(wan_id, new_data)
 
     if res.status_code == 200:
-        speech = "{} created".format(WAN_type)
+        speech = "Renamed '{}' to '{}'".format(original_name, new_name)
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
     elif res.status_code == 500:
-        speech = "Error: Could not create WAN"
+        speech = "Error: Could not rename WAN"
     else:
         speech = "Error: Could not connect to SteelConnect"
 

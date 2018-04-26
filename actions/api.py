@@ -1,3 +1,5 @@
+import logging
+
 import requests
 from requests.auth import HTTPBasicAuth
 import requests_toolbelt.adapters.appengine
@@ -37,8 +39,11 @@ class SteelConnectAPI:
         return context_list
 
 
+    def bare_url(self):
+        return SteelConnectAPI.api_url.format(self.base_url)
+
     def org_url(self):
-        return SteelConnectAPI.api_url.format(self.base_url) + "org/{}/".format(self.org_id)
+        return self.bare_url() + "org/{}/".format(self.org_id)
 
     def list_sites(self):
         url = self.org_url() + "sites"
@@ -77,9 +82,23 @@ class SteelConnectAPI:
 
     def create_wan(self, name):
         url = self.org_url() + "wans"
-        data = {"name": name}
+        data = {
+            "name": name,
+            "longname": name
+        }
         data = self.format_data(data)
         return requests.post(url, data=data, auth=self.auth)
+    
+    def update_wan(self, wan_id, new_data):
+        url = self.bare_url() + "wan/" + wan_id
+        data = self.format_data(new_data)
+        return requests.put(url, data=data, auth=self.auth)
+
+    def delete_wan(self, wan_id):
+        url = self.bare_url() + "wan/" + wan_id
+        data = {}
+        data = self.format_data(data)
+        return requests.delete(url, data=data, auth=self.auth)
 
     def create_zone(self, name, site):
         url = self.org_url() + "zones"

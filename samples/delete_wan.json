@@ -1,0 +1,41 @@
+{
+  "id": "8e334595-9297-430a-b681-c88f1bd033f4",
+  "timestamp": "2018-04-02T06:55:21.559Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "Delete the WAN named TestWAN",
+    "action": "DeleteWAN",
+    "actionIncomplete": false,
+    "parameters": {
+      "WAN": "WAN",
+      "WANName": "TestWAN"
+    },
+    "contexts": [],
+    "metadata": {
+      "intentId": "56bb85ca-ff5a-4091-aba6-2806d214139e",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "webhookResponseTime": 14,
+      "intentName": "DeleteWAN"
+    },
+    "fulfillment": {
+      "speech": "Error: This feature has not been implemented yet",
+      "source": "steelconnect",
+      "displayText": "Error: This feature has not been implemented yet",
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Error: This feature has not been implemented yet"
+        }
+      ]
+    },
+    "score": 1
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success",
+    "webhookTimedOut": false
+  },
+  "sessionId": "15cc3a66-6674-4d81-99e4-4110d3f9da3b"
+}
