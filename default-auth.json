@@ -1,6 +1,6 @@
 {
-  "username" : "ayabb1@student.monash.edu",
-  "password" : "vt55SNpha8xub7pRgVmy",
-  "realm-url" : "monash.riverbed.cc",
-  "org-id" : "org-Monash-9a986912d67e72e2"
+  "username" : "your_username",
+  "password" : "your_password",
+  "realm-url" : "xxx.riverbed.cc",
+  "org-id" : "org_id_xxxxx"
 }
