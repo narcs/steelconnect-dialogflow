@@ -32,7 +32,7 @@ def create_site(api_auth, parameters):
 
         return error_string
 
-    res = api_auth.create_site(name, city, country_code)
+    res = api_auth.api_site.create_site(name, city, country_code)
 
     if res.status_code == 200:
         speech = "{} created in {}, {}".format(site_type.capitalize(), city, country_name)

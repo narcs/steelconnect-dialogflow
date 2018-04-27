@@ -29,7 +29,7 @@ def rename_wan(api_auth, parameters, contexts):
         "name": new_name,
         "longname": new_name
     }
-    res = api_auth.update_wan(wan_id, new_data)
+    res = api_auth.api_wan.update_wan(wan_id, new_data)
 
     if res.status_code == 200:
         speech = "Renamed '{}' to '{}'".format(original_name, new_name)

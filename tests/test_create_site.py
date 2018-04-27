@@ -6,7 +6,7 @@ import app
 
 from flask import json
 from samples.create_site import *
-from actions.api import SteelConnectAPI
+from api.api_auth import SteelConnectAPI
 
 
 # class MockResponse(Mock):

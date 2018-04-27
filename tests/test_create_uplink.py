@@ -6,7 +6,7 @@ import app
 
 from flask import json
 from samples.create_uplink import *
-from actions.api import SteelConnectAPI
+from api.api_auth import SteelConnectAPI
 
 ## The calls to the SteelConnect API need to be mocked - See Trello card
 
