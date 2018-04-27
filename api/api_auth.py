@@ -17,13 +17,13 @@ class SteelConnectAPI:
 
         self.base_config_url = "https://{}/api/scm.config/1.0/"
         self.api_base_config_url = self.base_config_url.format(self.base_url)
-        self.org_config_url = self.base_config_url + "org/{}/"
-        self.api_org_config_url = self.org_config_url.format(self.base_url, self.org_id)
+        self.org_config_url = self.api_base_config_url + "org/{}/"
+        self.api_org_config_url = self.org_config_url.format(self.org_id)
 
         self.base_reporting_url = "https://{}/api/scm.reporting/1.0/"
         self.api_base_reporting_url = self.base_reporting_url.format(self.base_url)
-        self.org_reporting_url = self.base_reporting_url + "org/{}/"
-        self.api_org_reporting_url = self.org_reporting_url.format(self.base_url, self.org_id)
+        self.org_reporting_url = self.api_base_reporting_url + "org/{}/"
+        self.api_org_reporting_url = self.org_reporting_url.format(self.org_id)
 
         self.api_site = SiteAPI(self.auth, self.api_base_config_url, self.api_org_config_url)
         self.api_wan = WanAPI(self.auth, self.api_base_config_url, self.api_org_config_url)
