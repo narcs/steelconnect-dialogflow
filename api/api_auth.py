@@ -25,10 +25,10 @@ class SteelConnectAPI:
         self.org_reporting_url = "https://{}/api/scm.reporting/1.0/org/{}/"
         self.api_org_reporting_url = self.org_reporting_url.format(self.base_url, self.org_id)
 
-        self.api_site = SiteAPI(self.auth, self.base_config_url, self.org_config_url)
-        self.api_wan = WanAPI(self.auth, self.base_config_url, self.org_config_url)
-        self.api_zone = ZoneAPI(self.auth, self.base_config_url, self.org_config_url)
-        self.api_node = NodeAPI(self.auth, self.base_config_url, self.org_config_url,
-                                self.base_reporting_url, self.org_reporting_url)
-        self.api_uplink = UplinkAPI(self.auth, self.org_id, self.base_config_url, self.org_config_url,
-                                self.base_reporting_url, self.org_reporting_url)
+        self.api_site = SiteAPI(self.auth, self.api_base_config_url, self.api_org_config_url)
+        self.api_wan = WanAPI(self.auth, self.api_base_config_url, self.api_org_config_url)
+        self.api_zone = ZoneAPI(self.auth, self.api_base_config_url, self.api_org_config_url)
+        self.api_node = NodeAPI(self.auth, self.api_base_config_url, self.api_org_config_url,
+                                self.api_base_reporting_url, self.api_org_reporting_url)
+        self.api_uplink = UplinkAPI(self.auth, self.org_id, self.api_base_config_url, self.api_org_config_url,
+                                self.api_base_reporting_url, self.api_org_reporting_url)
