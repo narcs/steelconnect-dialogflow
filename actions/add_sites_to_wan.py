@@ -2,7 +2,7 @@ import logging
 
 from flask import json
 from actions import create_uplink
-from api.util import find_context_by_name, find_contexts_by_name
+from ..api.util import find_context_by_name, find_contexts_by_name
 
 def add_sites_to_wan(api_auth, parameters, contexts):
     """
