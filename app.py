@@ -6,7 +6,7 @@ from flask import Flask, request, make_response
 import json
 import logging
 
-from actions.api import SteelConnectAPI
+from api import SteelConnectAPI
 
 from actions.create_uplink import create_uplink
 from actions.create_site import create_site

@@ -15,7 +15,7 @@ def list_wans(api_auth, parameters, contexts):
 
     logging.info("Listing WANs")
 
-    res = api_auth.list_wans()
+    res = api_auth.wan.list_wans()
 
     if res.status_code == 200:
         data = res.json()["items"]

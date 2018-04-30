@@ -25,7 +25,7 @@ def create_wan(api_auth, parameters, contexts):
 
         return error_string
 
-    res = api_auth.create_wan(name)
+    res = api_auth.wan.create_wan(name)
 
     if res.status_code == 200:
         speech = "{} created".format(WAN_type)

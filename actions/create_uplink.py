@@ -28,7 +28,7 @@ def create_uplink(api_auth, parameters):
     # Get all the sites and check whether there is a site match given city and site type
     if uplink_name == "":
         uplink_name = "Uplink";
-    data_sites = api_auth.list_sites().json()
+    data_sites = api_auth.site.list_sites().json()
     print(data_sites)
     site = " "
     for item in data_sites["items"]:
@@ -37,7 +37,7 @@ def create_uplink(api_auth, parameters):
             break
 
     # Get all the wans and check whether there is a wan match target wan user want the uplink to be created on
-    data_wans = api_auth.list_wans().json()
+    data_wans = api_auth.wan.list_wans().json()
     wan = " "
     for item in data_wans["items"]:
         if wan_name == item["name"]:
@@ -45,7 +45,7 @@ def create_uplink(api_auth, parameters):
             break
 
     # call create uplink api
-    res = api_auth.create_uplink(site, uplink_name, wan)
+    res = api_auth.uplink.create_uplink(site, uplink_name, wan)
 
     if res.status_code == 200:
         speech = "An uplink called {} has been created between site {}_{} and {} wan".format(uplink_name, city, site_type,
