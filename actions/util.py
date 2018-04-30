@@ -30,7 +30,7 @@ def get_wan_id_by_name(api_auth, wan_name):
     - If no such WAN exists, raises an APIError with a human-readable error string.
     """
 
-    res = api_auth.api_wan.list_wans()
+    res = api_auth.wan.list_wans()
     data = res.json()["items"]
 
     if res.status_code == 200:

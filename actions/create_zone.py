@@ -24,7 +24,7 @@ def create_zone(api_auth, parameters):
         return error_string
 
     # Get all sites and check whether site exists
-    data_sites = api_auth.api_site.list_sites().json()
+    data_sites = api_auth.site.list_sites().json()
     site = ""
     for item in data_sites["items"]:
         if city + site_type in item["id"]:
@@ -33,7 +33,7 @@ def create_zone(api_auth, parameters):
     if site != "":
 
         # Get all Zones and generate a new zone number
-        data_zones = api_auth.api_zone.list_zones().json()
+        data_zones = api_auth.zone.list_zones().json()
         zone = 1
         for item in data_zones["items"]:
             if "Zone_" in item["name"]:
@@ -44,7 +44,7 @@ def create_zone(api_auth, parameters):
         name = "Zone_" + str(zone)
 
         # Call create_zone in SteelConnectAPI
-        res = api_auth.api_zone.create_zone(name=name, site=site)
+        res = api_auth.zone.create_zone(name=name, site=site)
 
         if res.status_code == 200:
             speech = "Zone: {} created for site: {}, {}".format(name, city, site_type)
