@@ -5,7 +5,7 @@ from requests.auth import HTTPBasicAuth
 import requests
 
 
-def create_zone(api_auth, parameters):
+def create_zone(api_auth, parameters, contexts):
     """
     :param api_auth: SteelConnect api object
     :type api_auth: SteelConnectAPI

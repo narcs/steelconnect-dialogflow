@@ -8,21 +8,10 @@ import logging
 
 from api import SteelConnectAPI
 
-from actions.create_uplink import create_uplink
-from actions.create_site import create_site
-from actions.list_sites import list_sites
-from actions.list_sites_followup import list_sites_followup
-from actions.list_wans import list_wans
-from actions.create_wan import create_wan
-from actions.rename_wan import rename_wan
-from actions.delete_wan import delete_wan
-from actions.add_site_to_wan import add_site_to_wan
-from actions.add_sites_to_wan import add_sites_to_wan
-from actions.clear_sites import clear_sites
-from actions.create_zone import create_zone
-from actions.create_appliance import create_appliance
 
 app = Flask(__name__)
+app.Debug = True
+
 
 # Setup up api authentication
 try:
@@ -33,6 +22,60 @@ try:
 except IOError:
     j = None
     app.config["SC_API"] = None
+
+
+# Register actions.
+# 
+# Actions are functions with the signature `(api_auth, parameters, contexts) -> response_string`
+actions = {}
+
+def register_action(name, func):
+    actions[name] = func
+
+from actions.create_site import create_site
+register_action("CreateSite", create_site)
+
+from actions.create_uplink import create_uplink
+register_action("CreateUplink", create_uplink)
+
+from actions.list_sites import list_sites
+register_action("ListSites", list_sites)
+
+from actions.list_sites_followup import list_sites_followup
+def list_sites_followup_custom(api_auth, parameters, contexts):
+    return list_sites_followup(api_auth, req["result"]["contexts"][0]["parameters"], contexts)
+register_action("ListSites.ListSites-custom", list_sites_followup_custom)
+
+def list_sites_followup_yes(api_auth, parameters, contexts):
+    return list_sites_followup(api_auth, None, contexts)
+register_action("ListSites.ListSites-yes", list_sites_followup_yes)
+
+from actions.list_wans import list_wans
+register_action("ListWANs", list_wans)
+
+from actions.create_wan import create_wan
+register_action("CreateWAN", create_wan)
+
+from actions.rename_wan import rename_wan
+register_action("RenameWAN", rename_wan)
+
+from actions.delete_wan import delete_wan
+register_action("DeleteWAN", delete_wan)
+
+from actions.add_site_to_wan import add_site_to_wan
+register_action("AddSiteToWAN", add_site_to_wan)
+
+from actions.add_sites_to_wan import add_sites_to_wan
+register_action("AddSitesToWAN", add_sites_to_wan)
+
+from actions.clear_sites import clear_sites
+register_action("ClearSites", clear_sites)
+
+from actions.create_zone import create_zone
+register_action("CreateZone", create_zone)
+
+from actions.create_appliance import create_appliance
+register_action("CreateAppliance", create_appliance)
 
 
 @app.route('/')
@@ -60,38 +103,10 @@ def webhook():
         logging.error("Error processing request {}".format(e))
         return format_response("There was an error processing your request")
 
-    if action_type == "CreateSite":
-        response = create_site(app.config["SC_API"], parameters)
-    elif action_type == "CreateUplink":
-        response = create_uplink(app.config["SC_API"],parameters)
-    elif action_type == "ListSites":
-        response = list_sites(app.config["SC_API"], parameters)
-    elif action_type == "ListSites.ListSites-custom":
-        response = list_sites_followup(app.config["SC_API"], req["result"]["contexts"][0]["parameters"])
-    elif action_type == "ListSites.ListSites-yes":
-        parameters["position"] = "all"
-        response = list_sites_followup(app.config["SC_API"], None)
-    elif action_type == "ListWANs":
-        response = list_wans(app.config["SC_API"], parameters, contexts)
-    elif action_type == "CreateWAN":
-        response = create_wan(app.config["SC_API"], parameters, contexts)
-    elif action_type == "RenameWAN":
-        response = rename_wan(app.config["SC_API"], parameters, contexts)
-    elif action_type == "DeleteWAN":
-        response = delete_wan(app.config["SC_API"], parameters, contexts)
-    elif action_type == "AddSiteToWAN":
-        response = add_site_to_wan(app.config["SC_API"], parameters, contexts)
-    elif action_type == "AddSitesToWAN":
-        response = add_sites_to_wan(app.config["SC_API"], parameters, contexts)
-    elif action_type == "ClearSites":
-        response = clear_sites(parameters)
-    elif action_type == "CreateZone":
-        response = create_zone(app.config["SC_API"], parameters)
-    elif action_type == "CreateAppliance":
-        response = create_appliance(app.config["SC_API"], parameters)
-
-
-    # elif action_type == "SomeOtherAction"            # Use elif to add extra functionality
+    # Call the given action, if it exists.
+    logging.debug("Got action: {}".format(action_type))
+    if action_type in actions:
+        response = actions[action_type](app.config["SC_API"], parameters, contexts)
     else:
         response = "Error: This feature has not been implemented yet"
         logging.error("Not implemented error action: {} intent: {}".format(action_type, intent_type))
