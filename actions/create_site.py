@@ -15,14 +15,13 @@ def create_site(api_auth, parameters):
     :rtype: string
     """
     try:
-        site_type = parameters["SiteType"]
+        site_name = parameters["SiteName"]
         city = parameters["City"]
 
         # in case city consists of multiple words, strip the whitespace(s) as SCM doesn't allow it.
-        city_clean = city.replace(" ", "")
+        # city_clean = city.replace(" ", "")
         country_code = parameters["Country"]["alpha-2"]
         country_name = parameters["Country"]["name"]
-        name = site_type+"-"+city_clean
         
     except KeyError as e:
 
@@ -32,10 +31,10 @@ def create_site(api_auth, parameters):
 
         return error_string
 
-    res = api_auth.site.create_site(name, city, country_code)
+    res = api_auth.site.create_site(site_name, city, country_code)
 
     if res.status_code == 200:
-        speech = "{} created in {}, {}".format(site_type.capitalize(), city, country_name)
+        speech = "{} created in {}, {}".format(site_name.capitalize(), city, country_name)
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
     elif res.status_code == 500:
