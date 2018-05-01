@@ -29,3 +29,14 @@ class SiteAPI:
             }
         data = format_data(data)
         return requests.post(url, data=data, auth=self.auth)
+
+    def rename_site(self, site_id, short_name, long_name, city, country_code):
+        url = self.base_config_url + "site/" + site_id
+        data = {
+            "name": short_name,
+            "longname": long_name,
+            "city": city,
+            "country": country_code
+        }
+        data = format_data(data)
+        return requests.put(url, data=data, auth=self.auth)

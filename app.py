@@ -71,12 +71,6 @@ def webhook():
         response = list_sites_followup(app.config["SC_API"], req["result"]["contexts"][0]["parameters"])
     elif action_type == "ListSites.ListSites-yes":
         parameters["position"] = "all"
-<<<<<<< HEAD
-        response = list_sites_followup(app.config["SC_API"], parameters)
-    elif action_type == "CreateWAN":
-        response = create_wan(app.config["SC_API"], parameters, contexts)
-    elif action_type == "AddSiteToWAN": 
-=======
         response = list_sites_followup(app.config["SC_API"], None)
     elif action_type == "ListWANs":
         response = list_wans(app.config["SC_API"], parameters, contexts)
@@ -87,10 +81,9 @@ def webhook():
     elif action_type == "DeleteWAN":
         response = delete_wan(app.config["SC_API"], parameters, contexts)
     elif action_type == "AddSiteToWAN":
->>>>>>> 8a86f94feb2d87d14971a17b29fb246a60b8e819
         response = add_site_to_wan(app.config["SC_API"], parameters, contexts)
     elif action_type == "AddSitesToWAN":
-        response = add_sites_to_wan(app.config["SC_API"], parameters, contexts)
+        response = add_sites_to_wan(app.config["SC_API"], parameters, contexts)elif action_type == "ClearSites":
     elif action_type == "ClearSites":
         response = clear_sites(parameters)
     elif action_type == "CreateZone":
@@ -98,7 +91,6 @@ def webhook():
     elif action_type == "CreateAppliance":
         response = create_appliance(app.config["SC_API"], parameters)
     elif action_type == "RenameSite":
-        # parameters["position"] = "all"
         response = rename_site(app.config["SC_API"], parameters)
 
 
