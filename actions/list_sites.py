@@ -21,14 +21,23 @@ def list_sites(api_auth, parameters):
     if res.status_code == 200:
         data = res.json()["items"]
         num_sites = len(data)
+        
 
         if num_sites == 0:
             speech = "There are no sites in the {} organisation".format(org)
         elif num_sites == 1:
             speech = "There is one site in the {} organisation, it is called {}".format(org, data[0]["name"])
         elif num_sites > 1:
-            speech = "There are {} sites in the {} organisation, would you like to list all of them?".format(
+            speech = "There are {} sites in the {} organisation: \n".format(
                 num_sites, org)
+            for site in data:
+                name = site["name"]
+                city = site["city"]
+                country = site["country"]
+                speech += "{} in {} {}, \n".format(name, city, country)
+
+            speech = speech[2:] + "."
+            
         else:
             speech = "Unknown error occurred when retrieving sites"
     else:
