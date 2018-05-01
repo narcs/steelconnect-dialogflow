@@ -36,7 +36,7 @@ def list_sites(api_auth, parameters):
                 country = site["country"]
                 speech += "{} in {} {}, \n".format(name, city, country)
 
-            speech = speech[2:] + "."
+            speech = speech[:-3] + "."
             
         else:
             speech = "Unknown error occurred when retrieving sites"
