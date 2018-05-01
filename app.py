@@ -83,7 +83,7 @@ def webhook():
     elif action_type == "AddSiteToWAN":
         response = add_site_to_wan(app.config["SC_API"], parameters, contexts)
     elif action_type == "AddSitesToWAN":
-        response = add_sites_to_wan(app.config["SC_API"], parameters, contexts)elif action_type == "ClearSites":
+        response = add_sites_to_wan(app.config["SC_API"], parameters, contexts)
     elif action_type == "ClearSites":
         response = clear_sites(parameters)
     elif action_type == "CreateZone":
