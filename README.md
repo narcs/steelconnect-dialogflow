@@ -24,10 +24,10 @@ You can either clone the repository using git or download the zip file.
 
 ### Cloning using Git
 * If git is not already installed get it here https://git-scm.com/.
-* Clone this project using 'git clone https://github.com/Bakermat/steelconnect-dialogflow.git'
+* Clone this project using `git clone https://github.com/narcs/steelconnect-dialogflow.git`.
 
 ### Downloading the Zip
-Use this link: https://github.com/Bakermat/steelconnect-dialogflow/archive/master.zip.
+Use this link: https://github.com/narcs/steelconnect-dialogflow/archive/master.zip.
 
 ### Deploying
 * Fill out 'default-auth.json' with the details of your SCM account and organisation.

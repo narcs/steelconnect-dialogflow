@@ -1,0 +1,37 @@
+{
+  "id": "833a9470-162f-4adb-854e-a40a3448b8ea",
+  "timestamp": "2018-04-02T05:58:55.619Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "list wans",
+    "action": "ListWANs",
+    "actionIncomplete": false,
+    "parameters": {
+      "WAN": "WAN"
+    },
+    "contexts": [],
+    "metadata": {
+      "intentId": "7f42cd91-c196-4cf5-901d-ce7d8942d79b",
+      "webhookUsed": "false",
+      "webhookForSlotFillingUsed": "false",
+      "intentName": "ListWANs"
+    },
+    "fulfillment": {
+      "speech": "Something went wrong.",
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Something went wrong."
+        }
+      ]
+    },
+    "score": 1
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success",
+    "webhookTimedOut": false
+  },
+  "sessionId": "15cc3a66-6674-4d81-99e4-4110d3f9da3b"
+}

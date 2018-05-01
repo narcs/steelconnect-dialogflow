@@ -1,0 +1,42 @@
+{
+  "id": "9a74ca6c-4b99-4c8e-bc44-66ab5d04a556",
+  "timestamp": "2018-04-03T03:29:37.032Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "rename the TestWAN WAN to GlobalNet",
+    "action": "RenameWAN",
+    "actionIncomplete": false,
+    "parameters": {
+      "WAN": "WAN",
+      "OriginalName": "TestWAN",
+      "NewName": "GlobalNet"
+    },
+    "contexts": [],
+    "metadata": {
+      "intentId": "79d238fb-ed36-49b1-9d9f-c3efd1f11676",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "webhookResponseTime": 1422,
+      "intentName": "RenameWAN"
+    },
+    "fulfillment": {
+      "speech": "Error: This feature has not been implemented yet",
+      "source": "steelconnect",
+      "displayText": "Error: This feature has not been implemented yet",
+      "messages": [
+        {
+          "type": 0,
+          "speech": "Error: This feature has not been implemented yet"
+        }
+      ]
+    },
+    "score": 1
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success",
+    "webhookTimedOut": false
+  },
+  "sessionId": "15cc3a66-6674-4d81-99e4-4110d3f9da3b"
+}

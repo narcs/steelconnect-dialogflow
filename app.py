@@ -6,14 +6,16 @@ from flask import Flask, request, make_response
 import json
 import logging
 
-from actions.api import SteelConnectAPI
+from api import SteelConnectAPI
 
 from actions.create_uplink import create_uplink
 from actions.create_site import create_site
 from actions.list_sites import list_sites
 from actions.list_sites_followup import list_sites_followup
+from actions.list_wans import list_wans
 from actions.create_wan import create_wan
-from actions.create_wan_new import create_wan
+from actions.rename_wan import rename_wan
+from actions.delete_wan import delete_wan
 from actions.add_site_to_wan import add_site_to_wan
 from actions.add_sites_to_wan import add_sites_to_wan
 from actions.clear_sites import clear_sites
@@ -22,7 +24,6 @@ from actions.create_appliance import create_appliance
 from actions.rename_site import rename_site
 
 app = Flask(__name__)
-
 
 # Setup up api authentication
 try:
@@ -70,10 +71,23 @@ def webhook():
         response = list_sites_followup(app.config["SC_API"], req["result"]["contexts"][0]["parameters"])
     elif action_type == "ListSites.ListSites-yes":
         parameters["position"] = "all"
+<<<<<<< HEAD
         response = list_sites_followup(app.config["SC_API"], parameters)
     elif action_type == "CreateWAN":
         response = create_wan(app.config["SC_API"], parameters, contexts)
     elif action_type == "AddSiteToWAN": 
+=======
+        response = list_sites_followup(app.config["SC_API"], None)
+    elif action_type == "ListWANs":
+        response = list_wans(app.config["SC_API"], parameters, contexts)
+    elif action_type == "CreateWAN":
+        response = create_wan(app.config["SC_API"], parameters, contexts)
+    elif action_type == "RenameWAN":
+        response = rename_wan(app.config["SC_API"], parameters, contexts)
+    elif action_type == "DeleteWAN":
+        response = delete_wan(app.config["SC_API"], parameters, contexts)
+    elif action_type == "AddSiteToWAN":
+>>>>>>> 8a86f94feb2d87d14971a17b29fb246a60b8e819
         response = add_site_to_wan(app.config["SC_API"], parameters, contexts)
     elif action_type == "AddSitesToWAN":
         response = add_sites_to_wan(app.config["SC_API"], parameters, contexts)
