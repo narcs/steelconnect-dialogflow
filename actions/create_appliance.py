@@ -6,7 +6,7 @@ import requests
 # import app
 
 
-def create_appliance(api_auth, parameters):
+def create_appliance(api_auth, parameters, contexts):
     """
     :param api_auth: SteelConnect api object
     :type api_auth: SteelConnectAPI

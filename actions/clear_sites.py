@@ -5,7 +5,7 @@ from requests.auth import HTTPBasicAuth
 import requests
 
 
-def clear_sites(parameters):
+def clear_sites(api_auth, parameters, contexts):
     """
     :param parameters: json parameters from Dialogflow intent
     :type parameters: json
