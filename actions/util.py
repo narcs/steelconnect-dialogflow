@@ -42,3 +42,28 @@ def get_wan_id_by_name(api_auth, wan_name):
     else:
         raise APIError("Failed to get the list of WANs")
 
+
+def get_site_id_by_name(api_auth, site_name, city, country_code):
+    """
+    Given a Site's short name:
+    - If there is a Site by that name city and country, returns the ID of the first matching Site.
+    - If no such site exists, raises an APIError with a human-readable error string.
+    """
+    res = api_auth.site.list_sites()
+
+    if res.status_code == 200:
+        data = res.json()["items"]
+
+        for site in data:
+            if site["name"] == site_name and site["city"] == city and site["country"] == country_code:
+                return site["id"]
+        raise APIError(("The site {} in {} {} does not exist").format(site_name, city, country_code))
+    elif res.status_code == 400:
+        raise APIError("Invalid parameters: {}".format(res.json()["error"]["message"]))
+    elif res.status_code == 500:
+        raise APIError("Failed to get the list of Sites")
+    else:
+        raise APIError("Error: Could not connect to SteelConnect")
+
+
+

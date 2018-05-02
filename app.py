@@ -72,6 +72,8 @@ def webhook():
     elif action_type == "ListSites.ListSites-yes":
         parameters["position"] = "all"
         response = list_sites_followup(app.config["SC_API"], None)
+    elif action_type == "RenameSite":
+        response = rename_site(app.config["SC_API"], parameters)
     elif action_type == "ListWANs":
         response = list_wans(app.config["SC_API"], parameters, contexts)
     elif action_type == "CreateWAN":
@@ -90,8 +92,6 @@ def webhook():
         response = create_zone(app.config["SC_API"], parameters)
     elif action_type == "CreateAppliance":
         response = create_appliance(app.config["SC_API"], parameters)
-    elif action_type == "RenameSite":
-        response = rename_site(app.config["SC_API"], parameters)
 
 
     # elif action_type == "SomeOtherAction"            # Use elif to add extra functionality
