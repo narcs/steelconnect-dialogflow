@@ -32,10 +32,12 @@ def create_uplink(api_auth, parameters):
     data_sites = api_auth.list_sites().json()
     #print(data_sites)
     sites = []
+    ids = []
     for item in data_sites["items"]:
         #logging.debut(item["city"])
         if (city.lower() == item["city"].lower()):
-            sites.append(item["id"])
+            ids.append(item["id"])
+            sites.append("{}, {}, {}".format(item["name"], item["city"], item["country"]))
 			
 	# Error of no sites were found in that city
     if (len(sites) < 1):
@@ -60,12 +62,13 @@ def create_uplink(api_auth, parameters):
 	return speech
 		
     # Otherwise only one site, so pop it into site
+    site_id = ids.pop()
     site = sites.pop()
     # call create uplink api
-    res = api_auth.create_uplink(site, uplink_name, wan)
+    res = api_auth.create_uplink(site_id, uplink_name, wan)
 
     if res.status_code == 200:
-        speech = "An uplink called {} has been created between site {}_{} and {} wan".format(uplink_name, city, site_type,
+        speech = "An uplink called {} has been created between site: {} and WAN: {} ".format(uplink_name, site,
                                                                                   wan_name)
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
