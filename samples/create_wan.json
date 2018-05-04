@@ -1,0 +1,52 @@
+{
+  "id": "e7ade72b-c040-4bc5-bb05-bb666c91f21d",
+  "timestamp": "2018-04-03T03:43:22.041Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "create a wan named TestWAN",
+    "action": "CreateWAN",
+    "actionIncomplete": false,
+    "parameters": {
+      "WAN": "WAN",
+      "WANType": "TestWAN"
+    },
+    "contexts": [
+      {
+        "name": "wan_created",
+        "parameters": {
+          "WANType": "TestWAN",
+          "WAN.original": "wan",
+          "WAN": "WAN",
+          "WANType.original": "TestWAN"
+        },
+        "lifespan": 99
+      }
+    ],
+    "metadata": {
+      "intentId": "c8554705-522f-44f4-864c-3b2cf85f0724",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "webhookResponseTime": 964,
+      "intentName": "CreateWAN"
+    },
+    "fulfillment": {
+      "speech": "TestWAN created",
+      "source": "steelconnect",
+      "displayText": "TestWAN created",
+      "messages": [
+        {
+          "type": 0,
+          "speech": "TestWAN created"
+        }
+      ]
+    },
+    "score": 1
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success",
+    "webhookTimedOut": false
+  },
+  "sessionId": "15cc3a66-6674-4d81-99e4-4110d3f9da3b"
+}

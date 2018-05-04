@@ -30,7 +30,7 @@ You can either clone the repository using git or download the zip file.
 Use this link: https://github.com/narcs/steelconnect-dialogflow/archive/master.zip.
 
 ### Deploying
-* Fill out 'default-auth.json' with the details of your SCM account and organisation.
+* Copy `default-auth.json.example` to `default-auth.json` and fill it out with the details of your SCM account and organisation.
 * Deploy the app by opening Google Cloud SDK Shell/terminal, navigate the apps directory via 'cd /path/to/steelconnect-dialogflow/' and run 'gcloud app deploy'.
 
 ### Using Dialogflow

@@ -1,5 +1,5 @@
 from samples.create_uplink import *
-from actions.api import SteelConnectAPI
+from api import SteelConnectAPI
 import app
 
 if __name__ == "__main__":

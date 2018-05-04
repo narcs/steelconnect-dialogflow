@@ -5,7 +5,7 @@ from requests.auth import HTTPBasicAuth
 import requests
 
 
-def create_site(api_auth, parameters):
+def create_site(api_auth, parameters, contexts):
     """
     :param api_auth: steelconnect api object
     :type api_auth: SteelConnectAPI
@@ -32,7 +32,7 @@ def create_site(api_auth, parameters):
 
         return error_string
 
-    res = api_auth.create_site(name, city, country_code)
+    res = api_auth.site.create_site(name, city, country_code)
 
     if res.status_code == 200:
         speech = "{} created in {}, {}".format(site_type.capitalize(), city, country_name)

@@ -6,7 +6,7 @@ import requests
 # import app
 
 
-def create_appliance(api_auth, parameters):
+def create_appliance(api_auth, parameters, contexts):
     """
     :param api_auth: SteelConnect api object
     :type api_auth: SteelConnectAPI
@@ -26,7 +26,7 @@ def create_appliance(api_auth, parameters):
         return error_string
 
     # Get all sites and check whether site exists
-    data_sites = api_auth.list_sites().json()
+    data_sites = api_auth.site.list_sites().json()
     site = ""
     for item in data_sites["items"]:
         if city + site_type in item["id"]:
@@ -38,7 +38,7 @@ def create_appliance(api_auth, parameters):
     if site != "":
 
         # Call create_appliance in SteelConnectAPI
-        res = api_auth.create_appliance(site=site, model=model)
+        res = api_auth.node.create_appliance(site=site, model=model)
 
         if res.status_code == 200:
             speech = "Appliance: {} created for site: {}, {}".format(model, city, site_type)

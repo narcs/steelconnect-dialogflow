@@ -2,6 +2,7 @@ import logging
 
 from flask import json
 from actions import create_uplink
+from api.util import find_context_by_name, find_contexts_by_name
 
 def add_sites_to_wan(api_auth, parameters, contexts):
     """
@@ -15,8 +16,8 @@ def add_sites_to_wan(api_auth, parameters, contexts):
     :rtype: string
     """
     try:
-        wan_context = api_auth.find_context_by_name(contexts, "wan_created")["parameters"]
-        site_contexts = api_auth.find_contexts_by_name(contexts, "sitecreated")["parameters"]
+        wan_context = find_context_by_name(contexts, "wan_created")["parameters"]
+        site_contexts = find_contexts_by_name(contexts, "sitecreated")["parameters"]
 
         site_success_list = ""
         site_fail_list = ""

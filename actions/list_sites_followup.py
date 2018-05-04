@@ -2,7 +2,7 @@ import logging
 
 from flask import json
 
-def list_sites_followup(api_auth, parameters):
+def list_sites_followup(api_auth, parameters, contexts):
     """
     :param api_auth: steelconnect api object
     :type api_auth: SteelConnectAPI
@@ -28,7 +28,7 @@ def list_sites_followup(api_auth, parameters):
 
 
     # Get all sites and return a response based on the number of sites
-    res = api_auth.list_sites()
+    res = api_auth.site.list_sites()
 
     if res.status_code == 200:
         data = res.json()["items"]

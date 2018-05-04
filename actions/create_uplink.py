@@ -5,7 +5,7 @@ from requests.auth import HTTPBasicAuth
 import requests
 
 
-def create_uplink(api_auth, parameters):
+def create_uplink(api_auth, parameters, contexts):
     """
     :param api_auth: steelconnect api object
     :type api_auth: SteelConnectAPI
@@ -29,10 +29,11 @@ def create_uplink(api_auth, parameters):
         uplink_name = "Uplink";
 		
 	# Get all the sites and check whether there is a site match given city
-    data_sites = api_auth.list_sites().json()
+    data_sites = api_auth.site.list_sites().json()
     #print(data_sites)
     sites = []
     ids = []
+
     for item in data_sites["items"]:
         #logging.debut(item["city"])
         if (city.lower() == item["city"].lower()):
@@ -45,7 +46,7 @@ def create_uplink(api_auth, parameters):
 	return speech
 
     # Get all the wans and check whether there is a wan match target wan user want the uplink to be created on
-    data_wans = api_auth.list_wans().json()
+    data_wans = api_auth.wan.list_wans().json()
     wan = " "
     for item in data_wans["items"]:
         if wan_name == item["name"]:
@@ -65,7 +66,8 @@ def create_uplink(api_auth, parameters):
     site_id = ids.pop()
     site = sites.pop()
     # call create uplink api
-    res = api_auth.create_uplink(site_id, uplink_name, wan)
+
+    res = api_auth.uplink.create_uplink(site_id, uplink_name, wan)
 
     if res.status_code == 200:
         speech = "An uplink called {} has been created between site: {} and WAN: {} ".format(uplink_name, site,
