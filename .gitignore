@@ -3,3 +3,6 @@
 
 # Vim swapfiles
 *.swp
+
+# SteelConnect auth file
+default-auth.json

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "174da926-7f2a-4f59-aac4-e37690dded32",
+    "data": [
+      {
+        "text": "Clear",
+        "alias": "clear",
+        "meta": "@clear",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "sites",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "f419af8e-4878-48e6-86fc-d8bbfa0f6f43",
+    "data": [
+      {
+        "text": "I want to ",
+        "userDefined": false
+      },
+      {
+        "text": "clear",
+        "alias": "clear",
+        "meta": "@clear",
+        "userDefined": true
+      },
+      {
+        "text": " all sites",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

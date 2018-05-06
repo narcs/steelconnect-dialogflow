@@ -1,0 +1,148 @@
+[
+  {
+    "id": "38de572a-48d8-4b16-995a-dedea896dc9b",
+    "data": [
+      {
+        "text": "Connect Beijing Site to RouteVPN",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "77b68964-a96d-4ab2-8bf8-f2e92814e904",
+    "data": [
+      {
+        "text": "Add an ",
+        "userDefined": false
+      },
+      {
+        "text": "Internet",
+        "alias": "Wans",
+        "meta": "@WANType",
+        "userDefined": true
+      },
+      {
+        "text": " uplink called ",
+        "userDefined": false
+      },
+      {
+        "text": "ILink",
+        "alias": "Uplinks",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " to site ",
+        "userDefined": false
+      },
+      {
+        "text": "Berlin",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Branch",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "81044b1c-99c8-49f7-bc3a-3bfe84cec1e2",
+    "data": [
+      {
+        "text": "Bond  ",
+        "userDefined": false
+      },
+      {
+        "text": "NewYork",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Boutique",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
+        "userDefined": true
+      },
+      {
+        "text": " to ",
+        "userDefined": false
+      },
+      {
+        "text": "RouteVPN",
+        "alias": "Wans",
+        "meta": "@WANType",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "aabc76f6-2c08-461d-bbe6-2d9e0f14d6d1",
+    "data": [
+      {
+        "text": "Add an ",
+        "userDefined": false
+      },
+      {
+        "text": "Internet",
+        "alias": "Wans",
+        "meta": "@WANType",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "uplink",
+        "alias": "Uplinks",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " to site ",
+        "userDefined": false
+      },
+      {
+        "text": "Melbourne",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Shop",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

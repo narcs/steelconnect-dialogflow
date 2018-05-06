@@ -1,0 +1,50 @@
+{
+  "id": "5506cc77-9627-405b-89df-cc14d51424d8",
+  "name": "CreateZone",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "CreateZone",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "43937881-cdc1-4594-a14b-b06fc35a8e74",
+          "required": true,
+          "dataType": "@SiteTypes",
+          "name": "SiteTypes",
+          "value": "$SiteTypes",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the type of the site?"
+            }
+          ]
+        },
+        {
+          "id": "f72719e5-567f-43bf-87db-0b542b607df7",
+          "required": true,
+          "dataType": "@sys.geo-city",
+          "name": "City",
+          "value": "$City",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

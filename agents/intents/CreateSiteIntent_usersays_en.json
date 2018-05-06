@@ -1,0 +1,286 @@
+[
+  {
+    "id": "41dbc316-eb8f-44c6-8022-ac9b91ec86f9",
+    "data": [
+      {
+        "text": "Add site",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "ecc5b505-0b7e-40ae-95a8-4383ada44172",
+    "data": [
+      {
+        "text": "Create a ",
+        "userDefined": false
+      },
+      {
+        "text": "DC",
+        "alias": "SiteType",
+        "meta": "@SiteTypes",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Alice Springs,",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "ce4a277b-17da-4ea3-9712-c7e5f27a3310",
+    "data": [
+      {
+        "text": "I would like a ",
+        "userDefined": false
+      },
+      {
+        "text": "plant",
+        "alias": "SiteType",
+        "meta": "@SiteTypes",
+        "userDefined": false
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Perth",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "13986b03-e6a1-4417-86d6-7f165bf582c9",
+    "data": [
+      {
+        "text": "Bring up a ",
+        "userDefined": false
+      },
+      {
+        "text": "branch",
+        "alias": "SiteType",
+        "meta": "@SiteTypes",
+        "userDefined": false
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Hobart",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "133da448-caf0-4103-9827-5106fd7551f4",
+    "data": [
+      {
+        "text": "Make a ",
+        "userDefined": false
+      },
+      {
+        "text": "headquarters",
+        "alias": "SiteType",
+        "meta": "@SiteTypes",
+        "userDefined": false
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Helsinki",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Finland",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b67bc28e-49f0-4058-bc89-04f312ea938b",
+    "data": [
+      {
+        "text": "Instantiate a ",
+        "userDefined": false
+      },
+      {
+        "text": "boutique",
+        "alias": "SiteType",
+        "meta": "@SiteTypes",
+        "userDefined": false
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "New York",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "USA",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "3cb37557-0107-4e41-8969-a87ccdc83e1c",
+    "data": [
+      {
+        "text": "Create a ",
+        "userDefined": false
+      },
+      {
+        "text": "branch",
+        "alias": "SiteType",
+        "meta": "@SiteTypes",
+        "userDefined": false
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Tokyo",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Japan",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "743745df-b135-4c55-b5b8-3b21b2688cf7",
+    "data": [
+      {
+        "text": "I want a ",
+        "userDefined": false
+      },
+      {
+        "text": "branch",
+        "alias": "SiteType",
+        "meta": "@SiteTypes",
+        "userDefined": true
+      },
+      {
+        "text": " in  ",
+        "userDefined": false
+      },
+      {
+        "text": "China",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "bee47e2e-3f7f-4f8a-8a22-c5bb281bd2cd",
+    "data": [
+      {
+        "text": "Create a site in ",
+        "userDefined": false
+      },
+      {
+        "text": "Tokyo",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

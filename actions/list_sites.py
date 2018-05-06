@@ -4,7 +4,7 @@ from flask import json
 from requests.auth import HTTPBasicAuth
 import requests
 
-def list_sites(api_auth, parameters):
+def list_sites(api_auth, parameters, contexts):
     """
     :param parameters: json parameters from Dialogflow intent
     :type parameters: json

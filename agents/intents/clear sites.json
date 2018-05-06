@@ -1,0 +1,38 @@
+{
+  "id": "f47999cb-696e-4125-a82f-0f5aee17a64e",
+  "name": "clear sites",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "ClearSites",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "fc778439-4ae0-4f14-adf7-5b1be13ee73a",
+          "dataType": "@clear",
+          "name": "clear",
+          "value": "$clear",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "google": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

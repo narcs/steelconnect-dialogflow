@@ -8,8 +8,8 @@ import logging
 
 from api import SteelConnectAPI
 
-from actions.create_uplink import create_uplink
 from actions.create_site import create_site
+from actions.create_uplink import create_uplink
 from actions.list_sites import list_sites
 from actions.list_sites_followup import list_sites_followup
 from actions.list_wans import list_wans
@@ -24,7 +24,11 @@ from actions.create_appliance import create_appliance
 from actions.rename_site import rename_site
 from actions.delete_site import delete_site
 
+from actions.uplink import list_uplinks
+
 app = Flask(__name__)
+app.Debug = True
+
 
 # Setup up api authentication
 try:
@@ -35,6 +39,39 @@ try:
 except IOError:
     j = None
     app.config["SC_API"] = None
+
+
+# Register actions.
+# 
+# Actions are functions with the signature `(api_auth, parameters, contexts) -> response_string`
+actions = {}
+
+def register_action(name, func):
+    actions[name] = func
+
+register_action("CreateSite", create_site)
+register_action("CreateUplink", create_uplink)
+register_action("ListSites", list_sites)
+
+def list_sites_followup_custom(api_auth, parameters, contexts):
+    return list_sites_followup(api_auth, req["result"]["contexts"][0]["parameters"], contexts)
+register_action("ListSites.ListSites-custom", list_sites_followup_custom)
+
+def list_sites_followup_yes(api_auth, parameters, contexts):
+    return list_sites_followup(api_auth, None, contexts)
+register_action("ListSites.ListSites-yes", list_sites_followup_yes)
+
+register_action("ListWANs", list_wans)
+register_action("CreateWAN", create_wan)
+register_action("RenameWAN", rename_wan)
+register_action("DeleteWAN", delete_wan)
+register_action("AddSiteToWAN", add_site_to_wan)
+register_action("AddSitesToWAN", add_sites_to_wan)
+register_action("ClearSites", clear_sites)
+register_action("CreateZone", create_zone)
+register_action("CreateAppliance", create_appliance)
+
+register_action("ListUplinks", list_uplinks)
 
 
 @app.route('/')
@@ -62,6 +99,7 @@ def webhook():
         logging.error("Error processing request {}".format(e))
         return format_response("There was an error processing your request")
 
+<<<<<<< HEAD
     if action_type == "CreateSite":
         response = create_site(app.config["SC_API"], parameters)
     elif action_type == "CreateUplink":
@@ -98,6 +136,12 @@ def webhook():
 
 
     # elif action_type == "SomeOtherAction"            # Use elif to add extra functionality
+=======
+    # Call the given action, if it exists.
+    logging.debug("Got action: {}".format(action_type))
+    if action_type in actions:
+        response = actions[action_type](app.config["SC_API"], parameters, contexts)
+>>>>>>> b5ec3e5025227f913cdd3783453aed8961ad1e1c
     else:
         response = "Error: This feature has not been implemented yet"
         logging.error("Not implemented error action: {} intent: {}".format(action_type, intent_type))

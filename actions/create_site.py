@@ -5,7 +5,7 @@ from requests.auth import HTTPBasicAuth
 import requests
 
 
-def create_site(api_auth, parameters):
+def create_site(api_auth, parameters, contexts):
     """
     :param api_auth: steelconnect api object
     :type api_auth: SteelConnectAPI

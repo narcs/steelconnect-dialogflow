@@ -1,0 +1,28 @@
+{
+  "id": "5908978c-d440-48c9-a87c-cad641108ef3",
+  "parentId": "e6eea4ea-a890-4117-ba1b-83bf227493aa",
+  "rootParentId": "e6eea4ea-a890-4117-ba1b-83bf227493aa",
+  "name": "ListSites - yes",
+  "auto": true,
+  "contexts": [
+    "ListSites-followup",
+    "ReadSiteList"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "ListSites.ListSites-yes",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1522845755,
+  "fallbackIntent": false,
+  "events": []
+}

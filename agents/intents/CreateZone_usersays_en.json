@@ -1,0 +1,58 @@
+[
+  {
+    "id": "91f444f7-ea82-42c9-ad43-26ce69694f2e",
+    "data": [
+      {
+        "text": "create a zone for ",
+        "userDefined": false
+      },
+      {
+        "text": "New York",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "shop",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "cf700c30-eb59-4912-977c-528489c8e740",
+    "data": [
+      {
+        "text": "Create a zone in ",
+        "userDefined": false
+      },
+      {
+        "text": "Melbourne",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "boutique",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

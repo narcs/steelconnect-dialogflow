@@ -2,7 +2,7 @@ import logging
 
 from flask import json
 
-def list_sites_followup(api_auth, parameters):
+def list_sites_followup(api_auth, parameters, contexts):
     """
     :param api_auth: steelconnect api object
     :type api_auth: SteelConnectAPI
