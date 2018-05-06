@@ -1,0 +1,58 @@
+{
+  "id": "c8554705-522f-44f4-864c-3b2cf85f0724",
+  "name": "CreateWAN",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "CreateWAN",
+      "affectedContexts": [
+        {
+          "name": "WAN_Created",
+          "parameters": {},
+          "lifespan": 99
+        }
+      ],
+      "parameters": [
+        {
+          "id": "558b153d-de90-44f9-ad56-4c3083dfe715",
+          "required": false,
+          "dataType": "@WAN",
+          "name": "WAN",
+          "value": "$WAN",
+          "isList": false
+        },
+        {
+          "id": "c15fe973-0d20-4313-b6bd-afd276e70d26",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "WANType",
+          "value": "$WANType",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What should the WAN be called?"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1522726897,
+  "fallbackIntent": false,
+  "events": []
+}

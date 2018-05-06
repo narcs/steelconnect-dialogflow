@@ -1,0 +1,40 @@
+{
+  "description": "An agent for interfacing with Riverbed SteelConnect Manager",
+  "language": "en",
+  "activeAssistantAgents": [],
+  "disableInteractionLogs": true,
+  "googleAssistant": {
+    "googleAssistantCompatible": false,
+    "welcomeIntentSignInRequired": true,
+    "startIntents": [],
+    "systemIntents": [],
+    "endIntentIds": [],
+    "oAuthLinking": {
+      "required": false,
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "tokenUrl": "https://accounts.google.com/o/oauth2/token",
+      "scopes": "https://www.googleapis.com/auth/userinfo.email",
+      "grantType": "AUTH_CODE_GRANT"
+    },
+    "voiceType": "MALE_1",
+    "capabilities": [],
+    "protocolVersion": "V2",
+    "isDeviceAgent": false
+  },
+  "defaultTimezone": "Australia/Sydney",
+  "webhook": {
+    "url": "https://\u003cyour-project-id\u003e.appspot.com/webhook/",
+    "headers": {
+      "": ""
+    },
+    "available": true,
+    "useForDomains": true,
+    "cloudFunctionsEnabled": false,
+    "cloudFunctionsInitialized": false
+  },
+  "isPrivate": true,
+  "customClassifierMode": "use.after",
+  "mlMinConfidence": 0.2,
+  "supportedLanguages": [],
+  "onePlatformApiVersion": "v1legacy"
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "value": "Internet",
+    "synonyms": [
+      "Internet"
+    ]
+  },
+  {
+    "value": "MPLS",
+    "synonyms": [
+      "MPLS",
+      "M P L S",
+      "Multiprotocol Label Switching"
+    ]
+  },
+  {
+    "value": "VPN",
+    "synonyms": [
+      "VPN",
+      "V P N",
+      "Virtual Private Network"
+    ]
+  },
+  {
+    "value": "LTE",
+    "synonyms": [
+      "LTE",
+      "Long-Term Evolution"
+    ]
+  },
+  {
+    "value": "RouteVPN",
+    "synonyms": [
+      "RouteVPN"
+    ]
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "id": "56bb85ca-ff5a-4091-aba6-2806d214139e",
+  "name": "DeleteWAN",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "DeleteWAN",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "55844ccf-1793-4745-9ec3-a516c74a97e8",
+          "required": false,
+          "dataType": "@WAN",
+          "name": "WAN",
+          "value": "$WAN",
+          "isList": false
+        },
+        {
+          "id": "1db264af-7e54-427e-ac5a-4a8f9024de0b",
+          "required": false,
+          "dataType": "@sys.any",
+          "name": "WANName",
+          "value": "$WANName",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Something went wrong."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1522727777,
+  "fallbackIntent": false,
+  "events": []
+}

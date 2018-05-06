@@ -1,0 +1,29 @@
+{
+  "id": "f63f9884-2b3c-482b-9e9f-bb58e3a542ec",
+  "name": "ListUplinks",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "ListUplinks",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "There was an error connecting with SteelConnect, please try again later."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1525578177,
+  "fallbackIntent": false,
+  "events": []
+}

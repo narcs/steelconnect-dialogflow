@@ -1,0 +1,84 @@
+[
+  {
+    "value": "Branch",
+    "synonyms": [
+      "branch"
+    ]
+  },
+  {
+    "value": "HQ",
+    "synonyms": [
+      "headquarter",
+      "headquarters",
+      "hq"
+    ]
+  },
+  {
+    "value": "Shop",
+    "synonyms": [
+      "shop"
+    ]
+  },
+  {
+    "value": "Boutique",
+    "synonyms": [
+      "boutique"
+    ]
+  },
+  {
+    "value": "Office",
+    "synonyms": [
+      "office"
+    ]
+  },
+  {
+    "value": "Mine",
+    "synonyms": [
+      "mine"
+    ]
+  },
+  {
+    "value": "Warehouse",
+    "synonyms": [
+      "warehouse"
+    ]
+  },
+  {
+    "value": "Plant",
+    "synonyms": [
+      "plant"
+    ]
+  },
+  {
+    "value": "Head office",
+    "synonyms": [
+      "head office"
+    ]
+  },
+  {
+    "value": "Station",
+    "synonyms": [
+      "station"
+    ]
+  },
+  {
+    "value": "Depot",
+    "synonyms": [
+      "depot"
+    ]
+  },
+  {
+    "value": "Store",
+    "synonyms": [
+      "store"
+    ]
+  },
+  {
+    "value": "DC",
+    "synonyms": [
+      "dc",
+      "data centre",
+      "data center"
+    ]
+  }
+]
