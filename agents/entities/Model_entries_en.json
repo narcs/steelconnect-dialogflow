@@ -1,0 +1,109 @@
+[
+  {
+    "value": "raccoon",
+    "synonyms": [
+      "raccoon",
+      "SDI-AP3",
+      "ap3"
+    ]
+  },
+  {
+    "value": "koala",
+    "synonyms": [
+      "koala",
+      "SDI-AP5",
+      "ap5"
+    ]
+  },
+  {
+    "value": "ursus",
+    "synonyms": [
+      "ursus",
+      "SDI-AP5R",
+      "ap5r"
+    ]
+  },
+  {
+    "value": "panda",
+    "synonyms": [
+      "panda",
+      "SDI-130W",
+      "130w"
+    ]
+  },
+  {
+    "value": "ewok",
+    "synonyms": [
+      "ewok",
+      "SDI-330",
+      "330"
+    ]
+  },
+  {
+    "value": "grizzly",
+    "synonyms": [
+      "grizzly",
+      "SDI-1030",
+      "1030"
+    ]
+  },
+  {
+    "value": "cx570",
+    "synonyms": [
+      "cx570",
+      "570-SD",
+      "cx-570",
+      "570"
+    ]
+  },
+  {
+    "value": "cx770",
+    "synonyms": [
+      "cx770",
+      "770-SD",
+      "cx-770",
+      "770"
+    ]
+  },
+  {
+    "value": "cx3070",
+    "synonyms": [
+      "cx3070",
+      "3070-SD",
+      "cx-3070",
+      "3070"
+    ]
+  },
+  {
+    "value": "aardvark",
+    "synonyms": [
+      "aardvark",
+      "SDI-S12",
+      "s12"
+    ]
+  },
+  {
+    "value": "sloth",
+    "synonyms": [
+      "sloth",
+      "SDI-S24",
+      "s24"
+    ]
+  },
+  {
+    "value": "kodiak",
+    "synonyms": [
+      "kodiak",
+      "SDI-130",
+      "130"
+    ]
+  },
+  {
+    "value": "panther",
+    "synonyms": [
+      "panther",
+      "SDI-5030",
+      "5030"
+    ]
+  }
+]

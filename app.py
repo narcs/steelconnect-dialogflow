@@ -22,6 +22,7 @@ from actions.clear_sites import clear_sites
 from actions.create_zone import create_zone
 from actions.create_appliance import create_appliance
 
+from actions.uplink import list_uplinks
 
 app = Flask(__name__)
 app.Debug = True
@@ -67,6 +68,8 @@ register_action("AddSitesToWAN", add_sites_to_wan)
 register_action("ClearSites", clear_sites)
 register_action("CreateZone", create_zone)
 register_action("CreateAppliance", create_appliance)
+
+register_action("ListUplinks", list_uplinks)
 
 
 @app.route('/')

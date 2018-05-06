@@ -1,0 +1,94 @@
+[
+  {
+    "id": "f1d83ef1-fa5f-48ec-8be2-f0a36e570296",
+    "data": [
+      {
+        "text": "Build a ",
+        "userDefined": false
+      },
+      {
+        "text": "WAN",
+        "alias": "WAN",
+        "meta": "@WAN",
+        "userDefined": false
+      },
+      {
+        "text": " named ",
+        "userDefined": false
+      },
+      {
+        "text": "TestWAN",
+        "alias": "WANType",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522726897
+  },
+  {
+    "id": "b98b9c43-11f1-4e26-93af-85399dc04eb4",
+    "data": [
+      {
+        "text": "Create a ",
+        "userDefined": false
+      },
+      {
+        "text": "WAN",
+        "alias": "WAN",
+        "meta": "@WAN",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522726897
+  },
+  {
+    "id": "e93227b3-74bd-46cb-a085-8a2e0532dd92",
+    "data": [
+      {
+        "text": "Build me a ",
+        "userDefined": false
+      },
+      {
+        "text": "WAN",
+        "alias": "WAN",
+        "meta": "@WAN",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522726897
+  },
+  {
+    "id": "aa03a069-9c76-4aaf-a802-ad8c97428def",
+    "data": [
+      {
+        "text": "Create a ",
+        "userDefined": false
+      },
+      {
+        "text": "WAN",
+        "alias": "WAN",
+        "meta": "@WAN",
+        "userDefined": false
+      },
+      {
+        "text": " named ",
+        "userDefined": false
+      },
+      {
+        "text": "TestWAN",
+        "alias": "WANType",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522726897
+  }
+]

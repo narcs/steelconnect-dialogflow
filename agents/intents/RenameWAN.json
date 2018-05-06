@@ -1,0 +1,66 @@
+{
+  "id": "79d238fb-ed36-49b1-9d9f-c3efd1f11676",
+  "name": "RenameWAN",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "RenameWAN",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "564ba6f7-cba9-4550-9048-1f6c00ea8ab1",
+          "required": false,
+          "dataType": "@WAN",
+          "name": "WAN",
+          "value": "$WAN",
+          "isList": false
+        },
+        {
+          "id": "55d8efd2-728f-414a-adf5-d0df30dd9891",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "OriginalName",
+          "value": "$OriginalName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What\u0027s the name of the WAN you want to rename?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "853d6b86-05f1-4df3-a7a5-ecd5078deef3",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "NewName",
+          "value": "$NewName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What\u0027s the new name for the WAN?"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Something went wrong."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1524625179,
+  "fallbackIntent": false,
+  "events": []
+}
