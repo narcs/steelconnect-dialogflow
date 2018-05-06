@@ -52,7 +52,7 @@ register_action("CreateUplink", create_uplink)
 register_action("ListSites", list_sites)
 
 def list_sites_followup_custom(api_auth, parameters, contexts):
-    return list_sites_followup(api_auth, req["result"]["contexts"][0]["parameters"], contexts)
+    return list_sites_followup(api_auth, contexts[0]["parameters"], contexts)
 register_action("ListSites.ListSites-custom", list_sites_followup_custom)
 
 def list_sites_followup_yes(api_auth, parameters, contexts):
