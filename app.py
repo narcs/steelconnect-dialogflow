@@ -22,6 +22,7 @@ from actions.clear_sites import clear_sites
 from actions.create_zone import create_zone
 from actions.create_appliance import create_appliance
 from actions.rename_site import rename_site
+from actions.delete_site import delete_site
 
 app = Flask(__name__)
 
@@ -65,6 +66,8 @@ def webhook():
         response = create_site(app.config["SC_API"], parameters)
     elif action_type == "CreateUplink":
         response = create_uplink(app.config["SC_API"],parameters)
+    elif action_type =="DeleteSite":
+        response = delete_site(app.config["SC_API"], parameters)
     elif action_type == "ListSites":
         response = list_sites(app.config["SC_API"], parameters)
     elif action_type == "ListSites.ListSites-custom":

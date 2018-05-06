@@ -40,3 +40,9 @@ class SiteAPI:
         }
         data = format_data(data)
         return requests.put(url, data=data, auth=self.auth)
+
+    def delete_site(self, site_id):
+        url = self.base_config_url + "site/" + site_id
+        data = {}
+        data = format_data(data)
+        return requests.delete(url, data=data, auth=self.auth)

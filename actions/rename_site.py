@@ -39,7 +39,7 @@ def rename_site(api_auth, parameters):
     res = api_auth.site.rename_site(site_id, new_name, new_name, city, country_code)
 
     if res.status_code == 200:
-        speech = "Site {} has been successfully renamed to {}".format(old_name, new_name)
+        speech = "Site {} in {} {} has been successfully renamed to {}".format(old_name, city, country_name, new_name)
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
     elif res.status_code == 500:
