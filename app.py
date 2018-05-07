@@ -21,6 +21,9 @@ from actions.add_sites_to_wan import add_sites_to_wan
 from actions.clear_sites import clear_sites
 from actions.create_zone import create_zone
 from actions.create_appliance import create_appliance
+from actions.list_appliances import list_appliances
+from actions.list_appliances_followup import list_appliances_followup
+# from actions.delete_appliance import delete_appliance
 
 from actions.uplink import list_uplinks
 
@@ -47,18 +50,23 @@ actions = {}
 def register_action(name, func):
     actions[name] = func
 
-register_action("CreateSite", create_site)
-register_action("CreateUplink", create_uplink)
-register_action("ListSites", list_sites)
-
 def list_sites_followup_custom(api_auth, parameters, contexts):
     return list_sites_followup(api_auth, contexts[0]["parameters"], contexts)
-register_action("ListSites.ListSites-custom", list_sites_followup_custom)
 
 def list_sites_followup_yes(api_auth, parameters, contexts):
     return list_sites_followup(api_auth, None, contexts)
-register_action("ListSites.ListSites-yes", list_sites_followup_yes)
 
+def list_appliances_followup_yes(api_auth, parameters, contexts):
+    return list_appliances_followup(api_auth, None, contexts)
+
+def list_appliances_followup_custom(api_auth, parameters, contexts):
+    return list_appliances_followup(api_auth, contexts[0]["parameters"], contexts)
+
+register_action("CreateSite", create_site)
+register_action("CreateUplink", create_uplink)
+register_action("ListSites", list_sites)
+register_action("ListSites.ListSites-custom", list_sites_followup_custom)
+register_action("ListSites.ListSites-yes", list_sites_followup_yes)
 register_action("ListWANs", list_wans)
 register_action("CreateWAN", create_wan)
 register_action("RenameWAN", rename_wan)
@@ -68,8 +76,12 @@ register_action("AddSitesToWAN", add_sites_to_wan)
 register_action("ClearSites", clear_sites)
 register_action("CreateZone", create_zone)
 register_action("CreateAppliance", create_appliance)
-
 register_action("ListUplinks", list_uplinks)
+register_action("ListAppliances", list_appliances)
+register_action("ListAppliances.ListAppliances-custom", list_appliances_followup_custom)
+register_action("ListAppliances.ListAppliances-yes",list_appliances_followup_yes)
+
+
 
 
 @app.route('/')
