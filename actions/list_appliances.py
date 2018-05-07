@@ -4,7 +4,7 @@ from flask import json
 from requests.auth import HTTPBasicAuth
  
 #  "List all appliances" works but not "list appliances"
-def list_appliances(api_auth, parameters):
+def list_appliances(api_auth, parameters, contexts):
  
     logging.info("Listing Appliances")
     org = parameters["organisation"]
