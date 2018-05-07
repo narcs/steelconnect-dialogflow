@@ -23,8 +23,7 @@ from actions.create_zone import create_zone
 from actions.create_appliance import create_appliance
 from actions.list_appliances import list_appliances
 from actions.list_appliances_followup import list_appliances_followup
-# from actions.delete_appliance import delete_appliance
-
+from actions.delete_appliance import delete_appliance
 from actions.uplink import list_uplinks
 
 app = Flask(__name__)
@@ -80,9 +79,7 @@ register_action("ListUplinks", list_uplinks)
 register_action("ListAppliances", list_appliances)
 register_action("ListAppliances.ListAppliances-custom", list_appliances_followup_custom)
 register_action("ListAppliances.ListAppliances-yes",list_appliances_followup_yes)
-
-
-
+register_action("DeleteAppliance", delete_appliance)
 
 @app.route('/')
 def home():

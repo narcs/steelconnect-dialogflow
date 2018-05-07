@@ -30,8 +30,8 @@ class NodeAPI:
         data = format_data(data)
         return requests.post(url, data=data, auth=self.auth)
 
-    # def delete_appliance(self, appliance_id):
-    #     url = self.base_config_url + "node/" + appliance_id
-    #     data = {}
-    #     data = format_data(data)
-    #     return requests.delete(url, data=data, auth=self.auth)
+    def delete_appliance(self, appliance_id):
+        url = self.base_config_url + "node/" + appliance_id
+        data = {}
+        data = format_data(data)
+        return requests.delete(url, data=data, auth=self.auth)
