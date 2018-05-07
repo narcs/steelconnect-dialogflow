@@ -21,7 +21,7 @@ class NodeAPI:
         url = self.base_config_url + "node/" + node_id
         return requests.get(url, auth=self.auth)
 
-    def create_appliance(self, model, site):
+    def create_appliance(self, site, model):
         url = self.org_config_url + "node/virtual/register"
         data = {
             "site": site,
