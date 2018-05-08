@@ -23,10 +23,8 @@ def delete_appliance(api_auth, parameters, contexts):
     data = res.json()["items"]
     
     found = False
-    thingo = []
     if res.status_code == 200:
         for appliance in data:
-            thingo.append(appliance["id"])
             if appliance_id == appliance["id"]:
                 appliance_id = appliance["id"]
                 found = True
