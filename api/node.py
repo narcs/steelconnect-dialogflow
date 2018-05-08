@@ -17,11 +17,20 @@ class NodeAPI:
         url = self.org_config_url + "nodes" 
         return requests.get(url, auth=self.auth) 
 
-    def get_node(self, node_id):
-        url = self.base_config_url + "node/" + node_id
+    def get_appliance_info(self, node_id):
+        url = self.base_reporting_url + "node/" + node_id
         return requests.get(url, auth=self.auth)
 
     def create_appliance(self, site, model):
+        url = self.org_config_url + "node/virtual/register"
+        data = {
+            "site": site,
+            "model": model
+        }
+        data = format_data(data)
+        return requests.post(url, data=data, auth=self.auth)
+
+    def create_appliance_new(self, site, model):
         url = self.org_config_url + "node/virtual/register"
         data = {
             "site": site,

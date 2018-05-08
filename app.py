@@ -25,6 +25,9 @@ from actions.list_appliances import list_appliances
 from actions.list_appliances_followup import list_appliances_followup
 from actions.delete_appliance import delete_appliance
 from actions.uplink import list_uplinks
+from actions.get_appliance_info import get_appliance_info
+
+from actions.create_appliance_new import create_appliance_new
 
 app = Flask(__name__)
 app.Debug = True
@@ -80,6 +83,9 @@ register_action("ListAppliances", list_appliances)
 register_action("ListAppliances.ListAppliances-custom", list_appliances_followup_custom)
 register_action("ListAppliances.ListAppliances-yes",list_appliances_followup_yes)
 register_action("DeleteAppliance", delete_appliance)
+register_action("GetApplianceInfo", get_appliance_info)
+
+register_action("CreateApplianceNew", create_appliance_new)
 
 @app.route('/')
 def home():
