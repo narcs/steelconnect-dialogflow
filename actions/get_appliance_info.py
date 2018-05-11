@@ -48,6 +48,6 @@ def get_appliance_info(api_auth, parameters, contexts):
             count = count + 1
         api_auth.node.set_appliance_list(appliance_options)         #Store the list of appliances on the chosen site
         speech = "There are multiple {} appliances at {}. Please choose a value from one of the following: {}".format(model, site_name, appliance_options_response)
-    else:   #Just in case, though not likely
-        return "Error: There were no {} appliances found on {} located in {}, {}".format(model, site_name, city, country_code)
+    else: #If we couldn't find any appliances
+        return "There were no {} appliances found on {} located in {}, {}. Please try a different appliance, site name, or location".format(model, site_name, city, country_code)
     return speech
