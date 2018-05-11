@@ -24,6 +24,7 @@ from actions.create_appliance import create_appliance
 from actions.list_appliances import list_appliances
 from actions.list_appliances_followup import list_appliances_followup
 from actions.delete_appliance import delete_appliance
+from actions.delete_appliance_followup import delete_appliance_followup
 from actions.uplink import list_uplinks
 from actions.get_appliance_info import get_appliance_info
 from actions.get_appliance_info_followup import get_appliance_info_followup
@@ -68,6 +69,9 @@ def list_appliances_followup_custom(api_auth, parameters, contexts):
 def get_appliance_info_followup_custom(api_auth, parameters, contexts):
     return get_appliance_info_followup(api_auth, contexts[0]["parameters"], contexts)
 
+def delete_appliance_followup_custom(api_auth, parameters, contexts):
+    return delete_appliance_followup(api_auth, contexts[0]["parameters"], contexts)
+
 register_action("CreateSite", create_site)
 register_action("CreateUplink", create_uplink)
 register_action("ListSites", list_sites)
@@ -87,6 +91,7 @@ register_action("ListAppliances", list_appliances)
 register_action("ListAppliances.ListAppliances-custom", list_appliances_followup_custom)
 register_action("ListAppliances.ListAppliances-yes",list_appliances_followup_yes)
 register_action("DeleteAppliance", delete_appliance)
+register_action("DeleteAppliance.DeleteAppliance-custom", delete_appliance_followup_custom)
 register_action("GetApplianceInfo", get_appliance_info)
 register_action("GetApplianceInfo.GetApplianceInfo-custom", get_appliance_info_followup_custom)
 register_action("CreateApplianceNew", create_appliance_new)

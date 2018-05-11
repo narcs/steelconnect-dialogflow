@@ -59,7 +59,7 @@ def delete_appliance(api_auth, parameters, contexts):
             appliance_options.append(appliance["id"])
             count = count + 1
         api_auth.node.set_appliance_list(appliance_options)
-        speech = "There are multiple {} appliances at {}. Please choose a value from one of the following: {}".format(model, site_name, appliance_options_response)
+        speech = "There are multiple {} appliances at {}. Please choose a specific appliance to delete from the following: {}".format(model, site_name, appliance_options_response)
     else:
         speech = "Error: There was another error while attempting to delete the appliance"
     logging.debug(speech)
