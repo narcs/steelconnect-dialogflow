@@ -42,3 +42,17 @@ def get_wan_id_by_name(api_auth, wan_name):
     else:
         raise APIError("Failed to get the list of WANs")
 
+
+def format_sitelink_list(items):
+    """
+    Given the successful result of `api_auth.sitelink.get_sitelinks().json()["items"]`,
+    returns the list of sitelinks as a nicely-formatted string suitable for
+    presenting to the user.
+    """
+
+    s = ""
+
+    for link in items:
+        s += "\n - To: {}, Status: {}".format(link["remote_site"], link["status"])
+
+    return s

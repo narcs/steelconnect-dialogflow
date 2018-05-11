@@ -13,10 +13,13 @@ def get_sitelinks(api_auth, parameters, contexts):
     :rtype: string
     """
 
-    res = api_auth.sitelink.get_sitelinks()
+    # TODO: Get site ID from name.
+    res = api_auth.sitelink.get_sitelinks(<site_id>)
 
     if res.status_code == 200:
         data = res.json()["items"]
+        speech = "Tunnels from {}".format() + format_sitelink_list(data)
+
     else:
         speech = "Error: Could not connect to SteelConnect"
 
