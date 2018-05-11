@@ -65,6 +65,9 @@ def list_appliances_followup_yes(api_auth, parameters, contexts):
 def list_appliances_followup_custom(api_auth, parameters, contexts):
     return list_appliances_followup(api_auth, contexts[0]["parameters"], contexts)
 
+def get_appliance_info_followup_custom(api_auth, parameters, contexts):
+    return get_appliance_info_followup(api_auth, contexts[0]["parameters"], contexts)
+
 register_action("CreateSite", create_site)
 register_action("CreateUplink", create_uplink)
 register_action("ListSites", list_sites)

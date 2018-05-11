@@ -13,11 +13,11 @@ class NodeAPI:
         self.base_reporting_url = base_reporting_url
         self.org_reporting_url = org_reporting_url
 
-        # These are variables to store information. Hesitant to put in, but it is currently the only way to 
+        # This variable stores information about multiple appliances on a site. 
+        # Hesitant to put in, but it is currently the only way to 
         # transfer information from parameters between contexts
         # Use this for now, try to fix later as we get more used to dialogflow
         self.appliances = None          
-        self.appliance_info = None
 
     def list_appliances(self): 
         url = self.org_config_url + "nodes" 
@@ -69,5 +69,4 @@ class NodeAPI:
         information.append("Mem Load" + str(appliance_info["mem_load"]) + "\n")
         information.append("State: " + str(appliance_info["state"]) + "\n")
         information.append("Last Online: " + str(appliance_info["last_online"]) + "\n")
-        self.appliance_info = information
-        return self.appliance_info
+        return information
