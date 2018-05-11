@@ -30,7 +30,7 @@ def get_wan(api_auth, parameters, contexts):
 
     if res.status_code == 200:
         template = """Name: {}
-Short name: {}
+Long name: {}
 REST API ID: {}
 No. of uplinks connected to this WAN: {}"""
 
