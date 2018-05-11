@@ -21,7 +21,6 @@ from actions.add_sites_to_wan import add_sites_to_wan
 from actions.clear_sites import clear_sites
 from actions.create_zone import create_zone
 from actions.list_appliances import list_appliances
-from actions.list_appliances_followup import list_appliances_followup
 from actions.delete_appliance import delete_appliance
 from actions.delete_appliance_followup import delete_appliance_followup
 from actions.uplink import list_uplinks
@@ -59,12 +58,6 @@ def list_sites_followup_custom(api_auth, parameters, contexts):
 def list_sites_followup_yes(api_auth, parameters, contexts):
     return list_sites_followup(api_auth, None, contexts)
 
-def list_appliances_followup_yes(api_auth, parameters, contexts):
-    return list_appliances_followup(api_auth, None, contexts)
-
-def list_appliances_followup_custom(api_auth, parameters, contexts):
-    return list_appliances_followup(api_auth, contexts[0]["parameters"], contexts)
-
 def get_appliance_info_followup_custom(api_auth, parameters, contexts):
     return get_appliance_info_followup(api_auth, contexts[0]["parameters"], contexts)
 
@@ -86,8 +79,6 @@ register_action("ClearSites", clear_sites)
 register_action("CreateZone", create_zone)
 register_action("ListUplinks", list_uplinks)
 register_action("ListAppliances", list_appliances)
-register_action("ListAppliances.ListAppliances-custom", list_appliances_followup_custom)
-register_action("ListAppliances.ListAppliances-yes",list_appliances_followup_yes)
 register_action("DeleteAppliance", delete_appliance)
 register_action("DeleteAppliance.DeleteAppliance-custom", delete_appliance_followup_custom)
 register_action("GetApplianceInfo", get_appliance_info)
