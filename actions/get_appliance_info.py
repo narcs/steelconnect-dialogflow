@@ -46,12 +46,8 @@ def get_appliance_info(api_auth, parameters, contexts):
             appliance_options_response += "Option " + str(count) + ": " + appliance["id"] + '\n'
             appliance_options.append(appliance["id"])
             count = count + 1
-        api_auth.node.set_appliance_list(appliance_options)
+        api_auth.node.set_appliance_list(appliance_options)         #Store the list of appliances on the chosen site
         speech = "There are multiple {} appliances at {}. Please choose a value from one of the following: {}".format(model, site_name, appliance_options_response)
     else:   #Just in case, though not likely
         return "Error: Invalid number of appliances"
     return speech
-
-
-# Get information on ewok shadow appliance for banana in Texas, US
-# Get information on panda shadow appliance for shop-Helsinki in Helsinki, Finland
