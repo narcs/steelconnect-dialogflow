@@ -7,6 +7,7 @@ from wan import WanAPI
 from zone import ZoneAPI
 from node import NodeAPI
 from uplink import UplinkAPI
+from sitelink import SitelinkAPI
 
 class SteelConnectAPI:
 
@@ -32,3 +33,5 @@ class SteelConnectAPI:
                                 self.api_base_reporting_url, self.api_org_reporting_url)
         self.uplink = UplinkAPI(self.auth, self.org_id, self.api_base_config_url, self.api_org_config_url,
                                 self.api_base_reporting_url, self.api_org_reporting_url)
+
+        self.sitelink = SitelinkAPI(self.auth, self.api_base_reporting_url)
