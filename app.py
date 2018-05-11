@@ -14,6 +14,7 @@ from actions.list_sites import list_sites
 from actions.list_sites_followup import list_sites_followup
 from actions.list_wans import list_wans
 from actions.create_wan import create_wan
+from actions.get_wan import get_wan
 from actions.rename_wan import rename_wan
 from actions.delete_wan import delete_wan
 from actions.add_site_to_wan import add_site_to_wan
@@ -61,6 +62,7 @@ register_action("ListSites.ListSites-yes", list_sites_followup_yes)
 
 register_action("ListWANs", list_wans)
 register_action("CreateWAN", create_wan)
+register_action("GetWAN", get_wan)
 register_action("RenameWAN", rename_wan)
 register_action("DeleteWAN", delete_wan)
 register_action("AddSiteToWAN", add_site_to_wan)

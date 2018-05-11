@@ -1,0 +1,114 @@
+[
+  {
+    "id": "bcee5496-7af7-4cff-8662-6a39c24ead9d",
+    "data": [
+      {
+        "text": "Get ",
+        "userDefined": false
+      },
+      {
+        "text": "WAN",
+        "alias": "WAN",
+        "meta": "@WAN",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "GlobalNet",
+        "alias": "WANName",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526011167
+  },
+  {
+    "id": "7ec8d1bd-9f57-446f-8ed8-3699bcba0bfd",
+    "data": [
+      {
+        "text": "Tell me about the ",
+        "userDefined": false
+      },
+      {
+        "text": "WAN",
+        "alias": "WAN",
+        "meta": "@WAN",
+        "userDefined": true
+      },
+      {
+        "text": " named ",
+        "userDefined": false
+      },
+      {
+        "text": "GlobalNet",
+        "alias": "WANName",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526011167
+  },
+  {
+    "id": "ed9ff8bc-344a-4124-9931-69a1b7d1533e",
+    "data": [
+      {
+        "text": "Get the ",
+        "userDefined": false
+      },
+      {
+        "text": "WAN",
+        "alias": "WAN",
+        "meta": "@WAN",
+        "userDefined": false
+      },
+      {
+        "text": " named ",
+        "userDefined": false
+      },
+      {
+        "text": "GlobalNet",
+        "alias": "WANName",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526011167
+  },
+  {
+    "id": "d58966f0-83f2-441b-ae26-50be8c69dc4d",
+    "data": [
+      {
+        "text": "Get details of the ",
+        "userDefined": false
+      },
+      {
+        "text": "WAN",
+        "alias": "WAN",
+        "meta": "@WAN",
+        "userDefined": false
+      },
+      {
+        "text": " named ",
+        "userDefined": false
+      },
+      {
+        "text": "GlobalNet",
+        "alias": "WANName",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526011167
+  }
+]
