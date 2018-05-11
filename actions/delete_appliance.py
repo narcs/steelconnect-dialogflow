@@ -5,6 +5,12 @@ from util import get_site_id_by_name
 
 def delete_appliance(api_auth, parameters, contexts):
     """
+    Allow users to delete an appliance on a particular site
+    Need to know the city, site name, model and country. 
+    If there are multiple appliances of the same model on a site,
+    a follow up question will prompt the user to select a specific 
+    appliance
+
     :param api_auth: steelconnect api object 
     :type api_auth: SteelConnectAPI 
     :param parameters: json parameters from Dialogflow intent 

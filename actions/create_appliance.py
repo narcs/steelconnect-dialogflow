@@ -6,6 +6,10 @@ from util import get_site_id_by_name
 
 def create_appliance(api_auth, parameters, contexts):
     """
+    Allows users to create an appliance on a site. 
+    We in order for them to do so, we need to know the city, site name
+    model and country code. 
+    
     :param api_auth: SteelConnect api object
     :type api_auth: SteelConnectAPI
     :param parameters: json parameters from Dialogflow intent

@@ -5,7 +5,18 @@ from requests.auth import HTTPBasicAuth
  
 #  "List all appliances" works but not "list appliances"
 def list_appliances(api_auth, parameters, contexts):
- 
+    """
+    Displays to users all appliances that exists. 
+    It will let the know the model, appliance id and on which
+    site it is on
+
+    :param api_auth: steelconnect api object 
+    :type api_auth: SteelConnectAPI 
+    :param parameters: json parameters from Dialogflow intent 
+    :type parameters: json 
+    :return: Returns a response to be read out to user 
+    :rtype: string 
+    """
     logging.info("Listing Appliances")
  
     res = api_auth.node.list_appliances()

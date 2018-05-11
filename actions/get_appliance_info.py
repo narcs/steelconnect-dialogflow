@@ -5,6 +5,20 @@ from requests.auth import HTTPBasicAuth
 from util import get_site_id_by_name
 
 def get_appliance_info(api_auth, parameters, contexts):
+    """
+    Allow users to get information about a oarticular appliance
+    Need to know the city, site name, model and country. 
+    If there are multiple appliances of the same model on a site,
+    a follow up question will prompt the user to select a specific 
+    appliance
+
+    :param api_auth: steelconnect api object 
+    :type api_auth: SteelConnectAPI 
+    :param parameters: json parameters from Dialogflow intent 
+    :type parameters: json 
+    :return: Returns a response to be read out to user 
+    :rtype: string 
+    """
     try:
         city = parameters["City"].replace(" ", "")  # .replace() is for locations where there are spaces. E.g. Kuala Lumpur
         site_name = parameters["SiteName"]
