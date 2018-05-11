@@ -30,7 +30,7 @@ def get_appliance_info(api_auth, parameters, contexts):
         return "Error: Failed to get relevant appliances"
 
     if len(appliances_on_site) == 1:        #If only one appliance matches the spec
-        appliance_id = appliance["id"]
+        appliance_id = appliances_on_site[0]["id"]
         res = api_auth.node.get_appliance_info(node_id= appliance_id)
         if res.status_code == 200:
             appliance_info = res.json()
