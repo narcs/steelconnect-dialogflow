@@ -2,12 +2,6 @@ import logging
 from flask import json
 from actions.list_appliances import list_appliances
 from util import get_site_id_by_name
- 
-# For now, use id as the way to identify a particular appliance
-# This is crap usability, if we have time, find a more usable method in the future
- 
- # Delete ewok shadow appliance on banana in Texas, US
- # Delete panda shadow appliance for shop-Helsinki in Helsinki, Finland 
 
 def delete_appliance(api_auth, parameters, contexts):
     """
