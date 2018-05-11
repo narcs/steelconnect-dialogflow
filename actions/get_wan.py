@@ -29,13 +29,12 @@ def get_wan(api_auth, parameters, contexts):
     data = res.json()
 
     if res.status_code == 200:
-        template = """Details for {}:
-Name: {}
+        template = """Name: {}
 Short name: {}
 REST API ID: {}
 No. of uplinks connected to this WAN: {}"""
 
-        speech = template.format(data["name"], data["name"], data["longname"], wan_id, len(data["uplinks"]))
+        speech = template.format(data["name"], data["longname"] if data["longname"] is not None else "<none>", wan_id, len(data["uplinks"]))
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
     elif res.status_code == 500:
