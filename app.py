@@ -20,7 +20,6 @@ from actions.add_site_to_wan import add_site_to_wan
 from actions.add_sites_to_wan import add_sites_to_wan
 from actions.clear_sites import clear_sites
 from actions.create_zone import create_zone
-from actions.create_appliance import create_appliance
 from actions.list_appliances import list_appliances
 from actions.list_appliances_followup import list_appliances_followup
 from actions.delete_appliance import delete_appliance
@@ -29,7 +28,7 @@ from actions.uplink import list_uplinks
 from actions.get_appliance_info import get_appliance_info
 from actions.get_appliance_info_followup import get_appliance_info_followup
 
-from actions.create_appliance_new import create_appliance_new
+from actions.create_appliance import create_appliance
 
 app = Flask(__name__)
 app.Debug = True
@@ -85,7 +84,6 @@ register_action("AddSiteToWAN", add_site_to_wan)
 register_action("AddSitesToWAN", add_sites_to_wan)
 register_action("ClearSites", clear_sites)
 register_action("CreateZone", create_zone)
-register_action("CreateAppliance", create_appliance)
 register_action("ListUplinks", list_uplinks)
 register_action("ListAppliances", list_appliances)
 register_action("ListAppliances.ListAppliances-custom", list_appliances_followup_custom)
@@ -94,7 +92,7 @@ register_action("DeleteAppliance", delete_appliance)
 register_action("DeleteAppliance.DeleteAppliance-custom", delete_appliance_followup_custom)
 register_action("GetApplianceInfo", get_appliance_info)
 register_action("GetApplianceInfo.GetApplianceInfo-custom", get_appliance_info_followup_custom)
-register_action("CreateApplianceNew", create_appliance_new)
+register_action("CreateAppliance", create_appliance)
 
 @app.route('/')
 def home():

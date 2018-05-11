@@ -2,6 +2,7 @@ import logging
 from flask import json
 from requests.auth import HTTPBasicAuth
 import requests
+from util import get_site_id_by_name
 
 def create_appliance(api_auth, parameters, contexts):
     """
@@ -14,8 +15,9 @@ def create_appliance(api_auth, parameters, contexts):
     """
     try:
         city = parameters["City"].replace(" ", "")  # .replace() is for locations where there are spaces. E.g. Kuala Lumpur
-        site_type = parameters["SiteTypes"]
+        site_name = parameters["SiteName"]
         model = parameters["Model"]
+        country_code = parameters["Country"]["alpha-2"]
  
     except KeyError as e:
         error_string = "Error processing create Appliance intent. {0}".format(e)
@@ -23,19 +25,21 @@ def create_appliance(api_auth, parameters, contexts):
         return error_string
 
     # Get all sites and check whether site exists
+    # Currently, if site doesn't exist it just says not available
+    # Need to fix it, but depends on how get_site_id_by_name is impleented 
+    site_id = get_site_id_by_name(api_auth, site_name, city,country_code)
+        
     data_sites = api_auth.site.list_sites().json()
-    site = ""
     for item in data_sites["items"]:
-        if "site-" + site_type + city + "-" in item["id"]:
-            site = item["id"]
+        if item["id"] == site_id:
             break
 
-    if site != "":
+    if site_id:
         # Call create_appliance in SteelConnectAPI
-        res = api_auth.node.create_appliance(site=site, model=model)
+        res = api_auth.node.create_appliance(site=site_id, model=model)
  
         if res.status_code == 200:
-            speech = "Appliance: {} created for site: {}, {}".format(model, city, site_type)
+            speech = "Appliance: {} created for site: {}, {}".format(model, city, site_name)
         elif res.status_code == 400:
             speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
         elif res.status_code == 404:
@@ -47,6 +51,6 @@ def create_appliance(api_auth, parameters, contexts):
  
         logging.debug(speech)
     else:
-        speech = "Invalid site {}, {}".format(city, site_type)
+        speech = "Invalid site {} in {}".format(site_name, city)
     return speech
 

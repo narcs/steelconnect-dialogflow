@@ -36,15 +36,6 @@ class NodeAPI:
         data = format_data(data)
         return requests.post(url, data=data, auth=self.auth)
 
-    def create_appliance_new(self, site, model):
-        url = self.org_config_url + "node/virtual/register"
-        data = {
-            "site": site,
-            "model": model
-        }
-        data = format_data(data)
-        return requests.post(url, data=data, auth=self.auth)
-
     def delete_appliance(self, appliance_id):
         url = self.base_config_url + "node/" + appliance_id
         data = {}
