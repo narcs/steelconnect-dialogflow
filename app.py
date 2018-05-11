@@ -26,6 +26,7 @@ from actions.list_appliances_followup import list_appliances_followup
 from actions.delete_appliance import delete_appliance
 from actions.uplink import list_uplinks
 from actions.get_appliance_info import get_appliance_info
+from actions.get_appliance_info_followup import get_appliance_info_followup
 
 from actions.create_appliance_new import create_appliance_new
 
@@ -84,7 +85,7 @@ register_action("ListAppliances.ListAppliances-custom", list_appliances_followup
 register_action("ListAppliances.ListAppliances-yes",list_appliances_followup_yes)
 register_action("DeleteAppliance", delete_appliance)
 register_action("GetApplianceInfo", get_appliance_info)
-
+register_action("GetApplianceInfo.GetApplianceInfo-custom", get_appliance_info_followup_custom)
 register_action("CreateApplianceNew", create_appliance_new)
 
 @app.route('/')
