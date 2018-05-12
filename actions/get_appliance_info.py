@@ -6,7 +6,7 @@ from util import get_site_id_by_name
 
 def get_appliance_info(api_auth, parameters, contexts):
     """
-    Allow users to get information about a oarticular appliance
+    Allow users to get information about a particular appliance
     Need to know the city, site name, model and country. 
     If there are multiple appliances of the same model on a site,
     a follow up question will prompt the user to select a specific 

@@ -18,7 +18,7 @@ def delete_appliance_followup(api_auth, parameters, contexts):
     try:
         option_choice = int(parameters["OptionNumber"])
     except KeyError as e:
-        error_string = "Error processing deleteing appliance followup"
+        error_string = "Error processing deleting appliance followup"
         logging.error(error_string)
         return error_string
     

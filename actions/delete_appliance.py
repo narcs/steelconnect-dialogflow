@@ -1,7 +1,7 @@
 import logging
 from flask import json
 from actions.list_appliances import list_appliances
-from util import get_site_id_by_name
+from util import get_site_id_by_name, APIError
 
 def delete_appliance(api_auth, parameters, contexts):
     """
@@ -30,8 +30,11 @@ def delete_appliance(api_auth, parameters, contexts):
         logging.error(error_string)
         return error_string
 
-    site_id = get_site_id_by_name(api_auth, site_name, city,country_code)
-    
+    try:
+        site_id = get_site_id_by_name(api_auth, site_name, city,country_code)
+    except APIError as E:
+        return str(E)
+
     #Make sure that this appliance exists
     appliance_list = api_auth.node.list_appliances()
     data = appliance_list.json()["items"]
