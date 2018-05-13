@@ -1,0 +1,248 @@
+[
+  {
+    "id": "1e6bdba3-ac17-46f1-8207-f450a8a9c78c",
+    "data": [
+      {
+        "text": "what\u0027s happening with ",
+        "userDefined": false
+      },
+      {
+        "text": "koala",
+        "alias": "Model",
+        "meta": "@Model",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Hobart",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526025822
+  },
+  {
+    "id": "f4fc7056-4f86-47c1-99b2-422412fe5acc",
+    "data": [
+      {
+        "text": "status update on appliances in ",
+        "userDefined": false
+      },
+      {
+        "text": "Sydney",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526025003
+  },
+  {
+    "id": "2f78ab5e-c265-4037-8611-96b7f0dc1798",
+    "data": [
+      {
+        "text": "tell me about ",
+        "userDefined": false
+      },
+      {
+        "text": "raccoon",
+        "alias": "Model",
+        "meta": "@Model",
+        "userDefined": true
+      },
+      {
+        "text": " on ",
+        "userDefined": false
+      },
+      {
+        "text": "Melbourne",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526025003
+  },
+  {
+    "id": "859fb6a6-e981-4ab8-bc24-24fbf87104ca",
+    "data": [
+      {
+        "text": "Collect info about ",
+        "userDefined": false
+      },
+      {
+        "text": "raccoon",
+        "alias": "Model",
+        "meta": "@Model",
+        "userDefined": false
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Melbourne",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526025003
+  },
+  {
+    "id": "66d4d615-18ed-49b0-a887-78cc3ac2d825",
+    "data": [
+      {
+        "text": "Get information on shadow appliances",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526025003
+  },
+  {
+    "id": "d90e5ef8-dac2-4e1c-9eb3-facf2d389590",
+    "data": [
+      {
+        "text": "Get appliance information",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526025003
+  },
+  {
+    "id": "82dec7a2-5a86-4877-8e3a-a2c9b00cc2a7",
+    "data": [
+      {
+        "text": "Get information on ",
+        "userDefined": false
+      },
+      {
+        "text": "panda",
+        "alias": "Model",
+        "meta": "@Model",
+        "userDefined": false
+      },
+      {
+        "text": " shadow appliance for ",
+        "userDefined": false
+      },
+      {
+        "text": "banana",
+        "alias": "SiteName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Texas",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "US",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526025003
+  },
+  {
+    "id": "e2042b01-e6f4-42c6-9a58-42cdd7dbea07",
+    "data": [
+      {
+        "text": "Get information on ",
+        "userDefined": false
+      },
+      {
+        "text": "ewok",
+        "alias": "Model",
+        "meta": "@Model",
+        "userDefined": false
+      },
+      {
+        "text": " shadow appliance for ",
+        "userDefined": false
+      },
+      {
+        "text": "chicken",
+        "alias": "SiteName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Tokyo",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Japan",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526025003
+  }
+]

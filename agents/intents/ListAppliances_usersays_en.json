@@ -1,0 +1,62 @@
+[
+  {
+    "id": "184222b4-1cbf-47f8-8c34-999f55b76243",
+    "data": [
+      {
+        "text": "Display appliances",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526040973
+  },
+  {
+    "id": "f0fe1d3e-450e-4160-b365-e0e19a48a65e",
+    "data": [
+      {
+        "text": "List all appliances",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526040973
+  },
+  {
+    "id": "faa61c99-ca27-4e76-96f6-0cf5c26ff049",
+    "data": [
+      {
+        "text": "what appliances are in my organisation",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526040973
+  },
+  {
+    "id": "685d7b56-8a01-45aa-9b40-c88d3e370b94",
+    "data": [
+      {
+        "text": "List appliances",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526040973
+  },
+  {
+    "id": "4a57276b-4c59-4865-b13d-2c7e9d0c84e0",
+    "data": [
+      {
+        "text": "how many appliances are in my organisation",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526040973
+  }
+]

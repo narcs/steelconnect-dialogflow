@@ -1,0 +1,48 @@
+[
+  {
+    "id": "435f3fb5-461f-490e-878f-11bbe6cf07e1",
+    "data": [
+      {
+        "text": "Option ",
+        "userDefined": false
+      },
+      {
+        "text": "2",
+        "alias": "OptionNumber",
+        "meta": "@sys.number-integer",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525832809
+  },
+  {
+    "id": "13825a0d-2cb7-424b-b7d3-b327595105d3",
+    "data": [
+      {
+        "text": "1",
+        "alias": "OptionNumber",
+        "meta": "@sys.number-integer",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525832809
+  },
+  {
+    "id": "5ab29423-f004-41d9-9153-62b1eb59fdbd",
+    "data": [
+      {
+        "text": "One",
+        "alias": "OptionNumber",
+        "meta": "@sys.number-integer",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525832809
+  }
+]
