@@ -3,7 +3,7 @@ import logging
 from flask import json
 from actions.util import *
 
-def delete_site(api_auth, parameters):
+def delete_site(api_auth, parameters, contexts):
     """
     :param api_auth: steelconnect api object
     :type api_auth: SteelConnectAPI
@@ -33,7 +33,7 @@ def delete_site(api_auth, parameters):
     except APIError as e:
         return str(e)
 
-    # Renaming site
+    # Deleting site
     res = api_auth.site.delete_site(site_id)
 
     if res.status_code == 200:

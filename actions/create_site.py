@@ -34,7 +34,7 @@ def create_site(api_auth, parameters, contexts):
     res = api_auth.site.create_site(site_name, city, country_code)
 
     if res.status_code == 200:
-        speech = "{} created in {} {}".format(site_name.capitalize(), city, country_name)
+        speech = "A site named {} has been created in {} {}".format(site_name.capitalize(), city, country_name)
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
     elif res.status_code == 500:

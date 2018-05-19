@@ -1,0 +1,77 @@
+{
+    "id": "a0f0a8f3-d794-4033-9c88-cd62acb3ae5b",
+    "name": "DeleteSite",
+    "auto": true,
+    "contexts": [],
+    "responses": [
+      {
+        "resetContexts": false,
+        "action": "DeleteSite",
+        "affectedContexts": [
+          {
+            "name": "SiteDeleted",
+            "parameters": {},
+            "lifespan": 5
+          },
+          {
+            "name": "DeleteSite-followup",
+            "parameters": {},
+            "lifespan": 2
+          }
+        ],
+        "parameters": [
+          {
+            "id": "c894a067-400b-4849-b315-fa817c954918",
+            "required": true,
+            "dataType": "@sys.any",
+            "name": "name",
+            "value": "$name",
+            "prompts": [
+              "What is the name of the site?"
+            ],
+            "isList": false
+          },
+          {
+            "id": "c7e6e2ed-19a3-40c0-8eb9-6f1a9512c0e4",
+            "required": true,
+            "dataType": "@sys.geo-city",
+            "name": "City",
+            "value": "$City",
+            "prompts": [
+              "What City?"
+            ],
+            "isList": false
+          },
+          {
+            "id": "efdecdfd-bef1-4f05-8148-31980942f682",
+            "required": true,
+            "dataType": "@sys.geo-country-code",
+            "name": "Country",
+            "value": "$Country",
+            "prompts": [
+              "What Country?"
+            ],
+            "isList": false
+          }
+        ],
+        "messages": [
+          {
+            "type": 0,
+            "speech": []
+          }
+        ],
+        "defaultResponsePlatforms": {},
+        "speech": []
+      }
+    ],
+    "priority": 500000,
+    "cortanaCommand": {
+      "navigateOrService": "NAVIGATE",
+      "target": ""
+    },
+    "webhookUsed": true,
+    "webhookForSlotFilling": false,
+    "lastUpdate": 1526699475,
+    "fallbackIntent": false,
+    "events": []
+  }

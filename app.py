@@ -11,6 +11,12 @@ from api import SteelConnectAPI
 from actions.create_site import create_site
 from actions.create_uplink import create_uplink
 from actions.list_sites import list_sites
+from actions.rename_site import rename_site
+from actions.rename_site_list import rename_site_list
+from actions.rename_site_list_select import rename_site_list_select
+
+
+from actions.delete_site import delete_site
 from actions.list_sites_followup import list_sites_followup
 from actions.list_wans import list_wans
 from actions.create_wan import create_wan
@@ -21,8 +27,7 @@ from actions.add_sites_to_wan import add_sites_to_wan
 from actions.clear_sites import clear_sites
 from actions.create_zone import create_zone
 from actions.create_appliance import create_appliance
-from actions.rename_site import rename_site
-from actions.delete_site import delete_site
+
 
 from actions.uplink import list_uplinks
 
@@ -52,6 +57,10 @@ def register_action(name, func):
 register_action("CreateSite", create_site)
 register_action("CreateUplink", create_uplink)
 register_action("ListSites", list_sites)
+register_action("RenameSite", rename_site)
+register_action("DeleteSite", delete_site)
+register_action("RenameSiteList", rename_site_list)
+register_action("RenameSiteList.RenameSiteList-selectnumber", rename_site_list_select)
 
 def list_sites_followup_custom(api_auth, parameters, contexts):
     return list_sites_followup(api_auth, req["result"]["contexts"][0]["parameters"], contexts)
@@ -59,8 +68,8 @@ register_action("ListSites.ListSites-custom", list_sites_followup_custom)
 
 def list_sites_followup_yes(api_auth, parameters, contexts):
     return list_sites_followup(api_auth, None, contexts)
-register_action("ListSites.ListSites-yes", list_sites_followup_yes)
 
+register_action("ListSites.ListSites-yes", list_sites_followup_yes)
 register_action("ListWANs", list_wans)
 register_action("CreateWAN", create_wan)
 register_action("RenameWAN", rename_wan)
@@ -99,49 +108,10 @@ def webhook():
         logging.error("Error processing request {}".format(e))
         return format_response("There was an error processing your request")
 
-<<<<<<< HEAD
-    if action_type == "CreateSite":
-        response = create_site(app.config["SC_API"], parameters)
-    elif action_type == "CreateUplink":
-        response = create_uplink(app.config["SC_API"],parameters)
-    elif action_type =="DeleteSite":
-        response = delete_site(app.config["SC_API"], parameters)
-    elif action_type == "ListSites":
-        response = list_sites(app.config["SC_API"], parameters)
-    elif action_type == "ListSites.ListSites-custom":
-        response = list_sites_followup(app.config["SC_API"], req["result"]["contexts"][0]["parameters"])
-    elif action_type == "ListSites.ListSites-yes":
-        parameters["position"] = "all"
-        response = list_sites_followup(app.config["SC_API"], None)
-    elif action_type == "RenameSite":
-        response = rename_site(app.config["SC_API"], parameters)
-    elif action_type == "ListWANs":
-        response = list_wans(app.config["SC_API"], parameters, contexts)
-    elif action_type == "CreateWAN":
-        response = create_wan(app.config["SC_API"], parameters, contexts)
-    elif action_type == "RenameWAN":
-        response = rename_wan(app.config["SC_API"], parameters, contexts)
-    elif action_type == "DeleteWAN":
-        response = delete_wan(app.config["SC_API"], parameters, contexts)
-    elif action_type == "AddSiteToWAN":
-        response = add_site_to_wan(app.config["SC_API"], parameters, contexts)
-    elif action_type == "AddSitesToWAN":
-        response = add_sites_to_wan(app.config["SC_API"], parameters, contexts)
-    elif action_type == "ClearSites":
-        response = clear_sites(parameters)
-    elif action_type == "CreateZone":
-        response = create_zone(app.config["SC_API"], parameters)
-    elif action_type == "CreateAppliance":
-        response = create_appliance(app.config["SC_API"], parameters)
-
-
-    # elif action_type == "SomeOtherAction"            # Use elif to add extra functionality
-=======
     # Call the given action, if it exists.
     logging.debug("Got action: {}".format(action_type))
     if action_type in actions:
         response = actions[action_type](app.config["SC_API"], parameters, contexts)
->>>>>>> b5ec3e5025227f913cdd3783453aed8961ad1e1c
     else:
         response = "Error: This feature has not been implemented yet"
         logging.error("Not implemented error action: {} intent: {}".format(action_type, intent_type))
