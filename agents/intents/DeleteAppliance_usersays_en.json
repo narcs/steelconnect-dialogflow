@@ -1,21 +1,9 @@
 [
   {
-    "id": "7e34df27-cfc7-4da5-8d91-6aa0c0396866",
+    "id": "15ae5264-81b0-401d-9733-2a9a0df4caf7",
     "data": [
       {
-        "text": "Create appliance",
-        "userDefined": false
-      }
-    ],
-    "isTemplate": false,
-    "count": 0,
-    "updated": 1526024562
-  },
-  {
-    "id": "ec15176b-44a6-41f7-9c5d-2a4e59a18724",
-    "data": [
-      {
-        "text": "Create a ",
+        "text": "Delete ",
         "userDefined": false
       },
       {
@@ -35,7 +23,7 @@
         "userDefined": true
       },
       {
-        "text": " ",
+        "text": ", ",
         "userDefined": false
       },
       {
@@ -47,29 +35,41 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526024647
+    "updated": 1526024614
   },
   {
-    "id": "cc513d40-6a2e-41c5-a61b-6c3cd9a517d6",
+    "id": "4f59af3e-bd60-4744-be23-d05f64c90072",
     "data": [
       {
-        "text": "Create a shadow appliance",
+        "text": "Delete appliance",
         "userDefined": false
       }
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526024502
+    "updated": 1526024614
   },
   {
-    "id": "deb213af-ecdd-4e37-98b4-6dba5f8dea02",
+    "id": "635b4f43-8866-4624-802c-8a0435182dbf",
     "data": [
       {
-        "text": "Create an ",
+        "text": "Delete shadow appliance",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526024614
+  },
+  {
+    "id": "7311ac0c-64a1-4063-b930-ede4e7719df5",
+    "data": [
+      {
+        "text": "Delete ",
         "userDefined": false
       },
       {
-        "text": "ewok",
+        "text": "panda",
         "alias": "Model",
         "meta": "@Model",
         "userDefined": false
@@ -79,7 +79,7 @@
         "userDefined": false
       },
       {
-        "text": "chicken",
+        "text": "shop-Helsinki",
         "alias": "SiteName",
         "meta": "@sys.any",
         "userDefined": true
@@ -89,7 +89,7 @@
         "userDefined": false
       },
       {
-        "text": "Tokyo",
+        "text": "Helsinki",
         "alias": "City",
         "meta": "@sys.geo-city",
         "userDefined": false
@@ -99,7 +99,7 @@
         "userDefined": false
       },
       {
-        "text": "Japan",
+        "text": "Finland",
         "alias": "Country",
         "meta": "@sys.geo-country-code",
         "userDefined": false
@@ -107,23 +107,23 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526024502
+    "updated": 1526015220
   },
   {
-    "id": "94d11d74-a51d-4b89-a9a7-2451e00517fa",
+    "id": "4a68b4d0-f480-452c-8559-2e45badc97c5",
     "data": [
       {
-        "text": "Create ",
+        "text": "Delete ",
         "userDefined": false
       },
       {
-        "text": "panda",
+        "text": "ewok",
         "alias": "Model",
         "meta": "@Model",
-        "userDefined": true
+        "userDefined": false
       },
       {
-        "text": " shadow appliance for ",
+        "text": " shadow appliance on ",
         "userDefined": false
       },
       {
@@ -140,7 +140,7 @@
         "text": "Texas",
         "alias": "City",
         "meta": "@sys.geo-city",
-        "userDefined": true
+        "userDefined": false
       },
       {
         "text": ", ",
@@ -155,6 +155,6 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526024502
+    "updated": 1526015220
   }
 ]
