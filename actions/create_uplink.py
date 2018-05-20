@@ -15,7 +15,6 @@ def create_uplink(api_auth, parameters, contexts):
     :rtype: string
     """
     try:
-        site_type = parameters["SiteTypes"]
         city = parameters["City"]
         uplink_name = parameters["Uplinks"]
         wan_name = parameters["Wans"]
@@ -26,11 +25,10 @@ def create_uplink(api_auth, parameters, contexts):
         return error_string
 
     if uplink_name == "":
-        uplink_name = "Uplink";
+        uplink_name = "Uplink"
 		
 	# Get all the sites and check whether there is a site match given city
     data_sites = api_auth.site.list_sites().json()
-    #print(data_sites)
     sites = []
     ids = []
 
@@ -43,7 +41,7 @@ def create_uplink(api_auth, parameters, contexts):
 	# Error of no sites were found in that city
     if (len(sites) < 1):
         speech = "Error: No site could be found in that city"
-	return speech
+        return speech
 
     # Get all the wans and check whether there is a wan match target wan user want the uplink to be created on
     data_wans = api_auth.wan.list_wans().json()
@@ -55,12 +53,15 @@ def create_uplink(api_auth, parameters, contexts):
 
     # If more than one site is found in that city list them and return to Dialogflow for followup intent to handle
     if (len(sites) > 1):
-        speech = "Select a site: \n"
+        speech = "Which site out of these?"
         index = 1
-	for site in sites:
-            speech += "{}. {}\n".format(index, site)
-	    index += 1
-	return speech
+        for site in sites:
+            if index == 1:
+                speech += "{}".format(site)
+            else:
+                speech += ", {}".format(site)
+            index += 1
+        return speech
 		
     # Otherwise only one site, so pop it into site
     site_id = ids.pop()
