@@ -23,7 +23,7 @@ def get_appliance_info_followup(api_auth, parameters, contexts):
         return error_string
     
     appliance_options = api_auth.node.get_appliance_list()
-    appliance_id = appliance_options[option_choice - 1]
+    appliance_id = appliance_options[option_choice - 1]     #option_choice -1 because arrays start at zero <-- this is more of a reminder sort of thing...
     res = api_auth.node.get_appliance_info(node_id= appliance_id)
     if res.status_code == 200:
         appliance_info = res.json()
