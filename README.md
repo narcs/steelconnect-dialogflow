@@ -41,3 +41,31 @@ Use this link: https://github.com/narcs/steelconnect-dialogflow/archive/master.z
 * Lastly, change the organisation value under Intents -> ListSites to your own organisation name as this is used in some of the responses.
 
 You can now use Dialogflow to the test out the intents on your realm and organisation. Have a look at the Dialogflow intents what you can do, you can add/delete to suit your needs.
+
+<!-- Adding this here because I think it'll be useful for future peeps -->
+# Known Bugs And Limitations
+* Newline characters are not rendered in dialogflow
+  E.g. In the code, we may have something like:
+  ```
+    speech = "First Name: Rick, \nLast Name: Rolling, \nFavourite Pokemon: Magikarp"
+  ```
+
+  In dialog flow, it will be rendered as: 
+  ```
+    "First Name: Rick, \nLast Name: Rolling, \nFavourite Pokemon: Magikarp"
+  ```
+
+  Instead of:
+  ```
+    "First Name: Rick,
+     Last Name: Rolling,
+     Favourite Pokemon: Magikarp"
+  ```  
+
+* SteelConnect cannot identify if a city does not exist in a country. It will create a site in that city anyway. 
+  I.e. If you say `create a site in Penang, Australia`, a site will be created in the city of Penang, but in Malaysia instead of Australia (because there is not city of Penang in Australia)
+
+<!-- Adding this here because I think it'll be useful for future peeps, but also because I forgot quite a few stuff that'll be nice reminders after not touching the code for a while -->
+# Hints And Tips
+* Remember to name the action in the Action And Parameter section in DialogFlow
+* Remember to 'Enable Webhook Call For This Intent' in the Fulfillment section when creating a new intent in DialogFlow
