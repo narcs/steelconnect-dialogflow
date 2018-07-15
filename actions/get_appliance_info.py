@@ -18,9 +18,11 @@ def get_appliance_info(api_auth, parameters, contexts):
     :type parameters: json 
     :return: Returns a response to be read out to user 
     :rtype: string 
+
+    Example statement: Get information on panda shadow appliance for DC-KualaLumpur in Kuala Lumpur, Malaysia
     """
     try:
-        city = parameters["City"].replace(" ", "")  # .replace() is for locations where there are spaces. E.g. Kuala Lumpur
+        city = parameters["City"]
         site_name = parameters["SiteName"]
         model = parameters["Model"]
         country_code = parameters["Country"]["alpha-2"]
@@ -32,7 +34,7 @@ def get_appliance_info(api_auth, parameters, contexts):
 
     # Get all sites and check whether site exists
     site_id = get_site_id_by_name(api_auth, site_name, city,country_code)
-
+    
     appliance_list = api_auth.node.list_appliances()        #Get all appliances first
     if appliance_list.status_code == 200:
         data = appliance_list.json()["items"]
