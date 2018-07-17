@@ -1,0 +1,49 @@
+[
+  {
+    "id": "ddc45c22-1880-4555-bc39-5a55e20d908f",
+    "data": [
+      {
+        "text": "Get ",
+        "userDefined": false
+      },
+      {
+        "text": "uplink",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " information on ",
+        "userDefined": false
+      },
+      {
+        "text": "siteName",
+        "alias": "SiteName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Hobart",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1531483112
+  }
+]
