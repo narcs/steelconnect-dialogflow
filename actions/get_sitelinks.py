@@ -30,11 +30,9 @@ def get_sitelinks(api_auth, parameters, contexts):
         data = res.json()["items"]
         if len(data) != 0:
             speech = "Tunnels from {}: {}".format(site_name, format_sitelink_list(api_auth, data))
-        else:
-            speech = "There are no tunnels from {}".format(site_name)
 
     elif res.status_code == 404:
-        speech = "No such site"
+        speech = "There are no tunnels from {}".format(site_name)
     else:
         speech = "Error: Unspecified error"
 
