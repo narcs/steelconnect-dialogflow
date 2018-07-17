@@ -24,6 +24,8 @@ from actions.create_appliance import create_appliance
 
 from actions.uplink import list_uplinks
 
+from actions.get_sitelinks import get_sitelinks
+
 app = Flask(__name__)
 app.Debug = True
 
@@ -70,6 +72,8 @@ register_action("CreateZone", create_zone)
 register_action("CreateAppliance", create_appliance)
 
 register_action("ListUplinks", list_uplinks)
+
+register_action("GetSitelinks", get_sitelinks)
 
 
 @app.route('/')

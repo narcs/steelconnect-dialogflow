@@ -14,7 +14,7 @@ def get_sitelinks(api_auth, parameters, contexts):
     """
 
     # TODO: Get site ID from name.
-    res = api_auth.sitelink.get_sitelinks(<site_id>)
+    res = api_auth.sitelink.get_sitelinks("site-HQ-5e84559c484455da")
 
     if res.status_code == 200:
         data = res.json()["items"]
