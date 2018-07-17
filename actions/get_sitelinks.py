@@ -29,7 +29,7 @@ def get_sitelinks(api_auth, parameters, contexts):
     if res.status_code == 200:
         data = res.json()["items"]
         if len(data) != 0:
-            speech = "Tunnels from {}: {}".format(site_name, format_sitelink_list(data))
+            speech = "Tunnels from {}: {}".format(site_name, format_sitelink_list(api_auth, data))
         else:
             speech = "There are no tunnels from {}".format(site_name)
 
