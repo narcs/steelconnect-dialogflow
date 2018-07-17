@@ -44,7 +44,7 @@ You can now use Dialogflow to the test out the intents on your realm and organis
 
 <!-- Adding this here because I think it'll be useful for future peeps -->
 # Known Bugs And Limitations
-* Newline characters are not rendered in dialogflow
+* Newline characters are not rendered in Dialogflow Web Demo
   E.g. In the code, we may have something like:
   ```
     speech = "First Name: Rick, \nLast Name: Rolling, \nFavourite Pokemon: Magikarp"
@@ -62,8 +62,11 @@ You can now use Dialogflow to the test out the intents on your realm and organis
      Favourite Pokemon: Magikarp"
   ```  
 
-* SteelConnect cannot identify if a city does not exist in a country. It will create a site in that city anyway. 
-  I.e. If you say `create a site in Penang, Australia`, a site will be created in the city of Penang, but in Malaysia instead of Australia (because there is not city of Penang in Australia)
+* SteelConnect cannot identify if a city does not exist in a country. It will create a site regardless if the city-country pairing       doesn't make sense. 
+  I.e. If you say `create a site in Beijing, Australia`, a site will be created and saved as Beijing, Australia despite the fact that there is no city named Beijing in Australia. 
+
+  Due to the confusing city-country pairing, the site will not be shown the the SteelConnect Map
+
 
 <!-- Adding this here because I think it'll be useful for future peeps, but also because I forgot quite a few stuff that'll be nice reminders after not touching the code for a while -->
 # Hints And Tips
