@@ -33,7 +33,9 @@ def get_sitelinks(api_auth, parameters, contexts):
         else:
             speech = "There are no tunnels from {}".format(site_name)
 
+    elif res.status_code == 404:
+        speech = "No such site"
     else:
-        speech = "Error: Could not connect to SteelConnect"
+        speech = "Error: Unspecified error"
 
     return speech
