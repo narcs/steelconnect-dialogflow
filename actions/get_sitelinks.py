@@ -13,13 +13,25 @@ def get_sitelinks(api_auth, parameters, contexts):
     :rtype: string
     """
 
-    # TODO: Get site ID from name.
-    res = api_auth.sitelink.get_sitelinks("site-HQ-5e84559c484455da")
+    site_name = parameters["SiteName"]
+    site_city = parameters["SiteCity"]
+    site_country_id = parameters["SiteCountry"]["alpha-2"]
+    site_id = ""
+
+    try:
+        site_id = get_site_id_by_name(api_auth, site_name, site_city, site_country_id)
+    except APIError as e:
+        return str(e)
+
+    res = api_auth.sitelink.get_sitelinks(site_id)
     speech = ""
 
     if res.status_code == 200:
         data = res.json()["items"]
-        speech = "Tunnels from {}: {}".format("<site-name>", format_sitelink_list(data))
+        if len(data) != 0:
+            speech = "Tunnels from {}: {}".format(site_name, format_sitelink_list(data))
+        else:
+            speech = "There are no tunnels from {}".format(site_name)
 
     else:
         speech = "Error: Could not connect to SteelConnect"
