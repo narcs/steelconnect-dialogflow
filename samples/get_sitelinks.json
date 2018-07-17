@@ -1,0 +1,37 @@
+{
+  "id": "e7fc9d9d-fbc5-4949-9a95-4993de4eb67a",
+  "timestamp": "2018-07-17T03:10:23.074Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "list siteslinks from test",
+    "action": "GetSitelinks",
+    "actionIncomplete": false,
+    "parameters": {
+      "site": "test"
+    },
+    "contexts": [],
+    "metadata": {
+      "intentId": "12d2fd2d-6fec-4a33-8033-413b1129d91c",
+      "webhookUsed": "false",
+      "webhookForSlotFillingUsed": "false",
+      "isFallbackIntent": "false",
+      "intentName": "get sitelinks from SiteName"
+    },
+    "fulfillment": {
+      "speech": "",
+      "messages": [
+        {
+          "type": 0,
+          "speech": ""
+        }
+      ]
+    },
+    "score": 0.5400000214576721
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success"
+  },
+  "sessionId": "94eb8747-4b32-15c3-11e8-cf8336b132f9"
+}

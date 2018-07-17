@@ -15,10 +15,11 @@ def get_sitelinks(api_auth, parameters, contexts):
 
     # TODO: Get site ID from name.
     res = api_auth.sitelink.get_sitelinks("site-HQ-5e84559c484455da")
+    speech = ""
 
     if res.status_code == 200:
         data = res.json()["items"]
-        speech = "Tunnels from {}".format() + format_sitelink_list(data)
+        speech = "Tunnels from {}: {}".format("<site-name>", format_sitelink_list(data))
 
     else:
         speech = "Error: Could not connect to SteelConnect"
