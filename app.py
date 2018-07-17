@@ -29,6 +29,12 @@ from actions.get_sitelinks import get_sitelinks
 app = Flask(__name__)
 app.Debug = True
 
+# Enable error logging through app engine logging.
+# https://stackoverflow.com/a/42547090
+@app.before_request
+def enable_local_error_handling():
+    app.logger.addHandler(logging.StreamHandler())
+    app.logger.setLevel(logging.INFO)
 
 # Setup up api authentication
 try:
