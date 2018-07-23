@@ -3,10 +3,13 @@
 # install_aliases()
 
 from flask import Flask, request, make_response, render_template, url_for, redirect
+import requests
 import json
+from werkzeug.security import generate_password_hash, check_password_hash
 import logging
 
 from api import SteelConnectAPI
+from config import project_id
 
 from actions.create_site import create_site
 from actions.create_uplink import create_uplink
@@ -31,6 +34,8 @@ from actions.create_appliance import create_appliance
 
 app = Flask(__name__)
 app.Debug = True
+
+firestore_API = "https://firestore.googleapis.com/v1beta1/projects/{}/databases/(default)/documents/Accounts/".format(project_id)
 
 # Setup up api authentication
 try:
@@ -122,12 +127,29 @@ def webhook():
 @app.route('/authenticate', methods=['GET', 'POST'])
 def authenticate():
     if request.method == 'POST':
-        if request.form['username'] != 'a' and request.form['password'] != 'b':
-            return 'error'
+        username = request.form['username']
+        password = request.form['password']
+        # Get data from Firestore
+        res = requests.get(firestore_API)
+        data = res.json()['documents']
+        user_data = get_user_data(data, username)
+        if user_data == -1:
+            return 'Username not found'
         else:
-            return redirect(url_for('authenticate'))
-
+            hashed_password = user_data['password']['stringValue']
+            if check_password_hash(hashed_password, password):
+                return 'Success!'
+            else:
+                return 'Wrong password'
     return render_template('authenticate.html')
+
+def get_user_data(firestore_json, username):
+    for document in firestore_json:
+        user_data = document['fields']
+        username_to_match = user_data['username']['stringValue']
+        if username == username_to_match:
+            return user_data
+    return -1
 
 
 def format_response(speech):

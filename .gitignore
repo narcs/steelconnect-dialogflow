@@ -6,3 +6,6 @@
 
 # SteelConnect auth file
 default-auth.json
+
+# Configuration file
+config.py
