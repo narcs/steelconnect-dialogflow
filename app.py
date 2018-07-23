@@ -130,27 +130,17 @@ def authenticate():
         username = request.form['username']
         password = request.form['password']
         # Get data from Firestore
-        res = requests.get(firestore_API)
-        data = res.json()['documents']
-        user_data = get_user_data(data, username)
-        if user_data == -1:
-            return 'Username not found'
-        else:
-            hashed_password = user_data['password']['stringValue']
+        res = requests.get(firestore_API + username)
+        if res.status_code == 200:
+            data = res.json()['fields']
+            hashed_password = data['password']['stringValue']
             if check_password_hash(hashed_password, password):
-                return 'Success!'
+                return 'success!'
             else:
                 return 'Wrong password'
+        else:
+            return 'Username not found'
     return render_template('authenticate.html')
-
-def get_user_data(firestore_json, username):
-    for document in firestore_json:
-        user_data = document['fields']
-        username_to_match = user_data['username']['stringValue']
-        if username == username_to_match:
-            return user_data
-    return -1
-
 
 def format_response(speech):
     """
