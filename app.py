@@ -2,7 +2,7 @@
 # from future.standard_library import install_aliases
 # install_aliases()
 
-from flask import Flask, request, make_response
+from flask import Flask, request, make_response, render_template, url_for, redirect
 import json
 import logging
 
@@ -31,7 +31,6 @@ from actions.create_appliance import create_appliance
 
 app = Flask(__name__)
 app.Debug = True
-
 
 # Setup up api authentication
 try:
@@ -119,6 +118,16 @@ def webhook():
         logging.error("Not implemented error action: {} intent: {}".format(action_type, intent_type))
 
     return format_response(response)                        # Correctly format the text response into json for Dialogflow to read out to the user
+
+@app.route('/authenticate', methods=['GET', 'POST'])
+def authenticate():
+    if request.method == 'POST':
+        if request.form['username'] != 'a' and request.form['password'] != 'b':
+            return 'error'
+        else:
+            return redirect(url_for('authenticate'))
+
+    return render_template('authenticate.html')
 
 
 def format_response(speech):
