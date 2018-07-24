@@ -41,7 +41,6 @@ firestore_API = "https://firestore.googleapis.com/v1beta1/projects/{}/databases/
 try:
     with open("./default-auth.json") as file:
         j = json.load(file)
-
         app.config["SC_API"] = SteelConnectAPI(j["username"], j["password"], j["realm-url"], j["org-id"])
 except IOError:
     j = None
@@ -125,7 +124,7 @@ def webhook():
     return format_response(response)                        # Correctly format the text response into json for Dialogflow to read out to the user
 
 @app.route("/authenticate", methods=["GET", "POST"])
-def authenticate():
+def authenticate(authenticated=None):
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
@@ -135,12 +134,36 @@ def authenticate():
             data = res.json()["fields"]
             hashed_password = data["password"]["stringValue"]
             if check_password_hash(hashed_password, password):
+                # Get realm
+                realms = data["realms"]["mapValue"]["fields"]
+                realm = realms.keys()[0] # Get first key TODO: allow users to choose realm
+                # Get organisation id
+                org_ids = realms[realm]["arrayValue"]["values"]
+                org_id = org_ids[0]["stringValue"] # Get first org_id TODO: allow users to choose org_id
+                realm = realm.encode("ascii")
+                org_id = org_id.encode("ascii")
+                print(realm, org_id)
+                app.config["SC_API"] = SteelConnectAPI(username, password, realm, org_id)
                 return "success!"
             else:
                 return "Wrong password"
         else:
             return "Username not found"
-    return render_template("authenticate.html")
+    if app.config["SC_API"]:
+        authenticated = app.config["SC_API"]
+    return render_template("authenticate.html", authenticated=authenticated)
+
+@app.route("/status")
+def status():
+    if not app.config["SC_API"]:
+        return "Currently not logged in."
+    else:
+        return "Logged in as: {}".format(app.config["SC_API"].auth.username)
+
+@app.route("/logout")
+def logout():
+    app.config["SC_API"] = None
+    return redirect(url_for("authenticate"))
 
 @app.route("/create", methods=["GET", "POST"])
 def create():
