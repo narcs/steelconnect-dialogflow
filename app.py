@@ -9,7 +9,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import logging
 
 from api import SteelConnectAPI
-from config import project_id
+from config import firestore_project_id
 
 from actions.create_site import create_site
 from actions.create_uplink import create_uplink
@@ -35,7 +35,7 @@ from actions.create_appliance import create_appliance
 app = Flask(__name__)
 app.Debug = True
 
-firestore_API = "https://firestore.googleapis.com/v1beta1/projects/{}/databases/(default)/documents".format(project_id)
+firestore_API = "https://firestore.googleapis.com/v1beta1/projects/{}/databases/(default)/documents".format(firestore_project_id)
 
 # Setup up api authentication
 try:
