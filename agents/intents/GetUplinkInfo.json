@@ -1,0 +1,54 @@
+{
+  "id": "c2a0e787-cab6-45f4-bb23-05a1d2e772cb",
+  "name": "GetUplinkInfo",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "GetUplinkInfo",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "433148b1-4e2c-4d64-8690-cfebe34e8ed0",
+          "required": false,
+          "dataType": "@sys.geo-city",
+          "name": "City",
+          "value": "$City",
+          "isList": false
+        },
+        {
+          "id": "8c155ce7-aba2-41b5-a588-61ff04e3d2ef",
+          "required": false,
+          "dataType": "@sys.geo-country-code",
+          "name": "Country",
+          "value": "$Country",
+          "isList": false
+        },
+        {
+          "id": "146f7d43-0fbb-4495-98e5-d289a5632490",
+          "required": false,
+          "dataType": "@sys.any",
+          "name": "SiteName",
+          "value": "$SiteName",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1531483112,
+  "fallbackIntent": false,
+  "events": []
+}

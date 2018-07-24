@@ -26,6 +26,7 @@ from actions.delete_appliance_followup import delete_appliance_followup
 from actions.uplink import list_uplinks
 from actions.get_appliance_info import get_appliance_info
 from actions.get_appliance_info_followup import get_appliance_info_followup
+from actions.get_uplink_info import get_uplink_info
 
 from actions.create_appliance import create_appliance
 
@@ -78,6 +79,7 @@ register_action("AddSitesToWAN", add_sites_to_wan)
 register_action("ClearSites", clear_sites)
 register_action("CreateZone", create_zone)
 register_action("ListUplinks", list_uplinks)
+register_action("GetUplinkInfo", get_uplink_info)
 register_action("ListAppliances", list_appliances)
 register_action("DeleteAppliance", delete_appliance)
 register_action("DeleteAppliance.DeleteAppliance-custom", delete_appliance_followup_custom)

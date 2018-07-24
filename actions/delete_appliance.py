@@ -20,7 +20,7 @@ def delete_appliance(api_auth, parameters, contexts):
     """
 
     try:
-        city = parameters["City"].replace(" ", "")  # .replace() is for locations where there are spaces. E.g. Kuala Lumpur
+        city = parameters["City"]
         site_name = parameters["SiteName"]
         model = parameters["Model"]
         country_code = parameters["Country"]["alpha-2"]
