@@ -14,15 +14,22 @@ from actions.list_sites import list_sites
 from actions.list_sites_followup import list_sites_followup
 from actions.list_wans import list_wans
 from actions.create_wan import create_wan
+from actions.get_wan import get_wan
 from actions.rename_wan import rename_wan
 from actions.delete_wan import delete_wan
 from actions.add_site_to_wan import add_site_to_wan
 from actions.add_sites_to_wan import add_sites_to_wan
 from actions.clear_sites import clear_sites
 from actions.create_zone import create_zone
-from actions.create_appliance import create_appliance
-
+from actions.list_appliances import list_appliances
+from actions.delete_appliance import delete_appliance
+from actions.delete_appliance_followup import delete_appliance_followup
 from actions.uplink import list_uplinks
+from actions.get_appliance_info import get_appliance_info
+from actions.get_appliance_info_followup import get_appliance_info_followup
+from actions.get_uplink_info import get_uplink_info
+
+from actions.create_appliance import create_appliance
 
 from actions.get_sitelinks import get_sitelinks
 
@@ -55,32 +62,41 @@ actions = {}
 def register_action(name, func):
     actions[name] = func
 
-register_action("CreateSite", create_site)
-register_action("CreateUplink", create_uplink)
-register_action("ListSites", list_sites)
-
 def list_sites_followup_custom(api_auth, parameters, contexts):
     return list_sites_followup(api_auth, contexts[0]["parameters"], contexts)
-register_action("ListSites.ListSites-custom", list_sites_followup_custom)
 
 def list_sites_followup_yes(api_auth, parameters, contexts):
     return list_sites_followup(api_auth, None, contexts)
-register_action("ListSites.ListSites-yes", list_sites_followup_yes)
 
+def get_appliance_info_followup_custom(api_auth, parameters, contexts):
+    return get_appliance_info_followup(api_auth, contexts[0]["parameters"], contexts)
+
+def delete_appliance_followup_custom(api_auth, parameters, contexts):
+    return delete_appliance_followup(api_auth, contexts[0]["parameters"], contexts)
+
+register_action("CreateSite", create_site)
+register_action("CreateUplink", create_uplink)
+register_action("ListSites", list_sites)
+register_action("ListSites.ListSites-custom", list_sites_followup_custom)
+register_action("ListSites.ListSites-yes", list_sites_followup_yes)
 register_action("ListWANs", list_wans)
 register_action("CreateWAN", create_wan)
+register_action("GetWAN", get_wan)
 register_action("RenameWAN", rename_wan)
 register_action("DeleteWAN", delete_wan)
 register_action("AddSiteToWAN", add_site_to_wan)
 register_action("AddSitesToWAN", add_sites_to_wan)
 register_action("ClearSites", clear_sites)
 register_action("CreateZone", create_zone)
-register_action("CreateAppliance", create_appliance)
-
 register_action("ListUplinks", list_uplinks)
-
+register_action("GetUplinkInfo", get_uplink_info)
+register_action("ListAppliances", list_appliances)
+register_action("DeleteAppliance", delete_appliance)
+register_action("DeleteAppliance.DeleteAppliance-custom", delete_appliance_followup_custom)
+register_action("GetApplianceInfo", get_appliance_info)
+register_action("GetApplianceInfo.GetApplianceInfo-custom", get_appliance_info_followup_custom)
+register_action("CreateAppliance", create_appliance)
 register_action("GetSitelinks", get_sitelinks)
-
 
 @app.route('/')
 def home():

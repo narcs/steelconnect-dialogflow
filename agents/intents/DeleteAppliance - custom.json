@@ -1,0 +1,48 @@
+{
+  "id": "e5d636f5-bb9f-4402-81e3-4fce97dc5067",
+  "parentId": "91bc8844-cc3c-4ec4-8272-cf9a2c2bcd0f",
+  "rootParentId": "91bc8844-cc3c-4ec4-8272-cf9a2c2bcd0f",
+  "name": "DeleteAppliance - custom",
+  "auto": true,
+  "contexts": [
+    "DeleteAppliance-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "DeleteAppliance.DeleteAppliance-custom",
+      "affectedContexts": [
+        {
+          "name": "DeleteApplianceFollowup",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "a5ed944d-9405-4a99-83fc-fabc537b55f9",
+          "required": true,
+          "dataType": "@sys.number-integer",
+          "name": "OptionNumber",
+          "value": "$OptionNumber",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1526020764,
+  "fallbackIntent": false,
+  "events": []
+}
