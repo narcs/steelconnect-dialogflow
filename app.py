@@ -142,10 +142,10 @@ def authenticate(authenticated=None):
                 # Get realm
                 realms = data["realms"]["mapValue"]["fields"]
                 realm = realms.keys()[0] # Get first key TODO: allow users to choose realm
+                realm = realm.encode("ascii")
                 # Get organisation id
                 org_ids = realms[realm]["arrayValue"]["values"]
                 org_id = org_ids[0]["stringValue"] # Get first org_id TODO: allow users to choose org_id
-                realm = realm.encode("ascii")
                 org_id = org_id.encode("ascii")
                 print(realm, org_id)
                 app.config["SC_API"] = SteelConnectAPI(username, password, realm, org_id)
