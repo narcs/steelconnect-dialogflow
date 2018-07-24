@@ -142,24 +142,34 @@ def authenticate():
             return 'Username not found'
     return render_template('authenticate.html')
 
-@app.route('/create')
+@app.route('/create', methods=["GET", "POST"])
 def create():
-    document_id = "test"
-    password = "abc123"
-    realms = {
-        "monash.riverbed.cc": [
-            "org-Monash-9a986912d67e72e2",
-        ],
-    }
-    realm_request_body = create_firestore_realms_request_body(realms)
-    password_request_body = create_firestore_password_request_body(password)
-    request_body = create_firestore_request_body(realm_request_body, password_request_body)
-    request_url = "{}{}{}{}".format(firestore_API, "/Accounts", "?documentId=", document_id)
-    res = requests.post(request_url, json=request_body)
-    if res.status_code == 200:
-        print('done')
-    else:
-        return 'Error'
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        password_confirm = request.form["password_confirm"]
+        realm = request.form["realm"]
+        org_id = request.form["org_id"]
+        if password != password_confirm:
+            return "Passwords do not match"
+        else:
+            document_id = username
+            realms = {
+                realm: [
+                    org_id,
+                ],
+            }
+            realm_request_body = create_firestore_realms_request_body(realms)
+            password_request_body = create_firestore_password_request_body(password)
+            request_body = create_firestore_request_body(realm_request_body, password_request_body)
+            request_url = "{}{}{}{}".format(firestore_API, "/Accounts", "?documentId=", document_id)
+            res = requests.post(request_url, json=request_body)
+            if res.status_code == 200:
+                return "Done"
+            else:
+                return 'Error'
+
+    return render_template("create.html")
 
 def create_firestore_realms_request_body(new_realms):
     body = {

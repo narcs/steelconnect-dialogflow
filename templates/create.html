@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>SteelConnect Google Dialogflow - Authentication</title>
+    <title>SteelConnect Google Dialogflow - Create Account</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bulma.css') }}">
 </head>
 
@@ -12,7 +12,7 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-6 is-offset-3">
-                    <h3 class="title has-text-grey">SteelConnect Login</h3>
+                    <h3 class="title has-text-grey">SteelConnect Create Account</h3>
                     <div class="box">
                         <form method="post">
                             <div class="field">
@@ -27,8 +27,23 @@
                                 </div>
                             </div>
                             <div class="field">
+                                <div class="control">
+                                    <input class="input" type="password" name="password_confirm" placeholder="Password confirm">
+                                </div>
                             </div>
-                            <button class="button is-block is-info is-fullwidth" type="submit">Login</button>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input" type="text" name="realm" placeholder="Realm">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input" type="text" name="org_id" placeholder="Organisation Id">
+                                </div>
+                            </div>
+                            <div class="field">
+                            </div>
+                            <button class="button is-block is-info is-large is-fullwidth" type="submit">Create</button>
                         </form>
                     </div>
                 </div>
