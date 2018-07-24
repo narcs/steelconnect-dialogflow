@@ -124,25 +124,25 @@ def webhook():
 
     return format_response(response)                        # Correctly format the text response into json for Dialogflow to read out to the user
 
-@app.route('/authenticate', methods=['GET', 'POST'])
+@app.route("/authenticate", methods=["GET", "POST"])
 def authenticate():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
         # Get data from Firestore
         res = requests.get(firestore_API + "/Accounts/" + username)
         if res.status_code == 200:
-            data = res.json()['fields']
-            hashed_password = data['password']['stringValue']
+            data = res.json()["fields"]
+            hashed_password = data["password"]["stringValue"]
             if check_password_hash(hashed_password, password):
-                return 'success!'
+                return "success!"
             else:
-                return 'Wrong password'
+                return "Wrong password"
         else:
-            return 'Username not found'
-    return render_template('authenticate.html')
+            return "Username not found"
+    return render_template("authenticate.html")
 
-@app.route('/create', methods=["GET", "POST"])
+@app.route("/create", methods=["GET", "POST"])
 def create():
     if request.method == "POST":
         username = request.form["username"]
@@ -160,14 +160,15 @@ def create():
                 ],
             }
             realm_request_body = create_firestore_realms_request_body(realms)
-            password_request_body = create_firestore_password_request_body(password)
+            hashed_password = generate_password_hash(password)
+            password_request_body = create_firestore_password_request_body(hashed_password)
             request_body = create_firestore_request_body(realm_request_body, password_request_body)
             request_url = "{}{}{}{}".format(firestore_API, "/Accounts", "?documentId=", document_id)
             res = requests.post(request_url, json=request_body)
             if res.status_code == 200:
                 return "Done"
             else:
-                return 'Error'
+                return "Error"
 
     return render_template("create.html")
 
