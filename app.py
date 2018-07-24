@@ -100,6 +100,11 @@ def webhook():
     :return: Returns a json formatted response containing the text to be read back to the user
     :rtype: json
     """
+    # Checked authentication
+    if not app.config["SC_API"]:
+        response = "Not authenticated."
+        return format_response(response)
+
     req = request.get_json(silent=True, force=True)
 
     logging.debug("Request\n" + json.dumps(req, indent=4))
