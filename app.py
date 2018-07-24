@@ -35,7 +35,7 @@ from actions.create_appliance import create_appliance
 app = Flask(__name__)
 app.Debug = True
 
-firestore_API = "https://firestore.googleapis.com/v1beta1/projects/{}/databases/(default)/documents/Accounts/".format(project_id)
+firestore_API = "https://firestore.googleapis.com/v1beta1/projects/{}/databases/(default)/documents".format(project_id)
 
 # Setup up api authentication
 try:
@@ -130,7 +130,7 @@ def authenticate():
         username = request.form['username']
         password = request.form['password']
         # Get data from Firestore
-        res = requests.get(firestore_API + username)
+        res = requests.get(firestore_API + "/Accounts/" + username)
         if res.status_code == 200:
             data = res.json()['fields']
             hashed_password = data['password']['stringValue']
@@ -141,6 +141,60 @@ def authenticate():
         else:
             return 'Username not found'
     return render_template('authenticate.html')
+
+@app.route('/create')
+def create():
+    document_id = "test"
+    password = "abc123"
+    realms = {
+        "monash.riverbed.cc": [
+            "org-Monash-9a986912d67e72e2",
+        ],
+    }
+    realm_request_body = create_firestore_realms_request_body(realms)
+    password_request_body = create_firestore_password_request_body(password)
+    request_body = create_firestore_request_body(realm_request_body, password_request_body)
+    request_url = "{}{}{}{}".format(firestore_API, "/Accounts", "?documentId=", document_id)
+    res = requests.post(request_url, json=request_body)
+    if res.status_code == 200:
+        print('done')
+    else:
+        return 'Error'
+
+def create_firestore_realms_request_body(new_realms):
+    body = {
+        "realms": {
+            "mapValue": {
+                "fields": {}
+            }
+        }
+    }
+    for realm in new_realms:
+        body["realms"]["mapValue"]["fields"][realm] = {}
+        body["realms"]["mapValue"]["fields"][realm]["arrayValue"] = {}
+        body["realms"]["mapValue"]["fields"][realm]["arrayValue"]["values"] = []
+        for org_id in new_realms[realm]:
+            body["realms"]["mapValue"]["fields"][realm]["arrayValue"]["values"].append(
+                {"stringValue": org_id}
+            )
+    return body
+
+def create_firestore_password_request_body(password):
+    body = {
+        "password": {
+            "stringValue": password
+        }
+    }
+    return body
+
+def create_firestore_request_body(realms, password):
+    body = {
+        "fields": {
+            "realms": realms["realms"],
+            "password": password["password"]
+        }
+    }
+    return body
 
 def format_response(speech):
     """
