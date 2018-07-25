@@ -1,0 +1,48 @@
+{
+  "id": "12c9fa64-0e35-4b66-bebc-6975121a4160",
+  "parentId": "a12e1635-1199-4763-bf07-e02937d0bbdc",
+  "rootParentId": "a12e1635-1199-4763-bf07-e02937d0bbdc",
+  "name": "GetApplianceInfo - custom",
+  "auto": true,
+  "contexts": [
+    "GetApplianceInfo-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "GetApplianceInfo.GetApplianceInfo-custom",
+      "affectedContexts": [
+        {
+          "name": "ApplianceInfoDisplay",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "5bdb4458-fd57-434f-9bf2-5d71a5022f19",
+          "required": true,
+          "dataType": "@sys.number-integer",
+          "name": "OptionNumber",
+          "value": "$OptionNumber",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1525832809,
+  "fallbackIntent": false,
+  "events": []
+}

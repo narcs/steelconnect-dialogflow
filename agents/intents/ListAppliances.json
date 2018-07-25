@@ -1,0 +1,35 @@
+{
+  "id": "f363ca3e-542b-437a-8a5e-16fed423f0c9",
+  "name": "ListAppliances",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "ListAppliances",
+      "affectedContexts": [
+        {
+          "name": "ReadApplianceList",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1526040973,
+  "fallbackIntent": false,
+  "events": []
+}

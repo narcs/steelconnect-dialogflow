@@ -1,0 +1,52 @@
+{
+  "id": "4144a636-a198-4e62-b07c-9fbc4acd25cb",
+  "name": "GetWAN",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "GetWAN",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "6947b6c5-ddbc-4c53-9b2d-f550a5ded9ba",
+          "required": true,
+          "dataType": "@WAN",
+          "name": "WAN",
+          "value": "$WAN",
+          "isList": false
+        },
+        {
+          "id": "f35945e4-d53d-4c7b-a33f-8e99b1a8f802",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "WANName",
+          "value": "$WANName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Which WAN should I get details for?"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1526012379,
+  "fallbackIntent": false,
+  "events": []
+}

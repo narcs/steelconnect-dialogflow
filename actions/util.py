@@ -42,7 +42,10 @@ def get_wan_id_by_name(api_auth, wan_name):
     else:
         raise APIError("Failed to get the list of WANs")
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 890896962e6937fa19ed3794f7a5c59d9d4ef250
 def get_site_id_by_name(api_auth, site_name, city, country_code):
     """
     Given a Site's short name:
@@ -63,7 +66,11 @@ def get_site_id_by_name(api_auth, site_name, city, country_code):
     elif res.status_code == 500:
         raise APIError("Failed to get the list of Sites")
     else:
+<<<<<<< HEAD
         raise APIError("Error: Could not connect to SteelConnect")
 
 
 
+=======
+        raise APIError("Error: Could not connect to SteelConnect")
+>>>>>>> 890896962e6937fa19ed3794f7a5c59d9d4ef250
