@@ -1,0 +1,143 @@
+[
+  {
+    "id": "7ea36ce5-7428-476c-9b44-369fc6a4ff44",
+    "data": [
+      {
+        "text": "Add a ",
+        "userDefined": false
+      },
+      {
+        "text": "SDI-330",
+        "alias": "Model",
+        "meta": "@Model",
+        "userDefined": true
+      },
+      {
+        "text": " shadow appliance to ",
+        "userDefined": false
+      },
+      {
+        "text": "Melbourne",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "a7a05b6a-c6aa-4cac-ba20-66527833067b",
+    "data": [
+      {
+        "text": "Insert a ",
+        "userDefined": false
+      },
+      {
+        "text": "SDI-330",
+        "alias": "Model",
+        "meta": "@Model",
+        "userDefined": false
+      },
+      {
+        "text": " shadow appliance for ",
+        "userDefined": false
+      },
+      {
+        "text": "Melbourne",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "boutique",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "3bcfb5ef-6120-4241-8383-90fc7287b390",
+    "data": [
+      {
+        "text": "Create a ",
+        "userDefined": false
+      },
+      {
+        "text": "cx-570",
+        "alias": "Model",
+        "meta": "@Model",
+        "userDefined": false
+      },
+      {
+        "text": " shadow appliance in ",
+        "userDefined": false
+      },
+      {
+        "text": "New York",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "boutique",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "13036cb6-d51e-4a2a-8e99-01b526b452cf",
+    "data": [
+      {
+        "text": "Add a ",
+        "userDefined": false
+      },
+      {
+        "text": "SDI-130",
+        "alias": "Model",
+        "meta": "@Model",
+        "userDefined": false
+      },
+      {
+        "text": " shadow appliance to ",
+        "userDefined": false
+      },
+      {
+        "text": "Melbourne",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "shop",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

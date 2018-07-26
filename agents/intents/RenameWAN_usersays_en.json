@@ -1,0 +1,96 @@
+[
+  {
+    "id": "79e9ba7c-cf5d-4246-8359-9b7090718fab",
+    "data": [
+      {
+        "text": "Rename the ",
+        "userDefined": false
+      },
+      {
+        "text": "WAN",
+        "alias": "WAN",
+        "meta": "@WAN",
+        "userDefined": false
+      },
+      {
+        "text": " named ",
+        "userDefined": false
+      },
+      {
+        "text": "WAN",
+        "alias": "OriginalName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " to ",
+        "userDefined": false
+      },
+      {
+        "text": "GlobalNet",
+        "alias": "NewName",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1524625179
+  },
+  {
+    "id": "66716e85-952c-4e02-b008-4eb69e900354",
+    "data": [
+      {
+        "text": "Rename a ",
+        "userDefined": false
+      },
+      {
+        "text": "WAN",
+        "alias": "WAN",
+        "meta": "@WAN",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1524625179
+  },
+  {
+    "id": "e0efc704-1ebc-4b4d-9159-8c73b5de47f8",
+    "data": [
+      {
+        "text": "Rename the ",
+        "userDefined": false
+      },
+      {
+        "text": "TestWAN",
+        "alias": "OriginalName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "WAN",
+        "alias": "WAN",
+        "meta": "@WAN",
+        "userDefined": false
+      },
+      {
+        "text": " to ",
+        "userDefined": false
+      },
+      {
+        "text": "GlobalNet",
+        "alias": "NewName",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1524625179
+  }
+]

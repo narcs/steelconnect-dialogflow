@@ -1,0 +1,51 @@
+{
+  "id": "5fabb8cc-e0b6-4d3d-b57e-789bac46513d",
+  "name": "AddSiteToWAN",
+  "auto": true,
+  "contexts": [
+    "WAN_Created",
+    "SiteCreated"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "AddSiteToWAN",
+      "affectedContexts": [
+        {
+          "name": "WAN_Created",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "SiteCreated",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "55b63597-2a2a-4b43-a9fe-732176c03301",
+          "required": false,
+          "dataType": "@WAN",
+          "name": "WAN",
+          "value": "$WAN",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

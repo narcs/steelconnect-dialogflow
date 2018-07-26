@@ -1,0 +1,38 @@
+{
+  "id": "7f42cd91-c196-4cf5-901d-ce7d8942d79b",
+  "name": "ListWANs",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "ListWANs",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "ef40c30d-8eee-4b1e-883a-c16ed2da150a",
+          "required": false,
+          "dataType": "@WAN",
+          "name": "WAN",
+          "value": "$WAN",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Something went wrong."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1522649953,
+  "fallbackIntent": false,
+  "events": []
+}

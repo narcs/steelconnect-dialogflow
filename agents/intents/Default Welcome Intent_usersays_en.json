@@ -1,0 +1,80 @@
+[
+  {
+    "id": "e3115094-d8f1-43c2-aa85-fdcf43407333",
+    "data": [
+      {
+        "text": "good afternoon",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "3aab9615-2109-43d2-ad59-21ed9f1e366d",
+    "data": [
+      {
+        "text": "hi",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "56153f52-b253-4d0e-8a26-f956cc6e5153",
+    "data": [
+      {
+        "text": "good evening",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "181ac9d8-d126-4107-addf-7c67008387da",
+    "data": [
+      {
+        "text": "good day",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "1b355e21-e59a-4887-8387-09721569da62",
+    "data": [
+      {
+        "text": "good morning",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "3f730802-71b0-4e58-9220-2c8027797e4a",
+    "data": [
+      {
+        "text": "hello",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "694e0948-f4c4-4be0-b486-e857cbc59a71",
+    "data": [
+      {
+        "text": "SteelConnect",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

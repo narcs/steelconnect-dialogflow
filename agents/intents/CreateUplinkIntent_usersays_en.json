@@ -1,0 +1,226 @@
+[
+  {
+    "id": "df23503a-0c5d-4c98-a35b-ca366e11b703",
+    "data": [
+      {
+        "text": "Create ",
+        "userDefined": false
+      },
+      {
+        "text": "uplink",
+        "alias": "Uplinks",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525426310
+  },
+  {
+    "id": "ea244e8f-fdf5-4b8a-8a5f-48dc65a341cc",
+    "data": [
+      {
+        "text": "Create ",
+        "userDefined": false
+      },
+      {
+        "text": "uplink",
+        "alias": "Uplinks",
+        "meta": "@sys.any",
+        "userDefined": false
+      },
+      {
+        "text": " from ",
+        "userDefined": false
+      },
+      {
+        "text": "Tokyo",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " site to ",
+        "userDefined": false
+      },
+      {
+        "text": "VPN",
+        "alias": "Wans",
+        "meta": "@WANType",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525426310
+  },
+  {
+    "id": "39bf3f2d-10f5-42d9-91e1-b960cfc59c8d",
+    "data": [
+      {
+        "text": "Connect",
+        "alias": "Uplinks",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Beijing",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " Site to ",
+        "userDefined": false
+      },
+      {
+        "text": "RouteVPN",
+        "alias": "Wans",
+        "meta": "@WANType",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525426310
+  },
+  {
+    "id": "b25bba5c-a936-4aee-b902-0e55d6817e9f",
+    "data": [
+      {
+        "text": "Add an ",
+        "userDefined": false
+      },
+      {
+        "text": "Internet",
+        "alias": "Wans",
+        "meta": "@WANType",
+        "userDefined": true
+      },
+      {
+        "text": " uplink called ",
+        "userDefined": false
+      },
+      {
+        "text": "ILink",
+        "alias": "Uplinks",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " to site ",
+        "userDefined": false
+      },
+      {
+        "text": "Berlin",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Branch",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525426310
+  },
+  {
+    "id": "0fb5282b-250b-4ba8-a087-e631a7cf9bce",
+    "data": [
+      {
+        "text": "Bond  ",
+        "userDefined": false
+      },
+      {
+        "text": "NewYork",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Boutique",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
+        "userDefined": true
+      },
+      {
+        "text": " to ",
+        "userDefined": false
+      },
+      {
+        "text": "RouteVPN",
+        "alias": "Wans",
+        "meta": "@WANType",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525426310
+  },
+  {
+    "id": "4492b500-49b3-45b4-b457-8aad9db7be95",
+    "data": [
+      {
+        "text": "Add an ",
+        "userDefined": false
+      },
+      {
+        "text": "Internet",
+        "alias": "Wans",
+        "meta": "@WANType",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "uplink",
+        "alias": "Uplinks",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " to site ",
+        "userDefined": false
+      },
+      {
+        "text": "Melbourne",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Shop",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525426310
+  }
+]

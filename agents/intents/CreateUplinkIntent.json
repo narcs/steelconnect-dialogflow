@@ -1,0 +1,92 @@
+{
+  "id": "f47796b8-5382-453e-be83-4afaaf0efd33",
+  "name": "CreateUplinkIntent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "CreateUplink",
+      "affectedContexts": [
+        {
+          "name": "CreateUplinkIntent-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "f480b2f6-129d-42e2-91f7-7aea78f56962",
+          "required": true,
+          "dataType": "@WANType",
+          "name": "Wans",
+          "value": "$Wans",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the connected wan?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "54f12351-cb5f-48dd-b8fe-a0a0b41754c1",
+          "required": true,
+          "dataType": "@sys.geo-city",
+          "name": "City",
+          "value": "$City",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the city name?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "c641f1a3-bd0c-46ba-bd89-a2d68bf3d9cd",
+          "required": false,
+          "dataType": "@SiteTypes",
+          "name": "SiteTypes",
+          "value": "$SiteTypes",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the site type?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "758fffc8-f964-4436-87ba-8462a20907af",
+          "required": false,
+          "dataType": "@sys.any",
+          "name": "Uplinks",
+          "value": "$Uplinks",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What ido you like to call the uplink?"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1525426310,
+  "fallbackIntent": false,
+  "events": []
+}

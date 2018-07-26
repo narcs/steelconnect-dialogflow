@@ -1,0 +1,48 @@
+{
+  "id": "e6eea4ea-a890-4117-ba1b-83bf227493aa",
+  "name": "ListSites",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "ListSites",
+      "affectedContexts": [
+        {
+          "name": "ReadSiteList",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "ListSites-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "36124b70-4cca-4514-a0e6-b70af995f2b7",
+          "required": false,
+          "dataType": "",
+          "name": "organisation",
+          "value": "\u003cyour_org_name\u003e",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "There was an error connecting with SteelConnect, please try again later."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}
