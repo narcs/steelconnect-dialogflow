@@ -89,4 +89,3 @@ def format_sitelink_list(api_auth, items):
         s += "\n - To: {} ({}), Status: {}".format(remote_site_name, link["remote_site"], link["status"])
 
     return s
-        raise APIError("Error: Could not connect to SteelConnect")
