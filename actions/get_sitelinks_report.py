@@ -3,7 +3,7 @@ import logging
 from flask import json
 from actions.util import *
 
-def get_sitelinks(api_auth, parameters, contexts):
+def get_sitelinks_report(api_auth, parameters, contexts):
     """
     :param api_auth: steelconnect api object
     :type api_auth: SteelConnectAPI
@@ -13,15 +13,10 @@ def get_sitelinks(api_auth, parameters, contexts):
     :rtype: string
     """
 
-    site_name = parameters["SiteName"]
-    site_city = parameters["SiteCity"]
-    site_country_id = parameters["SiteCountry"]["alpha-2"]
-    site_id = ""
+    # To check every sitelink, we need to go through each site in the org
+    # and compile a list of all unique sitelinks, then count statuses.
 
-    try:
-        site_id = get_site_id_by_name(api_auth, site_name, site_city, site_country_id)
-    except APIError as e:
-        return str(e)
+
 
     res = api_auth.sitelink.get_sitelinks(site_id)
     speech = ""
