@@ -1,0 +1,38 @@
+{
+  "id": "e72a7b25-96b9-40ea-9a3c-640ff30882ad",
+  "timestamp": "2018-05-11T03:59:31.488Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "Tell me about the WAN named GlobalNet",
+    "speech": "",
+    "action": "GetWAN",
+    "actionIncomplete": false,
+    "parameters": {
+      "WAN": "WAN",
+      "WANName": "GlobalNet"
+    },
+    "contexts": [],
+    "metadata": {
+      "intentId": "4144a636-a198-4e62-b07c-9fbc4acd25cb",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "intentName": "GetWAN"
+    },
+    "fulfillment": {
+      "speech": "",
+      "messages": [
+        {
+          "type": 0,
+          "speech": ""
+        }
+      ]
+    },
+    "score": 1
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success"
+  },
+  "sessionId": "0bca09db-65f9-46c0-9bf8-51a006b14a65"
+}

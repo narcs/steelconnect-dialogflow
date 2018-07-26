@@ -1,16 +1,27 @@
 {
-  "id": "78e01cb3-5e73-4af8-b9a8-ba109291a10b",
-  "name": "CreateAppliance",
+  "id": "a12e1635-1199-4763-bf07-e02937d0bbdc",
+  "name": "GetApplianceInfo",
   "auto": true,
   "contexts": [],
   "responses": [
     {
       "resetContexts": false,
-      "action": "CreateAppliance",
-      "affectedContexts": [],
+      "action": "GetApplianceInfo",
+      "affectedContexts": [
+        {
+          "name": "GetApplianceInfo-followup",
+          "parameters": {},
+          "lifespan": 1
+        },
+        {
+          "name": "DisplayApplianceInfo",
+          "parameters": {},
+          "lifespan": 1
+        }
+      ],
       "parameters": [
         {
-          "id": "68831408-f557-4072-a402-774bf53c1da7",
+          "id": "bbfe7550-1b02-451d-b676-acf263eadb55",
           "required": true,
           "dataType": "@sys.any",
           "name": "SiteName",
@@ -18,7 +29,7 @@
           "isList": false
         },
         {
-          "id": "2511eb65-5615-4dd5-8af2-b8d8a0744c8b",
+          "id": "732271f9-86da-4ae8-b365-7d82b0fc891f",
           "required": true,
           "dataType": "@sys.geo-city",
           "name": "City",
@@ -26,7 +37,7 @@
           "isList": false
         },
         {
-          "id": "277e9433-5c78-486c-9695-cbbfcf0d6111",
+          "id": "9499c683-7462-4059-b46c-b7485875c9d1",
           "required": true,
           "dataType": "@sys.geo-country-code",
           "name": "Country",
@@ -34,7 +45,7 @@
           "isList": false
         },
         {
-          "id": "dcd3c495-6a57-4f3b-a72c-235cbe3b2ae7",
+          "id": "aa064914-efc1-4ad8-88c3-76d8b58f0be9",
           "required": true,
           "dataType": "@Model",
           "name": "Model",
@@ -56,7 +67,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1526025231,
+  "lastUpdate": 1526025822,
   "fallbackIntent": false,
   "events": []
 }

@@ -1,44 +1,36 @@
 {
-  "id": "78e01cb3-5e73-4af8-b9a8-ba109291a10b",
-  "name": "CreateAppliance",
+  "id": "c2a0e787-cab6-45f4-bb23-05a1d2e772cb",
+  "name": "GetUplinkInfo",
   "auto": true,
   "contexts": [],
   "responses": [
     {
       "resetContexts": false,
-      "action": "CreateAppliance",
+      "action": "GetUplinkInfo",
       "affectedContexts": [],
       "parameters": [
         {
-          "id": "68831408-f557-4072-a402-774bf53c1da7",
-          "required": true,
-          "dataType": "@sys.any",
-          "name": "SiteName",
-          "value": "$SiteName",
-          "isList": false
-        },
-        {
-          "id": "2511eb65-5615-4dd5-8af2-b8d8a0744c8b",
-          "required": true,
+          "id": "433148b1-4e2c-4d64-8690-cfebe34e8ed0",
+          "required": false,
           "dataType": "@sys.geo-city",
           "name": "City",
           "value": "$City",
           "isList": false
         },
         {
-          "id": "277e9433-5c78-486c-9695-cbbfcf0d6111",
-          "required": true,
+          "id": "8c155ce7-aba2-41b5-a588-61ff04e3d2ef",
+          "required": false,
           "dataType": "@sys.geo-country-code",
           "name": "Country",
           "value": "$Country",
           "isList": false
         },
         {
-          "id": "dcd3c495-6a57-4f3b-a72c-235cbe3b2ae7",
-          "required": true,
-          "dataType": "@Model",
-          "name": "Model",
-          "value": "$Model",
+          "id": "146f7d43-0fbb-4495-98e5-d289a5632490",
+          "required": false,
+          "dataType": "@sys.any",
+          "name": "SiteName",
+          "value": "$SiteName",
           "isList": false
         }
       ],
@@ -56,7 +48,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1526025231,
+  "lastUpdate": 1531483112,
   "fallbackIntent": false,
   "events": []
 }

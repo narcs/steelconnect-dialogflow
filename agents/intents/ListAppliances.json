@@ -1,19 +1,25 @@
 {
-  "id": "b4466da2-60c8-4ffa-83da-bb55d9408558",
-  "name": "Default Welcome Intent",
+  "id": "f363ca3e-542b-437a-8a5e-16fed423f0c9",
+  "name": "ListAppliances",
   "auto": true,
   "contexts": [],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.welcome",
-      "affectedContexts": [],
+      "action": "ListAppliances",
+      "affectedContexts": [
+        {
+          "name": "ReadApplianceList",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
       "parameters": [],
       "messages": [
         {
           "type": 0,
           "lang": "en",
-          "speech": "Hi! What can SteelConnect do for you today?"
+          "speech": []
         }
       ],
       "defaultResponsePlatforms": {},
@@ -21,12 +27,9 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": false,
+  "webhookUsed": true,
   "webhookForSlotFilling": false,
+  "lastUpdate": 1526040973,
   "fallbackIntent": false,
-  "events": [
-    {
-      "name": "WELCOME"
-    }
-  ]
+  "events": []
 }
