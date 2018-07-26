@@ -30,7 +30,6 @@ def create_uplink_select_site(api_auth, parameters, contexts):
     found = False
 
     for item in data_sites["items"]:
-        #logging.debug(item["name"])
         if (site_type == item["name"]):
             id = item["id"]
             found = True

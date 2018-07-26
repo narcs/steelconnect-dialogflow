@@ -24,7 +24,7 @@ def create_uplink(api_auth, parameters, contexts):
         logging.error(error_string)
         return error_string
 
-    if uplink_name == "":
+    #if uplink_name == "":
         uplink_name = "Uplink"
 		
 	# Get all the sites and check whether there is a site match given city
@@ -33,7 +33,6 @@ def create_uplink(api_auth, parameters, contexts):
     ids = []
 
     for item in data_sites["items"]:
-        #logging.debut(item["city"])
         if (city.lower() == item["city"].lower()):
             ids.append(item["id"])
             sites.append("{}, {}, {}".format(item["name"], item["city"], item["country"]))
@@ -66,8 +65,8 @@ def create_uplink(api_auth, parameters, contexts):
     # Otherwise only one site, so pop it into site
     site_id = ids.pop()
     site = sites.pop()
-    # call create uplink api
 
+    # call create uplink api
     res = api_auth.uplink.create_uplink(site_id, uplink_name, wan)
 
     if res.status_code == 200:
