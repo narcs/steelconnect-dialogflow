@@ -31,7 +31,7 @@ from actions.get_uplink_info import get_uplink_info
 
 from actions.create_appliance import create_appliance
 
-from actions.get_sitelinks import get_sitelinks
+from actions.get_sitelinks_report import get_sitelinks_report
 
 app = Flask(__name__)
 app.Debug = True
@@ -96,7 +96,7 @@ register_action("DeleteAppliance.DeleteAppliance-custom", delete_appliance_follo
 register_action("GetApplianceInfo", get_appliance_info)
 register_action("GetApplianceInfo.GetApplianceInfo-custom", get_appliance_info_followup_custom)
 register_action("CreateAppliance", create_appliance)
-register_action("GetSitelinks", get_sitelinks)
+register_action("GetSitelinksReport", get_sitelinks_report)
 
 @app.route('/')
 def home():

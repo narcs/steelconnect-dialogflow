@@ -13,22 +13,28 @@ def get_sitelinks_report(api_auth, parameters, contexts):
     :rtype: string
     """
 
+    all_sitelinks = {}
+    error_occurred = False
+
     # To check every sitelink, we need to go through each site in the org
     # and compile a list of all unique sitelinks, then count statuses.
+    sites_res = api_auth.site.list_sites()
+    if sites_res.status_code != 200:
+        return "Failed to get list of sites for getting all sitelinks"
 
+    for site in sites_data.json()["items"]:
+        sitelinks_res = api_auth.sitelink.get_sitelinks(site["id"])
+        if sitelinks_res.status_code == 404:
+            pass # No sitelinks for this site
+        elif sitelinks_res.status_code != 200:
+            # We'll log an error and skip this one.
+            logging.warn("Failed to get sitelinks for {}".format(site["id"]))
+            error_occurred = True
+        else:
+            for sitelink in sitelinks_res.json()["items"]:
+                if sitelink["id"] not in all_sitelinks:
+                    all_sitelinks[sitelink["id"]] = sitelink
 
+    # Now let us summarise these sitelinks.
+    return "There are {} sitelinks".format(len(all_sitelinks))
 
-    res = api_auth.sitelink.get_sitelinks(site_id)
-    speech = ""
-
-    if res.status_code == 200:
-        data = res.json()["items"]
-        if len(data) != 0:
-            speech = "Tunnels from {}: {}".format(site_name, format_sitelink_list(api_auth, data))
-
-    elif res.status_code == 404:
-        speech = "There are no tunnels from {}".format(site_name)
-    else:
-        speech = "Error: Unspecified error"
-
-    return speech
