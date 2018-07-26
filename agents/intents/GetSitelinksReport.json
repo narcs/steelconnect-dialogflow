@@ -1,0 +1,29 @@
+{
+  "id": "12d2fd2d-6fec-4a33-8033-413b1129d91c",
+  "name": "GetSitelinksReport",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "GetSitelinksReport",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1532576287,
+  "fallbackIntent": false,
+  "events": []
+}

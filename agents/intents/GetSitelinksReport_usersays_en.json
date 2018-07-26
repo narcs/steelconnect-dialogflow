@@ -1,0 +1,74 @@
+[
+  {
+    "id": "04c4e03b-7a4d-42ea-a7ba-dec0cf0e6259",
+    "data": [
+      {
+        "text": "sitelink report",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1532576287
+  },
+  {
+    "id": "333f6997-a7eb-45c8-b97e-c2b7712f5a83",
+    "data": [
+      {
+        "text": "overlay report",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1532576287
+  },
+  {
+    "id": "cae09ebc-2710-4035-8b4d-85921033db86",
+    "data": [
+      {
+        "text": "tunnel report",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1532576287
+  },
+  {
+    "id": "9ed1a77a-67ab-4d86-9485-13deeff14022",
+    "data": [
+      {
+        "text": "tunnels report",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1532576287
+  },
+  {
+    "id": "b915d595-206c-4685-84c2-a70f6c92554c",
+    "data": [
+      {
+        "text": "overlays report",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1532576287
+  },
+  {
+    "id": "a2e4ad5c-6dbf-4dd5-8772-d745d7e81eb8",
+    "data": [
+      {
+        "text": "sitelinks report",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1532576287
+  }
+]
