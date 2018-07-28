@@ -36,6 +36,7 @@ app = Flask(__name__)
 app.Debug = True
 
 firestore_API = "https://firestore.googleapis.com/v1beta1/projects/{}/databases/(default)/documents".format(firestore_project_id)
+collection = "Accounts"
 
 # Setup up api authentication
 try:
@@ -144,7 +145,7 @@ def check_passwords_match(password_1, password_2):
     if password_1 == password_2:
         return True
     else:
-        return "Passwords do not match"
+        return "Password confirmation does not match"
 
 @app.route("/authenticate", methods=["GET", "POST"])
 def authenticate(authenticated=None):
@@ -152,7 +153,7 @@ def authenticate(authenticated=None):
         username = request.form["username"]
         password = request.form["password"]
         # Get data from Firestore
-        data = validate_username_password(firestore_API + "/Accounts/", username, password)
+        data = validate_username_password(firestore_API + "/{}/".format(collection), username, password)
         if isinstance(data, str):
             return data
         else:
@@ -205,14 +206,46 @@ def create():
             hashed_password = generate_password_hash(password)
             password_request_body = create_firestore_password_request_body(hashed_password)
             request_body = create_firestore_request_body(realm_request_body, password_request_body)
-            request_url = "{}{}{}{}".format(firestore_API, "/Accounts", "?documentId=", document_id)
+            request_url = "{}{}{}{}".format(firestore_API, "/{}".format(collection), "?documentId=", document_id)
             res = requests.post(request_url, json=request_body)
             if res.status_code == 200:
                 return "Done"
+            elif res.status_code == 409:
+                return "User already exists"
             else:
                 return "Error"
 
     return render_template("create.html")
+
+@app.route("/change_password", methods=["GET", "POST"])
+def change_password():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        new_password = request.form["new_password"]
+        new_password_confirm = request.form["new_password_confirm"]
+        # Validate username and password
+        data = validate_username_password(firestore_API + "/{}/".format(collection), username, password)
+        if isinstance(data, str):
+            return data
+        else:
+            passwords_match = check_passwords_match(new_password, new_password_confirm)
+            if isinstance(passwords_match, str):
+                return passwords_match
+            else:
+                # Update password
+                res = requests.get(firestore_API + "/{}/".format(collection) + username)
+                if res.status_code == 200:
+                    data = res.json()
+                    hashed_password = generate_password_hash(new_password)
+                    data["fields"]["password"]["stringValue"] = hashed_password 
+                    del data["name"]
+                    del data["createTime"]
+                    del data["updateTime"]
+                    res = requests.patch(firestore_API + "/{}/".format(collection) + username + "?currentDocument.exists=true", json=data)
+                    if res.status_code == 200:
+                        return "Password successfully changed"
+    return render_template("change_password.html")
 
 def create_firestore_realms_request_body(new_realms):
     body = {
