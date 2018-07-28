@@ -128,32 +128,45 @@ def webhook():
 
     return format_response(response)                        # Correctly format the text response into json for Dialogflow to read out to the user
 
+def validate_username_password(firestore_collection_api, username, password):
+    res = requests.get(firestore_collection_api + username)
+    if res.status_code == 200:
+        data = res.json()["fields"]
+        hashed_password = data["password"]["stringValue"]
+        if check_password_hash(hashed_password, password):
+            return data
+        else:
+            return "Wrong password"
+    else:
+        return "Username not found"
+
+def check_passwords_match(password_1, password_2):
+    if password_1 == password_2:
+        return True
+    else:
+        return "Passwords do not match"
+
 @app.route("/authenticate", methods=["GET", "POST"])
 def authenticate(authenticated=None):
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
         # Get data from Firestore
-        res = requests.get(firestore_API + "/Accounts/" + username)
-        if res.status_code == 200:
-            data = res.json()["fields"]
-            hashed_password = data["password"]["stringValue"]
-            if check_password_hash(hashed_password, password):
-                # Get realm
-                realms = data["realms"]["mapValue"]["fields"]
-                realm = realms.keys()[0] # Get first key TODO: allow users to choose realm
-                realm = realm.encode("ascii")
-                # Get organisation id
-                org_ids = realms[realm]["arrayValue"]["values"]
-                org_id = org_ids[0]["stringValue"] # Get first org_id TODO: allow users to choose org_id
-                org_id = org_id.encode("ascii")
-                print(realm, org_id)
-                app.config["SC_API"] = SteelConnectAPI(username, password, realm, org_id)
-                return "success!"
-            else:
-                return "Wrong password"
+        data = validate_username_password(firestore_API + "/Accounts/", username, password)
+        if isinstance(data, str):
+            return data
         else:
-            return "Username not found"
+            # Get realm
+            realms = data["realms"]["mapValue"]["fields"]
+            realm = realms.keys()[0] # Get first key TODO: allow users to choose realm
+            realm = realm.encode("ascii")
+            # Get organisation id
+            org_ids = realms[realm]["arrayValue"]["values"]
+            org_id = org_ids[0]["stringValue"] # Get first org_id TODO: allow users to choose org_id
+            org_id = org_id.encode("ascii")
+            print(realm, org_id)
+            app.config["SC_API"] = SteelConnectAPI(username, password, realm, org_id)
+            return "success!"
     if app.config["SC_API"]:
         authenticated = app.config["SC_API"]
     return render_template("authenticate.html", authenticated=authenticated)
@@ -178,8 +191,9 @@ def create():
         password_confirm = request.form["password_confirm"]
         realm = request.form["realm"]
         org_id = request.form["org_id"]
-        if password != password_confirm:
-            return "Passwords do not match"
+        passwords_match = check_passwords_match(password, password_confirm)
+        if isinstance(passwords_match, str):
+            return passwords_match
         else:
             document_id = username
             realms = {
