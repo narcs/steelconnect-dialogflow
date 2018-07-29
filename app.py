@@ -112,7 +112,7 @@ def webhook():
     """
     # Checked authentication
     if not app.config["SC_API"]:
-        response = "Not authenticated."
+        response = "Not authenticated. Login at: {}authenticate".format(request.host_url)
         return format_response(response)
 
     req = request.get_json(silent=True, force=True)
