@@ -2,7 +2,7 @@
 # from future.standard_library import install_aliases
 # install_aliases()
 
-from flask import Flask, request, make_response, render_template, url_for, redirect
+from flask import Flask, request, make_response, render_template, url_for, redirect, Markup
 import requests
 import json
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -35,17 +35,26 @@ from actions.create_appliance import create_appliance
 app = Flask(__name__)
 app.Debug = True
 
-firestore_API = "https://firestore.googleapis.com/v1beta1/projects/{}/databases/(default)/documents".format(firestore_project_id)
-collection = "Accounts"
+FIRESTORE_API = "https://firestore.googleapis.com/v1beta1/projects/{}/databases/(default)/documents".format(firestore_project_id)
+COLLECTION = "Accounts"
+
+# CSS notification category classes
+PRIMARY = "is-primary"
+LINK = "is_link"
+INFO = "is-info"
+SUCCESS = "is-success"
+WARNING = "is-warning"
+DANGER = "is-danger"
 
 # Setup up api authentication
-try:
-    with open("./default-auth.json") as file:
-        j = json.load(file)
-        app.config["SC_API"] = SteelConnectAPI(j["username"], j["password"], j["realm-url"], j["org-id"])
-except IOError:
-    j = None
-    app.config["SC_API"] = None
+# try:
+#     with open("./default-auth.json") as file:
+#         j = json.load(file)
+#         app.config["SC_API"] = SteelConnectAPI(j["username"], j["password"], j["realm-url"], j["org-id"])
+# except IOError:
+#     j = None
+#     app.config["SC_API"] = None
+app.config["SC_API"] = None
 
 
 # Register actions.
@@ -141,21 +150,52 @@ def validate_username_password(firestore_collection_api, username, password):
     else:
         return "Username not found"
 
-def check_passwords_match(password_1, password_2):
-    if password_1 == password_2:
+def valid_passwords_match(password_1, password_2):
+    if password_1 == "":
+        return "Password cannot be blank"
+    elif password_1 == password_2:
         return True
     else:
-        return "Password confirmation does not match"
+        return "Password confirm does not match"
+
+def create_notifications(notifications):
+    result = []
+    for notification in notifications:
+        temp_notification = {
+            "category": notification["category"],
+            "message": notification["message"],
+        }
+        result.append(temp_notification)
+
+    return result 
+
+def create_notification(category, message):
+    notification = {
+        "category": category,
+        "message": message,
+    }
+    return notification
+
+@app.route("/test")
+def test():
+    notification_1 = create_notification(DANGER, "hello")
+    notification_2 = create_notification(SUCCESS, "hello")
+    notifications = [notification_1, notification_2]
+    return render_template("test.html", notifications=notifications)
 
 @app.route("/authenticate", methods=["GET", "POST"])
-def authenticate(authenticated=None):
+def authenticate(title="Authentication", authenticated=None, notification=None):
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
+        if username == "":
+            notification = create_notification(WARNING, "Username not entered")
+            return render_template("authenticate.html", title=title, authenticated=authenticated, notification=notification)
         # Get data from Firestore
-        data = validate_username_password(firestore_API + "/{}/".format(collection), username, password)
+        data = validate_username_password(FIRESTORE_API + "/{}/".format(COLLECTION), username, password)
         if isinstance(data, str):
-            return data
+            notification = create_notification(DANGER, data)
+            return render_template("authenticate.html", title=title, authenticated=authenticated, notification=notification)
         else:
             # Get realm
             realms = data["realms"]["mapValue"]["fields"]
@@ -167,34 +207,52 @@ def authenticate(authenticated=None):
             org_id = org_id.encode("ascii")
             print(realm, org_id)
             app.config["SC_API"] = SteelConnectAPI(username, password, realm, org_id)
-            return "success!"
+            authenticated = app.config["SC_API"]
+            notification = create_notification(SUCCESS, "Successfully logged in as: {}".format(username))
+            return render_template("authenticate.html", title=title, authenticated=authenticated, notification=notification)
     if app.config["SC_API"]:
         authenticated = app.config["SC_API"]
-    return render_template("authenticate.html", authenticated=authenticated)
+    return render_template("authenticate.html", title=title, authenticated=authenticated, notification=notification)
 
 @app.route("/status")
 def status():
     if not app.config["SC_API"]:
-        return "Currently not logged in."
+        return format_response("Currently not authenticated. Login at: {}authenticate".format(request.host_url))
     else:
-        return "Logged in as: {}".format(app.config["SC_API"].auth.username)
+        return format_response("Logged in as: {}".format(app.config["SC_API"].auth.username))
 
 @app.route("/logout")
 def logout():
     app.config["SC_API"] = None
-    return redirect(url_for("authenticate"))
+    title = "Authentication"
+    authenticated=None
+    notification = create_notification(SUCCESS, "Successfully logged out")
+    return render_template("authenticate.html", title=title, authenticated=authenticated, notification=notification)
 
 @app.route("/create", methods=["GET", "POST"])
-def create():
+def create(title="Create Account", notifications=None, notification=None):
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
         password_confirm = request.form["password_confirm"]
         realm = request.form["realm"]
         org_id = request.form["org_id"]
-        passwords_match = check_passwords_match(password, password_confirm)
-        if isinstance(passwords_match, str):
-            return passwords_match
+        notifications = []
+        if username == "":
+            notification = create_notification(WARNING, "Username not entered")
+            notifications.append(notification)
+        valid_passwords = valid_passwords_match(password, password_confirm)
+        if isinstance(valid_passwords, str):
+            notification = create_notification(DANGER, valid_passwords)
+            notifications.append(notification)
+        if realm == "":
+            notification = create_notification(WARNING, "Realm not entered")
+            notifications.append(notification)
+        if org_id == "":
+            notification = create_notification(WARNING, "Organisation Id not entered")
+            notifications.append(notification)
+        if len(notifications) > 0:
+            return render_template("create.html", title=title, notifications=notifications)
         else:
             document_id = username
             realms = {
@@ -206,16 +264,20 @@ def create():
             hashed_password = generate_password_hash(password)
             password_request_body = create_firestore_password_request_body(hashed_password)
             request_body = create_firestore_request_body(realm_request_body, password_request_body)
-            request_url = "{}{}{}{}".format(firestore_API, "/{}".format(collection), "?documentId=", document_id)
+            request_url = "{}{}{}{}".format(FIRESTORE_API, "/{}".format(COLLECTION), "?documentId=", document_id)
             res = requests.post(request_url, json=request_body)
+            print(res)
             if res.status_code == 200:
-                return "Done"
+                notification = create_notification(SUCCESS, "Successfully created account: {}".format(username))
+                return render_template("create.html", title=title, notification=notification)
             elif res.status_code == 409:
-                return "User already exists"
+                notification = create_notification(DANGER, "Account already exists: {}".format(username))
+                return render_template("create.html", title=title, notification=notification)
             else:
-                return "Error"
+                notification = create_notification(DANGER, "Error status code: {}".format(res.status_code))
+                return render_template("create.html", title=title, notification=notification)
 
-    return render_template("create.html")
+    return render_template("create.html", title=title, notification=notification)
 
 @app.route("/change_password", methods=["GET", "POST"])
 def change_password():
@@ -225,16 +287,16 @@ def change_password():
         new_password = request.form["new_password"]
         new_password_confirm = request.form["new_password_confirm"]
         # Validate username and password
-        data = validate_username_password(firestore_API + "/{}/".format(collection), username, password)
+        data = validate_username_password(FIRESTORE_API + "/{}/".format(COLLECTION), username, password)
         if isinstance(data, str):
             return data
         else:
-            passwords_match = check_passwords_match(new_password, new_password_confirm)
+            passwords_match = valid_passwords_match(new_password, new_password_confirm)
             if isinstance(passwords_match, str):
                 return passwords_match
             else:
                 # Update password
-                res = requests.get(firestore_API + "/{}/".format(collection) + username)
+                res = requests.get(FIRESTORE_API + "/{}/".format(COLLECTION) + username)
                 if res.status_code == 200:
                     data = res.json()
                     hashed_password = generate_password_hash(new_password)
@@ -242,7 +304,7 @@ def change_password():
                     del data["name"]
                     del data["createTime"]
                     del data["updateTime"]
-                    res = requests.patch(firestore_API + "/{}/".format(collection) + username + "?currentDocument.exists=true", json=data)
+                    res = requests.patch(FIRESTORE_API + "/{}/".format(COLLECTION) + username + "?currentDocument.exists=true", json=data)
                     if res.status_code == 200:
                         return "Password successfully changed"
     return render_template("change_password.html")
@@ -305,4 +367,6 @@ def format_response(speech):
 
 if __name__ == '__main__':
     # Only used when running locally, uses entrypoint in app.yaml when run on google cloud
+    # app.secret_key = 'H\xa9\xde\xe5\xd8\x19J\x01T\x17\x95\xbf~\xc4\xf1Q\x96ph?4;\xd8k'
+    app.secret_key = 'secret123'
     app.run(debug=True, port=8080, host='127.0.0.1')
