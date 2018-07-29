@@ -150,9 +150,12 @@ def validate_username_password(firestore_collection_api, username, password):
     else:
         return "Username not found"
 
-def valid_passwords_match(password_1, password_2):
+def valid_passwords_match(password_1, password_2, field):
     if password_1 == "":
-        return "Password cannot be blank"
+        if field:
+            return "{} password cannot be blank".format(field)
+        else:
+            return "Password cannot be blank"
     elif password_1 == password_2:
         return True
     else:
@@ -241,7 +244,7 @@ def create(title="Create Account", notifications=None, notification=None):
         if username == "":
             notification = create_notification(WARNING, "Username not entered")
             notifications.append(notification)
-        valid_passwords = valid_passwords_match(password, password_confirm)
+        valid_passwords = valid_passwords_match(password, password_confirm, None)
         if isinstance(valid_passwords, str):
             notification = create_notification(DANGER, valid_passwords)
             notifications.append(notification)
@@ -280,34 +283,45 @@ def create(title="Create Account", notifications=None, notification=None):
     return render_template("create.html", title=title, notification=notification)
 
 @app.route("/change_password", methods=["GET", "POST"])
-def change_password():
+def change_password(title="Change Password", notifications=None, notification=None):
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
         new_password = request.form["new_password"]
         new_password_confirm = request.form["new_password_confirm"]
+        notifications = []
+        if username == "":
+            notification = create_notification(WARNING, "Username not entered")
+            notifications.append(notification)
+        valid_new_passwords = valid_passwords_match(new_password, new_password_confirm, "New")
+        if isinstance(valid_new_passwords, str):
+            notification = create_notification(DANGER, valid_new_passwords)
+            notifications.append(notification)
+        if len(notifications) > 0:
+            return render_template("change_password.html", title=title, notifications=notifications)
         # Validate username and password
         data = validate_username_password(FIRESTORE_API + "/{}/".format(COLLECTION), username, password)
         if isinstance(data, str):
-            return data
+            notification = create_notification(DANGER, data)
+            return render_template("change_password.html", title=title, notification=notification)
         else:
-            passwords_match = valid_passwords_match(new_password, new_password_confirm)
-            if isinstance(passwords_match, str):
-                return passwords_match
-            else:
-                # Update password
-                res = requests.get(FIRESTORE_API + "/{}/".format(COLLECTION) + username)
+            # Update password
+            res = requests.get(FIRESTORE_API + "/{}/".format(COLLECTION) + username)
+            if res.status_code == 200:
+                data = res.json()
+                hashed_password = generate_password_hash(new_password)
+                data["fields"]["password"]["stringValue"] = hashed_password 
+                del data["name"]
+                del data["createTime"]
+                del data["updateTime"]
+                res = requests.patch(FIRESTORE_API + "/{}/".format(COLLECTION) + username + "?currentDocument.exists=true", json=data)
                 if res.status_code == 200:
-                    data = res.json()
-                    hashed_password = generate_password_hash(new_password)
-                    data["fields"]["password"]["stringValue"] = hashed_password 
-                    del data["name"]
-                    del data["createTime"]
-                    del data["updateTime"]
-                    res = requests.patch(FIRESTORE_API + "/{}/".format(COLLECTION) + username + "?currentDocument.exists=true", json=data)
-                    if res.status_code == 200:
-                        return "Password successfully changed"
-    return render_template("change_password.html")
+                    notification = create_notification(SUCCESS, "Password successfully changed")
+                    return render_template("change_password.html", title=title, notification=notification)
+                else:
+                    notification = create_notification(DANGER, "Error status code: {}".format(res.status_code))
+                    return render_template("change_password.html", title=title, notification=notification)
+    return render_template("change_password.html", title=title)
 
 def create_firestore_realms_request_body(new_realms):
     body = {
