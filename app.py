@@ -2,7 +2,7 @@
 # from future.standard_library import install_aliases
 # install_aliases()
 
-from flask import Flask, request, make_response, render_template, url_for, redirect, Markup
+from flask import Flask, request, make_response, render_template, url_for, redirect
 import requests
 import json
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -227,10 +227,7 @@ def status():
 @app.route("/logout")
 def logout():
     app.config["SC_API"] = None
-    title = "Authentication"
-    authenticated=None
-    notification = create_notification(SUCCESS, "Successfully logged out")
-    return render_template("authenticate.html", title=title, authenticated=authenticated, notification=notification)
+    return redirect(url_for("authenticate"))
 
 @app.route("/create", methods=["GET", "POST"])
 def create(title="Create Account", notifications=None, notification=None):
