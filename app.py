@@ -46,16 +46,7 @@ SUCCESS = "is-success"
 WARNING = "is-warning"
 DANGER = "is-danger"
 
-# Setup up api authentication
-# try:
-#     with open("./default-auth.json") as file:
-#         j = json.load(file)
-#         app.config["SC_API"] = SteelConnectAPI(j["username"], j["password"], j["realm-url"], j["org-id"])
-# except IOError:
-#     j = None
-#     app.config["SC_API"] = None
 app.config["SC_API"] = None
-
 
 # Register actions.
 # 
@@ -203,12 +194,9 @@ def authenticate(title="Authentication", authenticated=None, notification=None):
             # Get realm
             realms = data["realms"]["mapValue"]["fields"]
             realm = realms.keys()[0] # Get first key TODO: allow users to choose realm
-            realm = realm.encode("ascii")
             # Get organisation id
             org_ids = realms[realm]["arrayValue"]["values"]
             org_id = org_ids[0]["stringValue"] # Get first org_id TODO: allow users to choose org_id
-            org_id = org_id.encode("ascii")
-            print(realm, org_id)
             app.config["SC_API"] = SteelConnectAPI(username, password, realm, org_id)
             authenticated = app.config["SC_API"]
             notification = create_notification(SUCCESS, "Successfully logged in as: {}".format(username))
@@ -379,5 +367,4 @@ def format_response(speech):
 if __name__ == '__main__':
     # Only used when running locally, uses entrypoint in app.yaml when run on google cloud
     # app.secret_key = 'H\xa9\xde\xe5\xd8\x19J\x01T\x17\x95\xbf~\xc4\xf1Q\x96ph?4;\xd8k'
-    app.secret_key = 'secret123'
     app.run(debug=True, port=8080, host='127.0.0.1')
