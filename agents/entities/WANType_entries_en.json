@@ -33,5 +33,23 @@
     "synonyms": [
       "RouteVPN"
     ]
+  },
+  {
+    "value": "WAN",
+    "synonyms": [
+      "WAN"
+    ]
+  },
+  {
+    "value": "TestWAN",
+    "synonyms": [
+      "TestWAN"
+    ]
+  },
+  {
+    "value": "TestVPN",
+    "synonyms": [
+      "TestVPN"
+    ]
   }
 ]
