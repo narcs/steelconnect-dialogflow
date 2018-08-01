@@ -29,7 +29,7 @@ from actions.uplink import list_uplinks
 from actions.get_appliance_info import get_appliance_info
 from actions.get_appliance_info_followup import get_appliance_info_followup
 from actions.get_uplink_info import get_uplink_info
-
+from actions.delete_uplink import delete_uplink
 from actions.create_appliance import create_appliance
 
 app = Flask(__name__)
@@ -70,6 +70,7 @@ def delete_appliance_followup_custom(api_auth, parameters, contexts):
 register_action("CreateSite", create_site)
 register_action("CreateUplink", create_uplink)
 register_action("CreateUplinkSelectSite", create_uplink_select_site)
+register_action("DeleteUplink", delete_uplink)
 register_action("ListSites", list_sites)
 register_action("ListSites.ListSites-custom", list_sites_followup_custom)
 register_action("ListSites.ListSites-yes", list_sites_followup_yes)
