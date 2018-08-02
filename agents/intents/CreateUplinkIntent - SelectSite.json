@@ -19,7 +19,7 @@
           "dataType": "@SiteNames",
           "name": "SiteNames",
           "value": "$SiteNames",
-          "isList": false
+          "isList": true
         }
       ],
       "messages": [
@@ -36,7 +36,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1526786412,
+  "lastUpdate": 1533187811,
   "fallbackIntent": false,
   "events": []
 }

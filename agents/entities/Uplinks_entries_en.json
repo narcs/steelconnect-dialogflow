@@ -7,5 +7,17 @@
       "link",
       "Link"
     ]
+  },
+  {
+    "value": "ILink",
+    "synonyms": [
+      "ILink"
+    ]
+  },
+  {
+    "value": "Connect",
+    "synonyms": [
+      "Connect"
+    ]
   }
 ]

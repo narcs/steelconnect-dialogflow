@@ -1,31 +1,19 @@
 [
   {
-    "id": "7e34df27-cfc7-4da5-8d91-6aa0c0396866",
+    "id": "7ea36ce5-7428-476c-9b44-369fc6a4ff44",
     "data": [
       {
-        "text": "Create appliance",
-        "userDefined": false
-      }
-    ],
-    "isTemplate": false,
-    "count": 0,
-    "updated": 1526024562
-  },
-  {
-    "id": "ec15176b-44a6-41f7-9c5d-2a4e59a18724",
-    "data": [
-      {
-        "text": "Create a ",
+        "text": "Add a ",
         "userDefined": false
       },
       {
-        "text": "raccoon",
+        "text": "SDI-330",
         "alias": "Model",
         "meta": "@Model",
         "userDefined": true
       },
       {
-        "text": " in ",
+        "text": " shadow appliance to ",
         "userDefined": false
       },
       {
@@ -33,128 +21,123 @@
         "alias": "City",
         "meta": "@sys.geo-city",
         "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "a7a05b6a-c6aa-4cac-ba20-66527833067b",
+    "data": [
+      {
+        "text": "Insert a ",
+        "userDefined": false
+      },
+      {
+        "text": "SDI-330",
+        "alias": "Model",
+        "meta": "@Model",
+        "userDefined": false
+      },
+      {
+        "text": " shadow appliance for ",
+        "userDefined": false
+      },
+      {
+        "text": "Melbourne",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
       },
       {
         "text": " ",
         "userDefined": false
       },
       {
-        "text": "Australia",
-        "alias": "Country",
-        "meta": "@sys.geo-country-code",
-        "userDefined": true
-      }
-    ],
-    "isTemplate": false,
-    "count": 0,
-    "updated": 1526024647
-  },
-  {
-    "id": "cc513d40-6a2e-41c5-a61b-6c3cd9a517d6",
-    "data": [
-      {
-        "text": "Create a shadow appliance",
+        "text": "boutique",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
         "userDefined": false
       }
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526024502
+    "updated": 0
   },
   {
-    "id": "deb213af-ecdd-4e37-98b4-6dba5f8dea02",
+    "id": "3bcfb5ef-6120-4241-8383-90fc7287b390",
     "data": [
       {
-        "text": "Create an ",
+        "text": "Create a ",
         "userDefined": false
       },
       {
-        "text": "ewok",
+        "text": "cx-570",
         "alias": "Model",
         "meta": "@Model",
         "userDefined": false
       },
       {
-        "text": " shadow appliance for ",
+        "text": " shadow appliance in ",
         "userDefined": false
       },
       {
-        "text": "chicken",
-        "alias": "SiteName",
-        "meta": "@sys.any",
-        "userDefined": true
-      },
-      {
-        "text": " in ",
-        "userDefined": false
-      },
-      {
-        "text": "Tokyo",
+        "text": "New York",
         "alias": "City",
         "meta": "@sys.geo-city",
         "userDefined": false
       },
       {
-        "text": ", ",
+        "text": " ",
         "userDefined": false
       },
       {
-        "text": "Japan",
-        "alias": "Country",
-        "meta": "@sys.geo-country-code",
+        "text": "boutique",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
         "userDefined": false
       }
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526024502
+    "updated": 0
   },
   {
-    "id": "94d11d74-a51d-4b89-a9a7-2451e00517fa",
+    "id": "13036cb6-d51e-4a2a-8e99-01b526b452cf",
     "data": [
       {
-        "text": "Create ",
+        "text": "Add a ",
         "userDefined": false
       },
       {
-        "text": "panda",
+        "text": "SDI-130",
         "alias": "Model",
         "meta": "@Model",
-        "userDefined": true
-      },
-      {
-        "text": " shadow appliance for ",
         "userDefined": false
       },
       {
-        "text": "banana",
-        "alias": "SiteName",
-        "meta": "@sys.any",
-        "userDefined": true
-      },
-      {
-        "text": " in ",
+        "text": " shadow appliance to ",
         "userDefined": false
       },
       {
-        "text": "Texas",
+        "text": "Melbourne",
         "alias": "City",
         "meta": "@sys.geo-city",
-        "userDefined": true
-      },
-      {
-        "text": ", ",
         "userDefined": false
       },
       {
-        "text": "US",
-        "alias": "Country",
-        "meta": "@sys.geo-country-code",
-        "userDefined": true
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "shop",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
+        "userDefined": false
       }
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526024502
+    "updated": 0
   }
 ]
