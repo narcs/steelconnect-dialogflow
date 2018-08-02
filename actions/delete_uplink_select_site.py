@@ -5,7 +5,7 @@ from requests.auth import HTTPBasicAuth
 import requests
 
 
-def delete_uplink(api_auth, parameters, contexts):
+def delete_uplink_select_site(api_auth, parameters, contexts):
     """
     :param api_auth: steelconnect api object
     :type api_auth: SteelConnectAPI
@@ -15,27 +15,28 @@ def delete_uplink(api_auth, parameters, contexts):
     :rtype: string
     """
     try:
-        city = parameters["City"]
-        wan_name = parameters["Wans"]
-
+        site_type = parameters["SiteNames"]
+        wan_name = contexts[0]["parameters"]["Wans"]
     except KeyError as e:
-        error_string = "Error processing deleteUplink intent. {0}".format(e)
+        error_string = "Error processing deleteUplink-followup intent. {0}".format(e)
         logging.error(error_string)
         return error_string
-		
-	# Get all the sites and check whether there is a site match given city
+
+
+    # Get all the sites and check whether there is a site match given city
     data_sites = api_auth.site.list_sites().json()
-    sites = []
-    ids = []
+    site_id = ""
+    found = False
 
     for item in data_sites["items"]:
-        if (city.lower() == item["city"].lower()):
-            ids.append(item["id"])
-            sites.append("{}".format(item["name"]))
-			
-	# Error if no sites were found in that city
-    if (len(sites) < 1):
-        speech = "Error: No site could be found in that city"
+        if (site_type == item["name"]):
+            site_id = item["id"]
+            found = True
+            break
+
+    #Check if site was found and error if not
+    if not found:
+        speech = "Error: Site {} was not found".format(site_type)
         return speech
 
     # Get all the wans and check whether there is a wan match target wan user want the uplink to be deleted
@@ -45,22 +46,6 @@ def delete_uplink(api_auth, parameters, contexts):
         if wan_name == item["name"]:
             wan = item["id"]
             break
-
-    # If more than one site is found in that city list them and return to Dialogflow for followup intent to handle
-    if (len(sites) > 1):
-        speech = "Which site out of these?"
-        index = 1
-        for site in sites:
-            if index == 1:
-                speech += "{}".format(site)
-            else:
-                speech += ", {}".format(site)
-            index += 1
-        return speech
-		
-    # Otherwise only one site, so pop it into site
-    site_id = ids.pop()
-    site = sites.pop()
 
     # Get uplink info of that site
     data_uplinks = api_auth.uplink.get_uplink_info(site_id).json()
@@ -82,8 +67,9 @@ def delete_uplink(api_auth, parameters, contexts):
     # call delete uplink api
     res = api_auth.uplink.delete_uplink(uplink_id)
 
+
     if res.status_code == 200:
-        speech = "Uplink called {} between site: {} and WAN: {} has been deleted".format(uplink_name, site,
+        speech = "An uplink called {} between site: {} and WAN: {} has been deleted".format(uplink_name, site_type,
                                                                                   wan_name)
     else:
         speech = "Error: Could not connect to SteelConnect"
