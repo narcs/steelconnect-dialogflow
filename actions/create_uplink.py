@@ -25,7 +25,7 @@ def create_uplink(api_auth, parameters, contexts):
         return error_string
 
     #if uplink_name == "":
-        uplink_name = "Uplink"
+    uplink_name = "Uplink"
 		
 	# Get all the sites and check whether there is a site match given city
     data_sites = api_auth.site.list_sites().json()
@@ -37,7 +37,7 @@ def create_uplink(api_auth, parameters, contexts):
             ids.append(item["id"])
             sites.append("{}, {}, {}".format(item["name"], item["city"], item["country"]))
 			
-	# Error of no sites were found in that city
+	# Error if no sites were found in that city
     if (len(sites) < 1):
         speech = "Error: No site could be found in that city"
         return speech
