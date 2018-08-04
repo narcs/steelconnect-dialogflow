@@ -14,13 +14,14 @@ def get_sitelinks_report(api_auth, parameters, contexts):
     :rtype: string
     """
 
-
     all_sitelinks = []
     error_occurred = False
 
     # To check every sitelink, we need to go through each site in the org
     # and compile a list of all unique sitelinks, then count statuses.
     # I haven't seen a way to just get a list of all sitelinks in an org.
+    # FIXME: This often takes too long, and Dialogflow times out. I think
+    # the timeout is five seconds.
     sites_res = api_auth.site.list_sites()
     if sites_res.status_code != 200:
         return "Failed to get list of sites for getting all sitelinks"
