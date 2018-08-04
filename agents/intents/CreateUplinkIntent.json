@@ -7,7 +7,13 @@
     {
       "resetContexts": false,
       "action": "CreateUplink",
-      "affectedContexts": [],
+      "affectedContexts": [
+        {
+          "name": "CreateUplinkIntent-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
       "parameters": [
         {
           "id": "f480b2f6-129d-42e2-91f7-7aea78f56962",
@@ -39,7 +45,7 @@
         },
         {
           "id": "c641f1a3-bd0c-46ba-bd89-a2d68bf3d9cd",
-          "required": true,
+          "required": false,
           "dataType": "@SiteTypes",
           "name": "SiteTypes",
           "value": "$SiteTypes",
@@ -80,6 +86,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
+  "lastUpdate": 1525426310,
   "fallbackIntent": false,
   "events": []
 }

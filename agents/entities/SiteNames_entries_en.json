@@ -1,0 +1,32 @@
+[
+  {
+    "value": "Site",
+    "synonyms": [
+      "Site"
+    ]
+  },
+  {
+    "value": "Branch",
+    "synonyms": [
+      "Branch"
+    ]
+  },
+  {
+    "value": "HQ",
+    "synonyms": [
+      "HQ"
+    ]
+  },
+  {
+    "value": "Laptop",
+    "synonyms": [
+      "Laptop"
+    ]
+  },
+  {
+    "value": "Computer",
+    "synonyms": [
+      "Computer"
+    ]
+  }
+]
