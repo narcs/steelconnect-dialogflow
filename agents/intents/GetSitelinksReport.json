@@ -13,7 +13,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": []
+          "speech": "Sorry, it took too long to check all sitelinks."
         }
       ],
       "defaultResponsePlatforms": {},
@@ -23,7 +23,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1532576287,
+  "lastUpdate": 1533422531,
   "fallbackIntent": false,
   "events": []
 }

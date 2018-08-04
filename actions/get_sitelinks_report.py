@@ -14,8 +14,7 @@ def get_sitelinks_report(api_auth, parameters, contexts):
     :rtype: string
     """
 
-    # It seems that sitelinks have different IDs depending on which side
-    # you're on. So all sitelinks are counted twice.
+
     all_sitelinks = []
     error_occurred = False
 
@@ -42,17 +41,27 @@ def get_sitelinks_report(api_auth, parameters, contexts):
                     site["id"], sitelink["remote_site"], sitelink["status"]))
                 all_sitelinks.append(sitelink)
 
+
+    # It seems that sitelinks have different IDs depending on which side
+    # you're on. So all sitelinks are counted twice.
+    # I will assume both sides have the same state. This may be technically
+    # incorrect though.
+
     # Now let us summarise these sitelinks.
     # Because I don't know all the statuses, I'm just going to count what I see.
     statuses = Counter()
 
     for sitelink in all_sitelinks:
-        statuses[sitelink["status"]] += 1
+        statuses[sitelink["state"]] += 1
 
-    speech = "There are {} sitelinks".format(len(all_sitelinks))
+    n_sitelinks = len(all_sitelinks) / 2
+    if n_sitelinks == 1:
+        speech = "There is 1 sitelink"
+    else:
+        speech = "There are {} sitelinks".format(len(all_sitelinks) / 2)
 
     for status in statuses:
-        speech += "\n  {} {}".format(statuses[status], status)
+        speech += "\n  - {} {}".format(statuses[status] / 2, status)
 
     return speech
 
