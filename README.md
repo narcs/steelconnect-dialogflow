@@ -2,6 +2,24 @@
 
 A webhook for handling SteelConnect API calls using Google Dialogflow (https://dialogflow.com)
 
+## Setting up Firestore Database (Prerequisite)
+1. Login to Firebase at https://firebase.google.com/
+2. Go to console in the top right
+3. Add a new project. Note project name
+4. Create `config.py` and place in app root directory. Assign variable `firestore_project_id` to project name. Use `config.py.example` as a template
+5. Open newly created project
+6. Open main menu. Under 'Develop' section go to 'Database'
+7. Create Firestore database
+8. Select and enable 'Start in test mode' for Firestore security rules. Rule generated should be as follows:
+```
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write;
+    }
+  }
+}
+```
 ## How to set up for local development
 * Clone the repo.
 * Install Python 2.
