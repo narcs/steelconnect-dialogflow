@@ -130,6 +130,18 @@ def webhook():
     return format_response(response)                        # Correctly format the text response into json for Dialogflow to read out to the user
 
 def validate_username_password(firestore_collection_api, username, password):
+    """
+    Validate username and password from Firestore Database
+    :param firestore_collection_api: REST API URL for Firestore Database collection
+    :type firestore_collection_api: string 
+    :param username: SteelConnect username 
+    :type username: string 
+    :param password: SteelConnect password
+    :type password:string 
+    :return: Dict object of SteelConnect Account details from Firestore Database, or string
+             if error
+    :rtype: Dict, or string
+    """
     res = requests.get(firestore_collection_api + username)
     if res.status_code == 200:
         data = res.json()["fields"]
@@ -142,6 +154,17 @@ def validate_username_password(firestore_collection_api, username, password):
         return "Username not found"
 
 def valid_passwords_match(password_1, password_2, field):
+    """
+    Check whether 'password_1' and 'password_2' match
+    :param password_1: password 
+    :type password_1: string 
+    :param password_2: password 
+    :type password_2: string 
+    :param field: Type of password field (e.g. 'New password')
+    :type field: string 
+    :return: True if passwords match, string error message otherwise
+    :rtype: Boolean, or string
+    """
     if password_1 == "":
         if field:
             return "{} password cannot be blank".format(field)
@@ -152,18 +175,16 @@ def valid_passwords_match(password_1, password_2, field):
     else:
         return "Password confirm does not match"
 
-def create_notifications(notifications):
-    result = []
-    for notification in notifications:
-        temp_notification = {
-            "category": notification["category"],
-            "message": notification["message"],
-        }
-        result.append(temp_notification)
-
-    return result 
-
 def create_notification(category, message):
+    """
+    Create object to pass to Jinja2 template to create notifications
+    :param category: CSS category styling class
+    :type category: string 
+    :param message: notification message
+    :type message: string 
+    :return: Dict object suitable to create notification in Jinja2 template
+    :rtype: Dict
+    """
     notification = {
         "category": category,
         "message": message,
@@ -254,7 +275,6 @@ def create(title="Create Account", notifications=None, notification=None):
             request_body = create_firestore_request_body(realm_request_body, password_request_body)
             request_url = "{}{}{}{}".format(FIRESTORE_API, "/{}".format(COLLECTION), "?documentId=", document_id)
             res = requests.post(request_url, json=request_body)
-            print(res)
             if res.status_code == 200:
                 notification = create_notification(SUCCESS, "Successfully created account: {}".format(username))
                 return render_template("create.html", title=title, notification=notification)
@@ -309,6 +329,13 @@ def change_password(title="Change Password", notifications=None, notification=No
     return render_template("change_password.html", title=title)
 
 def create_firestore_realms_request_body(new_realms):
+    """
+    Create request body to insert fields 'realms' for REST API Firestore Database document 
+    :param realms: object for 'realms' field suitable for REST API Firestore Database
+    :type realms: Dict
+    :return: Returns a Dict object suitable for a REST API Firestore request
+    :rtype: Dict 
+    """
     body = {
         "realms": {
             "mapValue": {
@@ -327,6 +354,13 @@ def create_firestore_realms_request_body(new_realms):
     return body
 
 def create_firestore_password_request_body(password):
+    """
+    Create request body to insert fields 'password' for REST API Firestore Database document 
+    :param password: object for 'password' field suitable for REST API Firebase Database
+    :type password: Dict
+    :return: Returns a Dict object suitable for a REST API Firestore request
+    :rtype: Dict 
+    """
     body = {
         "password": {
             "stringValue": password
@@ -335,6 +369,15 @@ def create_firestore_password_request_body(password):
     return body
 
 def create_firestore_request_body(realms, password):
+    """
+    Create request body to insert fields 'realms' and 'password' for REST API Firestore Database document 
+    :param realms: object for 'realms' field suitable for REST API Firestore Database
+    :type realms: Dict
+    :param password: object for 'password' field suitable for REST API Firebase Database
+    :type password: Dict
+    :return: Returns a Dict object suitable for a REST API Firestore request
+    :rtype: Dict 
+    """
     body = {
         "fields": {
             "realms": realms["realms"],
