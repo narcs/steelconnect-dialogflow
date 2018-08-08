@@ -200,6 +200,10 @@ def test():
 
 @app.route("/authenticate", methods=["GET", "POST"])
 def authenticate(title="Authentication", authenticated=None, notification=None):
+    """
+    Page to allow users to login and authenticate through Firestore Database:
+    :return: HTML
+    """
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
@@ -228,6 +232,11 @@ def authenticate(title="Authentication", authenticated=None, notification=None):
 
 @app.route("/status")
 def status():
+    """
+    Get server authentication status - whether anyone is currently logged in
+    :return: Returns a json formatted response
+    :rtype: json
+    """
     if not app.config["SC_API"]:
         return format_response("Currently not authenticated. Login at: {}authenticate".format(request.host_url))
     else:
@@ -235,11 +244,22 @@ def status():
 
 @app.route("/logout")
 def logout():
+    """
+    Logs out anyone currently authenticated and redirects to /authenticate
+    """
     app.config["SC_API"] = None
     return redirect(url_for("authenticate"))
 
 @app.route("/create", methods=["GET", "POST"])
 def create(title="Create Account", notifications=None, notification=None):
+    """
+    Page to allow users to create a new account with fields:
+        - Username
+        - Password
+        - Realm
+        - Organisation I.d
+    :return: HTML
+    """
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
@@ -289,6 +309,10 @@ def create(title="Create Account", notifications=None, notification=None):
 
 @app.route("/change_password", methods=["GET", "POST"])
 def change_password(title="Change Password", notifications=None, notification=None):
+    """
+    Page to allow users to change password
+    :return: HTML
+    """
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
