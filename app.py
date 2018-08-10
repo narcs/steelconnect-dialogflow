@@ -29,7 +29,7 @@ from actions.uplink import list_uplinks
 from actions.get_appliance_info import get_appliance_info
 from actions.get_appliance_info_followup import get_appliance_info_followup
 from actions.get_uplink_info import get_uplink_info
-
+from actions.get_appliances_report import get_appliances_report
 from actions.create_appliance import create_appliance
 
 app = Flask(__name__)
@@ -90,6 +90,7 @@ register_action("DeleteAppliance.DeleteAppliance-custom", delete_appliance_follo
 register_action("GetApplianceInfo", get_appliance_info)
 register_action("GetApplianceInfo.GetApplianceInfo-custom", get_appliance_info_followup_custom)
 register_action("CreateAppliance", create_appliance)
+register_action("GetAppliancesReport", get_appliances_report)
 
 @app.route('/')
 def home():
