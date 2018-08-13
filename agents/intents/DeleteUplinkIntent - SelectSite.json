@@ -1,0 +1,42 @@
+{
+  "id": "4cbc8dfc-7e4d-4461-9a4e-4c214d7df6a9",
+  "parentId": "ef169612-c095-4d65-ac45-b1b483595e8a",
+  "rootParentId": "ef169612-c095-4d65-ac45-b1b483595e8a",
+  "name": "DeleteUplinkIntent - SelectSite",
+  "auto": true,
+  "contexts": [
+    "DeleteUplinkIntent-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "DeleteUplinkSelectSite",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "f895ddf0-e095-4d2d-93ab-1bcfe6a2a8b4",
+          "required": true,
+          "dataType": "@SiteNames",
+          "name": "SiteNames",
+          "value": "$SiteNames",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1533186053,
+  "fallbackIntent": false,
+  "events": []
+}
