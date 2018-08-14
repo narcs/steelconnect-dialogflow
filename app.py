@@ -27,15 +27,12 @@ from actions.add_site_to_wan import add_site_to_wan
 from actions.add_sites_to_wan import add_sites_to_wan
 from actions.clear_sites import clear_sites
 from actions.create_zone import create_zone
-<<<<<<< HEAD
 from actions.create_appliance import create_appliance
 
 
-=======
 from actions.list_appliances import list_appliances
 from actions.delete_appliance import delete_appliance
 from actions.delete_appliance_followup import delete_appliance_followup
->>>>>>> 890896962e6937fa19ed3794f7a5c59d9d4ef250
 from actions.uplink import list_uplinks
 from actions.get_appliance_info import get_appliance_info
 from actions.get_appliance_info_followup import get_appliance_info_followup
@@ -66,25 +63,12 @@ actions = {}
 def register_action(name, func):
     actions[name] = func
 
-<<<<<<< HEAD
-register_action("CreateSite", create_site)
-register_action("CreateUplink", create_uplink)
-register_action("ListSites", list_sites)
-register_action("RenameSite", rename_site)
-register_action("DeleteSite", delete_site)
-register_action("RenameSiteList", rename_site_list)
-register_action("RenameSiteList.RenameSiteList-selectnumber", rename_site_list_select)
-
-=======
->>>>>>> 890896962e6937fa19ed3794f7a5c59d9d4ef250
 def list_sites_followup_custom(api_auth, parameters, contexts):
     return list_sites_followup(api_auth, contexts[0]["parameters"], contexts)
 
 def list_sites_followup_yes(api_auth, parameters, contexts):
     return list_sites_followup(api_auth, None, contexts)
 
-<<<<<<< HEAD
-=======
 def get_appliance_info_followup_custom(api_auth, parameters, contexts):
     return get_appliance_info_followup(api_auth, contexts[0]["parameters"], contexts)
 
@@ -95,7 +79,6 @@ register_action("CreateSite", create_site)
 register_action("CreateUplink", create_uplink)
 register_action("ListSites", list_sites)
 register_action("ListSites.ListSites-custom", list_sites_followup_custom)
->>>>>>> 890896962e6937fa19ed3794f7a5c59d9d4ef250
 register_action("ListSites.ListSites-yes", list_sites_followup_yes)
 register_action("ListWANs", list_wans)
 register_action("CreateWAN", create_wan)
