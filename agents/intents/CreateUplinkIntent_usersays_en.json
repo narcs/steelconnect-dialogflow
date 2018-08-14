@@ -1,18 +1,96 @@
 [
   {
-    "id": "38de572a-48d8-4b16-995a-dedea896dc9b",
+    "id": "df23503a-0c5d-4c98-a35b-ca366e11b703",
     "data": [
       {
-        "text": "Connect Beijing Site to RouteVPN",
+        "text": "Create ",
+        "userDefined": false
+      },
+      {
+        "text": "uplink",
+        "alias": "Uplinks",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525426310
+  },
+  {
+    "id": "ea244e8f-fdf5-4b8a-8a5f-48dc65a341cc",
+    "data": [
+      {
+        "text": "Create ",
+        "userDefined": false
+      },
+      {
+        "text": "uplink",
+        "alias": "Uplinks",
+        "meta": "@sys.any",
+        "userDefined": false
+      },
+      {
+        "text": " from ",
+        "userDefined": false
+      },
+      {
+        "text": "Tokyo",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " site to ",
+        "userDefined": false
+      },
+      {
+        "text": "VPN",
+        "alias": "Wans",
+        "meta": "@WANType",
         "userDefined": false
       }
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 0
+    "updated": 1525426310
   },
   {
-    "id": "77b68964-a96d-4ab2-8bf8-f2e92814e904",
+    "id": "39bf3f2d-10f5-42d9-91e1-b960cfc59c8d",
+    "data": [
+      {
+        "text": "Connect",
+        "alias": "Uplinks",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Beijing",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " Site to ",
+        "userDefined": false
+      },
+      {
+        "text": "RouteVPN",
+        "alias": "Wans",
+        "meta": "@WANType",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525426310
+  },
+  {
+    "id": "b25bba5c-a936-4aee-b902-0e55d6817e9f",
     "data": [
       {
         "text": "Add an ",
@@ -57,10 +135,10 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 0
+    "updated": 1525426310
   },
   {
-    "id": "81044b1c-99c8-49f7-bc3a-3bfe84cec1e2",
+    "id": "0fb5282b-250b-4ba8-a087-e631a7cf9bce",
     "data": [
       {
         "text": "Bond  ",
@@ -95,10 +173,10 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 0
+    "updated": 1525426310
   },
   {
-    "id": "aabc76f6-2c08-461d-bbe6-2d9e0f14d6d1",
+    "id": "4492b500-49b3-45b4-b457-8aad9db7be95",
     "data": [
       {
         "text": "Add an ",
@@ -143,6 +221,6 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 0
+    "updated": 1525426310
   }
 ]
