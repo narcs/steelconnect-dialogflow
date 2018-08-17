@@ -72,3 +72,6 @@ You can now use Dialogflow to the test out the intents on your realm and organis
 # Hints And Tips
 * Remember to name the action in the Action And Parameter section in DialogFlow
 * Remember to 'Enable Webhook Call For This Intent' in the Fulfillment section when creating a new intent in DialogFlow
+
+# Future Things to do
+* Validate same city names and differents country pairings (E.g. Differentiate between Sydney Canada and Sydney Australia)
