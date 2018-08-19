@@ -26,7 +26,8 @@ def list_appliances(api_auth, parameters, contexts):
         num_appliances = len(data)
         appliance_list = []
         for appliance in data:
-            appliance_list.append(appliance["model"] + " appliance (ID: " + appliance["id"] + ") on  site ID " + appliance["site"] + "\n")
+            appliance_info = "(Appliance ID: {},\nAppliance Model: {},\nSite: {})\n".format(appliance["id"], appliance["model"], appliance["site"])
+            appliance_list.append(appliance_info)
 
         if num_appliances == 0:
             speech = "There are no appliances"
