@@ -75,3 +75,4 @@ You can now use Dialogflow to the test out the intents on your realm and organis
 
 # Future Things to do
 * Validate same city names and differents country pairings (E.g. Differentiate between Sydney Canada and Sydney Australia)
+* When getting information about uplinks and appliances, we currently have it such that DialogFlow passes information back to the code here. This feels dirty, and we would ideally like to make it such that the information is stored on the server so that it can be retrieved there rather than having to pass it backwards and forwards. 
