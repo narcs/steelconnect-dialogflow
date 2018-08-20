@@ -76,3 +76,7 @@ You can now use Dialogflow to the test out the intents on your realm and organis
 # Setting Up Testing
 * Please follow instructions from https://chatbotsmagazine.com/3-steps-setup-automated-testing-for-google-assistant-and-dialogflow-de42937e57c6
     + A sample template json file has been provided, but you will need to rename it to `botium.json`
+    + Other useful links are:
+        - Source code for Botium: https://github.com/codeforequity-at/botium-cli
+        - To find out more about Botium: https://github.com/codeforequity-at/botium-core/wiki/The-Botium-CLI
+        - To include extra configurations: https://github.com/codeforequity-at/botium-core/wiki/Botium-Configuration
