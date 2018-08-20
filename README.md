@@ -72,3 +72,7 @@ You can now use Dialogflow to the test out the intents on your realm and organis
 # Hints And Tips
 * Remember to name the action in the Action And Parameter section in DialogFlow
 * Remember to 'Enable Webhook Call For This Intent' in the Fulfillment section when creating a new intent in DialogFlow
+
+# Setting Up Testing
+* Please follow instructions from https://chatbotsmagazine.com/3-steps-setup-automated-testing-for-google-assistant-and-dialogflow-de42937e57c6
+    + A sample template json file has been provided, but you will need to rename it to `botium.json`
