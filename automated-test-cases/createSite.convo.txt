@@ -1,0 +1,25 @@
+createSite
+
+#me
+Create a site
+
+#bot default
+What country?
+
+#me
+Canada
+
+#bot default
+What city would you like the site created in?
+
+#me
+Toronto
+
+#bot default
+What type of site would you like to create (e.g. DC, branch, shop, warehouse)?
+
+#me
+shop
+
+#bot default
+Shop created in Toronto, Canada
