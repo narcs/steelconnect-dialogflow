@@ -21,7 +21,7 @@ def delete_site(api_auth, parameters, contexts):
         
     except KeyError as e:
 
-        error_string = "Error processing createSite intent. {0}".format(e)
+        error_string = "Error processing deleteSite intent. {0}".format(e)
 
         logging.error(error_string)
 

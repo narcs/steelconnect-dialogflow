@@ -12,12 +12,9 @@ from actions.create_site import create_site
 from actions.create_uplink import create_uplink
 from actions.list_sites import list_sites
 from actions.rename_site import rename_site
-from actions.rename_site_list import rename_site_list
-from actions.rename_site_list_select import rename_site_list_select
-
-
 from actions.delete_site import delete_site
 from actions.list_sites_followup import list_sites_followup
+
 from actions.list_wans import list_wans
 from actions.create_wan import create_wan
 from actions.get_wan import get_wan
@@ -76,10 +73,10 @@ def delete_appliance_followup_custom(api_auth, parameters, contexts):
     return delete_appliance_followup(api_auth, contexts[0]["parameters"], contexts)
 
 register_action("CreateSite", create_site)
-register_action("CreateUplink", create_uplink)
 register_action("ListSites", list_sites)
-register_action("ListSites.ListSites-custom", list_sites_followup_custom)
-register_action("ListSites.ListSites-yes", list_sites_followup_yes)
+register_action("RenameSite", rename_site)
+register_action("DeleteSite", delete_site)
+register_action("CreateUplink", create_uplink)
 register_action("ListWANs", list_wans)
 register_action("CreateWAN", create_wan)
 register_action("GetWAN", get_wan)
