@@ -10,6 +10,7 @@ from api import SteelConnectAPI
 
 from actions.create_site import create_site
 from actions.create_uplink import create_uplink
+from actions.create_uplink_select_site import create_uplink_select_site
 from actions.list_sites import list_sites
 from actions.rename_site import rename_site
 from actions.delete_site import delete_site
@@ -25,7 +26,6 @@ from actions.add_sites_to_wan import add_sites_to_wan
 from actions.clear_sites import clear_sites
 from actions.create_zone import create_zone
 from actions.create_appliance import create_appliance
-
 
 from actions.list_appliances import list_appliances
 from actions.delete_appliance import delete_appliance
@@ -73,6 +73,8 @@ def delete_appliance_followup_custom(api_auth, parameters, contexts):
     return delete_appliance_followup(api_auth, contexts[0]["parameters"], contexts)
 
 register_action("CreateSite", create_site)
+register_action("CreateUplink", create_uplink)
+register_action("CreateUplinkSelectSite", create_uplink_select_site)
 register_action("ListSites", list_sites)
 register_action("RenameSite", rename_site)
 register_action("DeleteSite", delete_site)
