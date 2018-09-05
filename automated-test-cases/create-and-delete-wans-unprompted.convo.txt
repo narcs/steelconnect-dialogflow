@@ -1,0 +1,13 @@
+create and delete wans unprompted
+
+#me
+Create a wan named mufasa
+
+#bot default
+mufasa created
+
+#me
+delete the mufasa wan
+
+#bot default
+Successfully deleted the WAN named 'mufasa'

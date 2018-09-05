@@ -1,0 +1,19 @@
+create and delete wans prompted
+
+#me
+create a wan
+
+#bot default
+What should the WAN be called?
+
+#me
+simba
+
+#bot default
+simba created
+
+#me
+delete the wan named simba
+
+#bot default
+Successfully deleted the WAN named 'simba'
