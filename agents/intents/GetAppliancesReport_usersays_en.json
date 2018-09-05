@@ -1,14 +1,14 @@
 [
   {
-    "id": "67bb674e-e216-4dae-a3b8-50c41ab24aa8",
+    "id": "ad41d5d2-2c9f-43c3-abec-7ec65c384dca",
     "data": [
       {
-        "text": "get uplink information",
+        "text": "Appliance health check",
         "userDefined": false
       }
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1534666816
+    "updated": 1534645441
   }
 ]
