@@ -74,9 +74,18 @@ You can now use Dialogflow to the test out the intents on your realm and organis
 * Remember to 'Enable Webhook Call For This Intent' in the Fulfillment section when creating a new intent in DialogFlow
 
 # Setting Up Testing
+**_DISCLAIMER 1:_**  These test cases will be interacting with dynamic information and hence may fail. For the purposes of testing, please do not delete the Headquarters HQ site and Mothership site, as we want to minimise the likelihood of a test failing
+
+**_DISCLAIMER 2:_**  These test cases will take some time (it can take up to 15 seconds per test) due to it communicating with DialofLow and the SteelConnect systems. 
 * Please follow instructions from https://chatbotsmagazine.com/3-steps-setup-automated-testing-for-google-assistant-and-dialogflow-de42937e57c6
     + A sample template json file has been provided, but you will need to rename it to `botium.json`
     + Other useful links are:
         - Source code for Botium: https://github.com/codeforequity-at/botium-cli
         - To find out more about Botium: https://github.com/codeforequity-at/botium-core/wiki/The-Botium-CLI
         - To include extra configurations: https://github.com/codeforequity-at/botium-core/wiki/Botium-Configuration
+
+## Some Useful Botium Commands:
+* To start Botium: `botium-cli emulator`
+* To change Botium export files to automated-test-cases: `export BOTIUM_CONVOS=./automated-test-cases`
+* to run Botium tests: `botium-cli run`
+* To open up a browser UI with the test cases: `botium-cli emulator browser --convos=./spec/convo`
