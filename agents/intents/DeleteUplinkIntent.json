@@ -1,0 +1,72 @@
+{
+  "id": "ef169612-c095-4d65-ac45-b1b483595e8a",
+  "name": "DeleteUplinkIntent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "DeleteUplink",
+      "affectedContexts": [
+        {
+          "name": "DeleteUplinkIntent-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "66b8bd22-7dd2-49ec-b4bd-2414aca0813b",
+          "required": true,
+          "dataType": "@WANType",
+          "name": "Wans",
+          "value": "$Wans",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What WAN is it connected to?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "0bf92ee4-8ff2-4200-965c-1c245c96dd4d",
+          "required": true,
+          "dataType": "@sys.geo-city",
+          "name": "City",
+          "value": "$City",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Which city is it connected to?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "1cc0acf4-ab6f-487d-b3ed-9e028a5e45ba",
+          "required": false,
+          "dataType": "@Uplinks",
+          "name": "Uplinks",
+          "value": "$Uplinks",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1533003392,
+  "fallbackIntent": false,
+  "events": []
+}
