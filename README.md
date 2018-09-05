@@ -77,12 +77,17 @@ You can now use Dialogflow to the test out the intents on your realm and organis
 **_DISCLAIMER 1:_**  These test cases will be interacting with dynamic information and hence may fail. For the purposes of testing, please do not delete the Headquarters HQ site and Mothership site, as we want to minimise the likelihood of a test failing
 
 **_DISCLAIMER 2:_**  These test cases will take some time (it can take up to 15 seconds per test) due to it communicating with DialofLow and the SteelConnect systems. 
+
 * Please follow instructions from https://chatbotsmagazine.com/3-steps-setup-automated-testing-for-google-assistant-and-dialogflow-de42937e57c6
     + A sample template json file has been provided, but you will need to rename it to `botium.json`
     + Other useful links are:
         - Source code for Botium: https://github.com/codeforequity-at/botium-cli
         - To find out more about Botium: https://github.com/codeforequity-at/botium-core/wiki/The-Botium-CLI
         - To include extra configurations: https://github.com/codeforequity-at/botium-core/wiki/Botium-Configuration
+
+## Testing Requirements/Preconditions:
+The following refers to preconditions that need to be met before running `botium-cli run`
+* There must not be any appliances on the HQ site
 
 ## Some Useful Botium Commands:
 * To start Botium: `botium-cli emulator`
