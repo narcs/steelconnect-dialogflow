@@ -72,3 +72,10 @@ class UplinkAPI:
         information.append('Inbound Units: ' + str(uplink_info["qos_inbound_units"]) + '\n')
         information.append('Outbound Units: ' + str(uplink_info["qos_outbound_units"]) + '\n')
         return str(information)
+
+    def delete_uplink(self, uplink_id): 
+        url = self.base_config_url + "uplink/" + uplink_id 
+        data = {} 
+        data = format_data(data) 
+        return requests.delete(url, data=data, auth=self.auth) 
+ 
