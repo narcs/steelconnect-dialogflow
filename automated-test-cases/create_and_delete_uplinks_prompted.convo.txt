@@ -1,0 +1,37 @@
+create_and_delete_uplinks_prompted
+
+#me
+create an uplink
+
+#bot default
+What is the connected wan?
+
+#me
+internet
+
+#bot default
+What is the city name?
+
+#me
+alice springs
+
+#bot default
+An uplink called Uplink has been created between site: Mothership, Alice Springs, AU and WAN: Internet 
+
+#me
+delete an uplink
+
+#bot default
+What WAN is it connected to?
+
+#me
+internet
+
+#bot default
+Which city is it connected to?
+
+#me
+alice springs
+
+#bot default
+Uplink called Uplink between site: Mothership and WAN: Internet has been deleted
