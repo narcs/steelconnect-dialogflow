@@ -16,6 +16,6 @@ def get_uplink_info_followup(api_auth, parameters, contexts):
     uplinks = uplinks_res.json()["items"]
     uplink_information = uplinks[option_choice - 1]
     information = api_auth.uplink.format_uplink_information(uplink_information)
-    speech = "Information for Uplink {}: \n{}".format(uplinks[option_choice - 1]["id"], information)
+    speech = "Information for Uplink {}: \n{}".format(uplink_information["id"], information)
 
     return speech
