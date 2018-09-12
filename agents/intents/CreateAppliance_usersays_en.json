@@ -3,29 +3,17 @@
     "id": "86c9cd11-ada3-411d-81d1-ea168a35af4c",
     "data": [
       {
-        "text": "Create appliance",
-        "userDefined": false
-      }
-    ],
-    "isTemplate": false,
-    "count": 0,
-    "updated": 1526024562
-  },
-  {
-    "id": "57f2807d-09a4-49ba-b85b-d482c913f70f",
-    "data": [
-      {
-        "text": "Create a ",
+        "text": "Add a ",
         "userDefined": false
       },
       {
-        "text": "raccoon",
+        "text": "SDI-330",
         "alias": "Model",
         "meta": "@Model",
         "userDefined": true
       },
       {
-        "text": " in ",
+        "text": " shadow appliance to ",
         "userDefined": false
       },
       {
@@ -33,6 +21,33 @@
         "alias": "City",
         "meta": "@sys.geo-city",
         "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "id": "57f2807d-09a4-49ba-b85b-d482c913f70f",
+    "data": [
+      {
+        "text": "Insert a ",
+        "userDefined": false
+      },
+      {
+        "text": "SDI-330",
+        "alias": "Model",
+        "meta": "@Model",
+        "userDefined": false
+      },
+      {
+        "text": " shadow appliance for ",
+        "userDefined": false
+      },
+      {
+        "text": "Melbourne",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
       },
       {
         "text": " ",
@@ -59,102 +74,82 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526024502
+    "updated": 0
   },
   {
     "id": "9fbcdd25-6afd-4507-8389-a209f31965bf",
     "data": [
       {
-        "text": "Create an ",
+        "text": "Create a ",
         "userDefined": false
       },
       {
-        "text": "ewok",
+        "text": "cx-570",
         "alias": "Model",
         "meta": "@Model",
         "userDefined": false
       },
       {
-        "text": " shadow appliance for ",
+        "text": " shadow appliance in ",
         "userDefined": false
       },
       {
-        "text": "chicken",
-        "alias": "SiteName",
-        "meta": "@sys.any",
-        "userDefined": true
-      },
-      {
-        "text": " in ",
-        "userDefined": false
-      },
-      {
-        "text": "Tokyo",
+        "text": "New York",
         "alias": "City",
         "meta": "@sys.geo-city",
         "userDefined": false
       },
       {
-        "text": ", ",
+        "text": " ",
         "userDefined": false
       },
       {
-        "text": "Japan",
-        "alias": "Country",
-        "meta": "@sys.geo-country-code",
+        "text": "boutique",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
         "userDefined": false
       }
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526024502
+    "updated": 0
   },
   {
     "id": "79112da8-b9f3-4c1e-8294-9522bdec28fb",
     "data": [
       {
-        "text": "Create ",
+        "text": "Add a ",
         "userDefined": false
       },
       {
-        "text": "panda",
+        "text": "SDI-130",
         "alias": "Model",
         "meta": "@Model",
-        "userDefined": true
-      },
-      {
-        "text": " shadow appliance for ",
         "userDefined": false
       },
       {
-        "text": "banana",
-        "alias": "SiteName",
-        "meta": "@sys.any",
-        "userDefined": true
-      },
-      {
-        "text": " in ",
+        "text": " shadow appliance to ",
         "userDefined": false
       },
       {
-        "text": "Texas",
+        "text": "Melbourne",
         "alias": "City",
         "meta": "@sys.geo-city",
-        "userDefined": true
-      },
-      {
-        "text": ", ",
         "userDefined": false
       },
       {
-        "text": "US",
-        "alias": "Country",
-        "meta": "@sys.geo-country-code",
-        "userDefined": true
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "shop",
+        "alias": "SiteTypes",
+        "meta": "@SiteTypes",
+        "userDefined": false
       }
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526024502
+    "updated": 0
   }
 ]

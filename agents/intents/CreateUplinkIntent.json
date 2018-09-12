@@ -60,7 +60,7 @@
         {
           "id": "758fffc8-f964-4436-87ba-8462a20907af",
           "required": false,
-          "dataType": "@sys.any",
+          "dataType": "@Uplinks",
           "name": "Uplinks",
           "value": "$Uplinks",
           "prompts": [
@@ -86,7 +86,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1525426310,
+  "lastUpdate": 1533115572,
   "fallbackIntent": false,
   "events": []
 }
