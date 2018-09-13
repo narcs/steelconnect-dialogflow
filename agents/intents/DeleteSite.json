@@ -1,77 +1,191 @@
 {
-    "id": "a0f0a8f3-d794-4033-9c88-cd62acb3ae5b",
-    "name": "DeleteSite",
-    "auto": true,
-    "contexts": [],
-    "responses": [
-      {
-        "resetContexts": false,
-        "action": "DeleteSite",
-        "affectedContexts": [
-          {
-            "name": "SiteDeleted",
-            "parameters": {},
-            "lifespan": 5
-          },
-          {
-            "name": "DeleteSite-followup",
-            "parameters": {},
-            "lifespan": 2
-          }
-        ],
-        "parameters": [
-          {
-            "id": "c894a067-400b-4849-b315-fa817c954918",
-            "required": true,
-            "dataType": "@sys.any",
-            "name": "name",
-            "value": "$name",
-            "prompts": [
-              "What is the name of the site?"
-            ],
-            "isList": false
-          },
-          {
-            "id": "c7e6e2ed-19a3-40c0-8eb9-6f1a9512c0e4",
-            "required": true,
-            "dataType": "@sys.geo-city",
-            "name": "City",
-            "value": "$City",
-            "prompts": [
-              "What City?"
-            ],
-            "isList": false
-          },
-          {
-            "id": "efdecdfd-bef1-4f05-8148-31980942f682",
-            "required": true,
-            "dataType": "@sys.geo-country-code",
-            "name": "Country",
-            "value": "$Country",
-            "prompts": [
-              "What Country?"
-            ],
-            "isList": false
-          }
-        ],
-        "messages": [
-          {
-            "type": 0,
-            "speech": []
-          }
-        ],
-        "defaultResponsePlatforms": {},
-        "speech": []
-      }
-    ],
-    "priority": 500000,
-    "cortanaCommand": {
-      "navigateOrService": "NAVIGATE",
-      "target": ""
+  "id": "a0f0a8f3-d794-4033-9c88-cd62acb3ae5b",
+  "name": "DeleteSite",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "DeleteSite",
+      "affectedContexts": [
+        {
+          "name": "SiteDeleted",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "DeleteSite-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "c894a067-400b-4849-b315-fa817c954918",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "name",
+          "value": "$name",
+          "prompts": [
+            "What is the name of the site?"
+          ],
+          "isList": false
+        },
+        {
+          "id": "c7e6e2ed-19a3-40c0-8eb9-6f1a9512c0e4",
+          "required": true,
+          "dataType": "@sys.geo-city",
+          "name": "City",
+          "value": "$City",
+          "prompts": [
+            "What City?"
+          ],
+          "isList": false
+        },
+        {
+          "id": "efdecdfd-bef1-4f05-8148-31980942f682",
+          "required": true,
+          "dataType": "@sys.geo-country-code",
+          "name": "Country",
+          "value": "$Country",
+          "prompts": [
+            "What Country?"
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "cortanaCommand": {
+    "navigateOrService": "NAVIGATE",
+    "target": ""
+  },
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1526699475,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "9971b3d3-b991-46c2-8fc5-9ab0492cbc83",
+      "data": [
+        {
+          "text": "Remove site "
+        },
+        {
+          "text": "Plant",
+          "alias": "name",
+          "meta": "@sys.any",
+          "userDefined": false
+        },
+        {
+          "text": " from "
+        },
+        {
+          "text": "New York",
+          "alias": "City",
+          "meta": "@sys.geo-city",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "USA",
+          "alias": "Country",
+          "meta": "@sys.geo-country-code",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1526699475,
+      "isAuto": false
     },
-    "webhookUsed": true,
-    "webhookForSlotFilling": false,
-    "lastUpdate": 1526699475,
-    "fallbackIntent": false,
-    "events": []
-  }
+    {
+      "id": "d18bec59-dd2d-4d40-b8e4-56669196f019",
+      "data": [
+        {
+          "text": "I want to delete a site "
+        },
+        {
+          "text": "Pot",
+          "alias": "name",
+          "meta": "@sys.any",
+          "userDefined": true
+        },
+        {
+          "text": " at "
+        },
+        {
+          "text": "Perth",
+          "alias": "City",
+          "meta": "@sys.geo-city",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "Australia",
+          "alias": "Country",
+          "meta": "@sys.geo-country-code",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1526699475,
+      "isAuto": false
+    },
+    {
+      "id": "fdb23657-bbb1-40ba-80c0-1656f6f53479",
+      "data": [
+        {
+          "text": "Delete a site "
+        },
+        {
+          "text": "Branch",
+          "alias": "name",
+          "meta": "@sys.any",
+          "userDefined": true
+        },
+        {
+          "text": " at "
+        },
+        {
+          "text": "Tokyo",
+          "alias": "City",
+          "meta": "@sys.geo-city",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "Japan",
+          "alias": "Country",
+          "meta": "@sys.geo-country-code",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1525582155,
+      "isAuto": false
+    }
+  ],
+  "followUpIntents": [],
+  "liveAgentHandoff": false,
+  "endInteraction": false,
+  "templates": []
+}
