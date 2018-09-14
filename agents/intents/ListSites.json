@@ -32,6 +32,7 @@
       "messages": [
         {
           "type": 0,
+          "lang": "en",
           "speech": "There was an error connecting with SteelConnect, please try again later."
         }
       ],
@@ -44,81 +45,5 @@
   "webhookForSlotFilling": false,
   "lastUpdate": 1525578970,
   "fallbackIntent": false,
-  "events": [],
-  "userSays": [
-    {
-      "id": "d8f2d237-d798-48e8-ac0f-24ac9cb4863a",
-      "data": [
-        {
-          "text": "How many sites are in my organisation",
-          "userDefined": false
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 0,
-      "isAuto": false
-    },
-    {
-      "id": "b03eb4aa-763e-4d4e-823d-c70c309a3d35",
-      "data": [
-        {
-          "text": "What sites are in my organisation",
-          "userDefined": false
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 0,
-      "isAuto": false
-    },
-    {
-      "id": "1e3b0119-a16d-4a34-a8f3-362419189661",
-      "data": [
-        {
-          "text": "List all ",
-          "userDefined": false
-        },
-        {
-          "text": "sites",
-          "meta": "@sys.ignore",
-          "userDefined": false
-        }
-      ],
-      "isTemplate": false,
-      "count": 1,
-      "updated": 0,
-      "isAuto": false
-    },
-    {
-      "id": "56e43dd7-febd-482f-a4d6-5bfd6b6c5cee",
-      "data": [
-        {
-          "text": "Display sites",
-          "userDefined": false
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 0,
-      "isAuto": false
-    },
-    {
-      "id": "97c0ebcd-095b-47c3-ad2a-25516fa2777e",
-      "data": [
-        {
-          "text": "List sites",
-          "userDefined": false
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 0,
-      "isAuto": false
-    }
-  ],
-  "followUpIntents": [],
-  "liveAgentHandoff": false,
-  "endInteraction": false,
-  "templates": []
+  "events": []
 }
