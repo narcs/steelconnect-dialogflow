@@ -1,6 +1,6 @@
 {
   "id": "a8eec3d5-d453-486f-bca5-ca454c12233d",
-  "name": "CreateSiteIntent",
+  "name": "CreateSite",
   "auto": true,
   "contexts": [],
   "responses": [
@@ -22,10 +22,7 @@
           "name": "Country",
           "value": "$Country",
           "prompts": [
-            {
-              "lang": "en",
-              "value": "What country?"
-            }
+            "What country?"
           ],
           "isList": false
         },
@@ -36,24 +33,18 @@
           "name": "City",
           "value": "$City",
           "prompts": [
-            {
-              "lang": "en",
-              "value": "What city would you like the site created in?"
-            }
+            "What city would you like the site created in?"
           ],
           "isList": false
         },
         {
           "id": "44a0018c-fd46-492e-90de-cb89019d2531",
           "required": true,
-          "dataType": "@SiteTypes",
-          "name": "SiteType",
-          "value": "$SiteType",
+          "dataType": "@sys.any",
+          "name": "SiteName",
+          "value": "$SiteName",
           "prompts": [
-            {
-              "lang": "en",
-              "value": "What type of site would you like to create (e.g. DC, branch, shop, warehouse)?"
-            }
+            "What type of site would you like to create (e.g. DC, branch, shop, warehouse)?"
           ],
           "isList": false
         }
@@ -61,7 +52,6 @@
       "messages": [
         {
           "type": 0,
-          "lang": "en",
           "speech": "There was an error connecting to the SteelConnect API."
         }
       ],
@@ -74,6 +64,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
+  "lastUpdate": 1526785924,
   "fallbackIntent": false,
   "events": []
 }

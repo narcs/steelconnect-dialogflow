@@ -1,19 +1,19 @@
 {
-  "id": "9e923962-01a8-44f6-b858-758d1a553b29",
-  "name": "Default Welcome Intent",
+  "id": "12d2fd2d-6fec-4a33-8033-413b1129d91c",
+  "name": "GetSitelinksReport",
   "auto": true,
   "contexts": [],
   "responses": [
     {
       "resetContexts": false,
-      "action": "input.welcome",
+      "action": "GetSitelinksReport",
       "affectedContexts": [],
       "parameters": [],
       "messages": [
         {
           "type": 0,
           "lang": "en",
-          "speech": "Hi! What can SteelConnect do for you today?"
+          "speech": "Sorry, it took too long to check all sitelinks."
         }
       ],
       "defaultResponsePlatforms": {},
@@ -21,12 +21,9 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": false,
+  "webhookUsed": true,
   "webhookForSlotFilling": false,
+  "lastUpdate": 1533422531,
   "fallbackIntent": false,
-  "events": [
-    {
-      "name": "WELCOME"
-    }
-  ]
+  "events": []
 }

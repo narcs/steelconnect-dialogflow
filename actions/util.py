@@ -42,6 +42,7 @@ def get_wan_id_by_name(api_auth, wan_name):
     else:
         raise APIError("Failed to get the list of WANs")
 
+
 def get_site_id_by_name(api_auth, site_name, city, country_code):
     """
     Given a Site's short name:
@@ -63,3 +64,29 @@ def get_site_id_by_name(api_auth, site_name, city, country_code):
         raise APIError("Failed to get the list of Sites")
     else:
         raise APIError("Error: Could not connect to SteelConnect")
+
+
+def format_sitelink_list(api_auth, items):
+    """
+    Given the successful result of `api_auth.sitelink.get_sitelinks().json()["items"]`,
+    returns the list of sitelinks as a nicely-formatted string suitable for
+    presenting to the user.
+
+    Requires `api_auth` to get the names of the remote sites.
+    """
+
+    s = ""
+
+    for link in items:
+        remote_site_name = ""
+        res = api_auth.site.get_site(link["remote_site"])
+
+        if res.status_code == 200:
+            remote_site_name = res.json()["name"]
+        else:
+            remote_site_name = "<unknown>"
+
+        s += "\n - To: {} ({}), Status: {}".format(remote_site_name, link["remote_site"], link["status"])
+
+    return s
+

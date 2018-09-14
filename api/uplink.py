@@ -1,6 +1,7 @@
 import requests
 import requests_toolbelt.adapters.appengine
 from util import format_data
+import logging
 
 requests_toolbelt.adapters.appengine.monkeypatch()
 
@@ -40,6 +41,12 @@ class UplinkAPI:
         # post uplink
         data = format_data(data)
         return requests.post(url, data=data, auth=self.auth)
+
+    def delete_uplink(self, uplink_id):
+        url = self.base_config_url + "uplink/" + uplink_id
+        data = {}
+        data = format_data(data)
+        return requests.delete(url, data=data, auth=self.auth)
 
     # We need site_id to get the information about uplinks on a site
     def get_uplink_info(self):

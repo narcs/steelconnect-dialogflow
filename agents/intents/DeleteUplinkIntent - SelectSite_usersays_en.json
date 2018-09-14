@@ -1,0 +1,128 @@
+[
+  {
+    "id": "8c52b290-f39c-4131-8f3c-c35b0a086cd7",
+    "data": [
+      {
+        "text": "HQ-Beijing",
+        "alias": "SiteNames",
+        "meta": "@SiteNames",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1533185581
+  },
+  {
+    "id": "1e5fe42e-b6c2-40c6-b8b3-4bf99108249f",
+    "data": [
+      {
+        "text": "Shop-Melbourne",
+        "alias": "SiteNames",
+        "meta": "@SiteNames",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1533185581
+  },
+  {
+    "id": "601a8f29-f0d2-4f66-bcb6-88900845e42f",
+    "data": [
+      {
+        "text": "Site-Sydney",
+        "alias": "SiteNames",
+        "meta": "@SiteNames",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1533185581
+  },
+  {
+    "id": "c036862e-a495-4373-9cf8-095bc163c3df",
+    "data": [
+      {
+        "text": "HQ",
+        "alias": "SiteNames",
+        "meta": "@SiteNames",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1533115846
+  },
+  {
+    "id": "860e2dd3-72b7-4387-b3b5-118d55450ece",
+    "data": [
+      {
+        "text": "DC",
+        "alias": "SiteNames",
+        "meta": "@SiteNames",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1533115846
+  },
+  {
+    "id": "3e751415-1cc8-49c4-9e9a-12da9d8ebc7c",
+    "data": [
+      {
+        "text": "Shop",
+        "alias": "SiteNames",
+        "meta": "@SiteNames",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1533115846
+  },
+  {
+    "id": "7588ab9c-d6dd-450a-a738-14ac4bf1b693",
+    "data": [
+      {
+        "text": "pie",
+        "alias": "SiteNames",
+        "meta": "@SiteNames",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1533115846
+  },
+  {
+    "id": "4b98b748-1481-493a-9a24-8cdf233b9c8a",
+    "data": [
+      {
+        "text": "Mothership",
+        "alias": "SiteNames",
+        "meta": "@SiteNames",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1533115846
+  },
+  {
+    "id": "17feb887-72dc-41f9-88dd-9c79fb8e55c3",
+    "data": [
+      {
+        "text": "sheep",
+        "alias": "SiteNames",
+        "meta": "@SiteNames",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1533115846
+  }
+]

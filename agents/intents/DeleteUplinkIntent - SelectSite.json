@@ -1,25 +1,25 @@
 {
-  "id": "97e49801-1ae6-422c-bd43-4c731f20a027",
-  "parentId": "f47796b8-5382-453e-be83-4afaaf0efd33",
-  "rootParentId": "f47796b8-5382-453e-be83-4afaaf0efd33",
-  "name": "CreateUplinkIntent - SelectSite",
+  "id": "4cbc8dfc-7e4d-4461-9a4e-4c214d7df6a9",
+  "parentId": "ef169612-c095-4d65-ac45-b1b483595e8a",
+  "rootParentId": "ef169612-c095-4d65-ac45-b1b483595e8a",
+  "name": "DeleteUplinkIntent - SelectSite",
   "auto": true,
   "contexts": [
-    "CreateUplinkIntent-followup"
+    "DeleteUplinkIntent-followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "CreateUplinkSelectSite",
+      "action": "DeleteUplinkSelectSite",
       "affectedContexts": [],
       "parameters": [
         {
-          "id": "5e2ba6d8-eb1a-4b01-b8f4-dd6f1190ab09",
+          "id": "f895ddf0-e095-4d2d-93ab-1bcfe6a2a8b4",
           "required": true,
           "dataType": "@SiteNames",
           "name": "SiteNames",
           "value": "$SiteNames",
-          "isList": true
+          "isList": false
         }
       ],
       "messages": [
@@ -36,7 +36,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1533187811,
+  "lastUpdate": 1533186053,
   "fallbackIntent": false,
   "events": []
 }

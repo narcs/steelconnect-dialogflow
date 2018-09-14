@@ -1,11 +1,9 @@
 import logging
 
 from flask import json
-from requests.auth import HTTPBasicAuth
-import requests
+from actions.util import *
 
-
-def create_site(api_auth, parameters, contexts):
+def delete_site(api_auth, parameters, contexts):
     """
     :param api_auth: steelconnect api object
     :type api_auth: SteelConnectAPI
@@ -14,35 +12,39 @@ def create_site(api_auth, parameters, contexts):
     :return: Returns a response to be read out to user
     :rtype: string
     """
+    
     try:
-        site_name = parameters["SiteName"]
+        site_name = parameters["name"]
         city = parameters["City"]
-
-        # in case city consists of multiple words, strip the whitespace(s) as SCM doesn't allow it.
-        # city_clean = city.replace(" ", "")
         country_code = parameters["Country"]["alpha-2"]
         country_name = parameters["Country"]["name"]
         
     except KeyError as e:
 
-        error_string = "Error processing createSite intent. {0}".format(e)
+        error_string = "Error processing deleteSite intent. {0}".format(e)
 
         logging.error(error_string)
 
         return error_string
 
-    res = api_auth.site.create_site(site_name, city, country_code)
+    # Grab site id by name, city and country
+    try:
+        site_id = get_site_id_by_name(api_auth, site_name, city, country_code)
+    except APIError as e:
+        return str(e)
+
+    # Deleting site
+    res = api_auth.site.delete_site(site_id)
 
     if res.status_code == 200:
-        speech = "A site named {} has been created in {} {}".format(site_name.capitalize(), city, country_name)
+        speech = "Site {} in {} {} has been successfully deleted".format(site_name, city, country_name)
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
     elif res.status_code == 500:
-        speech = "Error: Could not create site"
+        speech = "Error: Could not delete site"
     else:
         speech = "Error: Could not connect to SteelConnect"
 
     logging.debug(speech)
 
     return speech
-

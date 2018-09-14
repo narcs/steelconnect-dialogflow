@@ -1,0 +1,40 @@
+[
+  {
+    "id": "1262c316-2257-4e38-864e-a0e22dd1046f",
+    "data": [
+      {
+        "text": "Delete ",
+        "userDefined": false
+      },
+      {
+        "text": "uplink",
+        "alias": "Uplinks",
+        "meta": "@Uplinks",
+        "userDefined": true
+      },
+      {
+        "text": " from ",
+        "userDefined": false
+      },
+      {
+        "text": "Sydney",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " Site to ",
+        "userDefined": false
+      },
+      {
+        "text": "RouteVPN",
+        "alias": "Wans",
+        "meta": "@WANType",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1533003392
+  }
+]
