@@ -1,110 +1,116 @@
 [
-    {
-      "id": "9971b3d3-b991-46c2-8fc5-9ab0492cbc83",
-      "data": [
-        {
-          "text": "Remove site "
-        },
-        {
-          "text": "Plant",
-          "alias": "name",
-          "meta": "@sys.any",
-          "userDefined": false
-        },
-        {
-          "text": " from "
-        },
-        {
-          "text": "New York",
-          "alias": "City",
-          "meta": "@sys.geo-city",
-          "userDefined": false
-        },
-        {
-          "text": " "
-        },
-        {
-          "text": "USA",
-          "alias": "Country",
-          "meta": "@sys.geo-country-code",
-          "userDefined": false
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 1526699475,
-      "isAuto": false
-    },
-    {
-      "id": "d18bec59-dd2d-4d40-b8e4-56669196f019",
-      "data": [
-        {
-          "text": "I want to delete a site "
-        },
-        {
-          "text": "Pot",
-          "alias": "name",
-          "meta": "@sys.any",
-          "userDefined": true
-        },
-        {
-          "text": " at "
-        },
-        {
-          "text": "Perth",
-          "alias": "City",
-          "meta": "@sys.geo-city",
-          "userDefined": false
-        },
-        {
-          "text": " "
-        },
-        {
-          "text": "Australia",
-          "alias": "Country",
-          "meta": "@sys.geo-country-code",
-          "userDefined": true
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 1526699475,
-      "isAuto": false
-    },
-    {
-      "id": "fdb23657-bbb1-40ba-80c0-1656f6f53479",
-      "data": [
-        {
-          "text": "Delete a site "
-        },
-        {
-          "text": "Branch",
-          "alias": "name",
-          "meta": "@sys.any",
-          "userDefined": true
-        },
-        {
-          "text": " at "
-        },
-        {
-          "text": "Tokyo",
-          "alias": "City",
-          "meta": "@sys.geo-city",
-          "userDefined": false
-        },
-        {
-          "text": " "
-        },
-        {
-          "text": "Japan",
-          "alias": "Country",
-          "meta": "@sys.geo-country-code",
-          "userDefined": false
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 1525582155,
-      "isAuto": false
-    }
+  {
+    "id": "9971b3d3-b991-46c2-8fc5-9ab0492cbc83",
+    "data": [
+      {
+        "text": "Remove site ",
+        "userDefined": false
+      },
+      {
+        "text": "Plant",
+        "alias": "name",
+        "meta": "@sys.any",
+        "userDefined": false
+      },
+      {
+        "text": " from ",
+        "userDefined": false
+      },
+      {
+        "text": "New York",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "USA",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526699475
+  },
+  {
+    "id": "d18bec59-dd2d-4d40-b8e4-56669196f019",
+    "data": [
+      {
+        "text": "I want to delete a site ",
+        "userDefined": false
+      },
+      {
+        "text": "Pot",
+        "alias": "name",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "Perth",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526699475
+  },
+  {
+    "id": "fdb23657-bbb1-40ba-80c0-1656f6f53479",
+    "data": [
+      {
+        "text": "Delete a site ",
+        "userDefined": false
+      },
+      {
+        "text": "Branch",
+        "alias": "name",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "Tokyo",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Japan",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525582155
+  }
 ]
