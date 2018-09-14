@@ -1,0 +1,25 @@
+site_delete_prompted
+
+#me
+delete a site
+
+#bot default
+What is the name of the site?
+
+#me
+pikachu
+
+#bot default
+What City?
+
+#me
+oslo
+
+#bot default
+What Country?
+
+#me
+norway
+
+#bot default
+Site pikachu in Oslo Norway has been successfully deleted
