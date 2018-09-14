@@ -38,9 +38,17 @@ from actions.delete_uplink import delete_uplink
 from actions.delete_uplink_select_site import delete_uplink_select_site
 from actions.create_appliance import create_appliance
 
+from actions.get_sitelinks_report import get_sitelinks_report
+
 app = Flask(__name__)
 app.Debug = True
 
+# Enable error logging through app engine logging.
+# https://stackoverflow.com/a/42547090
+@app.before_request
+def enable_local_error_handling():
+    app.logger.addHandler(logging.StreamHandler())
+    app.logger.setLevel(logging.INFO)
 
 # Setup up api authentication
 try:
@@ -99,6 +107,7 @@ register_action("DeleteAppliance.DeleteAppliance-custom", delete_appliance_follo
 register_action("GetApplianceInfo", get_appliance_info)
 register_action("GetApplianceInfo.GetApplianceInfo-custom", get_appliance_info_followup_custom)
 register_action("CreateAppliance", create_appliance)
+register_action("GetSitelinksReport", get_sitelinks_report)
 
 @app.route('/')
 def home():

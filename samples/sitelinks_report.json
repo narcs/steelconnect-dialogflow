@@ -1,0 +1,36 @@
+{
+  "id": "56d25da7-1498-421f-a61b-d73e2f5b820d",
+  "timestamp": "2018-07-26T04:49:54.564Z",
+  "lang": "en",
+  "result": {
+    "source": "agent",
+    "resolvedQuery": "sitelink report",
+    "speech": "",
+    "action": "GetSitelinksReport",
+    "actionIncomplete": false,
+    "parameters": {},
+    "contexts": [],
+    "metadata": {
+      "intentId": "12d2fd2d-6fec-4a33-8033-413b1129d91c",
+      "webhookUsed": "true",
+      "webhookForSlotFillingUsed": "false",
+      "isFallbackIntent": "false",
+      "intentName": "GetSitelinksReport"
+    },
+    "fulfillment": {
+      "speech": "",
+      "messages": [
+        {
+          "type": 0,
+          "speech": ""
+        }
+      ]
+    },
+    "score": 1
+  },
+  "status": {
+    "code": 200,
+    "errorType": "success"
+  },
+  "sessionId": "7e9c6912-ba52-e940-61c6-5b92a1de0b23"
+}
