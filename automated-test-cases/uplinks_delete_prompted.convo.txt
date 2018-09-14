@@ -1,0 +1,19 @@
+uplinks_delete_prompted - Delete uplinks while being prompted for parameters
+
+#me
+delete an uplink
+
+#bot default
+What WAN is it connected to?
+
+#me
+internet
+
+#bot default
+Which city is it connected to?
+
+#me
+alice springs
+
+#bot default
+Uplink called Uplink between site: Mothership and WAN: Internet has been deleted
