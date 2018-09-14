@@ -1,0 +1,13 @@
+wans_create_prompted - create wans while being prompted for required parameters
+
+#me
+create a wan
+
+#bot default
+What should the WAN be called?
+
+#me
+simba
+
+#bot default
+simba created
