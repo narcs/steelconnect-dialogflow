@@ -89,6 +89,8 @@ If you can't connect to DialogFlow or Botium doesn't work, here are some reasons
 * You may be working on the wrong DialogFlow file. Click on the down caret to the left of the settings button in DialogFlow and change to the correct project
 
 ## Testing Requirements/Preconditions:
+Tests are run in alphabetical order, so please be careful when naming the .convo.txt especially when there are dependencies. 
+
 The following refers to preconditions that need to be met before running `botium-cli run`
 * There must not be any appliances on the HQ site
 
