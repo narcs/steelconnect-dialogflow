@@ -85,7 +85,7 @@ You can now use Dialogflow to the test out the intents on your realm and organis
         - To find out more about Botium: https://github.com/codeforequity-at/botium-core/wiki/The-Botium-CLI
         - To include extra configurations: https://github.com/codeforequity-at/botium-core/wiki/Botium-Configuration
 
-If you can't connect the DialogFlow or Botium doesn't work, here are some reasons why:
+If you can't connect to DialogFlow or Botium doesn't work, here are some reasons why:
 * You may be working on the wrong DialogFlow file. Click on the down caret to the left of the settings button in DialogFlow and change to the correct project
 
 ## Testing Requirements/Preconditions:
