@@ -1,110 +1,133 @@
 [
-    {
-      "id": "9971b3d3-b991-46c2-8fc5-9ab0492cbc83",
-      "data": [
-        {
-          "text": "Remove site "
-        },
-        {
-          "text": "Plant",
-          "alias": "name",
-          "meta": "@sys.any",
-          "userDefined": false
-        },
-        {
-          "text": " from "
-        },
-        {
-          "text": "New York",
-          "alias": "City",
-          "meta": "@sys.geo-city",
-          "userDefined": false
-        },
-        {
-          "text": " "
-        },
-        {
-          "text": "USA",
-          "alias": "Country",
-          "meta": "@sys.geo-country-code",
-          "userDefined": false
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 1526699475,
-      "isAuto": false
-    },
-    {
-      "id": "d18bec59-dd2d-4d40-b8e4-56669196f019",
-      "data": [
-        {
-          "text": "I want to delete a site "
-        },
-        {
-          "text": "Pot",
-          "alias": "name",
-          "meta": "@sys.any",
-          "userDefined": true
-        },
-        {
-          "text": " at "
-        },
-        {
-          "text": "Perth",
-          "alias": "City",
-          "meta": "@sys.geo-city",
-          "userDefined": false
-        },
-        {
-          "text": " "
-        },
-        {
-          "text": "Australia",
-          "alias": "Country",
-          "meta": "@sys.geo-country-code",
-          "userDefined": true
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 1526699475,
-      "isAuto": false
-    },
-    {
-      "id": "fdb23657-bbb1-40ba-80c0-1656f6f53479",
-      "data": [
-        {
-          "text": "Delete a site "
-        },
-        {
-          "text": "Branch",
-          "alias": "name",
-          "meta": "@sys.any",
-          "userDefined": true
-        },
-        {
-          "text": " at "
-        },
-        {
-          "text": "Tokyo",
-          "alias": "City",
-          "meta": "@sys.geo-city",
-          "userDefined": false
-        },
-        {
-          "text": " "
-        },
-        {
-          "text": "Japan",
-          "alias": "Country",
-          "meta": "@sys.geo-country-code",
-          "userDefined": false
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 1525582155,
-      "isAuto": false
-    }
+  {
+    "id": "96826a95-af8f-42bc-8d64-4f06bd46f25d",
+    "data": [
+      {
+        "text": "delete a ",
+        "userDefined": false
+      },
+      {
+        "text": "site",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1536929826
+  },
+  {
+    "id": "ccf3f747-2027-40fe-a57b-463d3d9441de",
+    "data": [
+      {
+        "text": "Remove site ",
+        "userDefined": false
+      },
+      {
+        "text": "Plant",
+        "alias": "name",
+        "meta": "@sys.any",
+        "userDefined": false
+      },
+      {
+        "text": " from ",
+        "userDefined": false
+      },
+      {
+        "text": "New York",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "USA",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1536929826
+  },
+  {
+    "id": "4a7d783a-5e96-434d-9f6f-3cf9a4820939",
+    "data": [
+      {
+        "text": "I want to delete a site ",
+        "userDefined": false
+      },
+      {
+        "text": "Pot",
+        "alias": "name",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "Perth",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1536929826
+  },
+  {
+    "id": "16782daa-1d49-4a2d-9a13-5fdea91c108a",
+    "data": [
+      {
+        "text": "Delete a site ",
+        "userDefined": false
+      },
+      {
+        "text": "Branch",
+        "alias": "name",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "Tokyo",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Japan",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525582155
+  }
 ]

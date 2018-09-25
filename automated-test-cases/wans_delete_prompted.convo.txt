@@ -1,0 +1,13 @@
+wans_delete_prompted - delete wans while being prompted for required parameters
+
+#me
+delete a wan
+
+#bot default
+What is the WANName?
+
+#me
+simba
+
+#bot default
+Successfully deleted the WAN named 'simba'

@@ -1,88 +1,97 @@
 {
-    "id": "fefee499-32cc-4753-b5ee-3da3a18cb04d",
-    "name": "RenameSite",
-    "auto": true,
-    "contexts": [],
-    "responses": [
-      {
-        "resetContexts": false,
-        "action": "RenameSite",
-        "affectedContexts": [
-          {
-            "name": "RenameSite",
-            "parameters": {},
-            "lifespan": 5
-          },
-          {
-            "name": "RenameSite-followup",
-            "parameters": {},
-            "lifespan": 2
-          }
-        ],
-        "parameters": [
-          {
-            "id": "2a681f49-7836-4b9e-ad05-323a336c30c8",
-            "required": true,
-            "dataType": "@sys.any",
-            "name": "OldName",
-            "value": "$OldName",
-            "prompts": [
-              "What is the current name of the site?"
-            ],
-            "isList": false
-          },
-          {
-            "id": "e6398274-7607-44c5-914e-b906093592c2",
-            "required": true,
-            "dataType": "@sys.geo-city",
-            "name": "City",
-            "value": "$City",
-            "prompts": [
-              "What is the city of the site?"
-            ],
-            "isList": false
-          },
-          {
-            "id": "78fc97df-b502-466e-961c-643c859f1a04",
-            "required": true,
-            "dataType": "@sys.geo-country-code",
-            "name": "Country",
-            "value": "$Country",
-            "prompts": [
-              "What is the country of the site?"
-            ],
-            "isList": false
-          },
-          {
-            "id": "b89dd233-7d43-4bae-93d6-0f4f7048ef45",
-            "required": true,
-            "dataType": "@sys.any",
-            "name": "NewName",
-            "value": "$NewName",
-            "prompts": [
-              "What is the new name for the site?"
-            ],
-            "isList": false
-          }
-        ],
-        "messages": [
-          {
-            "type": 0,
-            "speech": []
-          }
-        ],
-        "defaultResponsePlatforms": {},
-        "speech": []
-      }
-    ],
-    "priority": 500000,
-    "cortanaCommand": {
-      "navigateOrService": "NAVIGATE",
-      "target": ""
-    },
-    "webhookUsed": true,
-    "webhookForSlotFilling": false,
-    "lastUpdate": 1525835582,
-    "fallbackIntent": false,
-    "events": []
-}  
+  "id": "fefee499-32cc-4753-b5ee-3da3a18cb04d",
+  "name": "RenameSite",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "RenameSite",
+      "affectedContexts": [
+        {
+          "name": "RenameSite",
+          "parameters": {},
+          "lifespan": 5
+        },
+        {
+          "name": "RenameSite-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "2a681f49-7836-4b9e-ad05-323a336c30c8",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "OldName",
+          "value": "$OldName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the current name of the site?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "e6398274-7607-44c5-914e-b906093592c2",
+          "required": true,
+          "dataType": "@sys.geo-city",
+          "name": "City",
+          "value": "$City",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the city of the site?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "78fc97df-b502-466e-961c-643c859f1a04",
+          "required": true,
+          "dataType": "@sys.geo-country-code",
+          "name": "Country",
+          "value": "$Country",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the country of the site?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "b89dd233-7d43-4bae-93d6-0f4f7048ef45",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "NewName",
+          "value": "$NewName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the new name for the site?"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1525835582,
+  "fallbackIntent": false,
+  "events": []
+}

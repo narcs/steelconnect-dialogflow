@@ -40,5 +40,6 @@
   "onePlatformApiVersion": "v1legacy",
   "analyzeQueryTextSentiment": false,
   "enabledKnowledgeBaseNames": [],
-  "knowledgeServiceConfidenceAdjustment": -0.4
+  "knowledgeServiceConfidenceAdjustment": -0.4,
+  "dialogBuilderMode": false
 }

@@ -1,0 +1,7 @@
+appliance_create_unprompted - Create one appliance without being prompted for required parameters
+
+#me
+Create a panda shadow appliance for HQ in Clayton, Australia
+
+#bot default
+Appliance: panda created for site: Clayton, HQ

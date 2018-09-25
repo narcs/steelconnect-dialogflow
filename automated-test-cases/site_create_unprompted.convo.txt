@@ -1,0 +1,7 @@
+site_create_unprompted - Create sites without any prompts
+
+#me
+I would like to create a site named hawk at Paris, France
+
+#bot default
+A site named Hawk has been created in Paris France
