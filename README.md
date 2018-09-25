@@ -67,6 +67,7 @@ You can now use Dialogflow to the test out the intents on your realm and organis
 
   Due to the confusing city-country pairing, the site will not be shown the the SteelConnect Map
 
+* In SteelConnect Manager, (and as specified by Shannon) you should not be able to delete RouteVPNs, however if you query the API directly (as we are doing with Dialogflow), you will be to. Awaiting confirmation as to whether user should be prevented from using RouteVPNs or issue should be fixed by SteelConnect. 
 
 <!-- Adding this here because I think it'll be useful for future peeps, but also because I forgot quite a few stuff that'll be nice reminders after not touching the code for a while -->
 # Hints And Tips
