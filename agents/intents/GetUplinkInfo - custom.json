@@ -1,0 +1,48 @@
+{
+  "id": "6fb0025c-3d02-4af3-a4dd-397675471476",
+  "parentId": "c2a0e787-cab6-45f4-bb23-05a1d2e772cb",
+  "rootParentId": "c2a0e787-cab6-45f4-bb23-05a1d2e772cb",
+  "name": "GetUplinkInfo - custom",
+  "auto": true,
+  "contexts": [
+    "GetUplinkInfo-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "GetUplinkInfo.GetUplinkInfo-custom",
+      "affectedContexts": [
+        {
+          "name": "UplinkInfoDisplay",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "6c907a0d-7273-42bb-a347-1e8ff7e2af9f",
+          "required": true,
+          "dataType": "@sys.number-integer",
+          "name": "OptionNumber",
+          "value": "$OptionNumber",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1534654608,
+  "fallbackIntent": false,
+  "events": []
+}

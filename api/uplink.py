@@ -49,8 +49,8 @@ class UplinkAPI:
         return requests.delete(url, data=data, auth=self.auth)
 
     # We need site_id to get the information about uplinks on a site
-    def get_uplink_info(self, site_id):
-        url = self.base_reporting_url + 'site/' + site_id + '/uplinks'
+    def get_uplink_info(self):
+        url = self.base_reporting_url + 'uplinks'
         return requests.get(url, auth=self.auth)
 
     def set_uplink_list(self, uplink_list):
@@ -61,21 +61,21 @@ class UplinkAPI:
 
     def format_uplink_information(self, uplink_info):
         information = []
-        information.append('Uplink ID: ' + str(uplink_info["id"] + '\n'))
-        information.append('Uplink Name: ' + str(uplink_info["name"] + '\n'))
-        information.append('Dead Interval: ' + str(uplink_info["dead_interval"] + '\n'))
-        information.append('Priority: ' + str(uplink_info["priority"] + '\n'))
-        information.append('Site Link Priority: ' + str(uplink_info["sitelink_prio"]) + '\n')
-        information.append('Up Time: ' + str(uplink_info["sitelink_prio"] + '\n'))
-        information.append('State: ' + str(uplink_info["state"]) + '\n')
-        information.append('WAN: ' + str(uplink_info["wan"]) + '\n')
-        information.append('Appliance: ' + str(uplink_info["node"]) + '\n')
-        information.append('Type: ' + str(uplink_info["type"]) + '\n')
-        information.append('IP Address: ' + str(uplink_info["v4ip"]) + '\n')
-        information.append('Hello Interval: ' + str(uplink_info["hello_interval"]) + '\n')
-        information.append('Cost: ' + str(uplink_info["cost"]) + '\n')
-        information.append('Neighbour Hold Time: ' + str(uplink_info["bgp_neigh_hold_time"]) + '\n')
-        information.append('Neighbour Keep Alive Time: ' + str(uplink_info["state"]) + '\n')
-        information.append('Inbound Units: ' + str(uplink_info["qos_inbound_units"]) + '\n')
-        information.append('Outbound Units: ' + str(uplink_info["qos_outbound_units"]) + '\n')
+        information.append('Uplink ID: {}\n'.format(uplink_info["id"]))
+        information.append('Uplink Name: {}\n'.format(uplink_info["name"]))
+        information.append('Dead Interval: {}\n'.format(uplink_info["dead_interval"]))        
+        information.append('Priority: {}\n'.format(uplink_info["priority"]))
+        information.append('Site Link Priority: {}\n'.format(uplink_info["sitelink_prio"]))
+        information.append('Up Time: {}\n'.format(uplink_info["uptime"]))#
+        information.append('State: {}\n'.format(uplink_info["state"]))
+        information.append('WAN: {}\n'.format(uplink_info["wan"]))
+        information.append('Appliance: {}\n'.format(uplink_info["node"]))#
+        information.append('Type: {}\n'.format(uplink_info["type"]))
+        information.append('IP Address: {}\n'.format(uplink_info["v4ip"]))#
+        information.append('Hello Interval: {}\n'.format(uplink_info["hello_interval"]))
+        information.append('Cost: {}\n'.format(uplink_info["cost"]))
+        information.append('Neighbour Hold Time: {}\n'.format(uplink_info["bgp_neigh_hold_time"]))
+        information.append('Neighbour Keep Alive Time: {}\n'.format(uplink_info["bgp_neigh_keepalive_time"]))
+        information.append('Inbound Units: {}\n'.format(uplink_info["qos_inbound_units"]))
+        information.append('Outbound Units: {}\n'.format(uplink_info["qos_outbound_units"]))
         return str(information)
