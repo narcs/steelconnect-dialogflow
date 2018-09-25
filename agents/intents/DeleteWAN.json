@@ -19,7 +19,7 @@
         },
         {
           "id": "1db264af-7e54-427e-ac5a-4a8f9024de0b",
-          "required": false,
+          "required": true,
           "dataType": "@sys.any",
           "name": "WANName",
           "value": "$WANName",
@@ -40,7 +40,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1522727777,
+  "lastUpdate": 1537867967,
   "fallbackIntent": false,
   "events": []
 }
