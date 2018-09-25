@@ -1,0 +1,7 @@
+uplinks_delete_unprompted - delete uplinks without any prompts
+
+#me
+delete uplink from alice springs site to routevpn
+
+#bot default
+Uplink called Uplink between site: Mothership and WAN: RouteVPN has been deleted

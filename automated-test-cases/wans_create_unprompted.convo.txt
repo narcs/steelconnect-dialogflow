@@ -1,0 +1,7 @@
+wans_create_unprompted - create wans without being prompted for required parameters
+
+#me
+Create a wan named mufasa
+
+#bot default
+mufasa created

@@ -22,7 +22,10 @@
           "name": "Country",
           "value": "$Country",
           "prompts": [
-            "What country?"
+            {
+              "lang": "en",
+              "value": "What country?"
+            }
           ],
           "isList": false
         },
@@ -33,7 +36,10 @@
           "name": "City",
           "value": "$City",
           "prompts": [
-            "What city would you like the site created in?"
+            {
+              "lang": "en",
+              "value": "What city would you like the site created in?"
+            }
           ],
           "isList": false
         },
@@ -44,7 +50,10 @@
           "name": "SiteName",
           "value": "$SiteName",
           "prompts": [
-            "What type of site would you like to create (e.g. DC, branch, shop, warehouse)?"
+            {
+              "lang": "en",
+              "value": "What is the name of site (e.g. DC, branch, shop, warehouse)?"
+            }
           ],
           "isList": false
         }
@@ -52,6 +61,7 @@
       "messages": [
         {
           "type": 0,
+          "lang": "en",
           "speech": "There was an error connecting to the SteelConnect API."
         }
       ],
@@ -64,7 +74,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1526785924,
+  "lastUpdate": 1536841188,
   "fallbackIntent": false,
   "events": []
 }

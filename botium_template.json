@@ -1,0 +1,12 @@
+{
+    "botium": {
+      "Capabilities": {
+        "PROJECTNAME": "<project name>",
+        "CONTAINERMODE": "dialogflow",
+        "DIALOGFLOW_PROJECT_ID": "<google project id>",
+        "DIALOGFLOW_CLIENT_EMAIL": "<service credentials email>",
+        "DIALOGFLOW_PRIVATE_KEY": "<service credentials private key>",
+        "DIALOGFLOW_USE_INTENT": false
+      }
+    }
+  }

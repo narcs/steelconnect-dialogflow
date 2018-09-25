@@ -1,0 +1,31 @@
+appliance_delete_prompted - delete an appliance while being prompted for required parameters
+
+#me
+Delete an appliance
+
+#bot default
+What is the Model?
+
+#me
+ewok
+
+#bot default
+What is the City?
+
+#me
+Clayton
+
+#bot default
+What is the Country?
+
+#me
+Australia
+
+#bot default
+What is the SiteName?
+
+#me
+HQ
+
+#bot default
+Successfully deleted ewok located on HQ in Clayton, AU

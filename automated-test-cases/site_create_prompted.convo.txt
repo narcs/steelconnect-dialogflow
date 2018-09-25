@@ -1,0 +1,25 @@
+site_create_prompted
+
+#me
+create a site
+
+#bot default
+What country?
+
+#me
+norway
+
+#bot default
+What city would you like the site created in?
+
+#me
+oslo
+
+#bot default
+What is the name of site (e.g. DC, branch, shop, warehouse)?
+
+#me
+pikachu
+
+#bot default
+A site named Pikachu has been created in Oslo Norway

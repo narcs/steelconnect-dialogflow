@@ -6,3 +6,7 @@
 
 # default-auth file
 default-auth.json
+
+# Removes files needed for or created from testing framework
+botium.json
+/botiumwork

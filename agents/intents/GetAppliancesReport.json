@@ -1,24 +1,13 @@
 {
-  "id": "c2a0e787-cab6-45f4-bb23-05a1d2e772cb",
-  "name": "GetUplinkInfo",
+  "id": "10337523-8976-4332-9a56-f6c253623d9d",
+  "name": "GetAppliancesReport",
   "auto": true,
   "contexts": [],
   "responses": [
     {
       "resetContexts": false,
-      "action": "GetUplinkInfo",
-      "affectedContexts": [
-        {
-          "name": "GetUplinkInfo-followup",
-          "parameters": {},
-          "lifespan": 1
-        },
-        {
-          "name": "DisplayUplinkInfo",
-          "parameters": {},
-          "lifespan": 1
-        }
-      ],
+      "action": "GetAppliancesReport",
+      "affectedContexts": [],
       "parameters": [],
       "messages": [
         {
@@ -34,7 +23,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1534666816,
+  "lastUpdate": 1534645441,
   "fallbackIntent": false,
   "events": []
 }

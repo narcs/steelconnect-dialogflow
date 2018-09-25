@@ -1,0 +1,7 @@
+uplinks_create_unprompted - Create uplinks without any prompts
+
+#me
+add a routevpn uplink to alice springs site
+
+#bot default
+An uplink called Uplink has been created between site: Mothership, Alice Springs, AU and WAN: RouteVPN 
