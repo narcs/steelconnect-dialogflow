@@ -34,13 +34,24 @@ from actions.uplink import list_uplinks
 from actions.get_appliance_info import get_appliance_info
 from actions.get_appliance_info_followup import get_appliance_info_followup
 from actions.get_uplink_info import get_uplink_info
-from actions.delete_uplink import delete_uplink 
-from actions.delete_uplink_select_site import delete_uplink_select_site 
+from actions.get_uplinks_report import get_uplinks_report
+from actions.get_uplink_info_followup import get_uplink_info_followup
+from actions.get_appliances_report import get_appliances_report
+from actions.delete_uplink import delete_uplink
+from actions.delete_uplink_select_site import delete_uplink_select_site
 from actions.create_appliance import create_appliance
+
+from actions.get_sitelinks_report import get_sitelinks_report
 
 app = Flask(__name__)
 app.Debug = True
 
+# Enable error logging through app engine logging.
+# https://stackoverflow.com/a/42547090
+@app.before_request
+def enable_local_error_handling():
+    app.logger.addHandler(logging.StreamHandler())
+    app.logger.setLevel(logging.INFO)
 
 # Setup up api authentication
 try:
@@ -73,6 +84,9 @@ def get_appliance_info_followup_custom(api_auth, parameters, contexts):
 def delete_appliance_followup_custom(api_auth, parameters, contexts):
     return delete_appliance_followup(api_auth, contexts[0]["parameters"], contexts)
 
+def get_uplink_info_followup_custom(api_auth, parameters, contexts):
+    return get_uplink_info_followup(api_auth, contexts[0]["parameters"], contexts)
+
 register_action("CreateSite", create_site)
 register_action("CreateUplink", create_uplink)
 register_action("CreateUplinkSelectSite", create_uplink_select_site)
@@ -93,12 +107,16 @@ register_action("ClearSites", clear_sites)
 register_action("CreateZone", create_zone)
 register_action("ListUplinks", list_uplinks)
 register_action("GetUplinkInfo", get_uplink_info)
+register_action("GetUplinkInfo.GetUplinkInfo-custom", get_uplink_info_followup_custom)
 register_action("ListAppliances", list_appliances)
 register_action("DeleteAppliance", delete_appliance)
 register_action("DeleteAppliance.DeleteAppliance-custom", delete_appliance_followup_custom)
 register_action("GetApplianceInfo", get_appliance_info)
 register_action("GetApplianceInfo.GetApplianceInfo-custom", get_appliance_info_followup_custom)
 register_action("CreateAppliance", create_appliance)
+register_action("GetAppliancesReport", get_appliances_report)
+register_action("GetUplinksReport", get_uplinks_report)
+register_action("GetSitelinksReport", get_sitelinks_report)
 
 @app.route('/')
 def home():

@@ -16,48 +16,29 @@ def get_uplink_info (api_auth, parameters, contexts):
     :return: Returns a response to be read out to user 
     :rtype: string 
 
-    Example Statement: Get uplink information on Mothership in Alice Springs, Australia
+    Example Statement: Get uplink information 
     """
-# Get info about uplink at site blah
-    try:
-        site_name = parameters["SiteName"]
-        # Need city and country as well because you want to hone in on which site
-        city = parameters["City"]
-        country_code = parameters["Country"]["alpha-2"]
-    except KeyError as e:
-        error_string = "Error processing getting Appliance information intent. {0}".format(e)
-        logging.error(error_string)
-        return error_string    
+    
+    uplinks_res = api_auth.uplink.get_uplink_info()
+    if uplinks_res.status_code != 200:
+        return "Failed to get a list of uplinks"
+    
+    uplinks = uplinks_res.json()["items"]
 
-    # Get all sites and check whether the site name exists in that location
-    site_id = get_site_id_by_name(api_auth, site_name, city,country_code)
-    
-    # See if there are uplinks on the site
-    uplink_list = api_auth.uplink.list_uplinks()
-    if uplink_list.status_code == 200:
-        data = uplink_list.json()["items"]
-        uplinks_on_site = []
-        for uplink in data:
-            if uplink["site"] == site_id:
-                uplinks_on_site.append(uplink)
+    if len(uplinks) == 1:
+        uplink_information = uplinks[0]
+        information = api_auth.uplink.format_uplink_information(uplink_information)
+        speech = "Information for Uplink {}: \n{}".format(uplinks[0]["id"], information)
+    elif len(uplinks) > 1:
+        uplink_options_response = ''
+        uplink_options = []
+        count = 1
+        for uplink in uplinks:
+            uplink_options_response += "Option " + str(count) + ": " + uplink["id"] + '\n' 
+            uplink_options.append(uplink["id"])
+            count = count + 1
+        api_auth.uplink.set_uplink_list(uplink_options)
+        speech = "There are multiple uplinks. Please choose a value from the following\n: {}".format(uplink_options_response)
     else:
-        return "Error: Failed to get uplinks on specified site"
-    
-    # If there are uplinks on the site then collect the information and spit it out
-    if len(uplinks_on_site) > 0:
-        res = api_auth.uplink.get_uplink_info(site_id)
-        if res.status_code == 200:
-            information = []
-            count = 1
-            uplink_info = res.json()
-            for uplink_data in uplink_info["items"]:
-                information.append('Uplink Number ' + str(count) + ': \n')
-                information.append(api_auth.uplink.format_uplink_information(uplink_data))
-                information.append('\n')
-                count = count + 1
-            speech = "There are {} uplinks on {}, located in {}, {}: \n {}".format(len(uplinks_on_site), site_id, city, country_code, ''.join(information))
-        else:
-            return "Error: Failed to get information about uplinks"        
-    else:
-        return "There were no uplinks found on {}, located in {}, {}. Please try a different site name or location.".format(site_name, city, country_code)
+        return "There were no uplinks found"
     return speech

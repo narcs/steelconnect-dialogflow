@@ -99,3 +99,6 @@ The following refers to preconditions that need to be met before running `botium
 * To change Botium export files to automated-test-cases: `export BOTIUM_CONVOS=./automated-test-cases`
 * to run Botium tests: `botium-cli run`
 * To open up a browser UI with the test cases: `botium-cli emulator browser --convos=./spec/convo`
+# Future Things to do
+* Validate same city names and differents country pairings (E.g. Differentiate between Sydney Canada and Sydney Australia)
+* When getting information about uplinks and appliances, we currently have it such that DialogFlow passes information back to the code here. This feels dirty, and we would ideally like to make it such that the information is stored on the server so that it can be retrieved there rather than having to pass it backwards and forwards. 
