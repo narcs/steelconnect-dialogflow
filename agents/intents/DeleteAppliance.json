@@ -21,6 +21,12 @@
           "dataType": "@Model",
           "name": "Model",
           "value": "$Model",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the model of the appliance you want to create?"
+            }
+          ],
           "isList": false
         },
         {
@@ -29,6 +35,12 @@
           "dataType": "@sys.geo-city",
           "name": "City",
           "value": "$City",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "In which city is this site in?"
+            }
+          ],
           "isList": false
         },
         {
@@ -37,6 +49,12 @@
           "dataType": "@sys.geo-country-code",
           "name": "Country",
           "value": "$Country",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "In which country is this site in?"
+            }
+          ],
           "isList": false
         },
         {
@@ -45,6 +63,12 @@
           "dataType": "@sys.any",
           "name": "SiteName",
           "value": "$SiteName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the name of the site that you would like your appliance to be on?"
+            }
+          ],
           "isList": false
         }
       ],
@@ -62,7 +86,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1526024682,
+  "lastUpdate": 1537933594,
   "fallbackIntent": false,
   "events": []
 }

@@ -1,6 +1,6 @@
 {
   "id": "f47796b8-5382-453e-be83-4afaaf0efd33",
-  "name": "CreateUplinkIntent",
+  "name": "CreateUplink",
   "auto": true,
   "contexts": [],
   "responses": [
@@ -24,7 +24,7 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "What is the connected wan?"
+              "value": "What wan would you like to connect it to?"
             }
           ],
           "isList": false
@@ -38,7 +38,7 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "What is the city name?"
+              "value": "In which city?"
             }
           ],
           "isList": false
@@ -86,7 +86,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1533115572,
+  "lastUpdate": 1537932529,
   "fallbackIntent": false,
   "events": []
 }

@@ -24,7 +24,7 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "What country?"
+              "value": "In which country would you like to create your site?"
             }
           ],
           "isList": false
@@ -38,7 +38,7 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "What city would you like the site created in?"
+              "value": "Which city would you like to create your site in?"
             }
           ],
           "isList": false
@@ -52,7 +52,7 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "What is the name of site (e.g. DC, branch, shop, warehouse)?"
+              "value": "What would you like to name your site?"
             }
           ],
           "isList": false
@@ -74,7 +74,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1536841188,
+  "lastUpdate": 1537931253,
   "fallbackIntent": false,
   "events": []
 }
