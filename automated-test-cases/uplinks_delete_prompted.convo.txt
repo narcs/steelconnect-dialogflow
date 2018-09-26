@@ -4,13 +4,13 @@ uplinks_delete_prompted - Delete uplinks while being prompted for parameters
 delete an uplink
 
 #bot default
-What WAN is it connected to?
+Which WAN was it connected to?
 
 #me
 internet
 
 #bot default
-Which city is it connected to?
+In which city is the connected site located in?
 
 #me
 alice springs

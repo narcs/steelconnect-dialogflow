@@ -4,7 +4,7 @@ wans_delete_prompted - delete wans while being prompted for required parameters
 delete a wan
 
 #bot default
-What is the WANName?
+What is the name of the WAN that you want to delete?
 
 #me
 simba

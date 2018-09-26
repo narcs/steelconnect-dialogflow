@@ -4,13 +4,13 @@ uplinks_create_prompted - Create uplinks while being prompted
 create an uplink
 
 #bot default
-What is the connected wan?
+What wan would you like to connect it to?
 
 #me
 internet
 
 #bot default
-What is the city name?
+In which city?
 
 #me
 alice springs
