@@ -24,7 +24,7 @@
   },
   "defaultTimezone": "Australia/Sydney",
   "webhook": {
-    "url": "https://steelconnect-198705.appspot.com/webhook/",
+    "url": "https://\u003cyour-project-id\u003e.appspot.com/webhook/",
     "headers": {
       "": ""
     },
