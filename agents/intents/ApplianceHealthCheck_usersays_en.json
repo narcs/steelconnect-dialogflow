@@ -1,0 +1,38 @@
+[
+  {
+    "id": "274978e4-e0c6-41f0-a68a-414a4b2aa69a",
+    "data": [
+      {
+        "text": "Appliance Overview",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537946231
+  },
+  {
+    "id": "69f930ae-f22f-4239-aa78-49cf3e0a1527",
+    "data": [
+      {
+        "text": "Appliance report",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537946231
+  },
+  {
+    "id": "53b67e95-a1e1-44bd-b843-4cedf8f8ba04",
+    "data": [
+      {
+        "text": "Appliance health check",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1534645441
+  }
+]

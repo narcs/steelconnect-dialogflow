@@ -4,19 +4,19 @@ site_delete_prompted
 delete a site
 
 #bot default
-What is the name of the site?
+What is the name of the site that you would like to delete?
 
 #me
 pikachu
 
 #bot default
-What City?
+In which city is this site located?
 
 #me
 oslo
 
 #bot default
-What Country?
+In which country is this site located?
 
 #me
 norway

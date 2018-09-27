@@ -1,6 +1,54 @@
 [
   {
-    "id": "15ae5264-81b0-401d-9733-2a9a0df4caf7",
+    "id": "708afbc6-757e-49a7-8a9e-0bf8ed07ccdc",
+    "data": [
+      {
+        "text": "Delete Appliance: ",
+        "userDefined": false
+      },
+      {
+        "text": "ewok",
+        "alias": "Model",
+        "meta": "@Model",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "caterpie",
+        "alias": "SiteName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "new york",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "united states",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537933594
+  },
+  {
+    "id": "ed0bf0a1-3599-4641-81c7-2ee1b6065cc5",
     "data": [
       {
         "text": "Delete ",
@@ -38,7 +86,7 @@
     "updated": 1526024614
   },
   {
-    "id": "4f59af3e-bd60-4744-be23-d05f64c90072",
+    "id": "d1ca49fc-ffe3-4633-adc9-1a84bccf95d3",
     "data": [
       {
         "text": "Delete appliance",
@@ -50,7 +98,7 @@
     "updated": 1526024614
   },
   {
-    "id": "635b4f43-8866-4624-802c-8a0435182dbf",
+    "id": "411d2828-5c8a-4cc4-b8f9-83f23768a1d5",
     "data": [
       {
         "text": "Delete shadow appliance",
@@ -62,7 +110,7 @@
     "updated": 1526024614
   },
   {
-    "id": "7311ac0c-64a1-4063-b930-ede4e7719df5",
+    "id": "d75063cb-8f77-47d3-a5a1-1684c266680a",
     "data": [
       {
         "text": "Delete ",
@@ -110,7 +158,7 @@
     "updated": 1526015220
   },
   {
-    "id": "4a68b4d0-f480-452c-8559-2e45badc97c5",
+    "id": "84d392a5-296b-4ba4-9da0-ba5e0ecfe4de",
     "data": [
       {
         "text": "Delete ",

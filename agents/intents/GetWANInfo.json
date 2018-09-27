@@ -1,6 +1,6 @@
 {
   "id": "4144a636-a198-4e62-b07c-9fbc4acd25cb",
-  "name": "GetWAN",
+  "name": "GetWANInfo",
   "auto": true,
   "contexts": [],
   "responses": [
@@ -36,7 +36,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": []
+          "speech": ":/ It seems like we are having some trouble getting information on your WANs... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -46,7 +46,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1526012379,
+  "lastUpdate": 1537946996,
   "fallbackIntent": false,
   "events": []
 }

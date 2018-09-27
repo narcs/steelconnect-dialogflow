@@ -1,6 +1,33 @@
 [
   {
-    "id": "4f27fff2-c09d-4e38-8129-16a1aaf6a9e0",
+    "id": "d3223c3b-b2a5-41cc-8e03-debb21e98764",
+    "data": [
+      {
+        "text": "Delete ",
+        "userDefined": false
+      },
+      {
+        "text": "WAN",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      },
+      {
+        "text": ": ",
+        "userDefined": false
+      },
+      {
+        "text": "Metapod",
+        "alias": "WANName",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537944696
+  },
+  {
+    "id": "f909a96e-2c6a-4041-a987-2ffc3f8dab0e",
     "data": [
       {
         "text": "Delete a ",
@@ -14,10 +41,10 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1536927846
+    "updated": 1537867967
   },
   {
-    "id": "a0431975-5b10-43ab-9f3d-34cb1354a55c",
+    "id": "888ab71f-9562-4c6c-9f0a-eaf90197664d",
     "data": [
       {
         "text": "Delete the ",
@@ -39,7 +66,7 @@
     "updated": 1522727777
   },
   {
-    "id": "c55dddee-0c16-4fbf-814a-2b5d33ea57e9",
+    "id": "624438f0-1e56-4afd-a080-3b4f941c8141",
     "data": [
       {
         "text": "Delete the ",

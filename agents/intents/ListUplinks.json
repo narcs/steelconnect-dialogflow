@@ -13,7 +13,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": "There was an error connecting with SteelConnect, please try again later."
+          "speech": ":/ It seems like we are having some trouble retrieving your uplinks... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -23,7 +23,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1525578177,
+  "lastUpdate": 1537947152,
   "fallbackIntent": false,
   "events": []
 }

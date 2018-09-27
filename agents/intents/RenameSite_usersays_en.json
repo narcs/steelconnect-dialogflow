@@ -1,6 +1,120 @@
 [
   {
-    "id": "f3483751-d6dc-470d-9c70-983b093ab62e",
+    "id": "1c3dd635-2546-42ab-a130-ec871a3e9018",
+    "data": [
+      {
+        "text": "Rename ",
+        "userDefined": false
+      },
+      {
+        "text": "Site",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": ": ",
+        "userDefined": false
+      },
+      {
+        "text": "Mankey",
+        "alias": "OldName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Primeape",
+        "alias": "NewName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Dhaka",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Bangladesh",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537948084
+  },
+  {
+    "id": "27a539c4-864f-4139-9096-f4b97f57d0d0",
+    "data": [
+      {
+        "text": "Rename ",
+        "userDefined": false
+      },
+      {
+        "text": "Site",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": ": ",
+        "userDefined": false
+      },
+      {
+        "text": "Pidgey",
+        "alias": "OldName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Pidgeotto",
+        "alias": "NewName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Cairo",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Egypt",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537948084
+  },
+  {
+    "id": "41409d9e-4e01-44ac-973d-0b2058ebda26",
     "data": [
       {
         "text": "Rename a site ",
@@ -48,7 +162,7 @@
     "updated": 1525835582
   },
   {
-    "id": "44909371-990c-4eac-9f68-89d658a7be14",
+    "id": "54b04aa4-0988-4b4a-bfc5-77caa8c7c72a",
     "data": [
       {
         "text": "Rename a site",
@@ -60,7 +174,7 @@
     "updated": 1523422549
   },
   {
-    "id": "2a35d590-2140-47a4-9cab-dd355ae97c7c",
+    "id": "e845f113-654f-4970-9fa3-f9444c06dcb7",
     "data": [
       {
         "text": "Rename ",
@@ -108,7 +222,7 @@
     "updated": 1523422549
   },
   {
-    "id": "2c6fa0a2-4934-4a39-9e35-7108a183ab2d",
+    "id": "fee6d01e-2d75-4fe9-b733-70db362d33b8",
     "data": [
       {
         "text": "Modify site name ",
@@ -156,7 +270,7 @@
     "updated": 1525189521
   },
   {
-    "id": "aff54228-6d11-49c0-95c3-95c38eee7890",
+    "id": "bbc2cdc5-d103-48c2-a5bc-8964335389f4",
     "data": [
       {
         "text": "Change ",
@@ -204,7 +318,7 @@
     "updated": 1523422549
   },
   {
-    "id": "f0859e3b-64bf-4d5d-bb25-8decceae46cd",
+    "id": "0d2296d7-689f-4da5-bbd9-33d4b4fd1daf",
     "data": [
       {
         "text": "I would like to rename ",

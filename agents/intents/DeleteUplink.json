@@ -1,22 +1,22 @@
 {
-  "id": "f47796b8-5382-453e-be83-4afaaf0efd33",
-  "name": "CreateUplinkIntent",
+  "id": "ef169612-c095-4d65-ac45-b1b483595e8a",
+  "name": "DeleteUplink",
   "auto": true,
   "contexts": [],
   "responses": [
     {
       "resetContexts": false,
-      "action": "CreateUplink",
+      "action": "DeleteUplink",
       "affectedContexts": [
         {
-          "name": "CreateUplinkIntent-followup",
+          "name": "DeleteUplinkIntent-followup",
           "parameters": {},
           "lifespan": 2
         }
       ],
       "parameters": [
         {
-          "id": "f480b2f6-129d-42e2-91f7-7aea78f56962",
+          "id": "66b8bd22-7dd2-49ec-b4bd-2414aca0813b",
           "required": true,
           "dataType": "@WANType",
           "name": "Wans",
@@ -24,13 +24,13 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "What is the connected wan?"
+              "value": "Which WAN was it connected to?"
             }
           ],
           "isList": false
         },
         {
-          "id": "54f12351-cb5f-48dd-b8fe-a0a0b41754c1",
+          "id": "0bf92ee4-8ff2-4200-965c-1c245c96dd4d",
           "required": true,
           "dataType": "@sys.geo-city",
           "name": "City",
@@ -38,37 +38,17 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "What is the city name?"
+              "value": "In which city is the connected site located in?"
             }
           ],
           "isList": false
         },
         {
-          "id": "c641f1a3-bd0c-46ba-bd89-a2d68bf3d9cd",
-          "required": false,
-          "dataType": "@SiteTypes",
-          "name": "SiteTypes",
-          "value": "$SiteTypes",
-          "prompts": [
-            {
-              "lang": "en",
-              "value": "What is the site type?"
-            }
-          ],
-          "isList": false
-        },
-        {
-          "id": "758fffc8-f964-4436-87ba-8462a20907af",
+          "id": "1cc0acf4-ab6f-487d-b3ed-9e028a5e45ba",
           "required": false,
           "dataType": "@Uplinks",
           "name": "Uplinks",
           "value": "$Uplinks",
-          "prompts": [
-            {
-              "lang": "en",
-              "value": "What ido you like to call the uplink?"
-            }
-          ],
           "isList": false
         }
       ],
@@ -76,7 +56,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": []
+          "speech": ":/ It seems like we are having some trouble deleting your uplink... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -86,7 +66,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1533115572,
+  "lastUpdate": 1537944619,
   "fallbackIntent": false,
   "events": []
 }

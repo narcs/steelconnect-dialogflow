@@ -1,6 +1,147 @@
 [
   {
-    "id": "b277fa07-027f-4840-900e-9a06632468ed",
+    "id": "1eeaea98-c5ee-4f76-abf2-da81ebe42112",
+    "data": [
+      {
+        "text": "create a ",
+        "userDefined": false
+      },
+      {
+        "text": "site",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " called ",
+        "userDefined": false
+      },
+      {
+        "text": "bulbasaur",
+        "alias": "SiteName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Hobart",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537871822
+  },
+  {
+    "id": "05c86688-fde9-412d-85b4-980fb5d62c93",
+    "data": [
+      {
+        "text": "Create ",
+        "userDefined": false
+      },
+      {
+        "text": "Site",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": ": ",
+        "userDefined": false
+      },
+      {
+        "text": "squirtle",
+        "alias": "SiteName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Jakarta",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Indonesia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537871822
+  },
+  {
+    "id": "e87e838b-e38c-4f0a-8e4c-c4e6763ee6c3",
+    "data": [
+      {
+        "text": "Make ",
+        "userDefined": false
+      },
+      {
+        "text": "Site",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": ": ",
+        "userDefined": false
+      },
+      {
+        "text": "charmander",
+        "alias": "SiteName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Perth",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537871822
+  },
+  {
+    "id": "cddb72ee-df22-40af-b19e-18ed9974f7df",
     "data": [
       {
         "text": "Create a site",
@@ -12,7 +153,7 @@
     "updated": 1526698688
   },
   {
-    "id": "1420e3d6-6c57-4e1f-9f92-aedd7acd94ac",
+    "id": "5f4ad53f-f5d3-41ac-a23e-d2d35d17fbf4",
     "data": [
       {
         "text": "I would like to create a site named ",
@@ -25,7 +166,7 @@
         "userDefined": false
       },
       {
-        "text": " at ",
+        "text": " in ",
         "userDefined": false
       },
       {
@@ -50,7 +191,7 @@
     "updated": 1526382182
   },
   {
-    "id": "eaa16e95-86b0-4739-9bea-5016c4e5e255",
+    "id": "d9c2db44-d15f-4744-95d3-d6ddf90438b2",
     "data": [
       {
         "text": "I want a ",
@@ -78,7 +219,7 @@
     "updated": 1525578915
   },
   {
-    "id": "2ada151f-f3be-4f00-8baa-450c922b065a",
+    "id": "255f8bec-4c21-49a0-a07f-554366f8a796",
     "data": [
       {
         "text": "I would like a ",
@@ -116,7 +257,7 @@
     "updated": 1525578915
   },
   {
-    "id": "acab9bb1-305b-4a6c-8a3b-93b387a3cf68",
+    "id": "2e226242-15a0-4a75-99ce-f0d2982133e0",
     "data": [
       {
         "text": "Bring up a ",
@@ -154,7 +295,7 @@
     "updated": 1525578915
   },
   {
-    "id": "e2b3b39a-4cf7-46cc-8c20-95080544a4b1",
+    "id": "77882a40-40b0-4cd7-9928-b8cbe7b76649",
     "data": [
       {
         "text": "Make a ",
@@ -192,7 +333,7 @@
     "updated": 1525578915
   },
   {
-    "id": "fef735e3-dc6d-405f-aa67-69fb82465b63",
+    "id": "324501d3-d29d-4645-acb1-a54a05f5101c",
     "data": [
       {
         "text": "Create a ",
@@ -230,7 +371,7 @@
     "updated": 1525578915
   },
   {
-    "id": "abe67e06-9ce5-4b7b-a050-dcde7a6325c9",
+    "id": "3b5954cd-ee02-4a01-8b4d-98f23c46bcaf",
     "data": [
       {
         "text": "Add site",
@@ -242,7 +383,7 @@
     "updated": 1525578915
   },
   {
-    "id": "0e5a618c-64c0-40ab-b726-c8eb8edaf7a6",
+    "id": "d2325f8b-eb5b-40a8-a6ec-3dea5c508afc",
     "data": [
       {
         "text": "Instantiate a ",
@@ -280,7 +421,7 @@
     "updated": 1525578915
   },
   {
-    "id": "b2c9bebd-f500-4746-9aab-4f61c21d60ab",
+    "id": "017ed1bf-2bee-449d-a55d-e26bde1eef69",
     "data": [
       {
         "text": "Create a site in ",
@@ -298,7 +439,7 @@
     "updated": 1525578915
   },
   {
-    "id": "ecb9d0c7-5a8f-4a7d-bb92-64567e79e3e9",
+    "id": "696234a5-53b3-4fcd-a685-afe13ba2d346",
     "data": [
       {
         "text": "Create a ",
