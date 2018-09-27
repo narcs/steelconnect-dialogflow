@@ -2,5 +2,8 @@ language: python
 python:
   - "3.6"
 
+install:
+  - pip install -r requirements-dev.txt
+
 script:
-  - python tests/test_app.py
+  - npm -v
