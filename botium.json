@@ -1,0 +1,12 @@
+{
+    "botium": {
+      "Capabilities": {
+        "PROJECTNAME": "SteelConnect",
+        "CONTAINERMODE": "dialogflow",
+        "DIALOGFLOW_PROJECT_ID": "steelconnect-198705",
+        "DIALOGFLOW_CLIENT_EMAIL": "steelconnectautotest@steelconnect-198705.iam.gserviceaccount.com",
+        "DIALOGFLOW_PRIVATE_KEY":  "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQCieopMLQP3SJPT\nMSsWiP0JUPaVudjywZELLnyB1AVw6N0l3jPTbFDIqdyVAnF0E8tlgpvRENeNcwo1\nJTqZhzhSBfS+654xrsgXUHp8smz1IWfwRZdu6+YJAdhxlSF08VLH7FxxzQ4p9tvZ\nXkxeDDISkpSMjAPaf7hjA+i5XQFbBHU+OSUcih+fd7x5SFNyFpp4BqUdaAgDQGVL\n8PL0hIWQ7x82UDOnFUjDx6CKPYfUK00Imc1MFB7bnhTDmFtLnsLxWBu8eq0hfomN\n0EevfdUcKODD3kpPzq1EbIvWUXhgPSdPcJ4dpglU2lS0czNs+8eBowAtW2SUdMbC\nionfx359AgMBAAECgf8nj67HiC5vB5JML1dOerch4uonisOdrYP4364b7oQPT06J\nlJEJ6asXMO+ErhOchTVWgiFucQC1xaJhTln2XUuurRnquB7MpMITldo9LTSv0HJ+\nY8jQ4/TJkf7MU9jRoJuHZ7BwBShtugMjP31YvkodkOiapXz1YXkuosUHsp2h4Lrj\nslEHT9xf2Qs9OZo2ENdOu9Qbbi9RY3Fv7WnGd9Yu1vWfIzhRvx4BBSWYbhkUdThS\nJB70J8rP3EnyLjWBsNPLdo/Jejx3/csVtw8pk4sdLj+NfflvKzkmZHIF20oojPia\nq4b7wIcjzuJyT/d36w+OXyowCmX+OnYkNprQzf0CgYEA4JdsgOHb1nJVQAh0CSmu\nwn8I1veJcctVjSs651Vttv9WIUsqIvYXf52/cVAE+8P0IK2fYcC+U5vNlCa6a3rM\nPoyhWvKsioHD4IpEKb7O3cGmvv6jJ1ZocA7LYJbDhm+u2NkDP4WDeSaAn1o64n2E\nvasqfwBBEdtZfrJOhcB6QPsCgYEAuTNr939Jb21N8dDsNrHPrAA2vl+sGqyqHUr/\nN0f2LRe35MBPyP8pK173Ix3XPU5GXowlyD7n8xVu4/lmMs/dd3KUbv2qcj73MDr0\n7+Xb+10Cspvb4ZDEvJWrC2zcD/7mwjC2wTcorV+fbR6LfwMagxkkxhDhKCVrjbtS\n9lBF1OcCgYBBryeVnfishC24l4BQObeZvIt6S1UQSdaQfecxRwPadFzdSd1d8jk3\nIoyd+Dgs5cddU0n8zeEcFMIQJS96RaS8WmbKcZTSwVbnMajzyJE5u+wnidNvqs7K\njxkd+5ndlIY/d2CC0Gp+ISuW702vdeQ/kHLSR+G/9jX7XuymI3/dxwKBgAwB2nkk\nZoVz577K1dXB933mUaZMG6NrGGhnyV4zKzHHPOP21/VnHaszMAC12ZOe9I8CtRxj\nf7RR6mubatXWhjxNUHRVu+xGSs50tBatp3KHmDouQrZAJZE4futxtl7PHvTuJZsn\nUVrUPUjc1xx3/gsL4Ud6Jq7spil9QKa5k513AoGBAKI6EFKsauFMZBfpZcYgGMTT\nAHiw/O0BDQ6kZz2/bRB1KSqELua2gZb0ECi8CKirP8fHqUhKf0VDBsfgEVmU3e90\nCEyE9VBJFCbLmPW6wVrpvfB3p6/z1J4RR7X9ic3oolr6qXG1LWgXIDALpN+evBhS\n0Yk2iWzB2c+5FmTQhpyy\n-----END PRIVATE KEY-----\n",
+        "DIALOGFLOW_USE_INTENT": false
+      }
+    }
+  }
