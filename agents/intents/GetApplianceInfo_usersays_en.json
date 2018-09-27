@@ -1,5 +1,53 @@
 [
   {
+    "id": "00dd77b2-fd7a-4d28-adc0-8a7bd567d5ad",
+    "data": [
+      {
+        "text": "Appliance Info: ",
+        "userDefined": false
+      },
+      {
+        "text": "Koala",
+        "alias": "Model",
+        "meta": "@Model",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Weedle",
+        "alias": "SiteName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": ",  ",
+        "userDefined": false
+      },
+      {
+        "text": "Sao Paulo",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Brazil",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537945970
+  },
+  {
     "id": "1970f0e7-a7c6-4c52-a8b5-151d7464cc3e",
     "data": [
       {
@@ -29,7 +77,7 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526025822
+    "updated": 1537945970
   },
   {
     "id": "8d144406-d3f4-4cf5-aa79-d4ffe6feee22",
@@ -47,7 +95,7 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526025003
+    "updated": 1537945970
   },
   {
     "id": "71950090-a875-4d29-868d-bbed1955266c",
@@ -85,7 +133,7 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526025003
+    "updated": 1537945970
   },
   {
     "id": "a1aae168-61ad-48b1-bf22-7fbee8834781",
@@ -123,7 +171,7 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526025003
+    "updated": 1537945970
   },
   {
     "id": "03ec0d98-8a29-4cba-88b2-f22492a9ddfc",
@@ -135,7 +183,7 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526025003
+    "updated": 1537945970
   },
   {
     "id": "4f0548df-d313-4248-ba73-ee1b5d8cc2ce",
@@ -147,7 +195,7 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526025003
+    "updated": 1537945970
   },
   {
     "id": "010d9751-da96-4242-b04a-a585c7f5bc8e",
@@ -195,7 +243,7 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526025003
+    "updated": 1537945970
   },
   {
     "id": "278889a3-ec2c-4024-a13a-8b0fd1aaff7d",

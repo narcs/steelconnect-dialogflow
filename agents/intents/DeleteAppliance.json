@@ -24,7 +24,7 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "What is the model of the appliance you want to create?"
+              "value": "What appliance model would you like to delete?"
             }
           ],
           "isList": false
@@ -66,7 +66,7 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "What is the name of the site that you would like your appliance to be on?"
+              "value": "What is the name of the site that you want to delete your appliance?"
             }
           ],
           "isList": false
@@ -76,7 +76,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": []
+          "speech": ":/ It seems like we are having some trouble deleting your appliance... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -86,7 +86,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1537933594,
+  "lastUpdate": 1537935551,
   "fallbackIntent": false,
   "events": []
 }

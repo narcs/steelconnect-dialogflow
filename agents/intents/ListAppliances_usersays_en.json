@@ -1,5 +1,53 @@
 [
   {
+    "id": "2eab7c2d-bd4e-4d1c-90a3-55777f33d600",
+    "data": [
+      {
+        "text": "What appliances do i have?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537947225
+  },
+  {
+    "id": "4a08083f-667b-4062-9736-07b2b553fd08",
+    "data": [
+      {
+        "text": "show me all of my appliances",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537947225
+  },
+  {
+    "id": "912e52ab-0370-4f1d-b3bb-071265676086",
+    "data": [
+      {
+        "text": "show me all my appliances",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537947225
+  },
+  {
+    "id": "6d2d1c70-b280-4d3a-b214-a2b59ad2f814",
+    "data": [
+      {
+        "text": "appliance list",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537947035
+  },
+  {
     "id": "fc1126ce-c840-4b06-8a70-32adb7df51de",
     "data": [
       {
@@ -9,7 +57,7 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526040973
+    "updated": 1537947225
   },
   {
     "id": "c11e9bf7-6b8e-4795-ac15-4a2ed937a23e",
@@ -21,7 +69,7 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526040973
+    "updated": 1537947225
   },
   {
     "id": "89694828-3186-4caf-a55f-4e7b10dfc15b",
@@ -33,7 +81,7 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526040973
+    "updated": 1537947225
   },
   {
     "id": "6453af82-fc0a-42fa-a215-d421dfa872f0",
@@ -45,7 +93,7 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1526040973
+    "updated": 1537947225
   },
   {
     "id": "242b927d-8f50-49a9-9f43-f1bcf9b2fd22",

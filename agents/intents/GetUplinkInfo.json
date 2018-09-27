@@ -24,7 +24,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": []
+          "speech": ":/ It seems like we are having some trouble getting information on your uplink... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -34,7 +34,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1534666816,
+  "lastUpdate": 1537946093,
   "fallbackIntent": false,
   "events": []
 }

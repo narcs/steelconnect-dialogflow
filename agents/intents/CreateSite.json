@@ -62,7 +62,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": "There was an error connecting to the SteelConnect API."
+          "speech": ":/ It seems like we are having some trouble creating your site... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {
@@ -74,7 +74,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1537931253,
+  "lastUpdate": 1537935491,
   "fallbackIntent": false,
   "events": []
 }

@@ -81,7 +81,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": []
+          "speech": ":/ It seems like we are having some trouble renaming your site... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -91,7 +91,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1525835582,
+  "lastUpdate": 1537948164,
   "fallbackIntent": false,
   "events": []
 }

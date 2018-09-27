@@ -1,5 +1,29 @@
 [
   {
+    "id": "fd838e1f-fb9a-4ddb-9245-92bfd758b775",
+    "data": [
+      {
+        "text": "WAN",
+        "alias": "WAN",
+        "meta": "@WAN",
+        "userDefined": false
+      },
+      {
+        "text": " Info: ",
+        "userDefined": false
+      },
+      {
+        "text": "Kakuna",
+        "alias": "WANName",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537946996
+  },
+  {
     "id": "4ee0ddfc-8d80-48f5-8a85-c195b48624ae",
     "data": [
       {

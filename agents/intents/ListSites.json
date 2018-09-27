@@ -27,13 +27,20 @@
           "name": "organisation",
           "value": "Monash",
           "isList": false
+        },
+        {
+          "id": "a611a399-d800-4a97-8864-79fb15e30208",
+          "dataType": "@SiteNames",
+          "name": "SiteNames",
+          "value": "$SiteNames",
+          "isList": false
         }
       ],
       "messages": [
         {
           "type": 0,
           "lang": "en",
-          "speech": "There was an error connecting with SteelConnect, please try again later."
+          "speech": ":/ It seems like we are having some trouble retrieving your sites... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -43,7 +50,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1525578970,
+  "lastUpdate": 1537947290,
   "fallbackIntent": false,
   "events": []
 }

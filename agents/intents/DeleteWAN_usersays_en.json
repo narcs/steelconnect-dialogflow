@@ -1,5 +1,32 @@
 [
   {
+    "id": "d3223c3b-b2a5-41cc-8e03-debb21e98764",
+    "data": [
+      {
+        "text": "Delete ",
+        "userDefined": false
+      },
+      {
+        "text": "WAN",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      },
+      {
+        "text": ": ",
+        "userDefined": false
+      },
+      {
+        "text": "Metapod",
+        "alias": "WANName",
+        "meta": "@sys.any",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1537944696
+  },
+  {
     "id": "f909a96e-2c6a-4041-a987-2ffc3f8dab0e",
     "data": [
       {

@@ -70,7 +70,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": []
+          "speech": ":/ It seems like we are having some trouble creating your appliance... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -80,7 +80,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1537930914,
+  "lastUpdate": 1537934500,
   "fallbackIntent": false,
   "events": []
 }
