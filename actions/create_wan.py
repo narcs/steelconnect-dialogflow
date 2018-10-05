@@ -1,5 +1,4 @@
 import logging
-
 from flask import json
 
 def create_wan(api_auth, parameters, contexts):
