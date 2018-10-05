@@ -10,18 +10,29 @@ def create_appliance(api_auth, parameters, contexts):
     In order for them to do so, we need to know the city, site name
     model and country code. 
 
-    :param api_auth: SteelConnect api object
-    :type api_auth: SteelConnectAPI
-    :param parameters: json parameters from Dialogflow intent
-    :type parameters: json
-    :return: Returns a response to be read out to user
-    :rtype: string
+    Works by checking if the site exists 
+
+    Parameters:
+    - api_auth: SteelConnect API object, it contains authentication log in details
+    - parameters: The json parameters obtained from the Dialogflow Intent. It obains the following:
+        > city: In which city the site is located in
+        > country_code: The country code of the country where the site is located 
+        > model: The model of the appliance the user wants to create
+        > site_name: the name of the site the user wants to place the appliance on
+    
+    Returns:
+    - speech: A string which has the response to be read/printed to the user
+
+    Example Prompt:
+    - Make an ewok appliance for charmeleon, in Darwin, Australia
+
     """
     try:
         city = parameters["City"]
         site_name = parameters["SiteName"]
         model = parameters["Model"]
         country_code = parameters["Country"]["alpha-2"]
+        country_name = parameters["Country"]["name"]
  
     except KeyError as e:
         error_string = "Error processing create Appliance intent. {0}".format(e)
@@ -29,35 +40,29 @@ def create_appliance(api_auth, parameters, contexts):
         return error_string
 
     # Get all sites and check whether site exists
-    # Currently, if site doesn't exist it just says not available
-    # Need to fix it, but depends on how get_site_id_by_name is implemented 
+    # Currently, if site doesn't exist it will let the user know that the site doesn't exist
     try:
         site_id = get_site_id_by_name(api_auth, site_name, city,country_code)
     except APIError as E:
         return str(E)    
 
-    data_sites = api_auth.site.list_sites().json()
-    for item in data_sites["items"]:
-        if item["id"] == site_id:
-            break
-
-    if site_id:
+    if site_id:         #If we find a site that exists
         # Call create_appliance in SteelConnectAPI
         res = api_auth.node.create_appliance(site=site_id, model=model)
  
-        if res.status_code == 200:
-            speech = "Appliance: {} created for site: {}, {}".format(model, city, site_name)
+        if res.status_code == 200:          #if successful
+            speech = "The {} appliance was created for the {} site in {}, {}".format(model, site_name, city, country_name)
         elif res.status_code == 400:
             speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
         elif res.status_code == 404:
             speech = "Error: Organization with given id does not exist"
-        elif res.status_code == 500:
-            speech = "Error: Could not create Appliance"
+        elif res.status_code == 500:        #If we couldn't create the appliance
+            speech = "Error: We could not create the {} appliance for the {} site in {}, {}".format(model, site_name, city, country_name)
         else:
             speech = "Error: Could not connect to SteelConnect"
  
         logging.debug(speech)
     else:
-        speech = "Invalid site {} in {}".format(site_name, city)
+        speech = "The site {} does not exist in {}, {}. No appliances were created.".format(site_name, city,country_name)
     return speech
 
