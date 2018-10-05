@@ -22,4 +22,4 @@ In which country is this site located?
 norway
 
 #bot default
-Site pikachu in Oslo Norway has been successfully deleted
+The site pikachu located in Oslo, Norway has been successfully deleted

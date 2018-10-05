@@ -22,4 +22,4 @@ What would you like to name your site?
 pikachu
 
 #bot default
-A site named Pikachu has been created in Oslo Norway
+A site named pikachu has been created in Oslo, Norway

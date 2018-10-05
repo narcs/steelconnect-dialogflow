@@ -10,4 +10,4 @@ What is the name of the WAN that you want to delete?
 simba
 
 #bot default
-Successfully deleted the WAN named 'simba'
+The simba WAN has successfully been deleted

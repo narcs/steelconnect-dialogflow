@@ -28,4 +28,4 @@ What is the model of the appliance you want to create?
 ewok
 
 #bot default
-Appliance: ewok created for site: Clayton, HQ
+The ewok appliance was created for the HQ site in Clayton, Australia
