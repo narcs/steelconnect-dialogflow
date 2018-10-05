@@ -4,6 +4,7 @@ from flask import json
 def list_uplinks(api_auth, parameters, contexts):
     """
     Allows users to list all the uplinks that are in the organisation and get a brief overview
+    in terms of which site and WAN it is connected to and the name of the uplink
 
     Works by calling the list_uplinks action defined in api/uplink.py
 
