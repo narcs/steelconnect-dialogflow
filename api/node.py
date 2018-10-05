@@ -50,14 +50,15 @@ class NodeAPI:
 
     def format_appliance_information(self, appliance_info): #Prevent duplicated code in get_appliance_info and get_appliance_info_followup
         information = []
-        information.append("Appliance ID: {}\n".format(appliance_info["id"]))         #Need to specify str(json[key]), otherwise it is unavailable in dialogflow
-        information.append("Model: {}\n".format(appliance_info["model"]))        
-        information.append("Organisation: {}\n".format(appliance_info["org"]))        
-        information.append("Site: {}\n".format(appliance_info["site"]))        
-        information.append("Serial: {}\n".format(appliance_info["serial"]))        
-        information.append("Uptime: {}\n".format(appliance_info["uptime"]))        
-        information.append("CPU Load: {}\n".format(appliance_info["cpu_load"]))        
-        information.append("Mem Load: {}\n".format(appliance_info["mem_load"]))        
-        information.append("State: {}\n".format(appliance_info["state"]))        
-        information.append("Last Online: {}\n".format(appliance_info["last_online"]))        
+        #The *(random text)* is for bolding purposes. Slack follows markdown notation.
+        information.append("*Appliance ID:* {}\n".format(appliance_info["id"]))         #Need to specify str(json[key]), otherwise it is unavailable in dialogflow
+        information.append("*Model:* {}\n".format(appliance_info["model"]))        
+        information.append("*Organisation:* {}\n".format(appliance_info["org"]))        
+        information.append("*Site:* {}\n".format(appliance_info["site"]))        
+        information.append("*Serial:* {}\n".format(appliance_info["serial"]))        
+        information.append("*Uptime:* {}\n".format(appliance_info["uptime"]))        
+        information.append("*CPU Load:* {}\n".format(appliance_info["cpu_load"]))        
+        information.append("*Mem Load:* {}\n".format(appliance_info["mem_load"]))        
+        information.append("*State:* {}\n".format(appliance_info["state"]))        
+        information.append("*Last Online:* {}\n".format(appliance_info["last_online"]))        
         return information
