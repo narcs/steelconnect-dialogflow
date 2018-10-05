@@ -5,36 +5,38 @@ from actions.util import *
 
 def get_wan(api_auth, parameters, contexts):
     """
-    Gets details about a specific WAN.
+    Allows users to get detailed information about a particular WAN
 
-    :param api_auth: steelconnect api object
-    :type api_auth: SteelConnectAPI
-    :param parameters: json parameters from Dialogflow intent
-    :type parameters: json
-    :param contexts: json contexts from Dialogflow intent
-    :type parameters: json
-    :return: Returns a response to be read out to user
-    :rtype: string
+    Works by checking if the WAN exists. If it exists, it gets the information about the WAN via 
+    the get_wan() method. It then extracts and formats the data
+
+    Parameters:
+    - api_auth: SteelConnect API object, it contains authentication log in details
+    - parameters: The json parameters obtained from the Dialogflow Intent. It obtains the following:
+        > WAN_name: the name of the WAN the user wants to retreive information about
+
+    Returns:
+    - speech: A string which has the list of all sites in the organisation
+
+    Example Prompt:
+    - Get details of the WAN named GlobalNet
+
     """
 
-    wan_name = parameters["WANName"]
-    wan_id = None
+    WAN_name = parameters["WANName"]
+    WAN_id = None
 
     try:
-        wan_id = get_wan_id_by_name(api_auth, wan_name)
+        WAN_id = get_wan_id_by_name(api_auth, WAN_name)
     except APIError as e:
         return str(e)
 
-    res = api_auth.wan.get_wan(wan_id)
+    res = api_auth.wan.get_wan(WAN_id)
     data = res.json()
 
     if res.status_code == 200:
-        template = """Name: {}
-Long name: {}
-REST API ID: {}
-No. of uplinks connected to this WAN: {}"""
-
-        speech = template.format(data["name"], data["longname"] if data["longname"] is not None else "<none>", wan_id, len(data["uplinks"]))
+        template = """*WAN ID:* {}\n*Name:* {}\n*Organisation:* {}\n*Trusted:* {}\n*Internet:* {}\n*Internet Nat:* {}\n*DCuplink:* {}\n*pingcheck_profile:* {}\n*pingcheck_ips:* {}\n*ping_gw:* {}\n*Encryption:* {}\n*uid:* {}\n*Sitelink:* {}\n*Number Of Connected Uplinks:* {}\n*Connected Uplinks:* \n\t{}\n"""
+        speech = template.format(WAN_id, data["name"], data["org"], data["trusted"], data["internet"], data["Internet_NAT"], data["dcuplink"] , data["pingcheck_profile"] , data["pingcheck_ips"], data["ping_gw"] , data["encryption"] , data["uid"], data["sitelink"], len(data["uplinks"]), "\n\t".join(data["uplinks"]))
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
     elif res.status_code == 500:
