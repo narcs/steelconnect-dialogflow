@@ -10,7 +10,8 @@ def create_appliance(api_auth, parameters, contexts):
     In order for them to do so, we need to know the city, site name
     model and country code. 
 
-    Works by checking if the site exists 
+    Works by checking if the site exists. If it exists, it gets the parameters, and with the 
+    parameters, it calls the SteelConnectAPI, and creates the appliance 
 
     Parameters:
     - api_auth: SteelConnect API object, it contains authentication log in details
