@@ -44,6 +44,5 @@ def delete_wan(api_auth, parameters, contexts):
         speech = "Error: Other error while attempting to delete the WAN"
 
     logging.debug(speech)
-
     return speech
 
