@@ -37,7 +37,7 @@ def list_appliances(api_auth, parameters, contexts):
                 model = appliance["model"]
 
                 if appliance["site"] == None:
-                    site_name = "No Associated Site" # if the site has been deleted but the appliance still exists, replace deleted site's id with Null. This needs to be done, otherwise, it will cause an error
+                    site_name = "_No Associated Site_" # if the site has been deleted but the appliance still exists, replace deleted site's id with Null. This needs to be done, otherwise, it will cause an error
                 else:
                     site = api_auth.site.get_site(appliance["site"])
                     site_name = site.json()["longname"]     #otherwise, display the proper name
