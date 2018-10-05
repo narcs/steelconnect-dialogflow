@@ -10,8 +10,8 @@ def create_site(api_auth, parameters, contexts):
     Allows users to create site 
     In order for them to do so, we need to know the city, site name and country code. 
 
-    Works by checking if the site exists. If it exists, it gets the parameters, and with the 
-    parameters, it calls the SteelConnectAPI, and creates the appliance 
+    Works by getting the parameters, and calling the SteelConnect API with the parameters to create
+    the site
 
     Parameters:
     - api_auth: SteelConnect API object, it contains authentication log in details
