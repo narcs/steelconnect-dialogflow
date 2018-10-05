@@ -41,7 +41,7 @@ def list_uplinks(api_auth, parameters, contexts):
                 wan_name = wan.json()["longname"]
 
                 #added leading zeroes in the count variable to help with formatting of data
-                speech += "\n{}. ID: {}\n\t  Site: {}\n\t  Uplink Name: {}\n\t  Connected WAN: {}\n".format(str(count).zfill(2), uplink["id"], site_name, name, wan_name)
+                speech += "\n{}. ID: {}\n\t  Site: {}\n\t  Uplink Name: {}\n\t  Connected WAN: {}\n".format(str(count).zfill(len(str(num_uplinks))), uplink["id"], site_name, name, wan_name)
                 count += 1
         else:
             speech = "Unknown error occurred when retrieving uplinks"

@@ -45,9 +45,9 @@ def list_sites(api_auth, parameters, contexts):
                 city = site["city"]
                 country = site["country"]
                 site_id = site["id"]
-                
+
                 #added leading zeroes in the count variable to help with formatting of data
-                speech += "\n{}. ID: {}\n\t  Site Name: {}\n\t  City: {}\n\t  Country: {}\n".format(str(count).zfill(2), site_id, name, city, country)
+                speech += "\n{}. ID: {}\n\t  Site Name: {}\n\t  City: {}\n\t  Country: {}\n".format(str(count).zfill(len(str(num_sites))), site_id, name, city, country)
                 count += 1
         else:
             speech = "Unknown error occurred when retrieving sites"
