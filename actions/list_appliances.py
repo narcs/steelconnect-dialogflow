@@ -1,44 +1,54 @@
 import logging 
-import requests
 from flask import json
-from requests.auth import HTTPBasicAuth
  
-#  "List all appliances" works but not "list appliances"
 def list_appliances(api_auth, parameters, contexts):
     """
-    Displays to users all appliances that exists. 
-    It will let the know the model, appliance id and on which
-    site it is on
+    Allows users to list all the appliances that are in the organisation, as well as 
+    which site they sit on, and it's model type
 
-    :param api_auth: steelconnect api object 
-    :type api_auth: SteelConnectAPI 
-    :param parameters: json parameters from Dialogflow intent 
-    :type parameters: json 
-    :return: Returns a response to be read out to user 
-    :rtype: string 
+    Works by calling the list_appliances action defined in api/appliances.py
+
+    Parameters:
+    - api_auth: SteelConnect API object, it contains authentication log in details
+    - parameters: The json parameters obtained from the Dialogflow Intent. In this case, we
+                  obtain nothing
+
+    Returns:
+    - speech: A string which has the list of all appliances in the organisation
+
+    Example Prompt:
+    - List appliances
+
     """
     logging.info("Listing Appliances")
  
     res = api_auth.node.list_appliances()
-
     if res.status_code == 200:
         data = res.json()["items"]
         num_appliances = len(data)
-        appliance_list = []
-        for appliance in data:
-            appliance_info = "(Appliance ID: {},\nAppliance Model: {},\nSite: {})\n".format(appliance["id"], appliance["model"], appliance["site"])
-            appliance_list.append(appliance_info)
 
         if num_appliances == 0:
             speech = "There are no appliances"
-        elif num_appliances == 1:
-            speech = "There is only one appliance, it is a {} on {} ".format(data[0]["model"], data[0]["site"] )
-        elif num_appliances > 1:
-            speech = "There are {} appliances. \n{}".format(num_appliances, "".join(appliance_list))
+        elif num_appliances >= 1:
+            speech = "There are {} appliances in the organisation: \n".format(num_appliances)
+            count = 1
+            for appliance in data:
+                id = appliance["id"]
+                model = appliance["model"]
+
+                if appliance["site"] == None:
+                    site_name = "No Associated Site" # if the site has been deleted but the appliance still exists, replace deleted site's id with Null. This needs to be done, otherwise, it will cause an error
+                else:
+                    site = api_auth.site.get_site(appliance["site"])
+                    site_name = site.json()["longname"]     #otherwise, display the proper name
+
+                #added leading zeroes in the count variable to help with formatting of data
+                speech += "\n{}. ID: {}\n\t  Site: {}\n\t  Model: {}\n".format(str(count).zfill(len(str(num_appliances))), id, site_name, model)            
+                count += 1
         else:
             speech = "Unknown error occurred when retrieving appliances"
     else:
         speech = "Error: Could not connect to SteelConnect"
+
     logging.debug(speech)
-    
     return speech
