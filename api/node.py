@@ -50,14 +50,14 @@ class NodeAPI:
 
     def format_appliance_information(self, appliance_info): #Prevent duplicated code in get_appliance_info and get_appliance_info_followup
         information = []
-        information.append("Appliance ID: " + str(appliance_info["id"]) + "\n")         #Need to specify str(json[key]), otherwise it is unavailable in dialogflow
-        information.append("Model: " + str(appliance_info["model"]) + "\n")
-        information.append("Organisation: " + str(appliance_info["org"]) + "\n")
-        information.append("Site: " + str(appliance_info["site"])+ "\n")
-        information.append("Serial: " + str(appliance_info["serial"]) + "\n")
-        information.append("Uptime: " + str(appliance_info["uptime"]) + "\n")
-        information.append("CPU Load: " + str(appliance_info["cpu_load"]) + "\n")
-        information.append("Mem Load" + str(appliance_info["mem_load"]) + "\n")
-        information.append("State: " + str(appliance_info["state"]) + "\n")
-        information.append("Last Online: " + str(appliance_info["last_online"]) + "\n")
+        information.append("Appliance ID: {}\n".format(appliance_info["id"]))         #Need to specify str(json[key]), otherwise it is unavailable in dialogflow
+        information.append("Model: {}\n".format(appliance_info["model"]))        
+        information.append("Organisation: {}\n".format(appliance_info["org"]))        
+        information.append("Site: {}\n".format(appliance_info["site"]))        
+        information.append("Serial: {}\n".format(appliance_info["serial"]))        
+        information.append("Uptime: {}\n".format(appliance_info["uptime"]))        
+        information.append("CPU Load: {}\n".format(appliance_info["cpu_load"]))        
+        information.append("Mem Load: {}\n".format(appliance_info["mem_load"]))        
+        information.append("State: {}\n".format(appliance_info["state"]))        
+        information.append("Last Online: {}\n".format(appliance_info["last_online"]))        
         return information
