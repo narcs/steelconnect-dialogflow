@@ -3,17 +3,27 @@ from flask import json
 
 def get_appliance_info_followup(api_auth, parameters, contexts):
     """
-    A follow up for when users want to get information about a 
-    specific appliance. Because the only unique identifier is a 
-    very long strong, it is tedious for user to enter it. 
-    This gives them option numbers to choose from.  
+    Allows users to get detailed information about a particular appliance,in cases where there are 
+    multiple appliances of the same model. In order to do this, we only retrieve a single option 
+    number. It is done this way because the unique identifier is a very long string and we do not 
+    expect users to be able to remember the identifier. Hence, option numbers are currently the 
+    best way to go. 
 
-    :param api_auth: SteelConnect api object
-    :type api_auth: SteelConnectAPI
-    :param parameters: json parameters from Dialogflow intent
-    :type parameters: json
-    :return: Returns a response to be read out to user
-    :rtype: string
+    Works by retrieving the list of appliances that match the model and site that the user requests
+    to get detailed information about. It asks the user for an option number, and delete the 
+    appliance that matches the option number the user put in. 
+
+    Parameters:
+    - api_auth: SteelConnect API object, it contains authentication log in details
+    - parameters: The json parameters obtained from the Dialogflow Intent. It obtains the following:
+        > option_choice: An integer that references an option to delete the appliance
+
+    Returns:
+    - speech: A string which has the list of all sites in the organisation
+
+    Example Prompt:
+    - 2
+
     """
     try:
         option_choice = int(parameters["OptionNumber"])
