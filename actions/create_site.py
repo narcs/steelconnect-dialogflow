@@ -7,7 +7,7 @@ import requests
 
 def create_site(api_auth, parameters, contexts):
     """
-    Allows users to create site 
+    Allows users to create a site 
     In order for them to do so, we need to know the city, site name and country code. 
 
     Works by getting the parameters, and calling the SteelConnect API with the parameters to create
