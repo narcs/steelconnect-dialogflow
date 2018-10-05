@@ -30,7 +30,7 @@ from actions.create_appliance import create_appliance
 from actions.list_appliances import list_appliances
 from actions.delete_appliance import delete_appliance
 from actions.delete_appliance_followup import delete_appliance_followup
-from actions.uplink import list_uplinks
+from actions.list_uplinks import list_uplinks
 from actions.get_appliance_info import get_appliance_info
 from actions.get_appliance_info_followup import get_appliance_info_followup
 from actions.get_uplink_info import get_uplink_info
