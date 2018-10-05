@@ -37,11 +37,11 @@ def delete_site(api_auth, parameters, contexts):
     res = api_auth.site.delete_site(site_id)
 
     if res.status_code == 200:
-        speech = "Site {} in {} {} has been successfully deleted".format(site_name, city, country_name)
+        speech = "The site {} located in {}, {} has been successfully deleted".format(site_name, city, country_name)
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
     elif res.status_code == 500:
-        speech = "Error: Could not delete site"
+        speech = "Error: We could not delete the {} site located in {}, {}".format(site_name, city, country_name)
     else:
         speech = "Error: Could not connect to SteelConnect"
 

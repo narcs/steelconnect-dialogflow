@@ -28,7 +28,7 @@ def create_wan(api_auth, parameters, contexts):
     res = api_auth.wan.create_wan(name)
 
     if res.status_code == 200:
-        speech = "{} created".format(WAN_type)
+        speech = "A WAN called {} was created".format(WAN_type)
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
     elif res.status_code == 500:

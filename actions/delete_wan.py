@@ -26,10 +26,10 @@ def delete_wan(api_auth, parameters, contexts):
     # Now delete the WAN!
     res = api_auth.wan.delete_wan(wan_id)
     if res.status_code == 200:
-        speech = "Successfully deleted the WAN named '{}'".format(wan_name)
+        speech = "The {} WAN has successfully been deleted".format(wan_name)
     elif res.status_code == 500:
         # Deletion failed.
-        speech = "The WAN could not be deleted."
+        speech = "The {} WAN could not be deleted.".format(wan_name)
     else:
         speech = "Error: Other error while attempting to delete the WAN"
 

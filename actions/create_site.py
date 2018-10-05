@@ -34,11 +34,11 @@ def create_site(api_auth, parameters, contexts):
     res = api_auth.site.create_site(site_name, city, country_code)
 
     if res.status_code == 200:
-        speech = "A site named {} has been created in {} {}".format(site_name.capitalize(), city, country_name)
+        speech = "A site named {} has been created in {}, {}".format(site_name, city, country_name)
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
     elif res.status_code == 500:
-        speech = "Error: Could not create site"
+        speech = "Error: We could not create the {} site at {}, {}".format(site_name, city, country_name)
     else:
         speech = "Error: Could not connect to SteelConnect"
 

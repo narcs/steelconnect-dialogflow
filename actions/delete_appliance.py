@@ -24,7 +24,8 @@ def delete_appliance(api_auth, parameters, contexts):
         site_name = parameters["SiteName"]
         model = parameters["Model"]
         country_code = parameters["Country"]["alpha-2"]
- 
+        country_name = parameters["Country"]["name"]
+
     except KeyError as e:
         error_string = "Error processing getting Appliance information intent. {0}".format(e)
         logging.error(error_string)
@@ -50,9 +51,9 @@ def delete_appliance(api_auth, parameters, contexts):
         appliance_id = appliances_on_site[0]["id"]
         res = api_auth.node.delete_appliance(appliance_id)
         if res.status_code == 200:
-            speech = "Successfully deleted {} located on {} in {}, {}".format(model, site_name, city, country_code)
+            speech = "The {} appliance on the {} site in {}, {} was deleted".format(model, site_name, city, country_name)
         else:
-            speech = "Appliance {} could not be deleted".format(appliance_id)
+            speech = "The {} appliance on the {} site located in {}, {} could not be deleted".format(model, site_name, city, country_name )
     elif len(appliances_on_site) > 1:
         appliance_options_response = ''
         appliance_options = []
