@@ -4,6 +4,25 @@
 class APIError(Exception):
     pass
 
+
+def format_wan_list(items):
+    """
+    Given the successful result of `api_auth.list_wans().json()["items"]`,
+    returns the list of WANs as a nicely-formatted string suitable for
+    presenting to the user.
+    """
+
+    s = ""
+
+    for wan in items:
+        if wan["longname"] is not None:
+            s += "\n - " + str(wan["name"]) + " (" + wan["longname"] + ")"
+        else:
+            s += "\n - " + str(wan["name"])
+
+    return s
+
+
 def get_wan_id_by_name(api_auth, wan_name):
     """
     Given a WAN's short name:
