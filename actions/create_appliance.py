@@ -15,7 +15,7 @@ def create_appliance(api_auth, parameters, contexts):
 
     Parameters:
     - api_auth: SteelConnect API object, it contains authentication log in details
-    - parameters: The json parameters obtained from the Dialogflow Intent. It obains the following:
+    - parameters: The json parameters obtained from the Dialogflow Intent. It obtains the following:
         > city: In which city the site is located in
         > country_code: The country code of the country where the site is located 
         > model: The model of the appliance the user wants to create
