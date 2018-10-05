@@ -24,7 +24,7 @@ def delete_site(api_auth, parameters, contexts):
     - speech: A string which has the response to be read/printed to the user
 
     Example Prompt:
-    - delete a site called bulbasaur in Hobart, Australia
+    - Delete butterfree site in Penang, Malaysia
 
     """
     
