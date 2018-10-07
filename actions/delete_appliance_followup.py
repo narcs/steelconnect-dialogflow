@@ -36,10 +36,14 @@ def delete_appliance_followup(api_auth, parameters, contexts):
         return error_string
     
     appliance_options = api_auth.node.get_appliance_list()
-    appliance_id = appliance_options[option_choice - 1]         #option_choice - 1 because arrays start at zero, so whatever the user inputs, we just need to subtract 1 from it
-    res = api_auth.node.delete_appliance(appliance_id)
-    if res.status_code == 200:
-        speech = "Successfully deleted appliance {}".format(appliance_id)
+
+    if option_choice < 1 or option_choice > len(appliance_options):        #Check to see if the value the user inputted is within range
+        speech = "Please selected a number between 1 and {}".format(len(appliance_options))
     else:
-        speech = "Appliance {} could not be deleted".format(appliance_id)
+        appliance_id = appliance_options[option_choice - 1]         #option_choice - 1 because arrays start at zero, so whatever the user inputs, we just need to subtract 1 from it
+        res = api_auth.node.delete_appliance(appliance_id)
+        if res.status_code == 200:
+            speech = "Successfully deleted appliance {}".format(appliance_id)
+        else:
+            speech = "Appliance {} could not be deleted".format(appliance_id)
     return speech
