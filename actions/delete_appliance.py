@@ -1,12 +1,11 @@
 import logging
 from flask import json
-from actions.list_appliances import list_appliances
 from util import get_site_id_by_name, APIError
 
 def delete_appliance(api_auth, parameters, contexts):
     """
     Allows users to delete an appliance on a site. 
-    In order for them to do so, we need to know the city, site name model and country code. 
+    In order for them to do so, we need to know the city, site name, model and country code. 
 
     Works by checking if the site exists. If it exists, it gets the parameters, and with the 
     parameters, it calls the SteelConnectAPI, and deletes the appliance. If there are multiple 
@@ -65,7 +64,7 @@ def delete_appliance(api_auth, parameters, contexts):
         else:                   #If we are unable to for whatever reason
             speech = "The {} appliance on the {} site located in {}, {} could not be deleted".format(model, site_name, city, country_name )
     elif len(appliances_on_site) > 1:           #If there are more than one appliances that matches the site and model, then prepare the response options, and call delete_appliance_followup.py
-        appliance_options_response = ''
+        appliance_options_response = '\n'
         appliance_options = []
         count = 1
         for appliance in appliances_on_site:
@@ -73,7 +72,7 @@ def delete_appliance(api_auth, parameters, contexts):
             appliance_options.append(appliance["id"])
             count = count + 1
         api_auth.node.set_appliance_list(appliance_options)         #Saves the options to be deleted
-        speech = "There are multiple {} appliances at {}. Please choose a specific appliance to delete from the following: {}".format(model, site_name, appliance_options_response)
+        speech = "There are multiple {} appliances at the {} site. Please choose a specific appliance to delete from the following: {}".format(model, site_name, appliance_options_response)
     else:
         speech = "Error: There was another error while attempting to delete the appliance"
     logging.debug(speech)
