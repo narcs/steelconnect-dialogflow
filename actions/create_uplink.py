@@ -38,7 +38,6 @@ def create_uplink(api_auth, parameters, contexts):
         wan_name = parameters["WANName"]
         city = parameters["City"]
         country_code = parameters["Country"]["alpha-2"]
-        country_name = parameters["Country"]["name"]
         
     except KeyError as e:
         error_string = "Error processing createUplink intent. {0}".format(e)
@@ -58,14 +57,14 @@ def create_uplink(api_auth, parameters, contexts):
             wan = item["id"]
             break
     else:           #If it doesn't match, print user friendly message
-        speech = "Unfortunately the WAN {} does not exist. Please select a different WAN".format(wan_name)
+        speech = "Unfortunately the WAN {} does not exist. Please select a different WAN that the uplink could connect to".format(wan_name)
         return speech    
 
     # call create uplink api
     res = api_auth.uplink.create_uplink(site_id, uplink_name, wan)
 
     if res.status_code == 200:
-        speech = "An uplink called {} has been created between the {} site in {}, {} and the {} ".format(uplink_name, site_name, city, country_name, wan_name)
+        speech = "An uplink called {} has been created between the {} site and the {} WAN ".format(uplink_name, site_name, wan_name)
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
     elif res.status_code == 500:
