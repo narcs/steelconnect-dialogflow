@@ -2,7 +2,7 @@ import logging
 import requests
 from flask import json
 from requests.auth import HTTPBasicAuth
-from util import get_site_id_by_name
+from util import get_site_id_by_name, APIError
 
 def get_appliance_info(api_auth, parameters, contexts):
     """
@@ -40,9 +40,11 @@ def get_appliance_info(api_auth, parameters, contexts):
         logging.error(error_string)
         return error_string
 
-    # Get all sites and check whether site exists
-    site_id = get_site_id_by_name(api_auth, site_name, city,country_code)
-    
+    try: # Get all sites and check whether site exists
+        site_id = get_site_id_by_name(api_auth, site_name, city,country_code)
+    except APIError as E:
+        return str(E) 
+
     appliance_list = api_auth.node.list_appliances()        #Get all appliances first
     if appliance_list.status_code == 200:
         data = appliance_list.json()["items"]
