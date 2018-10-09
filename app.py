@@ -9,6 +9,7 @@ import logging
 from api import SteelConnectAPI
 
 from actions.create_site import create_site
+from actions.get_site_info import get_site_info
 from actions.create_uplink import create_uplink
 from actions.create_uplink_select_site import create_uplink_select_site
 from actions.list_sites import list_sites
@@ -88,6 +89,7 @@ def get_uplink_info_followup_custom(api_auth, parameters, contexts):
     return get_uplink_info_followup(api_auth, contexts[0]["parameters"], contexts)
 
 register_action("CreateSite", create_site)
+register_action("GetSiteInfo", get_site_info)
 register_action("CreateUplink", create_uplink)
 register_action("CreateUplinkSelectSite", create_uplink_select_site)
 register_action("DeleteUplink", delete_uplink) 

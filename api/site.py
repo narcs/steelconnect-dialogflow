@@ -46,3 +46,13 @@ class SiteAPI:
         data = {}
         data = format_data(data)
         return requests.delete(url, data=data, auth=self.auth)
+
+    def format_site_info(self, site_info):
+        information = []
+        information.append("Site ID: " + str(site_info["id"]) + "\n")
+        information.append("Name: " + str(site_info["name"]) + "\n")
+        information.append("Organisation: " + str(site_info["org"]) + "\n")
+        information.append("City: " + str(site_info["city"])+ "\n")
+        information.append("Country: " + str(site_info["country"]) + "\n")
+        information.append("Uplinks: " + str(site_info["uplinks"]) + "\n")
+        return information

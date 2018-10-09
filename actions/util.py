@@ -65,7 +65,6 @@ def get_site_id_by_name(api_auth, site_name, city, country_code):
     else:
         raise APIError("Error: Could not connect to SteelConnect")
 
-
 def format_sitelink_list(api_auth, items):
     """
     Given the successful result of `api_auth.sitelink.get_sitelinks().json()["items"]`,
