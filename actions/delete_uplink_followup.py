@@ -36,6 +36,7 @@ def delete_uplink_followup(api_auth, parameters, contexts):
         logging.error(error_string)
         return error_string
 
+    #don't need to check status code because we are not calling any APIs
     uplink_options = api_auth.uplink.get_uplink_list()
 
     if option_choice < 1 or option_choice > len(uplink_options):        #Check to see if the value the user inputted is within range

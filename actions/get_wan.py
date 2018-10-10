@@ -1,5 +1,4 @@
 import logging
-
 from flask import json
 from actions.util import *
 
@@ -16,7 +15,7 @@ def get_wan(api_auth, parameters, contexts):
         > WAN_name: the name of the WAN the user wants to retreive information about
 
     Returns:
-    - speech: A string which has the list of all sites in the organisation
+    - speech: A string which has the health check information about the WANs in the organisation
 
     Example Prompt:
     - Get details of the WAN named GlobalNet

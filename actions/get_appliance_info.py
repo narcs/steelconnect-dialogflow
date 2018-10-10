@@ -23,7 +23,8 @@ def get_appliance_info(api_auth, parameters, contexts):
         > site_name: the name of the site the user wants to get appliance information about
 
     Returns:
-    - speech: A string which has the list of all sites in the organisation
+    - speech: A string which has the list of all appliances in the organisation that matches the user
+              specifications
 
     Example Prompt:
     - Get information on ewok shadow appliance for chicken in Tokyo, Japan
