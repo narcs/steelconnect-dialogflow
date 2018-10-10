@@ -1,5 +1,4 @@
 import logging
-
 from flask import json
 from actions.util import get_wan_id_by_name, APIError
 

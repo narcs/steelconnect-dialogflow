@@ -1,5 +1,4 @@
 import logging
-
 from flask import json
 from actions.util import *
 
