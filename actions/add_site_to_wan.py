@@ -1,5 +1,9 @@
-import logging
+"""
+This has not yet been tested or modified since 2017. 
+This is potentially deprecated
+"""
 
+import logging
 from flask import json
 from actions import create_uplink
 from api.util import find_context_by_name, find_contexts_by_name
