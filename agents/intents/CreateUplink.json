@@ -18,9 +18,9 @@
         {
           "id": "f480b2f6-129d-42e2-91f7-7aea78f56962",
           "required": true,
-          "dataType": "@WANType",
-          "name": "Wans",
-          "value": "$Wans",
+          "dataType": "@sys.any",
+          "name": "WANName",
+          "value": "$WANName",
           "prompts": [
             {
               "lang": "en",
@@ -45,28 +45,42 @@
         },
         {
           "id": "c641f1a3-bd0c-46ba-bd89-a2d68bf3d9cd",
-          "required": false,
-          "dataType": "@SiteTypes",
-          "name": "SiteTypes",
-          "value": "$SiteTypes",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "SiteName",
+          "value": "$SiteName",
           "prompts": [
             {
               "lang": "en",
-              "value": "What is the site type?"
+              "value": "What is the name of site that you want to connect the WAN to?"
             }
           ],
           "isList": false
         },
         {
           "id": "758fffc8-f964-4436-87ba-8462a20907af",
-          "required": false,
-          "dataType": "@Uplinks",
-          "name": "Uplinks",
-          "value": "$Uplinks",
+          "required": true,
+          "dataType": "@sys.geo-country-code",
+          "name": "Country",
+          "value": "$Country",
           "prompts": [
             {
               "lang": "en",
-              "value": "What ido you like to call the uplink?"
+              "value": "Which country does the site exist on?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "8054f8bc-f6d7-41a9-b30f-3753e1410567",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "UplinkName",
+          "value": "$UplinkName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What name would you like to give your uplink?"
             }
           ],
           "isList": false
@@ -86,7 +100,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1537935511,
+  "lastUpdate": 1538824129,
   "fallbackIntent": false,
   "events": []
 }

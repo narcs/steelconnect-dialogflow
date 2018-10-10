@@ -11,7 +11,7 @@
         {
           "name": "GetApplianceInfo-followup",
           "parameters": {},
-          "lifespan": 1
+          "lifespan": 3
         },
         {
           "name": "DisplayApplianceInfo",
@@ -67,7 +67,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1537946026,
+  "lastUpdate": 1538911093,
   "fallbackIntent": false,
   "events": []
 }

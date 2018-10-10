@@ -11,20 +11,20 @@
         {
           "name": "DeleteUplinkIntent-followup",
           "parameters": {},
-          "lifespan": 2
+          "lifespan": 3
         }
       ],
       "parameters": [
         {
           "id": "66b8bd22-7dd2-49ec-b4bd-2414aca0813b",
           "required": true,
-          "dataType": "@WANType",
-          "name": "Wans",
-          "value": "$Wans",
+          "dataType": "@sys.any",
+          "name": "WANName",
+          "value": "$WANName",
           "prompts": [
             {
               "lang": "en",
-              "value": "Which WAN was it connected to?"
+              "value": "What WAN would you like to delete the uplink from?"
             }
           ],
           "isList": false
@@ -38,17 +38,51 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "In which city is the connected site located in?"
+              "value": "In which city is the site that you want to remove the uplink from?"
             }
           ],
           "isList": false
         },
         {
-          "id": "1cc0acf4-ab6f-487d-b3ed-9e028a5e45ba",
-          "required": false,
-          "dataType": "@Uplinks",
-          "name": "Uplinks",
-          "value": "$Uplinks",
+          "id": "180d6c28-ab13-438e-abaf-4e3b7c1d5da3",
+          "required": true,
+          "dataType": "@sys.geo-country-code",
+          "name": "Country",
+          "value": "$Country",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "In which country do you want to remove your uplink from?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "854723a8-e52c-4994-ac9b-8433ef66aefa",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "UplinkName",
+          "value": "$UplinkName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the name of the uplink that you would like to delete?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "f6cadd73-556f-4bc8-bfc3-fa7dc6b75f71",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "SiteName",
+          "value": "$SiteName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the name of the site that you would like to delete your uplink from?"
+            }
+          ],
           "isList": false
         }
       ],
@@ -66,7 +100,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1537944619,
+  "lastUpdate": 1538911113,
   "fallbackIntent": false,
   "events": []
 }

@@ -11,7 +11,7 @@
         {
           "name": "DeleteAppliance-followup",
           "parameters": {},
-          "lifespan": 1
+          "lifespan": 3
         }
       ],
       "parameters": [
@@ -86,7 +86,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1537935551,
+  "lastUpdate": 1538910948,
   "fallbackIntent": false,
   "events": []
 }
