@@ -4,4 +4,4 @@ appliance_delete_unprompted - Delete an appliance without being prompted for req
 Delete panda shadow appliance for HQ in Clayton, Australia
 
 #bot default
-Successfully deleted panda located on HQ in Clayton, AU
+The panda appliance on the HQ site in Clayton, Australia was deleted

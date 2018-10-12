@@ -28,4 +28,4 @@ What is the name of the site that you want to delete your appliance?
 HQ
 
 #bot default
-Successfully deleted ewok located on HQ in Clayton, AU
+The ewok appliance on the HQ site in Clayton, Australia was deleted

@@ -1,5 +1,9 @@
-import logging
+"""
+This has not yet been tested or modified since 2017. 
+This is potentially deprecated
+"""
 
+import logging
 from flask import json
 from requests.auth import HTTPBasicAuth
 import requests

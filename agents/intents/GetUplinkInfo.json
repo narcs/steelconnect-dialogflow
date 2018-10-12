@@ -11,7 +11,7 @@
         {
           "name": "GetUplinkInfo-followup",
           "parameters": {},
-          "lifespan": 1
+          "lifespan": 3
         },
         {
           "name": "DisplayUplinkInfo",
@@ -19,7 +19,48 @@
           "lifespan": 1
         }
       ],
-      "parameters": [],
+      "parameters": [
+        {
+          "id": "95d11d34-3f72-467f-bd5a-784a12579259",
+          "required": true,
+          "dataType": "@sys.geo-city",
+          "name": "City",
+          "value": "$City",
+          "isList": false
+        },
+        {
+          "id": "24ef43d8-aac7-4f4e-b2dc-bcc0184bbbca",
+          "required": true,
+          "dataType": "@sys.geo-country-code",
+          "name": "Country",
+          "value": "$Country",
+          "isList": false
+        },
+        {
+          "id": "4f026734-e6ad-48b4-bcbb-a7e2100c7377",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "WANName",
+          "value": "$WANName",
+          "isList": false
+        },
+        {
+          "id": "63dad0f6-74b6-4b71-90b8-10787dab87a1",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "SiteName",
+          "value": "$SiteName",
+          "isList": false
+        },
+        {
+          "id": "9fb6234f-e750-421d-ad02-b7454e7feca2",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "UplinkName",
+          "value": "$UplinkName",
+          "isList": false
+        }
+      ],
       "messages": [
         {
           "type": 0,
@@ -34,7 +75,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1537946093,
+  "lastUpdate": 1538910935,
   "fallbackIntent": false,
   "events": []
 }
