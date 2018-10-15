@@ -1,23 +1,51 @@
 [
   {
-    "id": "89419c45-0b2c-4c7c-b9b3-06953149404b",
+    "id": "5728d706-c9ec-45a1-86a8-86071e1a6354",
     "data": [
       {
-        "text": "Make ",
+        "text": "Create an ",
         "userDefined": false
       },
       {
-        "text": "Uplink",
-        "alias": "Uplinks",
-        "meta": "@Uplinks",
+        "text": "uplink",
+        "meta": "@sys.ignore",
         "userDefined": false
       },
       {
-        "text": ": ",
+        "text": " called ",
         "userDefined": false
       },
       {
-        "text": "Bali",
+        "text": "Arbok",
+        "alias": "UplinkName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " from the ",
+        "userDefined": false
+      },
+      {
+        "text": "ekans",
+        "alias": "SiteName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "site",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "kiev",
         "alias": "City",
         "meta": "@sys.geo-city",
         "userDefined": true
@@ -27,9 +55,86 @@
         "userDefined": false
       },
       {
+        "text": "ukraine",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": false
+      },
+      {
+        "text": " to ",
+        "userDefined": false
+      },
+      {
+        "text": "VPN",
+        "alias": "WANName",
+        "meta": "@sys.any",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1538822887
+  },
+  {
+    "id": "89419c45-0b2c-4c7c-b9b3-06953149404b",
+    "data": [
+      {
+        "text": "Make ",
+        "userDefined": false
+      },
+      {
+        "text": "Uplink",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": ": ",
+        "userDefined": false
+      },
+      {
+        "text": "Ratata",
+        "alias": "SiteName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Bali,",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Indonesia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Raticate",
+        "alias": "UplinkName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
         "text": "RouteVPN",
-        "alias": "Wans",
-        "meta": "@WANType",
+        "alias": "WANName",
+        "meta": "@sys.any",
         "userDefined": false
       }
     ],
@@ -46,12 +151,21 @@
       },
       {
         "text": "Uplink",
-        "alias": "Uplinks",
-        "meta": "@Uplinks",
+        "meta": "@sys.ignore",
         "userDefined": false
       },
       {
         "text": ": ",
+        "userDefined": false
+      },
+      {
+        "text": "Spearow",
+        "alias": "SiteName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": ",  ",
         "userDefined": false
       },
       {
@@ -65,9 +179,29 @@
         "userDefined": false
       },
       {
+        "text": "China",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Fearow",
+        "alias": "UplinkName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
         "text": "VPN",
-        "alias": "Wans",
-        "meta": "@WANType",
+        "alias": "WANName",
+        "meta": "@sys.any",
         "userDefined": false
       }
     ],
@@ -84,8 +218,7 @@
       },
       {
         "text": "uplink",
-        "alias": "Uplinks",
-        "meta": "@Uplinks",
+        "meta": "@sys.ignore",
         "userDefined": true
       }
     ],
@@ -102,8 +235,7 @@
       },
       {
         "text": "uplink",
-        "alias": "Uplinks",
-        "meta": "@Uplinks",
+        "meta": "@sys.ignore",
         "userDefined": false
       },
       {
@@ -122,8 +254,8 @@
       },
       {
         "text": "VPN",
-        "alias": "Wans",
-        "meta": "@WANType",
+        "alias": "WANName",
+        "meta": "@sys.any",
         "userDefined": false
       }
     ],
@@ -136,8 +268,7 @@
     "data": [
       {
         "text": "Connect",
-        "alias": "Uplinks",
-        "meta": "@Uplinks",
+        "meta": "@sys.ignore",
         "userDefined": true
       },
       {
@@ -156,8 +287,8 @@
       },
       {
         "text": "RouteVPN",
-        "alias": "Wans",
-        "meta": "@WANType",
+        "alias": "WANName",
+        "meta": "@sys.any",
         "userDefined": true
       }
     ],
@@ -174,8 +305,8 @@
       },
       {
         "text": "Internet",
-        "alias": "Wans",
-        "meta": "@WANType",
+        "alias": "WANName",
+        "meta": "@sys.any",
         "userDefined": true
       },
       {
@@ -184,8 +315,8 @@
       },
       {
         "text": "ILink",
-        "alias": "Uplinks",
-        "meta": "@Uplinks",
+        "alias": "UplinkName",
+        "meta": "@sys.any",
         "userDefined": true
       },
       {
@@ -204,8 +335,8 @@
       },
       {
         "text": "Branch",
-        "alias": "SiteTypes",
-        "meta": "@SiteTypes",
+        "alias": "SiteName",
+        "meta": "@sys.any",
         "userDefined": true
       }
     ],
@@ -232,8 +363,8 @@
       },
       {
         "text": "Boutique",
-        "alias": "SiteTypes",
-        "meta": "@SiteTypes",
+        "alias": "SiteName",
+        "meta": "@sys.any",
         "userDefined": true
       },
       {
@@ -242,8 +373,8 @@
       },
       {
         "text": "RouteVPN",
-        "alias": "Wans",
-        "meta": "@WANType",
+        "alias": "WANName",
+        "meta": "@sys.any",
         "userDefined": true
       }
     ],
@@ -260,8 +391,8 @@
       },
       {
         "text": "Internet",
-        "alias": "Wans",
-        "meta": "@WANType",
+        "alias": "WANName",
+        "meta": "@sys.any",
         "userDefined": true
       },
       {
@@ -270,8 +401,7 @@
       },
       {
         "text": "uplink",
-        "alias": "Uplinks",
-        "meta": "@Uplinks",
+        "meta": "@sys.ignore",
         "userDefined": true
       },
       {
@@ -290,8 +420,8 @@
       },
       {
         "text": "Shop",
-        "alias": "SiteTypes",
-        "meta": "@SiteTypes",
+        "alias": "SiteName",
+        "meta": "@sys.any",
         "userDefined": true
       }
     ],

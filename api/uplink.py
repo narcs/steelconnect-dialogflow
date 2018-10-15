@@ -1,7 +1,6 @@
 import requests
 import requests_toolbelt.adapters.appengine
 from util import format_data
-import logging
 
 requests_toolbelt.adapters.appengine.monkeypatch()
 
@@ -61,28 +60,22 @@ class UplinkAPI:
 
     def format_uplink_information(self, uplink_info):
         information = []
-        information.append('Uplink ID: {}\n'.format(uplink_info["id"]))
-        information.append('Uplink Name: {}\n'.format(uplink_info["name"]))
-        information.append('Dead Interval: {}\n'.format(uplink_info["dead_interval"]))        
-        information.append('Priority: {}\n'.format(uplink_info["priority"]))
-        information.append('Site Link Priority: {}\n'.format(uplink_info["sitelink_prio"]))
-        information.append('Up Time: {}\n'.format(uplink_info["uptime"]))#
-        information.append('State: {}\n'.format(uplink_info["state"]))
-        information.append('WAN: {}\n'.format(uplink_info["wan"]))
-        information.append('Appliance: {}\n'.format(uplink_info["node"]))#
-        information.append('Type: {}\n'.format(uplink_info["type"]))
-        information.append('IP Address: {}\n'.format(uplink_info["v4ip"]))#
-        information.append('Hello Interval: {}\n'.format(uplink_info["hello_interval"]))
-        information.append('Cost: {}\n'.format(uplink_info["cost"]))
-        information.append('Neighbour Hold Time: {}\n'.format(uplink_info["bgp_neigh_hold_time"]))
-        information.append('Neighbour Keep Alive Time: {}\n'.format(uplink_info["bgp_neigh_keepalive_time"]))
-        information.append('Inbound Units: {}\n'.format(uplink_info["qos_inbound_units"]))
-        information.append('Outbound Units: {}\n'.format(uplink_info["qos_outbound_units"]))
-        return str(information)
-
-    def delete_uplink(self, uplink_id): 
-        url = self.base_config_url + "uplink/" + uplink_id 
-        data = {} 
-        data = format_data(data) 
-        return requests.delete(url, data=data, auth=self.auth) 
- 
+        #*(text)* is for bolding of text in the slack integration, which uses a markdown notation
+        information.append('*Uplink ID:* {}\n'.format(uplink_info["id"]))
+        information.append('*Uplink Name:* {}\n'.format(uplink_info["name"]))
+        information.append('*Dead Interval:* {}\n'.format(uplink_info["dead_interval"]))        
+        information.append('*Priority:* {}\n'.format(uplink_info["priority"]))
+        information.append('*Site Link Priority:* {}\n'.format(uplink_info["sitelink_prio"]))
+        information.append('*Up Time:* {}\n'.format(uplink_info["uptime"]))#
+        information.append('*State:* {}\n'.format(uplink_info["state"]))
+        information.append('*WAN:* {}\n'.format(uplink_info["wan"]))
+        information.append('*Appliance:* {}\n'.format(uplink_info["node"]))#
+        information.append('*Type:* {}\n'.format(uplink_info["type"]))
+        information.append('*IP Address:* {}\n'.format(uplink_info["v4ip"]))#
+        information.append('*Hello Interval:* {}\n'.format(uplink_info["hello_interval"]))
+        information.append('*Cost:* {}\n'.format(uplink_info["cost"]))
+        information.append('*Neighbour Hold Time:* {}\n'.format(uplink_info["bgp_neigh_hold_time"]))
+        information.append('*Neighbour Keep Alive Time:* {}\n'.format(uplink_info["bgp_neigh_keepalive_time"]))
+        information.append('*Inbound Units:* {}\n'.format(uplink_info["qos_inbound_units"]))
+        information.append('*Outbound Units:* {}\n'.format(uplink_info["qos_outbound_units"]))
+        return information

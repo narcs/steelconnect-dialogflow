@@ -11,7 +11,7 @@
         {
           "name": "WAN_Created",
           "parameters": {},
-          "lifespan": 99
+          "lifespan": 2
         }
       ],
       "parameters": [
@@ -52,7 +52,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1537935527,
+  "lastUpdate": 1538911058,
   "fallbackIntent": false,
   "events": []
 }

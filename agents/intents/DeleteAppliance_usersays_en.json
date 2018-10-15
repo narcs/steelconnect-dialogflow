@@ -1,5 +1,77 @@
 [
   {
+    "id": "1d843126-a9ca-4d09-906f-6e7e668d8a0b",
+    "data": [
+      {
+        "text": "Delete Node: ",
+        "userDefined": false
+      },
+      {
+        "text": "panda",
+        "alias": "Model",
+        "meta": "@Model",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "lickitung",
+        "alias": "SiteName",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Berlin",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Germany",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1538833789
+  },
+  {
+    "id": "ce77300f-0994-4047-81f1-d53fe8fc205e",
+    "data": [
+      {
+        "text": "Delete nodes",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1538833789
+  },
+  {
+    "id": "df365dc0-fc17-409b-aad1-34fae51886af",
+    "data": [
+      {
+        "text": "Delete node",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1538833789
+  },
+  {
     "id": "708afbc6-757e-49a7-8a9e-0bf8ed07ccdc",
     "data": [
       {

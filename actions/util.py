@@ -1,9 +1,7 @@
 # Utility functions that actions can call on.
 
-
 class APIError(Exception):
     pass
-
 
 def format_wan_list(items):
     """
@@ -19,7 +17,7 @@ def format_wan_list(items):
             s += "\n - " + str(wan["name"]) + " (" + wan["longname"] + ")"
         else:
             s += "\n - " + str(wan["name"])
-
+    
     return s
 
 

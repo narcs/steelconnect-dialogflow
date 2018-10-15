@@ -2,24 +2,33 @@ import logging
 import requests
 from flask import json
 from requests.auth import HTTPBasicAuth
-from util import get_site_id_by_name
+from util import get_site_id_by_name, APIError
 
 def get_appliance_info(api_auth, parameters, contexts):
     """
-    Allow users to get information about a particular appliance
-    Need to know the city, site name, model and country. 
-    If there are multiple appliances of the same model on a site,
-    a follow up question will prompt the user to select a specific 
-    appliance
+    Allows users to get detailed information about a particular appliance
 
-    :param api_auth: steelconnect api object 
-    :type api_auth: SteelConnectAPI 
-    :param parameters: json parameters from Dialogflow intent 
-    :type parameters: json 
-    :return: Returns a response to be read out to user 
-    :rtype: string 
+    Works by checking if the site exists. If it exists, it gets the parameters, and with the 
+    parameters, it calls the SteelConnectAPI, and retrieves the information about the appliance. If
+    there are multiple appliances of the same model and on the same site, the user will be prompted 
+    to enter a number to delete the appropriate site (This is in the get_appliance_info_followup.py 
+    file. 
 
-    Example statement: Get information on panda shadow appliance for DC-KualaLumpur in Kuala Lumpur, Malaysia
+    Parameters:
+    - api_auth: SteelConnect API object, it contains authentication log in details
+    - parameters: The json parameters obtained from the Dialogflow Intent. It obtains the following:
+        > city: In which city the site is located in
+        > country_code: The country code of the country where the site is located 
+        > model: The model of the appliance the user wants to find information about
+        > site_name: the name of the site the user wants to get appliance information about
+
+    Returns:
+    - speech: A string which has the list of all appliances in the organisation that matches the user
+              specifications
+
+    Example Prompt:
+    - Get information on ewok shadow appliance for chicken in Tokyo, Japan
+
     """
     try:
         city = parameters["City"]
@@ -32,9 +41,11 @@ def get_appliance_info(api_auth, parameters, contexts):
         logging.error(error_string)
         return error_string
 
-    # Get all sites and check whether site exists
-    site_id = get_site_id_by_name(api_auth, site_name, city,country_code)
-    
+    try: # Get all sites and check whether site exists
+        site_id = get_site_id_by_name(api_auth, site_name, city,country_code)
+    except APIError as E:
+        return str(E) 
+
     appliance_list = api_auth.node.list_appliances()        #Get all appliances first
     if appliance_list.status_code == 200:
         data = appliance_list.json()["items"]
@@ -51,7 +62,7 @@ def get_appliance_info(api_auth, parameters, contexts):
         if res.status_code == 200:
             appliance_info = res.json()
             information = api_auth.node.format_appliance_information(appliance_info)
-            speech = "Information for {} appliance on {} located in {}, {}:\n{}".format(model, site_name, city, country_code, information)
+            speech = "Information for {} appliance on {} located in {}, {}:\n{}".format(model, site_name, city, country_code, ''.join(information))
         else:
             return "Error: Failed to get information about appliances"          #this error is for the specific appliance
     elif len(appliances_on_site) > 1:       #If we have more than one appliance that matches the spec

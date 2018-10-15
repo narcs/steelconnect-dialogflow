@@ -4,4 +4,4 @@ site_delete_unprompted - Delete sites without any prompts
 Delete a site hawk at Paris, France
 
 #bot default
-Site hawk in Paris France has been successfully deleted
+The site hawk located in Paris, France has been successfully deleted
