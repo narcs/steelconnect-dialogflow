@@ -35,7 +35,7 @@ def list_sites(api_auth, parameters, contexts):
         if num_sites == 0:
             speech = "There are no sites in the {} organisation".format(org)
         elif num_sites == 1:
-            speech = "There is one site in the {} organisation, it is called {}".format(org, data[0]["name"])
+            speech = "There is one site in the {} organisation, it is called {} at {}, {}".format(org, data[0]["name"], data[0]["city"], data[0]["country"])
         elif num_sites > 1:
             speech = "There are {} sites in the organisation: \n".format(num_sites)
             count = 1
