@@ -8,38 +8,45 @@ import logging
 
 from api import SteelConnectAPI
 
+#Actions for sites 
 from actions.create_site import create_site
+from actions.delete_site import delete_site
 from actions.get_site_info import get_site_info
-from actions.create_uplink import create_uplink
 from actions.list_sites import list_sites
 from actions.rename_site import rename_site
-from actions.delete_site import delete_site
 
-from actions.list_wans import list_wans
+#Actions for WANs
 from actions.create_wan import create_wan
-from actions.get_wan import get_wan
-from actions.rename_wan import rename_wan
 from actions.delete_wan import delete_wan
+from actions.get_wan import get_wan
+from actions.list_wans import list_wans
+from actions.rename_wan import rename_wan
+
+#untested actions that could be useful in the future
+from actions.create_zone import create_zone
 from actions.add_site_to_wan import add_site_to_wan
 from actions.add_sites_to_wan import add_sites_to_wan
 from actions.clear_sites import clear_sites
-from actions.create_zone import create_zone
-from actions.create_appliance import create_appliance
 
-from actions.list_appliances import list_appliances
+#Actions for appliances
+from actions.create_appliance import create_appliance
 from actions.delete_appliance import delete_appliance
 from actions.delete_appliance_followup import delete_appliance_followup
-from actions.list_uplinks import list_uplinks
+from actions.get_appliances_report import get_appliances_report
 from actions.get_appliance_info import get_appliance_info
 from actions.get_appliance_info_followup import get_appliance_info_followup
+from actions.list_appliances import list_appliances
+
+#Actions for uplinks
+from actions.create_uplink import create_uplink
+from actions.delete_uplink import delete_uplink
+from actions.delete_uplink_followup import delete_uplink_followup
 from actions.get_uplink_info import get_uplink_info
 from actions.get_uplinks_report import get_uplinks_report
 from actions.get_uplink_info_followup import get_uplink_info_followup
-from actions.get_appliances_report import get_appliances_report
-from actions.delete_uplink import delete_uplink
-from actions.delete_uplink_followup import delete_uplink_followup
-from actions.create_appliance import create_appliance
+from actions.list_uplinks import list_uplinks
 
+#Actions for sitelinks
 from actions.get_sitelinks_report import get_sitelinks_report
 
 app = Flask(__name__)
@@ -80,36 +87,46 @@ def delete_appliance_followup_custom(api_auth, parameters, contexts):
 def get_uplink_info_followup_custom(api_auth, parameters, contexts):
     return get_uplink_info_followup(api_auth, contexts[0]["parameters"], contexts)
 
+#Actions for sites
 register_action("CreateSite", create_site)
+register_action("DeleteSite", delete_site)
 register_action("GetSiteInfo", get_site_info)
+register_action("ListSites", list_sites)
+register_action("RenameSite", rename_site)
+
+#Actions for uplinks
 register_action("CreateUplink", create_uplink)
 register_action("DeleteUplink", delete_uplink) 
 register_action("DeleteUplink.DeleteUplink-custom", delete_uplink_followup) 
-register_action("ListSites", list_sites)
-register_action("RenameSite", rename_site)
-register_action("DeleteSite", delete_site)
-register_action("CreateUplink", create_uplink)
-register_action("ListWANs", list_wans)
-register_action("CreateWAN", create_wan)
-register_action("GetWAN", get_wan)
-register_action("RenameWAN", rename_wan)
-register_action("DeleteWAN", delete_wan)
-register_action("AddSiteToWAN", add_site_to_wan)
-register_action("AddSitesToWAN", add_sites_to_wan)
-register_action("ClearSites", clear_sites)
-register_action("CreateZone", create_zone)
-register_action("ListUplinks", list_uplinks)
 register_action("GetUplinkInfo", get_uplink_info)
 register_action("GetUplinkInfo.GetUplinkInfo-custom", get_uplink_info_followup_custom)
-register_action("ListAppliances", list_appliances)
+register_action("GetUplinksReport", get_uplinks_report)
+register_action("ListUplinks", list_uplinks)
+
+#Action for WANs
+register_action("CreateWAN", create_wan)
+register_action("DeleteWAN", delete_wan)
+register_action("GetWAN", get_wan)
+register_action("ListWANs", list_wans)
+register_action("RenameWAN", rename_wan)
+
+#Actions for Appliances
+register_action("CreateAppliance", create_appliance)
 register_action("DeleteAppliance", delete_appliance)
 register_action("DeleteAppliance.DeleteAppliance-custom", delete_appliance_followup_custom)
 register_action("GetApplianceInfo", get_appliance_info)
 register_action("GetApplianceInfo.GetApplianceInfo-custom", get_appliance_info_followup_custom)
-register_action("CreateAppliance", create_appliance)
 register_action("GetAppliancesReport", get_appliances_report)
-register_action("GetUplinksReport", get_uplinks_report)
+register_action("ListAppliances", list_appliances)
+
+#Actions for sitelinks
 register_action("GetSitelinksReport", get_sitelinks_report)
+
+#Untested actions but could be useful in the future
+register_action("ClearSites", clear_sites)
+register_action("AddSiteToWAN", add_site_to_wan)
+register_action("AddSitesToWAN", add_sites_to_wan)
+register_action("CreateZone", create_zone)
 
 @app.route('/')
 def home():
