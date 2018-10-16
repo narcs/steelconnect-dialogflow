@@ -5,12 +5,23 @@ from actions.util import *
 
 def get_site_info(api_auth, parameters, contexts):
     """
-    :param api_auth: steelconnect api object
-    :type api_auth: SteelConnectAPI
-    :param parameters: json parameters from Dialogflow intent
-    :type parameters: json
-    :return: Returns a response to be read out to user
-    :rtype: string
+    Allows users to get detailed information about a particular SITE
+
+    Works by checking if the SITE exists. If it exists, it gets the information about the SITE via 
+    the get_site() method. It then extracts and formats the data
+
+    Parameters:
+    - api_auth: SteelConnect API object, it contains authentication log in details
+    - parameters: The json parameters obtained from the Dialogflow Intent. It obtains the following:
+        > name: the name of the site the user wants to retreive information about
+        > city: In which city the site is located in
+        > country_code: The country code of the country where the site is located 
+        
+    Returns:
+    - speech: A string which has the health check information about a site in the organisation
+
+    Example Prompt:
+    - Get details of the site Branch in Sydney Australia
     """
     
     try:
@@ -39,7 +50,9 @@ def get_site_info(api_auth, parameters, contexts):
 
     if res.status_code == 200:
         information = api_auth.site.format_site_info(res.json())
-        speech = "Information for site {}: \n{}".format(name, information)
+        # Appending list of uplinks
+        information.append("*Uplinks:* {}".format("\n\t".join(res.json()["uplinks"])))
+        speech = "*Information for site {}:* \n{}".format(name, information)
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
     elif res.status_code == 500:

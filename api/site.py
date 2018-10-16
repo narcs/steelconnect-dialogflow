@@ -49,10 +49,9 @@ class SiteAPI:
 
     def format_site_info(self, site_info):
         information = []
-        information.append("Site ID: " + str(site_info["id"]) + "\n")
-        information.append("Name: " + str(site_info["name"]) + "\n")
-        information.append("Organisation: " + str(site_info["org"]) + "\n")
-        information.append("City: " + str(site_info["city"])+ "\n")
-        information.append("Country: " + str(site_info["country"]) + "\n")
-        information.append("Uplinks: " + str(site_info["uplinks"]) + "\n")
+        information.append("*Site ID:* {}\n".format(site_info["id"]))
+        information.append("*Name:* {}\n".format(site_info["name"]))
+        information.append("*Organisation:* {}\n".format(site_info["org"]))
+        information.append("*City:* {}\n".format(site_info["city"]))
+        information.append("*Country:* {}\n".format(site_info["country"]))
         return information

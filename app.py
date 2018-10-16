@@ -11,11 +11,9 @@ from api import SteelConnectAPI
 from actions.create_site import create_site
 from actions.get_site_info import get_site_info
 from actions.create_uplink import create_uplink
-from actions.create_uplink_select_site import create_uplink_select_site
 from actions.list_sites import list_sites
 from actions.rename_site import rename_site
 from actions.delete_site import delete_site
-from actions.list_sites_followup import list_sites_followup
 
 from actions.list_wans import list_wans
 from actions.create_wan import create_wan
@@ -73,12 +71,6 @@ actions = {}
 def register_action(name, func):
     actions[name] = func
 
-def list_sites_followup_custom(api_auth, parameters, contexts):
-    return list_sites_followup(api_auth, contexts[0]["parameters"], contexts)
-
-def list_sites_followup_yes(api_auth, parameters, contexts):
-    return list_sites_followup(api_auth, None, contexts)
-
 def get_appliance_info_followup_custom(api_auth, parameters, contexts):
     return get_appliance_info_followup(api_auth, contexts[0]["parameters"], contexts)
 
@@ -91,7 +83,6 @@ def get_uplink_info_followup_custom(api_auth, parameters, contexts):
 register_action("CreateSite", create_site)
 register_action("GetSiteInfo", get_site_info)
 register_action("CreateUplink", create_uplink)
-register_action("CreateUplinkSelectSite", create_uplink_select_site)
 register_action("DeleteUplink", delete_uplink) 
 register_action("DeleteUplink.DeleteUplink-custom", delete_uplink_followup) 
 register_action("ListSites", list_sites)
