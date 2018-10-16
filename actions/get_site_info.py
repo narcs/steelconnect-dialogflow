@@ -27,9 +27,7 @@ def get_site_info(api_auth, parameters, contexts):
     try:
         name = parameters["Name"]
         city = parameters["City"]
-
         country_code = parameters["Country"]["alpha-2"]
-        country_name = parameters["Country"]["name"]
         
     except KeyError as e:
 
@@ -51,8 +49,8 @@ def get_site_info(api_auth, parameters, contexts):
     if res.status_code == 200:
         information = api_auth.site.format_site_info(res.json())
         # Appending list of uplinks
-        information.append("*Uplinks:* {}".format("\n\t".join(res.json()["uplinks"])))
-        speech = "*Information for site {}:* \n{}".format(name, information)
+        information.append("*Uplinks:*\n\t{}".format("\n\t".join(res.json()["uplinks"])))
+        speech = "Information for site {}: \n{}".format(name, ''.join(information))
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
     elif res.status_code == 500:
