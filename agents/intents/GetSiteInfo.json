@@ -1,0 +1,78 @@
+{
+  "id": "8750ff78-fb43-4bd6-9394-753b6df78a0b",
+  "name": "GetSiteInfo",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "GetSiteInfo",
+      "affectedContexts": [
+        {
+          "name": "DisplaySiteInfo",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "8c71bbbb-3887-4180-a4ec-504a1707a978",
+          "required": true,
+          "dataType": "@sys.geo-country-code",
+          "name": "Country",
+          "value": "$Country",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the country?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "961570ad-9e4c-41b6-b113-b3b7ed3b4143",
+          "required": true,
+          "dataType": "@sys.geo-city",
+          "name": "City",
+          "value": "$City",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the city?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "45dbede2-c7d8-4ef2-9f4f-919e4b46a6b4",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "Name",
+          "value": "$Name",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the name of the site?"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1539660905,
+  "fallbackIntent": false,
+  "events": []
+}

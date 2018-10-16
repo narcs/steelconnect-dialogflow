@@ -34,8 +34,8 @@ def get_wan(api_auth, parameters, contexts):
     data = res.json()
 
     if res.status_code == 200:
-        template = """*WAN ID:* {}\n*Name:* {}\n*Organisation:* {}\n*Trusted:* {}\n*Internet:* {}\n*Internet Nat:* {}\n*DCuplink:* {}\n*pingcheck_profile:* {}\n*pingcheck_ips:* {}\n*ping_gw:* {}\n*Encryption:* {}\n*uid:* {}\n*Sitelink:* {}\n*Number Of Connected Uplinks:* {}\n*Connected Uplinks:* \n\t{}\n"""
-        speech = template.format(WAN_id, data["name"], data["org"], data["trusted"], data["internet"], data["Internet_NAT"], data["dcuplink"] , data["pingcheck_profile"] , data["pingcheck_ips"], data["ping_gw"] , data["encryption"] , data["uid"], data["sitelink"], len(data["uplinks"]), "\n\t".join(data["uplinks"]))
+        template = """Information for {} WAN:\n*WAN ID:* {}\n*Name:* {}\n*Organisation:* {}\n*Trusted:* {}\n*Internet:* {}\n*Internet Nat:* {}\n*DCuplink:* {}\n*pingcheck_profile:* {}\n*pingcheck_ips:* {}\n*ping_gw:* {}\n*Encryption:* {}\n*uid:* {}\n*Sitelink:* {}\n*Number Of Connected Uplinks:* {}\n*Connected Uplinks:* \n\t{}\n"""
+        speech = template.format(WAN_name, WAN_id, data["name"], data["org"], data["trusted"], data["internet"], data["Internet_NAT"], data["dcuplink"] , data["pingcheck_profile"] , data["pingcheck_ips"], data["ping_gw"] , data["encryption"] , data["uid"], data["sitelink"], len(data["uplinks"]), "\n\t".join(data["uplinks"]))
     elif res.status_code == 400:
         speech = "Invalid parameters: {}".format(res.json()["error"]["message"])
     elif res.status_code == 500:
