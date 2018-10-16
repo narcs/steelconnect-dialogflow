@@ -1,0 +1,222 @@
+[
+  {
+    "id": "484659b7-4d1f-4316-ac06-941968ecd564",
+    "data": [
+      {
+        "text": "Get details of the ",
+        "userDefined": false
+      },
+      {
+        "text": "site",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Branch",
+        "alias": "Name",
+        "meta": "@sys.any",
+        "userDefined": false
+      },
+      {
+        "text": " in ",
+        "userDefined": false
+      },
+      {
+        "text": "Sydney",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1539660905
+  },
+  {
+    "id": "bc63a6b7-7373-452e-95f0-5ee4a6153ad4",
+    "data": [
+      {
+        "text": "Get ",
+        "userDefined": false
+      },
+      {
+        "text": "site",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " info",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1539660905
+  },
+  {
+    "id": "f9e7e8ac-7a36-4d09-9752-663ed6a0d10a",
+    "data": [
+      {
+        "text": "Site Info: ",
+        "userDefined": false
+      },
+      {
+        "text": "Branch",
+        "alias": "Name",
+        "meta": "@sys.any",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Sydney",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      },
+      {
+        "text": ", ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1539660905
+  },
+  {
+    "id": "9d6ac5e9-9e6c-49a1-9993-4ab4a79cf0c4",
+    "data": [
+      {
+        "text": "I would like to know more about site ",
+        "userDefined": false
+      },
+      {
+        "text": "Branch",
+        "alias": "Name",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "Sydney",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1538982173
+  },
+  {
+    "id": "f155a5bc-cd56-49c4-9bab-83ec79a644e1",
+    "data": [
+      {
+        "text": "Give me more information about site ",
+        "userDefined": false
+      },
+      {
+        "text": "Branch",
+        "alias": "Name",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "Sydney",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1538982173
+  },
+  {
+    "id": "2ea6edaa-b900-4cfe-9134-9190b9b2690c",
+    "data": [
+      {
+        "text": "Tell me more about site ",
+        "userDefined": false
+      },
+      {
+        "text": "Branch",
+        "alias": "Name",
+        "meta": "@sys.any",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "Sydney",
+        "alias": "City",
+        "meta": "@sys.geo-city",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Australia",
+        "alias": "Country",
+        "meta": "@sys.geo-country-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1538982173
+  }
+]
