@@ -71,6 +71,11 @@ You can now use Dialogflow to the test out the intents on your realm and organis
 
 * In SteelConnect Manager, (and as specified by Shannon) you should not be able to delete RouteVPNs, however if you query the API directly (as we are doing with Dialogflow), you will be to
 
+* DialogFlow only recognises major cities. This means that cities such as "Melbourne" and "New York City" gets recognised, however lesser known cities such as "Gisborne South" and Noble Park" aren't
+
+* DialogFlow will timeout if there is too much content that needs to be passed in. 
+  + E.g. For the `List Uplinks` method, it will claim that there is a problem if there are approximately 75 uplinks present and not show it. However, the method works fine (as shown in Google Cloud Platform)
+
 <!-- Adding this here because I think it'll be useful for future peeps, but also because I forgot quite a few stuff that'll be nice reminders after not touching the code for a while -->
 # Hints And Tips
 * Remember to name the action in the Action And Parameter section in DialogFlow
@@ -118,12 +123,24 @@ The following actions have not been tested out and are deprecated. It has been l
 - Create SSID
 - Create Zone
 
-# Future Things to do (I.e. To Dos)
+# To Do
 * Validate same city names and differents country pairings (E.g. Differentiate between Sydney Canada and Sydney Australia)
 * When getting information about uplinks and appliances, we currently have it such that DialogFlow passes information back to the code here. This feels dirty, and we would ideally like to make it such that the information is stored on the server so that it can be retrieved there rather than having to pass it backwards and forwards. 
 * Create the ability to get site by id without being dependent on the city and country parameters
   + This will reduce the number parameters needed when invoking an intent
   + E.g. When making an uplink, we have 5 parameters: UplinkName, SiteName, City, Country, WAN. If we can remove the City, and         Country parameter, we will only have at most 3 parameters to deal with in any intent
   + If this is done, the `convo.txt` files in the /steelconnect-dialogflow/automated-test-cases files needs to be updated to remove City, and Country parameters 
-* Prevent users from deleting routeVPNs via dialogflow
+* Prevent users from deleting routeVPNs via DialogFlow
 * Do a Postman and Newman Proof Of Concept to test the SteelConnect API
+* List the available sites/appliances/WANs/Uplinks when making a query or deleting one of those entities. It should look something like this:
+  ```
+  User: Delete a site
+  Bot: Which site would you like to delete? Please select a number corresponding to the available sites:
+        1. Branch in Adelaide, Australa
+        2. Shop in Perth, Australia
+        3. DC in Darwin, Australia
+  User: 2
+  Bot: The Shop in Perth, Australia has now been deleted
+  ```
+* Move botium test cases to a separate realm so that dynamic data/information can also be tested
+* Port DialogFlow V1 to V2 and make adjustments based on those changes
