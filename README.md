@@ -112,6 +112,7 @@ Tests are run in alphabetical order, so please be careful when naming the .convo
 
 The following refers to preconditions that need to be met before running `botium-cli run`
 * There must not be any appliances on the HQ site
+* The Headquarters site (in Clayton, Australia) and Mothership site (in Alice Springs, Australia)  must exist 
 
 ## Some Useful Botium Commands:
 * To start Botium: `botium-cli emulator`
