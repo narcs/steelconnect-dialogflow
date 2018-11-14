@@ -4,16 +4,34 @@ uplinks_delete_prompted - Delete uplinks while being prompted for parameters
 delete an uplink
 
 #bot default
-Which WAN was it connected to?
+What WAN would you like to delete the uplink from?
 
 #me
-internet
+Internet
 
 #bot default
-In which city is the connected site located in?
+In which city is the site that you want to remove the uplink from?
 
 #me
-alice springs
+Alice Springs
 
 #bot default
-Uplink called Uplink between site: Mothership and WAN: Internet has been deleted
+In which country do you want to remove your uplink from?
+
+#me
+Australia
+
+#bot default
+What is the name of the site that you would like to delete your uplink from?
+
+#me
+Mothership
+
+#bot default
+What is the name of the uplink that you would like to delete?
+
+#me
+dratini
+
+#bot default
+The dratini uplink connecting the Mothership site to the Internet WAN has now been deleted
