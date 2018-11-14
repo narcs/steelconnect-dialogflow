@@ -468,6 +468,4 @@ def format_response(speech):
 
 
 if __name__ == '__main__':
-    # Only used when running locally, uses entrypoint in app.yaml when run on google cloud
-    # app.secret_key = 'H\xa9\xde\xe5\xd8\x19J\x01T\x17\x95\xbf~\xc4\xf1Q\x96ph?4;\xd8k'
     app.run(debug=True, port=8080, host='127.0.0.1')
