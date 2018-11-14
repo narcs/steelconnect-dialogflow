@@ -86,7 +86,7 @@ You can now use Dialogflow to the test out the intents on your realm and organis
   + I.e. Uplink actions are grouped together, site actions are grouped together
 
 # Setting Up Testing
-**_DISCLAIMER 1:_**  These test cases will be interacting with dynamic information and hence may fail. For the purposes of testing, **please do not delete the Headquarters HQ site and Mothership site**, as we want to minimise the likelihood of a test failing
+**_DISCLAIMER 1:_**  These test cases will be interacting with dynamic information and hence may fail. For the purposes of testing, **please do not delete the HQ site and Mothership site**, as we want to minimise the likelihood of a test failing
 
 **_DISCLAIMER 2:_**  These test cases will take some time (it can take up to 15 seconds per test) due to it communicating with DialogFlow and the SteelConnect systems. 
 
@@ -125,7 +125,7 @@ The following actions have not been tested out and are deprecated. It has been l
 
 # To Do
 * Validate same city names and differents country pairings (E.g. Differentiate between Sydney Canada and Sydney Australia)
-* When getting information about uplinks and appliances, we currently have it such that DialogFlow passes information back to the code here. This feels dirty, and we would ideally like to make it such that the information is stored on the server so that it can be retrieved there rather than having to pass it backwards and forwards. 
+* When getting information about uplinks and appliances, we currently have it such that DialogFlow passes information back to the code here, and gets saved so that it can be used for a followup action later on. This feels dirty, and we would ideally like to make it such that the information is stored on DialogFlow (or some other cleaner way) so that it can be retrieved there rather than having to pass it backwards and forwards. 
 * Create the ability to get site by id without being dependent on the city and country parameters
   + This will reduce the number parameters needed when invoking an intent
   + E.g. When making an uplink, we have 5 parameters: UplinkName, SiteName, City, Country, WAN. If we can remove the City, and         Country parameter, we will only have at most 3 parameters to deal with in any intent
