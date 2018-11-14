@@ -7,7 +7,7 @@ create an uplink
 What wan would you like to connect it to?
 
 #me
-internet
+Internet
 
 #bot default
 In which city?
@@ -16,4 +16,22 @@ In which city?
 alice springs
 
 #bot default
-An uplink called Uplink has been created between site: Mothership, Alice Springs, AU and WAN: Internet 
+Which country does the site exist on?
+
+#me
+Australia
+
+#bot default
+What is the name of site that you want to connect the WAN to?
+
+#me
+Mothership
+
+#bot default
+What name would you like to give your uplink?
+
+#me
+dratini
+
+#bot default
+An uplink called dratini has been created between the Mothership site and the Internet WAN
