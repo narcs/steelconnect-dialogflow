@@ -234,13 +234,6 @@ def create_notification(category, message):
     }
     return notification
 
-@app.route("/test")
-def test():
-    notification_1 = create_notification(DANGER, "hello")
-    notification_2 = create_notification(SUCCESS, "hello")
-    notifications = [notification_1, notification_2]
-    return render_template("test.html", notifications=notifications)
-
 @app.route("/authenticate", methods=["GET", "POST"])
 def authenticate(title="Authentication", authenticated=None, notification=None):
     """
