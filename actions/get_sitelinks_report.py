@@ -1,17 +1,28 @@
 import logging
 from collections import Counter
-
 from flask import json
 from actions.util import *
 
 def get_sitelinks_report(api_auth, parameters, contexts):
     """
-    :param api_auth: steelconnect api object
-    :type api_auth: SteelConnectAPI
-    :param parameters: json parameters from Dialogflow intent
-    :type parameters: json
-    :return: Returns a response to be read out to user
-    :rtype: string
+    Allows users to get a quick overview in terms of how many sitelinks have which status. That is,
+    how many are up, down, established and needs attention. 
+
+    Works by getting getting all the sites, and for each site, we retrieve the associated sitelink
+    using get_sitelinks_report.py defined in api/sitelink.py. Once done, we use a Counter to keep
+    track of which statuses we have. 
+    
+    Parameters:
+    - api_auth: SteelConnect API object, it contains authentication log in details
+    - parameters: The json parameters obtained from the Dialogflow Intent. In this case, it takes
+                  on no parameters
+    
+    Returns:
+    - speech: A string which has the health check information about the sitelinks in the organisation
+
+    Example Prompt:
+    - sitelinks health check
+
     """
 
     all_sitelinks = []

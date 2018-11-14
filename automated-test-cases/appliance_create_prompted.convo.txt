@@ -4,28 +4,28 @@ appliance_create_prompted - Create an appliance while being prompted for require
 Create an appliance
 
 #bot default
-What is the SiteName?
+What is the name of the site that you would like your appliance to be on?
 
 #me
 HQ
 
 #bot default
-What is the City?
+In which city is this site in?
 
 #me
 Clayton
 
 #bot default
-What is the Country?
+In which country is this site in?
 
 #me
 Australia
 
 #bot default
-What is the Model?
+What is the model of the appliance you want to create?
 
 #me
 ewok
 
 #bot default
-Appliance: ewok created for site: Clayton, HQ
+The ewok appliance was created for the HQ site in Clayton, Australia

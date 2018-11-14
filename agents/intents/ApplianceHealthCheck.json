@@ -1,6 +1,6 @@
 {
   "id": "10337523-8976-4332-9a56-f6c253623d9d",
-  "name": "GetAppliancesReport",
+  "name": "ApplianceHealthCheck",
   "auto": true,
   "contexts": [],
   "responses": [
@@ -13,7 +13,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": []
+          "speech": ":/ It seems like we are having some trouble getting information about all your appliances... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -23,7 +23,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1534645441,
+  "lastUpdate": 1537946231,
   "fallbackIntent": false,
   "events": []
 }

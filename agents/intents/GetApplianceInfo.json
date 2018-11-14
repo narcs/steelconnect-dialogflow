@@ -11,7 +11,7 @@
         {
           "name": "GetApplianceInfo-followup",
           "parameters": {},
-          "lifespan": 1
+          "lifespan": 3
         },
         {
           "name": "DisplayApplianceInfo",
@@ -57,7 +57,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": []
+          "speech": ":/ It seems like we are having some trouble getting information on your appliance... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -67,7 +67,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1526025822,
+  "lastUpdate": 1538911093,
   "fallbackIntent": false,
   "events": []
 }

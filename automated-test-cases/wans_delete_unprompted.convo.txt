@@ -4,4 +4,4 @@ wans_delete_unprompted - delete wans without being prompted for required paramet
 delete the mufasa wan
 
 #bot default
-Successfully deleted the WAN named 'mufasa'
+The mufasa WAN has successfully been deleted

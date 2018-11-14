@@ -1,6 +1,6 @@
 {
   "id": "12d2fd2d-6fec-4a33-8033-413b1129d91c",
-  "name": "GetSitelinksReport",
+  "name": "SitelinkHealthCheck",
   "auto": true,
   "contexts": [],
   "responses": [
@@ -13,7 +13,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": "Sorry, it took too long to check all sitelinks."
+          "speech": ":/ It seems like we are having some trouble getting information about all your sitelinks... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -23,7 +23,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1533422531,
+  "lastUpdate": 1537946784,
   "fallbackIntent": false,
   "events": []
 }

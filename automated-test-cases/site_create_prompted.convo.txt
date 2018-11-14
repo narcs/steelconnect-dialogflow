@@ -4,22 +4,22 @@ site_create_prompted
 create a site
 
 #bot default
-What country?
+In which country would you like to create your site?
 
 #me
 norway
 
 #bot default
-What city would you like the site created in?
+Which city would you like to create your site in?
 
 #me
 oslo
 
 #bot default
-What is the name of site (e.g. DC, branch, shop, warehouse)?
+What would you like to name your site?
 
 #me
 pikachu
 
 #bot default
-A site named Pikachu has been created in Oslo Norway
+A site named pikachu has been created in Oslo, Norway

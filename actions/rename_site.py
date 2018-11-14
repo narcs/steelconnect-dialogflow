@@ -1,16 +1,30 @@
 import logging
-
 from flask import json
 from actions.util import *
 
 def rename_site(api_auth, parameters, contexts):
     """
-    :param api_auth: steelconnect api object
-    :type api_auth: SteelConnectAPI
-    :param parameters: json parameters from Dialogflow intent
-    :type parameters: json
-    :return: Returns a response to be read out to user
-    :rtype: string
+    Allows users to rename an existing site
+
+    Works by getting the site id from the sitename, country nand city. From there it changes the
+    old site name to the new site name using the rename_site method defined in api/sites
+    
+    Parameters:
+    - api_auth: SteelConnect API object, it contains authentication log in details
+    - parameters: The json parameters obtained from the Dialogflow Intent. It obtains the following:
+        > city: The city where the user wants to create the site
+        > country_code: The country code of where the user wants to create the site
+            + The country name will be obtained from the country code, and will not be directly
+              retrieved from the user
+        > old_name: the name of the site the user wants to change
+        > new_name: the new name of the site the user wants to give
+    
+    Returns:
+    - speech: A string which lets the user know if the site has been renamed or not
+
+    Example Prompt:
+    - Rename Shop in Perth, Australia to Branch
+
     """
     
     try:

@@ -1,9 +1,7 @@
 # Utility functions that actions can call on.
 
-
 class APIError(Exception):
     pass
-
 
 def format_wan_list(items):
     """
@@ -19,7 +17,7 @@ def format_wan_list(items):
             s += "\n - " + str(wan["name"]) + " (" + wan["longname"] + ")"
         else:
             s += "\n - " + str(wan["name"])
-
+    
     return s
 
 
@@ -64,7 +62,6 @@ def get_site_id_by_name(api_auth, site_name, city, country_code):
         raise APIError("Failed to get the list of Sites")
     else:
         raise APIError("Error: Could not connect to SteelConnect")
-
 
 def format_sitelink_list(api_auth, items):
     """

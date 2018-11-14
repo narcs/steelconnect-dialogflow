@@ -1,36 +1,36 @@
 {
-  "id": "ef169612-c095-4d65-ac45-b1b483595e8a",
-  "name": "DeleteUplinkIntent",
+  "id": "8750ff78-fb43-4bd6-9394-753b6df78a0b",
+  "name": "GetSiteInfo",
   "auto": true,
   "contexts": [],
   "responses": [
     {
       "resetContexts": false,
-      "action": "DeleteUplink",
+      "action": "GetSiteInfo",
       "affectedContexts": [
         {
-          "name": "DeleteUplinkIntent-followup",
+          "name": "DisplaySiteInfo",
           "parameters": {},
-          "lifespan": 2
+          "lifespan": 5
         }
       ],
       "parameters": [
         {
-          "id": "66b8bd22-7dd2-49ec-b4bd-2414aca0813b",
+          "id": "8c71bbbb-3887-4180-a4ec-504a1707a978",
           "required": true,
-          "dataType": "@WANType",
-          "name": "Wans",
-          "value": "$Wans",
+          "dataType": "@sys.geo-country-code",
+          "name": "Country",
+          "value": "$Country",
           "prompts": [
             {
               "lang": "en",
-              "value": "What WAN is it connected to?"
+              "value": "What is the country?"
             }
           ],
           "isList": false
         },
         {
-          "id": "0bf92ee4-8ff2-4200-965c-1c245c96dd4d",
+          "id": "961570ad-9e4c-41b6-b113-b3b7ed3b4143",
           "required": true,
           "dataType": "@sys.geo-city",
           "name": "City",
@@ -38,17 +38,23 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "Which city is it connected to?"
+              "value": "What is the city?"
             }
           ],
           "isList": false
         },
         {
-          "id": "1cc0acf4-ab6f-487d-b3ed-9e028a5e45ba",
-          "required": false,
-          "dataType": "@Uplinks",
-          "name": "Uplinks",
-          "value": "$Uplinks",
+          "id": "45dbede2-c7d8-4ef2-9f4f-919e4b46a6b4",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "Name",
+          "value": "$Name",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the name of the site?"
+            }
+          ],
           "isList": false
         }
       ],
@@ -66,7 +72,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1533003392,
+  "lastUpdate": 1539660905,
   "fallbackIntent": false,
   "events": []
 }

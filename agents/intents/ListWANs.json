@@ -22,7 +22,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": "Something went wrong."
+          "speech": ":/ It seems like we are having some trouble retrieving your WANs... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -32,7 +32,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1522649953,
+  "lastUpdate": 1537947564,
   "fallbackIntent": false,
   "events": []
 }

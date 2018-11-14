@@ -2,7 +2,7 @@
   "id": "4cbc8dfc-7e4d-4461-9a4e-4c214d7df6a9",
   "parentId": "ef169612-c095-4d65-ac45-b1b483595e8a",
   "rootParentId": "ef169612-c095-4d65-ac45-b1b483595e8a",
-  "name": "DeleteUplinkIntent - SelectSite",
+  "name": "DeleteUplink - custom",
   "auto": true,
   "contexts": [
     "DeleteUplinkIntent-followup"
@@ -10,15 +10,15 @@
   "responses": [
     {
       "resetContexts": false,
-      "action": "DeleteUplinkSelectSite",
+      "action": "DeleteUplink.DeleteUplink-custom",
       "affectedContexts": [],
       "parameters": [
         {
-          "id": "f895ddf0-e095-4d2d-93ab-1bcfe6a2a8b4",
-          "required": true,
-          "dataType": "@SiteNames",
-          "name": "SiteNames",
-          "value": "$SiteNames",
+          "id": "cd7f537d-f273-4ddd-a7c6-45fd8e6e57fa",
+          "required": false,
+          "dataType": "@sys.number-integer",
+          "name": "OptionNumber",
+          "value": "$OptionNumber",
           "isList": false
         }
       ],
@@ -26,7 +26,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": []
+          "speech": ":/ It seems like we are having some trouble deleting your uplink... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -36,7 +36,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1533186053,
+  "lastUpdate": 1538832149,
   "fallbackIntent": false,
   "events": []
 }

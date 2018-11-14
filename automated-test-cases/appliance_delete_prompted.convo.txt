@@ -4,28 +4,28 @@ appliance_delete_prompted - delete an appliance while being prompted for require
 Delete an appliance
 
 #bot default
-What is the Model?
+What appliance model would you like to delete?
 
 #me
 ewok
 
 #bot default
-What is the City?
+In which city is this site in?
 
 #me
 Clayton
 
 #bot default
-What is the Country?
+In which country is this site in?
 
 #me
 Australia
 
 #bot default
-What is the SiteName?
+What is the name of the site that you want to delete your appliance?
 
 #me
 HQ
 
 #bot default
-Successfully deleted ewok located on HQ in Clayton, AU
+The ewok appliance on the HQ site in Clayton, Australia was deleted

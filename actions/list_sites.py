@@ -1,17 +1,27 @@
 import logging
-
 from flask import json
 from requests.auth import HTTPBasicAuth
 import requests
 
 def list_sites(api_auth, parameters, contexts):
     """
-    :param parameters: json parameters from Dialogflow intent
-    :type parameters: json
-    :return: Returns a response to be read out to user
-    :rtype: string
+    Allows users to list all the sites that are in the organisation and where they are 
+    located
+
+    Works by calling the list_sites action defined in api/site.py
+
+    Parameters:
+    - api_auth: SteelConnect API object, it contains authentication log in details
+    - parameters: The json parameters obtained from the Dialogflow Intent. In this case, we
+                  obtain nothing
+
+    Returns:
+    - speech: A string which has the list of all sites in the organisation
+
+    Example Prompt:
+    - List sites
+
     """
-    
     # Get org name from Entitities
     org = parameters["organisation"]
 
@@ -22,27 +32,26 @@ def list_sites(api_auth, parameters, contexts):
         data = res.json()["items"]
         num_sites = len(data)
         
-
         if num_sites == 0:
             speech = "There are no sites in the {} organisation".format(org)
         elif num_sites == 1:
-            speech = "There is one site in the {} organisation, it is called {}".format(org, data[0]["name"])
+            speech = "There is one site in the {} organisation, it is called {} at {}, {}".format(org, data[0]["name"], data[0]["city"], data[0]["country"])
         elif num_sites > 1:
-            speech = "There are {} sites in the {} organisation: \n".format(
-                num_sites, org)
+            speech = "There are {} sites in the organisation: \n".format(num_sites)
+            count = 1
             for site in data:
                 name = site["name"]
                 city = site["city"]
                 country = site["country"]
-                speech += "{} in {} {}, \n".format(name, city, country)
+                site_id = site["id"]
 
-            speech = speech[:-3] + "."
-            
+                #added leading zeroes in the count variable to help with formatting of data
+                speech += "\n{}. ID: {}\n\t  Site Name: {}\n\t  City: {}\n\t  Country: {}\n".format(str(count).zfill(len(str(num_sites))), site_id, name, city, country)
+                count += 1
         else:
             speech = "Unknown error occurred when retrieving sites"
     else:
         speech = "Error: Could not connect to SteelConnect"
 
     logging.debug(speech)
-
     return speech

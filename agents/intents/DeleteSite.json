@@ -29,7 +29,7 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "What is the name of the site?"
+              "value": "What is the name of the site that you would like to delete?"
             }
           ],
           "isList": false
@@ -43,7 +43,7 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "What City?"
+              "value": "In which city is this site located?"
             }
           ],
           "isList": false
@@ -57,9 +57,16 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "What Country?"
+              "value": "In which country is this site located?"
             }
           ],
+          "isList": false
+        },
+        {
+          "id": "f8337405-99f9-4632-81b7-ae309288f13f",
+          "dataType": "@SiteNames",
+          "name": "SiteNames",
+          "value": "$SiteNames",
           "isList": false
         }
       ],
@@ -67,7 +74,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": []
+          "speech": ":/ It seems like we are having some trouble deleting your site... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -77,7 +84,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1526699475,
+  "lastUpdate": 1537945805,
   "fallbackIntent": false,
   "events": []
 }

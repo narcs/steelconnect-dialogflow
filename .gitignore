@@ -7,6 +7,8 @@
 # default-auth file
 default-auth.json
 
+# Configuration file
+config.py
 # Removes files needed for or created from testing framework
 botium.json
 /botiumwork

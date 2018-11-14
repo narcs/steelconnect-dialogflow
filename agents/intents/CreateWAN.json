@@ -11,7 +11,7 @@
         {
           "name": "WAN_Created",
           "parameters": {},
-          "lifespan": 99
+          "lifespan": 2
         }
       ],
       "parameters": [
@@ -42,7 +42,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": []
+          "speech": ":/ It seems like we are having some trouble creating your WAN... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -52,7 +52,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1522726897,
+  "lastUpdate": 1538911058,
   "fallbackIntent": false,
   "events": []
 }

@@ -10,4 +10,4 @@ What should the WAN be called?
 simba
 
 #bot default
-simba created
+A WAN called simba was created

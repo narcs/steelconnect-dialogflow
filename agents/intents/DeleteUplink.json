@@ -1,0 +1,106 @@
+{
+  "id": "ef169612-c095-4d65-ac45-b1b483595e8a",
+  "name": "DeleteUplink",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "DeleteUplink",
+      "affectedContexts": [
+        {
+          "name": "DeleteUplinkIntent-followup",
+          "parameters": {},
+          "lifespan": 3
+        }
+      ],
+      "parameters": [
+        {
+          "id": "66b8bd22-7dd2-49ec-b4bd-2414aca0813b",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "WANName",
+          "value": "$WANName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What WAN would you like to delete the uplink from?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "0bf92ee4-8ff2-4200-965c-1c245c96dd4d",
+          "required": true,
+          "dataType": "@sys.geo-city",
+          "name": "City",
+          "value": "$City",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "In which city is the site that you want to remove the uplink from?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "180d6c28-ab13-438e-abaf-4e3b7c1d5da3",
+          "required": true,
+          "dataType": "@sys.geo-country-code",
+          "name": "Country",
+          "value": "$Country",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "In which country do you want to remove your uplink from?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "f6cadd73-556f-4bc8-bfc3-fa7dc6b75f71",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "SiteName",
+          "value": "$SiteName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the name of the site that you would like to delete your uplink from?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "854723a8-e52c-4994-ac9b-8433ef66aefa",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "UplinkName",
+          "value": "$UplinkName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the name of the uplink that you would like to delete?"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": ":/ It seems like we are having some trouble deleting your uplink... Please try again in a little while and hopefully things are running again"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1542180402,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -19,10 +19,16 @@
         },
         {
           "id": "1db264af-7e54-427e-ac5a-4a8f9024de0b",
-          "required": false,
+          "required": true,
           "dataType": "@sys.any",
           "name": "WANName",
           "value": "$WANName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the name of the WAN that you want to delete?"
+            }
+          ],
           "isList": false
         }
       ],
@@ -30,7 +36,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": "Something went wrong."
+          "speech": ":/ It seems like we are having some trouble deleting your WAN... Please try again in a little while and hopefully things are running again"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -40,7 +46,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1522727777,
+  "lastUpdate": 1537944736,
   "fallbackIntent": false,
   "events": []
 }
