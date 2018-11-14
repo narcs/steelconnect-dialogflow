@@ -58,20 +58,6 @@
           "isList": false
         },
         {
-          "id": "854723a8-e52c-4994-ac9b-8433ef66aefa",
-          "required": true,
-          "dataType": "@sys.any",
-          "name": "UplinkName",
-          "value": "$UplinkName",
-          "prompts": [
-            {
-              "lang": "en",
-              "value": "What is the name of the uplink that you would like to delete?"
-            }
-          ],
-          "isList": false
-        },
-        {
           "id": "f6cadd73-556f-4bc8-bfc3-fa7dc6b75f71",
           "required": true,
           "dataType": "@sys.any",
@@ -81,6 +67,20 @@
             {
               "lang": "en",
               "value": "What is the name of the site that you would like to delete your uplink from?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "854723a8-e52c-4994-ac9b-8433ef66aefa",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "UplinkName",
+          "value": "$UplinkName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the name of the uplink that you would like to delete?"
             }
           ],
           "isList": false
@@ -100,7 +100,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1538911113,
+  "lastUpdate": 1542180402,
   "fallbackIntent": false,
   "events": []
 }

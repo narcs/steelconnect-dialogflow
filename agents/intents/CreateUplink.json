@@ -44,20 +44,6 @@
           "isList": false
         },
         {
-          "id": "c641f1a3-bd0c-46ba-bd89-a2d68bf3d9cd",
-          "required": true,
-          "dataType": "@sys.any",
-          "name": "SiteName",
-          "value": "$SiteName",
-          "prompts": [
-            {
-              "lang": "en",
-              "value": "What is the name of site that you want to connect the WAN to?"
-            }
-          ],
-          "isList": false
-        },
-        {
           "id": "758fffc8-f964-4436-87ba-8462a20907af",
           "required": true,
           "dataType": "@sys.geo-country-code",
@@ -67,6 +53,20 @@
             {
               "lang": "en",
               "value": "Which country does the site exist on?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "c641f1a3-bd0c-46ba-bd89-a2d68bf3d9cd",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "SiteName",
+          "value": "$SiteName",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the name of site that you want to connect the WAN to?"
             }
           ],
           "isList": false
@@ -100,7 +100,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1538824129,
+  "lastUpdate": 1542179490,
   "fallbackIntent": false,
   "events": []
 }

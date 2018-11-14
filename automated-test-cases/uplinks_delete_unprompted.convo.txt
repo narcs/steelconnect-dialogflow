@@ -1,7 +1,7 @@
 uplinks_delete_unprompted - delete uplinks without any prompts
 
 #me
-delete uplink from alice springs site to routevpn
+Delete the Arbok uplink connecting the Mothership site in Alice Springs, Australia to RouteVPN
 
 #bot default
-Uplink called Uplink between site: Mothership and WAN: RouteVPN has been deleted
+The Arbok uplink connecting the Mothership site to the RouteVPN WAN has now been deleted
