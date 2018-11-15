@@ -38,8 +38,11 @@ jobs:
   - stage: botium_test
     script:
     - "./login.sh"
+    - npm cache clean -f
+    - npm install -g n
+    - n stable
     - npm install -g botium-cli
     - botium-cli run
 stages:
-- deploy
+#- deploy
 - botium_test
