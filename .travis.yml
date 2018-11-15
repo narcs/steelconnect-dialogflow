@@ -30,9 +30,10 @@ jobs:
     script: skip
   - stage: botium_test
     script:
+      - npm -v
     - "./login.sh"
     - npm install -g botium-cli
     - botium-cli run
 stages:
-- deploy
+- #deploy
 - botium_test
