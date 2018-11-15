@@ -1,9 +1,5 @@
 sudo: false
-os: linux
-dist: trusty
 language: python
-python:
-- '3.6'
 # Cache our Gcloud SDK between commands
 cache:
   directories:
@@ -36,4 +32,3 @@ deploy:
 
 script:
 - echo "No script to run"
-- ls
