@@ -28,11 +28,11 @@ jobs:
       version: 1
       on:
         all_branches: true
-    script: skip
+    script:
+      - npm -v
+      - node -v
   - stage: botium_test
     script:
-    - npm -v
-    - node -v
     - "./login.sh"
     - npm install -g botium-cli
     - botium-cli run
