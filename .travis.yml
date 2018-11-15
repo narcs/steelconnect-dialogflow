@@ -13,8 +13,8 @@ before_install:
   -in credentials.tar.gz.enc -out credentials.tar.gz -d
 - if [ ! -d ${HOME}/google-cloud-sdk ]; then curl https://sdk.cloud.google.com | bash;
   fi
-- #npm install -g npm@5.5.1
-- npm list -g botium-cli --depth=0 || npm install -g botium-cli
+#- npm install -g npm@5.5.1
+#- npm list -g botium-cli --depth=0 || npm install -g botium-cli
 - tar -xzf credentials.tar.gz
 - mkdir -p lib
 jobs:
@@ -44,7 +44,7 @@ jobs:
     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
     - nvm install 10.8.0
     - nvm use 10.8.0
-    - npm install -g botium-cli
+    - npm list -g botium-cli --depth=0 || npm install -g botium-cli@0.0.22
     - botium-cli run
 stages:
 #- deploy
