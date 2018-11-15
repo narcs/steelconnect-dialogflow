@@ -38,7 +38,7 @@ jobs:
   - stage: botium_test
     script:
     - "./login.sh"
-    #- npm install -g botium-cli
+    - npm install -g botium-cli
     - botium-cli run
 stages:
 - deploy
