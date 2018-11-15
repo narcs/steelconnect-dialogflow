@@ -10,7 +10,7 @@ before_install:
   -in credentials.tar.gz.enc -out credentials.tar.gz -d
 - if [ ! -d ${HOME}/google-cloud-sdk ]; then
     curl https://sdk.cloud.google.com | bash;
-fi
+  fi
 - tar -xzf credentials.tar.gz
 - mkdir -p lib
 - gcloud auth activate-service-account --key-file client-secret.json
