@@ -16,8 +16,8 @@ before_install:
 - if [ ! -d ${HOME}/google-cloud-sdk ]; then
     curl https://sdk.cloud.google.com | bash;
   fi
-- if [ ! -d $/home/trusty/nvm/versions/node/lib/botium-cli]; then
-    echo "can't find";
+- if [ ! -d $/home/travis/.nvm/versions/node/v8.9.1/lib/botium-cli]; then
+    npm install -g botium-cli;
   fi
 - tar -xzf credentials.tar.gz
 - mkdir -p lib
