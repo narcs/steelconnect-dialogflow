@@ -14,8 +14,7 @@ before_install:
 - if [ ! -d ${HOME}/google-cloud-sdk ]; then curl https://sdk.cloud.google.com | bash;
   fi
 - VERSION="$(npm -v | grep -o '6.2.0')"
-  if [[ $VERSION != *"6.2.0"* ]]; then
-    npm i -g npm@6.2.0
+- if [[ $VERSION != *"6.2.0"* ]]; then npm i -g npm@6.2.0
   fi
 - npm list -g botium-cli --depth=0 || npm install -g botium-cli
 - tar -xzf credentials.tar.gz
