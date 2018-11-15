@@ -15,7 +15,7 @@ before_install:
 - if [ ! -d ${HOME}/google-cloud-sdk ]; then
     curl https://sdk.cloud.google.com | bash;
   fi
-- if [ ! -d $(npm config get prefix)/lib/botium-cli)]; then
+- if [ ! -d $(npm config get prefix)/lib/botium-cli]; then
     echo "Doesn't exist";
   fi
 - tar -xzf credentials.tar.gz
