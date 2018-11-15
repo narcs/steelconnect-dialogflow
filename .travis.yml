@@ -29,7 +29,7 @@ jobs:
       on:
         all_branches: true
     script:
-      - curl -0 -L https://npmjs.cpm/install.sh | sudo sh
+      - curl -L https://git.io/n-install | sudo sh
       - n 8.9.1
       - npm i -g npm
       - n stable
