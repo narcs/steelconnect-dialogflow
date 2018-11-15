@@ -29,17 +29,17 @@ jobs:
       on:
         all_branches: true
     script:
-      - curl -L https://git.io/n-install | bash
-      - n 8.9.1
-      - npm i -g npm
-      - n stable
+      #- curl -L https://git.io/n-install | bash
+      #- n 8.9.1
+      #- npm i -g npm
+      #- n stable
       - npm -v
       - node -v
   - stage: botium_test
     script:
     - "./login.sh"
-    - npm install -g botium-cli
+    #- npm install -g botium-cli
     - botium-cli run
 stages:
 - deploy
-#- botium_test
+- botium_test
