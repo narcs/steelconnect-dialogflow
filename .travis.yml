@@ -19,7 +19,6 @@ before_install:
 jobs:
   include:
   - stage: deploy
-    script: skip
     deploy:
       provider: gae
       skip_cleanup: true
@@ -28,6 +27,8 @@ jobs:
       version: 1
       on:
         all_branches: true
+    script:
+    - curl --netrc-file login.netrc https://cv-steelconnect.appspot.com/authenticate
   - stage: botium_test
     script:
     - botium-cli run
