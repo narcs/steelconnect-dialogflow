@@ -16,7 +16,7 @@ before_install:
 - if [ ! -d ${HOME}/google-cloud-sdk ]; then
     curl https://sdk.cloud.google.com | bash;
   fi
-- npm list -g botium-cli --depth=0 || npm install -g botium-cli
+- #npm list -g botium-cli --depth=0 || npm install -g botium-cli
 - tar -xzf credentials.tar.gz
 - mkdir -p lib
 
@@ -38,4 +38,4 @@ jobs:
 
 stages:
   - deploy
-  - botium_test
+  - #botium_test
