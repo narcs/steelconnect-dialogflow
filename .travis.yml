@@ -30,8 +30,7 @@ jobs:
     script: skip
   - stage: botium_test
     script:
-      - curl --netrc-file login.netrc https://cv-steelconnect.appspot.com/authenticate
-      #- botium-cli run
+    - ./login.sh
 stages:
 - deploy
 - botium_test
