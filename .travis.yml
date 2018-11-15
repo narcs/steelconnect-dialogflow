@@ -8,7 +8,7 @@ python:
 cache:
   directories:
   - "$HOME/google-cloud-sdk/"
-  - $(npm config get prefix)/lib/botium-cli
+  #- $(npm config get prefix)/lib/botium-cli
 before_install:
 # [START auth]
 - openssl aes-256-cbc -K $encrypted_5aee36c2e1b9_key -iv $encrypted_5aee36c2e1b9_iv
@@ -16,8 +16,8 @@ before_install:
 - if [ ! -d ${HOME}/google-cloud-sdk ]; then
     curl https://sdk.cloud.google.com | bash;
   fi
-- if [ ! -d $(npm config get prefix)/lib/botium-cli]; then
-    npm install -g botium-cli;
+- if [ ! -d $/home/trusty/nvm/versions/node/lib/botium-cli]; then
+    echo "can't find";
   fi
 - tar -xzf credentials.tar.gz
 - mkdir -p lib
