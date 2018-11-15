@@ -19,9 +19,9 @@ before_install:
   fi
 - tar -xzf credentials.tar.gz
 - mkdir -p lib
-- gcloud auth activate-service-account --key-file client-secret.json
+#- gcloud auth activate-service-account --key-file client-secret.json
 deploy:
-  provider: cv-steelconnect
+  provider: gae
   skip_cleanup: true
   keyfile: client-secret.json
   project: cv-steelconnect
