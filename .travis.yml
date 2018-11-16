@@ -1,7 +1,8 @@
 sudo: false
-branch:
-  - CI
-  - master
+branches:
+  only:
+    - CI
+    - master
 os: linux
 dist: trusty
 language: python
@@ -27,7 +28,9 @@ jobs:
       project: cv-steelconnect
       version: 1
       on:
-        all_branches: true
+        branches:
+          - CI
+          - master
     script:
     - skip
   - stage: botium_test
