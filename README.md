@@ -268,6 +268,7 @@ Alternative
   + E.g. For the `List Uplinks` method, it will claim that there is a problem if there are approximately 75 uplinks present and not show it. However, the method works fine (as shown in Google Cloud Platform)
 
 # To Do
+* Improve .travis.yaml to cache botium-cli npm global package correctly. This is so we don't have to reinstall the package with every build and makes the build run faster. 
 * Validate same city names and differents country pairings (E.g. Differentiate between Sydney Canada and Sydney Australia)
 * When getting information about uplinks and appliances, we currently have it such that DialogFlow passes information back to the code here, and gets saved so that it can be used for a followup action later on. This feels dirty, and we would ideally like to make it such that the information is stored on DialogFlow (or some other cleaner way) so that it can be retrieved there rather than having to pass it backwards and forwards. 
 * Create the ability to get site by id without being dependent on the city and country parameters

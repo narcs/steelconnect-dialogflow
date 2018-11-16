@@ -1,4 +1,4 @@
-# Change to false if function not deprecated by Travis-CI.
+# Change sudo to false if function not deprecated by Travis-CI.
 # Setting to false allows faster build.
 # https://docs.travis-ci.com/user/reference/trusty/
 sudo: required
@@ -14,6 +14,9 @@ cache:
   directories:
   # Caching sdk so we don't always have to reinstall it
   - "$HOME/google-cloud-sdk/"
+  # Currently not implementing since we currently always install botium-cli -g in every build
+  # Need to find find workaround to not always do this and cache global packages correctly
+  - "$(npm config get prefix)/lib/node_modules"
 before_install:
 # Decrypts credentials.tar.gz.enc
 # Delete this line before running "travis encrypt-file credentials.tar.gz --add" in bash
@@ -23,6 +26,9 @@ before_install:
 # Checking if sdk already exist, if not then install
 - if [ ! -d ${HOME}/google-cloud-sdk ]; then curl https://sdk.cloud.google.com | bash;
   fi
+# Installs global package if it doesn't exist in cache
+# Currently not implementing since we currently always install botium-cli -g in every build 
+- npm list -g botium-cli --depth=0 || npm install -g botium-cli@0.0.22
 # Uncompress credentials
 - tar -xzf credentials.tar.gz
 - mkdir -p lib
