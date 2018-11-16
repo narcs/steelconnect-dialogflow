@@ -1,4 +1,7 @@
 sudo: false
+branch:
+  - CI
+  - master
 os: linux
 dist: trusty
 language: python
@@ -26,7 +29,7 @@ jobs:
       on:
         all_branches: true
     script:
-      - skip
+    - skip
   - stage: botium_test
     script:
     - "./login.sh"

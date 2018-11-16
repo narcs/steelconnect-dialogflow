@@ -12,3 +12,8 @@ config.py
 # Removes files needed for or created from testing framework
 botium.json
 /botiumwork
+
+# Travis CI
+client-secret.json
+credentials.tar.gz
+login.sh
