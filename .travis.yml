@@ -28,9 +28,7 @@ jobs:
       project: cv-steelconnect
       version: 1
       on:
-        branches:
-          - t1
-          - master
+        all_branches: true
     script:
     - skip
   - stage: botium_test
