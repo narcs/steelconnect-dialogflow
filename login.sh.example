@@ -1,0 +1,1 @@
+curl -d 'username=<steelconnect-username>&password=<steelconnect-password>' https://<project-id>.appspot.com/authenticate

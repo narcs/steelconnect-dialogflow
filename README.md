@@ -60,48 +60,6 @@ Use this link: https://github.com/narcs/steelconnect-dialogflow/archive/master.z
 
 You can now use Dialogflow to the test out the intents on your realm and organisation. Have a look at the Dialogflow intents what you can do, you can add/delete to suit your needs.
 
-<!-- Adding this here because I think it'll be useful for future peeps -->
-# Known Bugs And Limitations
-* Newline characters are not rendered in Dialogflow Web Demo
-  E.g. In the code, we may have something like:
-  ```
-    speech = "First Name: Rick, \nLast Name: Rolling, \nFavourite Pokemon: Magikarp"
-  ```
-
-  In DialogFlow, it will be rendered as: 
-  ```
-    "First Name: Rick, \nLast Name: Rolling, \nFavourite Pokemon: Magikarp"
-  ```
-
-  Instead of:
-  ```
-    "First Name: Rick,
-     Last Name: Rolling,
-     Favourite Pokemon: Magikarp"
-  ```  
-  + This is not an issue in Slack
-
-* SteelConnect cannot identify if a city does not exist in a country. It will create a site regardless if the city-country pairing       doesn't make sense. 
-  I.e. If you say `create a site in Beijing, Australia`, a site will be created and saved as Beijing, Australia despite the fact that there is no city named Beijing in Australia. 
-
-  Due to the confusing city-country pairing, the site will not be shown the the SteelConnect Map
-
-* In SteelConnect Manager, (and as specified by Shannon) you should not be able to delete RouteVPNs, however if you query the API directly (as we are doing with Dialogflow), you will be to
-
-* DialogFlow only recognises major cities. This means that cities such as "Melbourne" and "New York City" gets recognised, however lesser known cities such as "Gisborne South" and Noble Park" aren't
-
-* DialogFlow will timeout if there is too much content that needs to be passed in. 
-  + E.g. For the `List Uplinks` method, it will claim that there is a problem if there are approximately 75 uplinks present and not show it. However, the method works fine (as shown in Google Cloud Platform)
-
-<!-- Adding this here because I think it'll be useful for future peeps, but also because I forgot quite a few stuff that'll be nice reminders after not touching the code for a while -->
-# Hints And Tips
-* Remember to name the action in the Action And Parameter section in DialogFlow
-* Remember to 'Enable Webhook Call For This Intent' in the Fulfillment section when creating a new intent in DialogFlow
-* After importing/restoring/uploading files into DialogFlow, the system may not work by constantly printing "Not Available" after invoking each intent. It may be due to the fulfillment section being overwritten. Go to the Fulfillment section on the left, and ensure that the URL field contains the webhook URL for your project
-* If there are issues finding out the causes of bugs in DialogFlow, try going to Google Cloud Platform Error Reporting and/or Logging on the left pane to see the stack trace and the possible cause of the bug
-* The registration of actions in app.py has been separated according to the entity for easy readability
-  + I.e. Uplink actions are grouped together, site actions are grouped together
-
 # Setting Up Testing
 **_DISCLAIMER 1:_**  These test cases will be interacting with dynamic information and hence may fail. For the purposes of testing, **please do not delete the HQ site and Mothership site**, as we want to minimise the likelihood of a test failing
 
@@ -140,6 +98,174 @@ The following actions have not been tested out and are deprecated. It has been l
 - Clear sites
 - Create SSID
 - Create Zone
+
+# Setting up Travis CI
+**_DISCLAIMER:_** Both botium.json and config.py needs to be correctly configured to use Travis CI
+
+## Sign in to Travis CI
+- Go to Travis CI, https://travis-ci.org/.
+- Click on Sign in with GitHub.
+
+## Enable your repository on Travis CI
+- Now, you need to tell Travis CI to check for changes in your repository, so click on your name on the top-right of the Travis CI page and select **Accounts**.
+- This will take you to a page, https://travis-ci.org/profile/USERNAMEorORGANIZATION, which shows a list of your GitHub repositories that Travis CI knows about.
+- If you cannot see `USERNAMEorORGANIZATION/steelconnect-dialogflow`, then click the **Sync account** button which tells Travis CI to check your current repositories on GitHub.
+- When you can see `USERNAMEorORGANIZATION/steelconnect-dialogflow`, then click on the button next to it to instruct Travis CI to monitor that repository for changes. The X icon should change to a check/tick icon.
+- Travis CI looks for a file called `.travis.yml` in a Git repository. This file tells Travis CI how to build and test your software. In addition, this file can be used to specify any dependencies you need installed before building or testing your software.
+- This will take you to a page, https://travis-ci.org/USERNAMEorORGANIZATION/steelconnect-dialogflow, which shows information about the run of your Travis CI job.
+
+## Creating the credentials
+To deploy the app to this project, you must create a of type of credential:
+- Service account credentials that enable the Cloud SDK to authenticate successfully with the Cloud Platform project.
+
+**Create the service account credentials**
+1. In your GCP Console project, open the Credentials page.
+2. Click Create credentials > Service account key.
+3. Under Service account select New service account.
+4. Enter a Service account name such as continuous-integration-test.
+5. Under Role, select Project > Editor.
+6. Under Key type, select JSON.
+7. Click Create. The GCP Console downloads a new JSON file to your computer. The name of this file starts with your project ID.
+8. Copy this file to the root of the GitHub repo and rename the file client-secret.json.
+
+## Encryption and decryption
+Because these credentials are added to a public GitHub repo, they need to be encrypted and decrypted on Travis side.
+
+**Login**
+* Create a bash script and name it login.sh
+* Copy details from login.sh.example and fill in the correct username, password and app url.
+* This script will authenticate you automatically when travis is building the app.
+
+**Installing Travis Command Line Client**
+* To encrypt the files we need Travis command client, follow the following site on installing Ruby and the client.
+* https://github.com/travis-ci/travis.rb#installation
+* Currently encryption via Windows doesn't work correctly with the client therefore follow the following site to install Ruby on Windows Subsystem for Linux
+* https://stackoverflow.com/questions/37405528/installing-ruby-on-wsl-windows-subsystem-for-linux
+
+**Encrypting files**
+* Create a tar archive file containing the following files:
+  * client-secret.json
+  * botium.json
+  * config.py
+  * login.sh 
+
+`Important: Don’t add this archive to your Git repository. It contains your private credentials. The sample project's .gitignore file is set to ignore this file, but if you change its name, you'll need to add it to .gitignore again.`
+
+1. In a terminal window, run the following command:
+`$ tar -czf credentials.tar.gz client-secret.json botium.json config.py login.sh`
+
+2. In the `.travis.yml` file, remove the encryption information. This information will be automatically added when you encrypt your keys in the next step. Edit the file and after before_install, remove the follow line:
+```
+  - openssl aes-256-cbc -K $encrypted_4cb330591e04_key -iv $encrypted_4cb330591e04_iv -in credentials.tar.gz.enc -out credentials.tar.gz
+```
+
+3. Log in to Travis. You'll be prompted for your GitHub login credentials:
+`$ sudo travis login`
+
+4. Encrypt the file locally. If prompted to overwrite the existing file, respond yes:
+`$ sudo travis encrypt-file credentials.tar.gz --add`
+  * It's the --add option that causes the Travis client to automatically add the decryption step to the before_install step in the .travis.yml file.
+
+5. You only need to do this once, once credentials.tar.gz.enc has been commited and pushed, Travis will automatically decrypt it and use it to authenticate your credentials and deploy your app on gcloud.
+
+## Modifying .travis.yml
+1. Modify branches to your branch name
+```
+  branches:
+      only:
+        - <branch>
+```
+2. Modify project to your project-id
+```
+  deploy:
+    provider: gae
+    skip_cleanup: true
+    keyfile: client-secret.json
+    project: <project-id>
+    version: 1
+```
+## Running Travis
+1. Add the encrypted archive and travis file to the repo:
+```
+  $ git add credentials.tar.gz.enc .travis.yml
+  $ git commit -m "Adds encrypted credentials for Travis"
+  $ git push origin <branch>
+```
+2. Visit https://travis-ci.org/USERNAMEorORGANIZATION. You should see a job called steelconnect-dialogflow. Jobs are named after the corresponding repositories.
+
+3. Click on the repo. This will take you to a page, https://travis-ci.org/USERNAMEorORGANIZATION/steelconnect-dialogflow, which shows information about the run of your Travis CI job.
+
+4. The job should be coloured green and with a check/tick icon which means that the job succeeded.
+
+## Modifying Build Runs
+By default Travis is set to the run the build with every push however we can change this so that it would only run the build when we do a pull request
+1. Visit https://travis-ci.org/USERNAMEorORGANIZATION/steelconnect-dialogflow
+2. Click on `More options` menu on the right under your profile.
+3. Click `Settings`
+4. Untick `Build pushed branches`
+
+Alternative
+1. Visit https://travis-ci.org/USERNAMEorORGANIZATION/steelconnect-dialogflow/settings
+2. Untick `Build pushed branches`
+
+## Checking Build Request
+Sometimes the build won't run and gets rejected by Travis due to the .travis.yml file being incorrectly modified
+You can check this with their request page.
+
+1. Visit https://travis-ci.org/USERNAMEorORGANIZATION/steelconnect-dialogflow/requests
+2. Click on `More options` menu on the right under your profile.
+3. Click `Requests`
+
+Alternative
+1. Visit https://travis-ci.org/USERNAMEorORGANIZATION/steelconnect-dialogflow/settings
+
+## Sources
+- https://github.com/softwaresaved/build_and_test_examples/blob/master/travis/HelloWorld.md
+- https://cloud.google.com/solutions/continuous-delivery-with-travis-ci
+- https://docs.travis-ci.com/user/encrypting-files/
+- https://github.com/travis-ci/travis.rb#readme
+
+<!-- Adding this here because I think it'll be useful for future peeps, but also because I forgot quite a few stuff that'll be nice reminders after not touching the code for a while -->
+# Hints And Tips
+* Remember to name the action in the Action And Parameter section in DialogFlow
+* Remember to 'Enable Webhook Call For This Intent' in the Fulfillment section when creating a new intent in DialogFlow
+* After importing/restoring/uploading files into DialogFlow, the system may not work by constantly printing "Not Available" after invoking each intent. It may be due to the fulfillment section being overwritten. Go to the Fulfillment section on the left, and ensure that the URL field contains the webhook URL for your project
+* If there are issues finding out the causes of bugs in DialogFlow, try going to Google Cloud Platform Error Reporting and/or Logging on the left pane to see the stack trace and the possible cause of the bug
+* The registration of actions in app.py has been separated according to the entity for easy readability
+  + I.e. Uplink actions are grouped together, site actions are grouped together
+
+<!-- Adding this here because I think it'll be useful for future peeps -->
+# Known Bugs And Limitations
+* Newline characters are not rendered in Dialogflow Web Demo
+  E.g. In the code, we may have something like:
+  ```
+    speech = "First Name: Rick, \nLast Name: Rolling, \nFavourite Pokemon: Magikarp"
+  ```
+
+  In DialogFlow, it will be rendered as: 
+  ```
+    "First Name: Rick, \nLast Name: Rolling, \nFavourite Pokemon: Magikarp"
+  ```
+
+  Instead of:
+  ```
+    "First Name: Rick,
+     Last Name: Rolling,
+     Favourite Pokemon: Magikarp"
+  ```  
+  + This is not an issue in Slack
+
+* SteelConnect cannot identify if a city does not exist in a country. It will create a site regardless if the city-country pairing       doesn't make sense. 
+  I.e. If you say `create a site in Beijing, Australia`, a site will be created and saved as Beijing, Australia despite the fact that there is no city named Beijing in Australia. 
+
+  Due to the confusing city-country pairing, the site will not be shown the the SteelConnect Map
+
+* In SteelConnect Manager, (and as specified by Shannon) you should not be able to delete RouteVPNs, however if you query the API directly (as we are doing with Dialogflow), you will be to
+
+* DialogFlow only recognises major cities. This means that cities such as "Melbourne" and "New York City" gets recognised, however lesser known cities such as "Gisborne South" and Noble Park" aren't
+
+* DialogFlow will timeout if there is too much content that needs to be passed in. 
+  + E.g. For the `List Uplinks` method, it will claim that there is a problem if there are approximately 75 uplinks present and not show it. However, the method works fine (as shown in Google Cloud Platform)
 
 # To Do
 * Validate same city names and differents country pairings (E.g. Differentiate between Sydney Canada and Sydney Australia)
